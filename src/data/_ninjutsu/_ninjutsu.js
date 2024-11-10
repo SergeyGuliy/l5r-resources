@@ -1,6 +1,8 @@
 import {replaceCharacter} from '@/data/replaceCharacter';
 import {techGroups} from '@/data/groups';
 
+const { transliterate } = require('transliteration');
+
 export const ninjutsu = [
     {
         name: 'Заглушающий удар',
@@ -46,5 +48,6 @@ export const ninjutsu = [
 ].map(kata => ({
     ...kata,
     description: replaceCharacter(kata.description),
-    group: techGroups.ninjutsu
+    group: techGroups.ninjutsu,
+    link: transliterate(kata.name)
 }))

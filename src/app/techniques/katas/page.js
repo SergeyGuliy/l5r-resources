@@ -1,7 +1,6 @@
 'use client'
 
 import MyPage from '@/components/MyPage';
-
 import {katas} from '@/data/_katas/_katas';
 import {kataGroups, techGroups, techTranslations} from '@/data/groups';
 

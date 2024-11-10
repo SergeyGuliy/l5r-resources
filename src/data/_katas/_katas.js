@@ -1,5 +1,6 @@
 import {kataGroups, techGroups} from '@/data/groups';
 import {replaceCharacter} from '@/data/replaceCharacter';
+import {transliterate} from 'transliteration';
 
 const general = [
     {
@@ -337,5 +338,6 @@ export const katas = [
 ].map(kata => ({
     ...kata,
     description: replaceCharacter(kata.description),
-    group: techGroups.kata
+    group: techGroups.kata,
+    link: transliterate(kata.name)
 }))
