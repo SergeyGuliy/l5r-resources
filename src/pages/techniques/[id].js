@@ -1,6 +1,6 @@
 import MyPage from '@/components/MyPage';
 import {useRouter} from 'next/router';
-import {routeData} from '@/data';
+import {routeData} from '@/mockData';
 import {useMemo} from 'react';
 
 
@@ -15,6 +15,7 @@ export default function Home() {
 
     return (
         <MyPage
+            links={pageData.links}
             tech={pageData.list}
             title={pageData.title}
             filterGroups={pageData.filterSettings}

@@ -1,5 +1,6 @@
 import {Button, HStack} from '@chakra-ui/react';
 import {Switch} from '@/components/ui/switch';
+import {hiddenTrue} from '@/mockData/groups';
 
 export default function MySearchFilterGroups({filter, groupIndex, setFilters}) {
     const allChecked = filter.subGroups.every((value) => value.checked)
@@ -32,6 +33,7 @@ export default function MySearchFilterGroups({filter, groupIndex, setFilters}) {
 
     if (!filter.subGroups?.length) return
 
+
     return (
         <>
             <Switch
@@ -45,17 +47,21 @@ export default function MySearchFilterGroups({filter, groupIndex, setFilters}) {
             </Switch>
 
             <HStack>
-                {filter.subGroups.map((subGroup, subGroupIndexToUpdate) => (
-                    <Button
-                        size="xs"
-                        key={subGroup.value}
-                        colorPalette={subGroup.checked? 'blue': 'blue'}
-                        variant={subGroup.checked? 'solid': 'outline'}
-                        onClick={() => onCheckedSubGroup(!subGroup.checked, subGroupIndexToUpdate)}
-                    >
-                        {subGroup.label}
-                    </Button>
-                ))}
+                {filter.subGroups.map((subGroup, subGroupIndexToUpdate) => {
+                    if (subGroup.value === hiddenTrue) return 
+
+                    return (
+                        <Button
+                            size="xs"
+                            key={subGroup.value}
+                            colorPalette={subGroup.checked? 'blue': 'blue'}
+                            variant={subGroup.checked? 'solid': 'outline'}
+                            onClick={() => onCheckedSubGroup(!subGroup.checked, subGroupIndexToUpdate)}
+                        >
+                            {subGroup.label}
+                        </Button>
+                    )
+                })}
             </HStack>
         </>
     )

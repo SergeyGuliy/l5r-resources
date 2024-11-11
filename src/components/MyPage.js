@@ -2,19 +2,21 @@ import MySearchFilter from '@/components/MySearchFilter';
 import MyTechList from '@/components/MyTechList';
 import {Box} from '@chakra-ui/react';
 import {useMemo, useState} from 'react';
-import {subGroupsNames, techTranslations} from '@/data/groups';
+import {translations} from '@/mockData/groups';
 import MyTechPreview from '@/components/MyTechPreview';
+import MyLinks from '@/components/MyLinks';
 
 function parseFilters(filters) {
     return filters.map(i => ({
         techGroup: i.techGroup,
-        label: techTranslations[i.techGroup],
-        subGroups: i.subGroups?.length? i.subGroups.map(j => ({ label: subGroupsNames[j], checked: true, value: j })) : []
+        label: translations[i.techGroup],
+        subGroups: i.subGroups?.length? i.subGroups.map(j => ({ label: translations[j], checked: true, value: j })) : []
     }))
 }
 
-export default function MyPage({title, tech, filterGroups, useTechLvls}) {
+export default function MyPage({title, tech, filterGroups, useTechLvls, links}) {
     const defaultFilters = parseFilters(filterGroups)
+    console.log(defaultFilters)
 
     const [search, setSearch] = useState('')
     const [filters, setFilters] = useState(defaultFilters)
@@ -51,6 +53,7 @@ export default function MyPage({title, tech, filterGroups, useTechLvls}) {
         }
 
         if (filterKeys.length) {
+            console.log(filterKeys)
             techToReturn = techToReturn.filter(i => filterKeys.includes(i.subgroup))
         }
 
@@ -65,6 +68,7 @@ export default function MyPage({title, tech, filterGroups, useTechLvls}) {
     return (
         <Box display="flex" flexDirection="column">
             <h1>{title}</h1>
+            { !!links?.length && <MyLinks linksData={links}/>}
             <MySearchFilter
                 search={search}
                 setSearch={setSearch}

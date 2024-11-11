@@ -1,6 +1,6 @@
 'use client'
 
-import opportunity from '@/images/icons/opportunity.svg'
+import opportunity from '@/static/images/icons/opportunity.svg'
 import {renderToString} from 'react-dom/server';
 
 function MyIcon({name}) {
