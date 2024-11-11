@@ -13,14 +13,27 @@ import MySearchFilterLvls from '@/components/search-filter/MySearchFilterLvls';
 export function MyFilterDialog({open,setOpen,filters,setFilters,useTechLvls, lvls,setLvls}) {
     
     return (
-        <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)}>
-            <DialogContent>
+        <DialogRoot
+            lazyMount
+            open={open}
+            onOpenChange={(e) => setOpen(e.open)}
+            size={{
+                base: 'full',
+                lg: 'xl',
+            }}
+            centered={true}
+            placement={'center'}
+            scrollBehavior="inside"
+            height={'auto'}
+        >
+            <DialogContent minHeight={{lg: 'unset'}}>
                 <DialogHeader>
                     <DialogTitle>Фильтр</DialogTitle>
                     <DialogCloseTrigger />
                 </DialogHeader>
 
-                <DialogBody>
+                <DialogBody
+                    flex={'unset'}>
                     <Stack>
                         {filters.map((filter, groupIndex) => (
                             <MySearchFilterGroups

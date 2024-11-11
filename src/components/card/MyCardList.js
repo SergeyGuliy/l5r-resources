@@ -6,7 +6,7 @@ export default function MyCardList({tech, setCardData}) {
         <Stack
             direction={{ base: 'column', sm: 'row' }}
             wrap="wrap"
-            gap="2"
+            gap="8px"
             justify={'center'}
         >
             {tech.map((data, index) =>  <MyCardListItem data={data} key={index} setCardData={setCardData}/>)}

@@ -27,6 +27,7 @@ export default function MySearchFilter({
                 variant="solid"
                 colorPalette={isTouched? 'orange': 'blue'}
                 onClick={() => setOpen(true)}
+                mb={5}
             >
                 Фильтр
                 <LuFilter />
@@ -35,6 +36,7 @@ export default function MySearchFilter({
             {isTouched && <IconButton
                 variant="solid"
                 colorPalette={'orange'}
+                mb={5}
                 onClick={() => clearFilters()}
             >
                 <LuFilterX />

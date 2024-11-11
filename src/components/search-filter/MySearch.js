@@ -6,7 +6,7 @@ export function MySearch({useSearch, search,setSearch}) {
     if (!useSearch) return
 
     return (
-        <InputGroup flex="1" endElement={search && (
+        <InputGroup mb={5} flex="1" endElement={search && (
             <Box position="absolute" top="50%" right="0.5rem" transform="translateY(-50%)">
                 <Button
                     onClick={() => setSearch('')}

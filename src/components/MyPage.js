@@ -1,6 +1,6 @@
 import MySearchFilter from '@/components/search-filter/MySearchFilter';
 import MyCardList from '@/components/card/MyCardList';
-import {Box} from '@chakra-ui/react';
+import {Box, Text} from '@chakra-ui/react';
 import {useMemo, useState} from 'react';
 import {translations} from '@/mockData/constants';
 import MyCardPreview from '@/components/card/MyCardPreview';
@@ -66,8 +66,8 @@ export default function MyPage({title, tech, filterGroups, useTechLvls, useSearc
     }
 
     return (
-        <Box display="flex" flexDirection="column">
-            <h1>{title}</h1>
+        <Box display="flex" flexDirection="column" w={'100%'}>
+            <Text textStyle="xl" mb={5}>{title}</Text>
             { !!links?.length && <MyLinks linksData={links}/>}
             <MySearchFilter
                 useSearch={useSearch}
