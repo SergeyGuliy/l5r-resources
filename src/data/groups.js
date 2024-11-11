@@ -9,6 +9,7 @@ export const techGroups = {
 }
 
 export const techTranslations = {
+    techniques: 'Техники',
     kata: 'Ката',
     kihos: 'Кихо',
     appeals: 'Воззвания',
