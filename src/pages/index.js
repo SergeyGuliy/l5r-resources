@@ -4,7 +4,7 @@ import {InputGroup} from '@/components/ui/input-group';
 import {Box, Button, Group, Input} from '@chakra-ui/react';
 import {LuX} from 'react-icons/lu';
 import {useState} from 'react';
-import MyLinks from '@/components/MyLinks';
+import MyLinks from '@/components/link/MyLinks';
 
 const linksData = [
     {
