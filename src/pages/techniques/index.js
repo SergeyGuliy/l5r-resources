@@ -13,6 +13,7 @@ export default function Home() {
             title={pageData.title}
             filterGroups={pageData.filterSettings}
             useTechLvls={pageData.useTechLvls}
+            useSearch={pageData.useSearch}
         />
     );
 }

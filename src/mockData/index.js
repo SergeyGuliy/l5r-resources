@@ -1,6 +1,6 @@
 import {katas, katasFilterSettings} from './_katas';
 import {ninjutsu, ninjutsuFilterSettings} from './_ninjutsu';
-import {translations} from './groups';
+import {translations} from './constants';
 
 
 export const routeData = {
@@ -41,20 +41,23 @@ export const routeData = {
             },
         ],
         filterSettings: [katasFilterSettings, ninjutsuFilterSettings],
-        useTechLvls: true
+        useTechLvls: true,
+        useSearch: true,
     },
     katas: {
         title: translations.kata,
         list: katas,
         links: [],
         filterSettings: [katasFilterSettings],
-        useTechLvls: true
+        useTechLvls: true,
+        useSearch: true,
     },
     ninjutsu: {
         title: translations.ninjutsu,
         list: ninjutsu,
         links: [],
         filterSettings: [ninjutsuFilterSettings],
-        useTechLvls: true
+        useTechLvls: true,
+        useSearch: true,
     },
 }

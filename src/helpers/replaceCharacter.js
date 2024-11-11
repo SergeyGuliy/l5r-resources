@@ -1,11 +1,9 @@
-import {iconOpportunity} from '@/components/MyIcon';
+export function replaceCharacter(originString, replaceMap) {
+    let toReturn= originString;
 
-export function replaceCharacter(originString) {
-    let newString= originString;
+    replaceMap.map(([oldString, newString]) => {
+        toReturn = toReturn.replace(new RegExp(oldString, 'g'), newString)
+    })
 
-    Object.entries({
-        Y: iconOpportunity
-    }).map(([key, img]) => (newString = newString.replace(new RegExp(key, 'g'), img)))
-
-    return newString
+    return toReturn
 }

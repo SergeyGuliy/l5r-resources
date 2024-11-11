@@ -1,12 +1,12 @@
 import {replaceCharacter} from '@/helpers/replaceCharacter';
 import {generateLink} from '@/helpers/generateLink';
 
-import {hiddenTrue, techGroups} from '@/mockData/groups';
+import {hiddenTrue, injectImages, techGroups} from '@/mockData/constants';
 import {_ninjutsu} from '@/mockData/_ninjutsu/_ninjutsu';
 
 export const ninjutsu = _ninjutsu.map(kata => ({
     ...kata,
-    description: replaceCharacter(kata.description),
+    description: replaceCharacter(kata.description, injectImages),
     subgroup: hiddenTrue,
     group: techGroups.ninjutsu,
     link: generateLink(kata.name)

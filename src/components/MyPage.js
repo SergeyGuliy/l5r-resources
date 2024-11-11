@@ -1,10 +1,10 @@
-import MySearchFilter from '@/components/MySearchFilter';
-import MyTechList from '@/components/MyTechList';
+import MySearchFilter from '@/components/search-filter/MySearchFilter';
+import MyCardList from '@/components/card/MyCardList';
 import {Box} from '@chakra-ui/react';
 import {useMemo, useState} from 'react';
-import {translations} from '@/mockData/groups';
-import MyTechPreview from '@/components/MyTechPreview';
-import MyLinks from '@/components/MyLinks';
+import {translations} from '@/mockData/constants';
+import MyCardPreview from '@/components/card/MyCardPreview';
+import MyLinks from '@/components/link/MyLinks';
 
 function parseFilters(filters) {
     return filters.map(i => ({
@@ -14,7 +14,7 @@ function parseFilters(filters) {
     }))
 }
 
-export default function MyPage({title, tech, filterGroups, useTechLvls, links}) {
+export default function MyPage({title, tech, filterGroups, useTechLvls, useSearch, links}) {
     const defaultFilters = parseFilters(filterGroups)
     console.log(defaultFilters)
 
@@ -70,6 +70,7 @@ export default function MyPage({title, tech, filterGroups, useTechLvls, links}) 
             <h1>{title}</h1>
             { !!links?.length && <MyLinks linksData={links}/>}
             <MySearchFilter
+                useSearch={useSearch}
                 search={search}
                 setSearch={setSearch}
                 isTouched={isTouched}
@@ -80,8 +81,8 @@ export default function MyPage({title, tech, filterGroups, useTechLvls, links}) 
                 lvls={lvls}
                 setLvls={setLvls}
             />
-            <MyTechList tech={filteredTech} setCardData={setCardData}/>
-            {cardData && <MyTechPreview cardData={cardData} setCardData={setCardData}/>}
+            <MyCardList tech={filteredTech} setCardData={setCardData}/>
+            {cardData && <MyCardPreview cardData={cardData} setCardData={setCardData}/>}
         </Box>
     )
 }

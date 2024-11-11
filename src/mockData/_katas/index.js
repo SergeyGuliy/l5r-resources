@@ -1,7 +1,7 @@
 import {generateLink} from '@/helpers/generateLink';
 import {replaceCharacter} from '@/helpers/replaceCharacter';
 
-import {kataGroups, techGroups} from '@/mockData/groups';
+import {injectImages, kataGroups, techGroups} from '@/mockData/constants';
 import {_kataGeneral} from '@/mockData/_katas/_kataGeneral';
 import {_kataMelee} from '@/mockData/_katas/_kataMelee';
 import {_kataRange} from '@/mockData/_katas/_kataRange';
@@ -21,7 +21,7 @@ export const katas = [
     })),
 ].map(kata => ({
     ...kata,
-    description: replaceCharacter(kata.description),
+    description: replaceCharacter(kata.description, injectImages),
     group: techGroups.kata,
     link: generateLink(kata.name)
 }))
