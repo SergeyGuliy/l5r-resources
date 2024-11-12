@@ -15,6 +15,7 @@ export default function MyLinksItem({linkData}) {
         >
             <Link
                 href={linkData.link}
+                scroll={false}
             >
                 <Card.Root
                     p={3}

@@ -13,7 +13,7 @@ export default function RootLayout({ Component, pageProps }) {
     return (
         <Provider>
             <ClientOnly>
-                <Flex>
+                <Flex position={'relative'}>
                         <MySidebar />
                         <Box
                             flex="1"
@@ -35,10 +35,9 @@ export default function RootLayout({ Component, pageProps }) {
                                 '2xl': '1536px',
                             }}
                             height={{
-                                base: 'calc(100vh - 75px)',
+                                base: 'calc(100vh - 70px)',
                                 lg: '100%',
                             }}
-                            overflow={'auto'}
                         >
                             <Component {...pageProps} />
                         </Box>

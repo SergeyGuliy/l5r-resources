@@ -27,11 +27,13 @@ export default function MyCardList({tech, setCardData}) {
 
     return (
         <Stack
-            direction={{ base: 'column', sm: 'row' }}
-            wrap="wrap"
+            direction={{ base: 'column', md: 'column', lg: 'row', xl: 'row', '2xl': 'row' }}
+            wrap={'wrap'}
             gap="8px"
             justify={'center'}
             width={dynamicWidth}
+            height={'100%'}
+            style={{'overflowY': 'auto'}}
         >
             {tech.map((data, index) =>  <MyCardListItem
                 data={data}

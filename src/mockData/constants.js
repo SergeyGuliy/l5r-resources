@@ -30,6 +30,6 @@ export const translations = {
     ninjutsu: 'Ниндзюцу',
 }
 
-export const injectImages = ['Y', iconOpportunity]
+export const injectImages = [['Y', iconOpportunity]]
 export const allLvls = [1,2,3,4,5]
 export const hiddenNinjutsuTrue = 'hiddenNinjutsuTrue'

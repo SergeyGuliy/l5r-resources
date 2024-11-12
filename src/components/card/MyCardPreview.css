@@ -1,0 +1,7 @@
+.card-preview p {
+    padding-bottom: 10px;
+}
+.card-preview em {
+    font-style: italic;
+    font-weight: 100;
+}
