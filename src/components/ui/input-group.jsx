@@ -1,5 +1,5 @@
-import { Group, InputElement } from '@chakra-ui/react'
-import { cloneElement, forwardRef } from 'react'
+import { Group, InputElement } from "@chakra-ui/react";
+import { cloneElement, forwardRef } from "react";
 
 export const InputGroup = forwardRef(function InputGroup(props, ref) {
   const {
@@ -9,25 +9,25 @@ export const InputGroup = forwardRef(function InputGroup(props, ref) {
     endElementProps,
     children,
     ...rest
-  } = props
+  } = props;
 
   return (
     <Group ref={ref} {...rest}>
       {startElement && (
-        <InputElement pointerEvents='none' {...startElementProps}>
+        <InputElement pointerEvents="none" {...startElementProps}>
           {startElement}
         </InputElement>
       )}
       {cloneElement(children, {
-        ...(startElement && { ps: 'calc(var(--input-height) - 6px)' }),
-        ...(endElement && { pe: 'calc(var(--input-height) - 6px)' }),
+        ...(startElement && { ps: "calc(var(--input-height) - 6px)" }),
+        ...(endElement && { pe: "calc(var(--input-height) - 6px)" }),
         ...children.props,
       })}
       {endElement && (
-        <InputElement placement='end' {...endElementProps}>
+        <InputElement placement="end" {...endElementProps}>
           {endElement}
         </InputElement>
       )}
     </Group>
-  )
-})
+  );
+});

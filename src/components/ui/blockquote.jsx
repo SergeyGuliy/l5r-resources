@@ -1,8 +1,8 @@
-import { Blockquote as ChakraBlockquote } from '@chakra-ui/react'
-import { forwardRef } from 'react'
+import { Blockquote as ChakraBlockquote } from "@chakra-ui/react";
+import { forwardRef } from "react";
 
 export const Blockquote = forwardRef(function Blockquote(props, ref) {
-  const { children, cite, citeUrl, showDash, icon, ...rest } = props
+  const { children, cite, citeUrl, showDash, icon, ...rest } = props;
 
   return (
     <ChakraBlockquote.Root ref={ref} {...rest}>
@@ -16,7 +16,7 @@ export const Blockquote = forwardRef(function Blockquote(props, ref) {
         </ChakraBlockquote.Caption>
       )}
     </ChakraBlockquote.Root>
-  )
-})
+  );
+});
 
-export const BlockquoteIcon = ChakraBlockquote.Icon
+export const BlockquoteIcon = ChakraBlockquote.Icon;

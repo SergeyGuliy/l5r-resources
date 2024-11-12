@@ -1,14 +1,14 @@
-import { Breadcrumb } from '@chakra-ui/react'
-import { Children, Fragment, forwardRef, isValidElement } from 'react'
+import { Breadcrumb } from "@chakra-ui/react";
+import { Children, Fragment, forwardRef, isValidElement } from "react";
 
 export const BreadcrumbRoot = forwardRef(function BreadcrumbRoot(props, ref) {
-  const { separator, separatorGap, children, ...rest } = props
-  const validChildren = Children.toArray(children).filter(isValidElement)
+  const { separator, separatorGap, children, ...rest } = props;
+  const validChildren = Children.toArray(children).filter(isValidElement);
   return (
     <Breadcrumb.Root ref={ref} {...rest}>
       <Breadcrumb.List gap={separatorGap}>
         {validChildren.map((child, index) => {
-          const last = index === validChildren.length - 1
+          const last = index === validChildren.length - 1;
           return (
             <Fragment key={index}>
               <Breadcrumb.Item>{child}</Breadcrumb.Item>
@@ -16,13 +16,13 @@ export const BreadcrumbRoot = forwardRef(function BreadcrumbRoot(props, ref) {
                 <Breadcrumb.Separator>{separator}</Breadcrumb.Separator>
               )}
             </Fragment>
-          )
+          );
         })}
       </Breadcrumb.List>
     </Breadcrumb.Root>
-  )
-})
+  );
+});
 
-export const BreadcrumbLink = Breadcrumb.Link
-export const BreadcrumbCurrentLink = Breadcrumb.CurrentLink
-export const BreadcrumbEllipsis = Breadcrumb.Ellipsis
+export const BreadcrumbLink = Breadcrumb.Link;
+export const BreadcrumbCurrentLink = Breadcrumb.CurrentLink;
+export const BreadcrumbEllipsis = Breadcrumb.Ellipsis;

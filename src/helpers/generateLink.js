@@ -1,15 +1,15 @@
-import {transliterate} from 'transliteration';
-import {replaceCharacter} from '@/helpers/replaceCharacter';
+import { transliterate } from "transliteration";
+import { replaceCharacter } from "@/helpers/replaceCharacter";
 
 export function generateLink(text) {
-    let toReturn= transliterate(text);
+  let toReturn = transliterate(text);
 
-    toReturn =replaceCharacter(toReturn, [
-        [' ', '_'],
-        [/\(/g, ''],
-        [/\)/g, ''],
-        [/:/g, ''],
-    ])
+  toReturn = replaceCharacter(toReturn, [
+    [" ", "_"],
+    [/\(/g, ""],
+    [/\)/g, ""],
+    [/:/g, ""],
+  ]);
 
-    return toReturn
+  return toReturn;
 }

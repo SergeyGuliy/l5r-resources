@@ -1,8 +1,8 @@
-import { Checkbox as ChakraCheckbox } from '@chakra-ui/react'
-import { forwardRef } from 'react'
+import { Checkbox as ChakraCheckbox } from "@chakra-ui/react";
+import { forwardRef } from "react";
 
 export const Checkbox = forwardRef(function Checkbox(props, ref) {
-  const { icon, children, inputProps, rootRef, ...rest } = props
+  const { icon, children, inputProps, rootRef, ...rest } = props;
   return (
     <ChakraCheckbox.Root ref={rootRef} {...rest}>
       <ChakraCheckbox.HiddenInput ref={ref} {...inputProps} />
@@ -13,5 +13,5 @@ export const Checkbox = forwardRef(function Checkbox(props, ref) {
         <ChakraCheckbox.Label>{children}</ChakraCheckbox.Label>
       )}
     </ChakraCheckbox.Root>
-  )
-})
+  );
+});

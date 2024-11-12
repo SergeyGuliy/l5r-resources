@@ -1,5 +1,5 @@
-import { Tag as ChakraTag } from '@chakra-ui/react'
-import { forwardRef } from 'react'
+import { Tag as ChakraTag } from "@chakra-ui/react";
+import { forwardRef } from "react";
 
 export const Tag = forwardRef(function Tag(props, ref) {
   const {
@@ -9,7 +9,7 @@ export const Tag = forwardRef(function Tag(props, ref) {
     closable = !!onClose,
     children,
     ...rest
-  } = props
+  } = props;
 
   return (
     <ChakraTag.Root ref={ref} {...rest}>
@@ -24,5 +24,5 @@ export const Tag = forwardRef(function Tag(props, ref) {
         </ChakraTag.EndElement>
       )}
     </ChakraTag.Root>
-  )
-})
+  );
+});

@@ -1,9 +1,9 @@
 export function replaceCharacter(originString, replaceMap) {
-    let toReturn= originString;
+  let toReturn = originString;
 
-    replaceMap.map(([oldString, newString]) => {
-        toReturn = toReturn.replace(new RegExp(oldString, 'g'), newString)
-    })
+  replaceMap.map(([oldString, newString]) => {
+    toReturn = toReturn.replace(new RegExp(oldString, "g"), newString);
+  });
 
-    return toReturn
+  return toReturn;
 }
