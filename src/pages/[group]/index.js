@@ -11,6 +11,8 @@ export default function Home() {
         return routeData[router.query.group]
     }, [router.query.group])
 
+    console.log(groupData?.filterSettings)
+
     if (!groupData) return
 
     return (

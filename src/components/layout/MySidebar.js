@@ -1,4 +1,4 @@
-import {Button, Flex, Stack} from '@chakra-ui/react';
+import {Flex, Stack} from '@chakra-ui/react';
 import {LuBookMarked, LuLanguages, LuMoon, LuSun} from 'react-icons/lu';
 import {LinkButton} from '@/components/ui/link-button';
 import {useRouter} from 'next/router';

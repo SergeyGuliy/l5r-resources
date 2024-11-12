@@ -1,7 +1,7 @@
 import MySearchFilter from '@/components/search-filter/MySearchFilter';
 import MyCardList from '@/components/card/MyCardList';
 import {Box, HStack, Text} from '@chakra-ui/react';
-import {useMemo, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import {translations} from '@/mockData/constants';
 import MyLinks from '@/components/link/MyLinks';
 
@@ -14,26 +14,28 @@ function parseFilters(filters) {
 }
 
 export default function MyPage({title, tech, filterGroups, useTechLvls, useSearch, links, children}) {
-    const defaultFilters = parseFilters(filterGroups)
-
+    const [defaultFilters, setDefaultFilters] = useState(parseFilters(filterGroups))
     const [search, setSearch] = useState('')
     const [filters, setFilters] = useState(defaultFilters)
     const [lvls, setLvls] = useState([])
 
+    useEffect(() => {
+        console.warn(filterGroups)
+        setDefaultFilters(parseFilters(filterGroups))
+        setFilters(parseFilters(filterGroups))
+    }, [filterGroups]);
+
     const isTouched = useMemo(() => {
         if (lvls.length) return true
-        if (JSON.stringify(filters) !== JSON.stringify(defaultFilters)) return true
-        return false
+        return JSON.stringify(filters) !== JSON.stringify(defaultFilters);
     }, [lvls.length, filters, defaultFilters])
     
     const filterKeys = useMemo(() => {
         const toReturn = []
 
-        filters.forEach(group => {
-            group.subGroups.forEach(subGroup => {
-                if (subGroup.checked) toReturn.push(subGroup.value)
-            })
-        })
+        filters.forEach(group =>
+            (group.subGroups.forEach(subGroup =>
+                (subGroup.checked && toReturn.push(subGroup.value)))))
         
         return toReturn
     }, [filters])

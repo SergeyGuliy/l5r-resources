@@ -1,28 +1,14 @@
 import Link from 'next/link';
-import {Box, Card, Text} from '@chakra-ui/react';
+import {Card, GridItem, Text} from '@chakra-ui/react';
 
 export default function MyLinksItem({linkData}) {
     return (
-        <Box
-            width={{
-                base: '100%',
-                sm: 'calc(50% - 8px)',
-                md: 'calc(50% - 8px)',
-                lg: 'calc(33.3% - 8px)',
-                xl: 'calc(25% - 8px)',
-                '2xl': 'calc(20% - 8px)'
-        }}
-        >
-            <Link
-                href={linkData.link}
-                scroll={false}
-            >
-                <Card.Root
-                    p={3}
-                >
+        <GridItem colSpan={{base: '12', sm: '8', md: '6', lg: '6', xl: '4', '2xl': '3'}}>
+            <Link href={linkData.link}>
+                <Card.Root p={2}>
                     <Text fontWeight="semibold" textStyle="sm">{linkData.name}</Text>
                 </Card.Root>
             </Link>
-        </Box>
+        </GridItem>
     )
 }

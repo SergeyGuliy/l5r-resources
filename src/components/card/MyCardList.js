@@ -1,5 +1,5 @@
 import {MyCardListItem} from '@/components/card/MyCardListItem';
-import {Grid, GridItem, Stack} from '@chakra-ui/react';
+import {Grid, GridItem} from '@chakra-ui/react';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 

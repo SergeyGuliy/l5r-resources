@@ -16,7 +16,7 @@ export default function Home() {
 
     const itemData = useMemo(() => {
         return groupData?.list?.find(i => i.link === router.query.item)
-    }, [router.query.item])
+    }, [groupData?.list, router.query.item])
 
     if (!groupData) return
     if (!itemData) return
