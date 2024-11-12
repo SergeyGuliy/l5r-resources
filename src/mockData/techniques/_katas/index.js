@@ -7,23 +7,14 @@ import { _kataMelee } from "@/mockData/techniques/_katas/_kataMelee";
 import { _kataRange } from "@/mockData/techniques/_katas/_kataRange";
 
 export const katas = [
-  ..._kataGeneral.map((kata) => ({
-    ...kata,
-    subgroup: kataGroups.kataGeneral,
-  })),
-  ..._kataMelee.map((kata) => ({
-    ...kata,
-    subgroup: kataGroups.kataMelee,
-  })),
-  ..._kataRange.map((kata) => ({
-    ...kata,
-    subgroup: kataGroups.kataRange,
-  })),
-].map((kata) => ({
-  ...kata,
-  description: replaceCharacter(kata.description, injectImages),
+  ..._kataGeneral.map((i) => ({ ...i, subgroup: kataGroups.kataGeneral })),
+  ..._kataMelee.map((i) => ({ ...i, subgroup: kataGroups.kataMelee })),
+  ..._kataRange.map((i) => ({ ...i, subgroup: kataGroups.kataRange })),
+].map((i) => ({
+  ...i,
+  description: replaceCharacter(i.description, injectImages),
   group: techGroups.kata,
-  link: generateLink(kata.name),
+  link: generateLink(i.name),
 }));
 
 export const katasFilterSettings = {

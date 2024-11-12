@@ -1,4 +1,4 @@
-import { iconOpportunity } from "@/components/MyIcon";
+import { iconOpportunity, iconStrife } from "@/components/MyIcon";
 
 export const techGroups = {
   kata: "kata",
@@ -30,6 +30,10 @@ export const translations = {
   ninjutsu: "Ниндзюцу",
 };
 
-export const injectImages = [["Y", iconOpportunity]];
+export const injectImages = [
+  ["Y", iconOpportunity],
+  ["T", iconStrife],
+];
 export const allLvls = [1, 2, 3, 4, 5];
 export const hiddenNinjutsuTrue = "hiddenNinjutsuTrue";
+export const hiddenRitualsTrue = "hiddenRitualsTrue";

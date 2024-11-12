@@ -8,12 +8,12 @@ import {
 } from "@/mockData/constants";
 import { _ninjutsu } from "@/mockData/techniques/_ninjutsu/_ninjutsu";
 
-export const ninjutsu = _ninjutsu.map((kata) => ({
-  ...kata,
-  description: replaceCharacter(kata.description, injectImages),
+export const ninjutsu = _ninjutsu.map((i) => ({
+  ...i,
+  description: replaceCharacter(i.description, injectImages),
   subgroup: hiddenNinjutsuTrue,
   group: techGroups.ninjutsu,
-  link: generateLink(kata.name),
+  link: generateLink(i.name),
 }));
 
 export const ninjutsuFilterSettings = {
