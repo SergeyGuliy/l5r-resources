@@ -13,43 +13,43 @@ const linksData = [
     },
     {
         name: 'Стойки',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Кланы',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Семьи',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Школы',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Броня',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Оружие',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Свойства предметов',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Состояния',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Местность',
-        link: '/techniques',
+        link: '/group',
     },
     {
         name: 'Фигуры',
-        link: '/techniques',
+        link: '/group',
     },
 ]
 

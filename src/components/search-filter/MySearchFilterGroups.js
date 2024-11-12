@@ -1,6 +1,6 @@
 import {Button, HStack} from '@chakra-ui/react';
 import {Switch} from '@/components/ui/switch';
-import {hiddenTrue} from '@/mockData/constants';
+import {hiddenNinjutsuTrue} from '@/mockData/constants';
 
 export default function MySearchFilterGroups({filter, groupIndex, setFilters}) {
     const allChecked = filter.subGroups.every((value) => value.checked)
@@ -48,7 +48,7 @@ export default function MySearchFilterGroups({filter, groupIndex, setFilters}) {
 
             <HStack>
                 {filter.subGroups.map((subGroup, subGroupIndexToUpdate) => {
-                    if (subGroup.value === hiddenTrue) return 
+                    if (subGroup.value === hiddenNinjutsuTrue) return 
 
                     return (
                         <Button

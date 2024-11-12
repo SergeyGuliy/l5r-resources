@@ -1,9 +1,8 @@
 import MySearchFilter from '@/components/search-filter/MySearchFilter';
 import MyCardList from '@/components/card/MyCardList';
-import {Box, Text} from '@chakra-ui/react';
+import {Box, HStack, Text} from '@chakra-ui/react';
 import {useMemo, useState} from 'react';
 import {translations} from '@/mockData/constants';
-import MyCardPreview from '@/components/card/MyCardPreview';
 import MyLinks from '@/components/link/MyLinks';
 
 function parseFilters(filters) {
@@ -14,14 +13,12 @@ function parseFilters(filters) {
     }))
 }
 
-export default function MyPage({title, tech, filterGroups, useTechLvls, useSearch, links}) {
+export default function MyPage({title, tech, filterGroups, useTechLvls, useSearch, links, children}) {
     const defaultFilters = parseFilters(filterGroups)
-    console.log(defaultFilters)
 
     const [search, setSearch] = useState('')
     const [filters, setFilters] = useState(defaultFilters)
     const [lvls, setLvls] = useState([])
-    const [cardData, setCardData] = useState({})
 
     const isTouched = useMemo(() => {
         if (lvls.length) return true
@@ -52,10 +49,9 @@ export default function MyPage({title, tech, filterGroups, useTechLvls, useSearc
             techToReturn = techToReturn.filter(i => i.name.toUpperCase().includes(search.toUpperCase()))
         }
 
-        if (filterKeys.length) {
-            console.log(filterKeys)
+        // if (filterKeys.length) {
             techToReturn = techToReturn.filter(i => filterKeys.includes(i.subgroup))
-        }
+        // }
 
         return techToReturn
     }, [tech, lvls, search, filterKeys])
@@ -68,7 +64,10 @@ export default function MyPage({title, tech, filterGroups, useTechLvls, useSearc
     return (
         <Box display="flex" flexDirection="column" w={'100%'}>
             <Text textStyle="xl" mb={5}>{title}</Text>
+
+
             { !!links?.length && <MyLinks linksData={links}/>}
+
             <MySearchFilter
                 useSearch={useSearch}
                 search={search}
@@ -81,8 +80,12 @@ export default function MyPage({title, tech, filterGroups, useTechLvls, useSearc
                 lvls={lvls}
                 setLvls={setLvls}
             />
-            <MyCardList tech={filteredTech} setCardData={setCardData}/>
-            {cardData && <MyCardPreview cardData={cardData} setCardData={setCardData}/>}
+
+            <HStack alignItems={'start'}>
+                <MyCardList tech={filteredTech}/>
+                {children}
+            </HStack>
+
         </Box>
     )
 }

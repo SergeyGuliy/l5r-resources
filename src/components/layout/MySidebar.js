@@ -1,8 +1,11 @@
-import {Flex, Stack} from '@chakra-ui/react';
+import {Button, Flex, Stack} from '@chakra-ui/react';
 import {LuBookMarked, LuLanguages, LuMoon, LuSun} from 'react-icons/lu';
 import {LinkButton} from '@/components/ui/link-button';
+import {useRouter} from 'next/router';
 
 export default function MySidebar() {
+    const router = useRouter()
+
     return (
         <>
             <Flex
@@ -49,6 +52,11 @@ export default function MySidebar() {
                     variant="ghost"
                     fontSize="2xl"
                     fontWeight="bold"
+                    href={'/'}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        router.push('/')
+                    }}
                 >
                     L
                 </LinkButton>

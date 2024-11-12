@@ -2,9 +2,9 @@ import {generateLink} from '@/helpers/generateLink';
 import {replaceCharacter} from '@/helpers/replaceCharacter';
 
 import {injectImages, kataGroups, techGroups} from '@/mockData/constants';
-import {_kataGeneral} from '@/mockData/_katas/_kataGeneral';
-import {_kataMelee} from '@/mockData/_katas/_kataMelee';
-import {_kataRange} from '@/mockData/_katas/_kataRange';
+import {_kataGeneral} from '@/mockData/techniques/_katas/_kataGeneral';
+import {_kataMelee} from '@/mockData/techniques/_katas/_kataMelee';
+import {_kataRange} from '@/mockData/techniques/_katas/_kataRange';
 
 export const katas = [
     ..._kataGeneral.map(kata => ({

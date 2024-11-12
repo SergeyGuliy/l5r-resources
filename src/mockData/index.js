@@ -1,5 +1,5 @@
-import {katas, katasFilterSettings} from './_katas';
-import {ninjutsu, ninjutsuFilterSettings} from './_ninjutsu';
+import {katas, katasFilterSettings} from './techniques/_katas';
+import {ninjutsu, ninjutsuFilterSettings} from './techniques/_ninjutsu';
 import {translations} from './constants';
 
 
@@ -13,31 +13,31 @@ export const routeData = {
         links: [
             {
                 name: translations.kata,
-                link: '/techniques/katas',
+                link: '/katas',
             },
             {
                 name: translations.kihos,
-                link: '/techniques/kihos',
+                link: '/kihos',
             },
             {
                 name: translations.appeals,
-                link: '/techniques/appeals',
+                link: '/appeals',
             },
             {
                 name: translations.rituals,
-                link: '/techniques/rituals',
+                link: '/rituals',
             },
             {
                 name: translations.shuji,
-                link: '/techniques/shuji',
+                link: '/shuji',
             },
             {
                 name: translations.mahos,
-                link: '/techniques/mahos',
+                link: '/mahos',
             },
             {
                 name: translations.ninjutsu,
-                link: '/techniques/ninjutsu',
+                link: '/ninjutsu',
             },
         ],
         filterSettings: [katasFilterSettings, ninjutsuFilterSettings],
