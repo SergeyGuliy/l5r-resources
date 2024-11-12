@@ -66,9 +66,8 @@ export default function MyPage({title, tech, filterGroups, useTechLvls, useSearc
             <Text
                 textStyle="xl"
                 mb={5}
-                position={'sticky'}
-                top={'0'}
-            >{title}
+                top={'0'}>
+                {title}
             </Text>
 
             { !!links?.length && <MyLinks linksData={links}/>}
@@ -83,13 +82,12 @@ export default function MyPage({title, tech, filterGroups, useTechLvls, useSearc
                 clearFilters={clearFilters}
                 useTechLvls={useTechLvls}
                 lvls={lvls}
-                setLvls={setLvls}
-            />
+                setLvls={setLvls}/>
 
-            <HStack alignItems={'start'}
-                    position={'sticky'}
-                    overflow={'hidden'}
-                    top={'0'}>
+            <HStack
+                alignItems={'start'}
+                overflow={'hidden'}
+                top={'0'}>
                 <MyCardList tech={filteredTech}/>
                 {children}
             </HStack>

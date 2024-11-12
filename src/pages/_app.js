@@ -36,7 +36,7 @@ export default function RootLayout({ Component, pageProps }) {
                             }}
                             height={{
                                 base: 'calc(100vh - 70px)',
-                                lg: '100%',
+                                lg: '100vh',
                             }}
                         >
                             <Component {...pageProps} />

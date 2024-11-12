@@ -10,39 +10,21 @@ export function MyCardListItem ({data}) {
     const link = useMemo(() => ({
         pathname: '/[group]/[item]',
         query: { group: router.query.group, item: data.link, },
-    }), [data])
-
-    const dynamicWidth = useMemo(() => {
-        if (router.query.item) return {
-            base: '100%',
-            sm: '100%',
-            md: '100%',
-            lg: '100%',
-            xl: '100%',
-            '2xl': '100%'
-        }
-        return {
-            base: '100%',
-            sm: '100%',
-            md: 'calc(50% - 8px)',
-            lg: 'calc(50% - 8px)',
-            xl: 'calc(33.3% - 8px)',
-            '2xl': 'calc(25% - 8px)'
-        }
-    }, [router.query.item])
+    }), [data.link, router.query.group])
 
     return (
-        <Box
-            width={dynamicWidth}
-        >
+        <Box width={'100%'}>
             <Link href={link}>
                 <Card.Root p={3}>
                     <Stack direction="row" justifyContent={'space-between'} width={'100%'}>
                         <Stack gap="0">
                             <Text fontWeight="semibold" textStyle="sm">{data.name}</Text>
                             <HStack mt="2">
-                                {!!translations[data.group] && <Badge variant="surface" size="md">{translations[data.group]}</Badge>}
-                                {!!translations[data.subgroup] && <Badge variant="surface" size="md">{translations[data.subgroup]}</Badge>}
+                                {!!translations[data.group] &&
+                                    <Badge variant="surface" size="md">{translations[data.group]}</Badge>}
+
+                                {!!translations[data.subgroup] &&
+                                    <Badge variant="surface" size="md">{translations[data.subgroup]}</Badge>}
                             </HStack>
                         </Stack>
                         <Stack gap="0">

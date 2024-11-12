@@ -1,12 +1,12 @@
 import {MyCardListItem} from '@/components/card/MyCardListItem';
-import {Stack} from '@chakra-ui/react';
+import {Grid, GridItem, Stack} from '@chakra-ui/react';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 
 export default function MyCardList({tech, setCardData}) {
     const router = useRouter()
 
-    const dynamicWidth = useMemo(() => {
+    const dynamicWidthGrid = useMemo(() => {
         if (router.query.item) return {
             base: '100%',
             sm: '100%',
@@ -25,21 +25,41 @@ export default function MyCardList({tech, setCardData}) {
         }
     }, [router.query.item])
 
+    const dynamicWidthColumnCount = useMemo(() => {
+        if (router.query.item) return {
+            base: '12',
+            sm: '12',
+            md: '12',
+            lg: '12',
+            xl: '12',
+            '2xl': '12'
+        }
+        return {
+            base: '12',
+            sm: '12',
+            md: '6',
+            lg: '6',
+            xl: '4',
+            '2xl': '3'
+        }
+    }, [router.query.item])
+
     return (
-        <Stack
-            direction={{ base: 'column', md: 'column', lg: 'row', xl: 'row', '2xl': 'row' }}
-            wrap={'wrap'}
-            gap="8px"
-            justify={'center'}
-            width={dynamicWidth}
-            height={'100%'}
-            style={{'overflowY': 'auto'}}
+        <Grid
+            h="100%"
+            overflow={'auto'}
+            w={dynamicWidthGrid}
+            templateColumns="repeat(12, 1fr)"
+            gap={'8px'}
         >
-            {tech.map((data, index) =>  <MyCardListItem
-                data={data}
-                key={index}
-                setCardData={setCardData}
-            />)}
-        </Stack>
+            {tech.map((data, index) =>  (
+                <GridItem
+                    key={index}
+                    colSpan={dynamicWidthColumnCount}
+                >
+                    <MyCardListItem data={data} setCardData={setCardData}/>
+                </GridItem>
+            ))}
+        </Grid>
     )
 }
