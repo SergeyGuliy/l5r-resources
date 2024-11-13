@@ -1,8 +1,11 @@
+import { translations } from "./constants";
+
 import { katas, katasFilterSettings } from "./techniques/_kata";
 import { ninjutsu, ninjutsuFilterSettings } from "./techniques/_ninjutsu";
-import { translations } from "./constants";
 import { ritual, ritualFilterSettings } from "@/mockData/techniques/_ritual";
 import { kiho, kihoFilterSettings } from "@/mockData/techniques/_kiho";
+import { appeal, appealFilterSettings } from "@/mockData/techniques/_appeal";
+import { shuji, shujiFilterSettings } from "@/mockData/techniques/_shuji";
 
 export const routeData = {
   techniques: {
@@ -25,18 +28,18 @@ export const routeData = {
         name: translations.kiho,
         link: "/kiho",
       },
+      {
+        name: translations.appeal,
+        link: "/appeal",
+      },
+      {
+        name: translations.shuji,
+        link: "/shuji",
+      },
+
       // {
-      //   name: translations.appeals,
-      //   link: "/appeals",
-      // },
-      // {
-      //   name: translations.shuji,
-      //   link: "/shuji",
-      // },
-      //
-      // {
-      //   name: translations.mahos,
-      //   link: "/mahos",
+      //   name: translations.maho,
+      //   link: "/maho",
       // },
     ],
     filterSettings: [
@@ -77,6 +80,22 @@ export const routeData = {
     list: kiho,
     links: [],
     filterSettings: [kihoFilterSettings],
+    useTechLvls: true,
+    useSearch: true,
+  },
+  appeal: {
+    title: translations.appeal,
+    list: appeal,
+    links: [],
+    filterSettings: [appealFilterSettings],
+    useTechLvls: true,
+    useSearch: true,
+  },
+  shuji: {
+    title: translations.shuji,
+    list: shuji,
+    links: [],
+    filterSettings: [shujiFilterSettings],
     useTechLvls: true,
     useSearch: true,
   },

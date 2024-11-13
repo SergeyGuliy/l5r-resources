@@ -16,9 +16,20 @@ export const techGroups = {
   kihoWater: "kihoWater",
   kihoVoid: "kihoVoid",
 
-  appeals: "appeals",
   shuji: "shuji",
-  mahos: "mahos",
+  shujiEarth: "shujiEarth",
+  shujiAir: "shujiAir",
+  shujiFire: "shujiFire",
+  shujiWater: "shujiWater",
+  shujiVoid: "shujiVoid",
+
+  appeal: "appeal",
+  appealEarth: "appealEarth",
+  appealAir: "appealAir",
+  appealFire: "appealFire",
+  appealWater: "appealWater",
+
+  maho: "maho",
 };
 
 export const translations = {
@@ -38,9 +49,20 @@ export const translations = {
   kihoWater: "Кихо Воды",
   kihoVoid: "Кихо Пустоты",
 
-  appeals: "Воззвания",
   shuji: "Сюдзи",
-  mahos: "Махо",
+  shujiEarth: "Сюдзи Земли",
+  shujiAir: "Сюдзи Воздуха",
+  shujiFire: "Сюдзи Огня",
+  shujiWater: "Сюдзи Воды",
+  shujiVoid: "Сюдзи Пустоты",
+
+  appeal: "Воззвания",
+  appealEarth: "Воззвания Земли",
+  appealAir: "Воззвания Воздуха",
+  appealFire: "Воззвания Огня",
+  appealWater: "Воззвания Воды",
+
+  maho: "Махо",
 };
 
 export const injectImages = [
