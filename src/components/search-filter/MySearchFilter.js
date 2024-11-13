@@ -23,17 +23,19 @@ export default function MySearchFilter({
     <Group mb={2}>
       <MySearch search={search} setSearch={setSearch} useSearch={useSearch} />
 
-      <Button
-        variant="solid"
-        colorPalette={isTouched ? "orange" : "blue"}
-        onClick={() => setOpen(true)}
-        mb={5}
-      >
-        Фильтр
-        <LuFilter />
-      </Button>
+      {filters && (
+        <Button
+          variant="solid"
+          colorPalette={isTouched ? "orange" : "blue"}
+          onClick={() => setOpen(true)}
+          mb={5}
+        >
+          Фильтр
+          <LuFilter />
+        </Button>
+      )}
 
-      {isTouched && (
+      {isTouched && filters && (
         <IconButton
           variant="solid"
           colorPalette={"orange"}
@@ -44,15 +46,17 @@ export default function MySearchFilter({
         </IconButton>
       )}
 
-      <MyFilterDialog
-        open={open}
-        setOpen={setOpen}
-        filters={filters}
-        setFilters={setFilters}
-        useTechLvls={useTechLvls}
-        lvls={lvls}
-        setLvls={setLvls}
-      />
+      {filters && (
+        <MyFilterDialog
+          open={open}
+          setOpen={setOpen}
+          filters={filters}
+          setFilters={setFilters}
+          useTechLvls={useTechLvls}
+          lvls={lvls}
+          setLvls={setLvls}
+        />
+      )}
     </Group>
   );
 }

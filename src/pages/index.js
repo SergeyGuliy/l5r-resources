@@ -3,9 +3,11 @@ import { Box, Button, Group, Input } from "@chakra-ui/react";
 import { LuX } from "react-icons/lu";
 import { useState } from "react";
 import MyLinks from "@/components/link/MyLinks";
+import { groups, translations } from "@/mockData/constants";
+import { generateLinkPath } from "@/helpers/generateLinkPath";
 
 const linksData = [
-  { name: "Техники", link: "/techniques" },
+  { name: translations.techniques, link: generateLinkPath(groups.techniques) },
   { name: "Стойки", link: "/group" },
   { name: "Кланы", link: "/group" },
   { name: "Семьи", link: "/group" },
@@ -13,7 +15,7 @@ const linksData = [
   { name: "Броня", link: "/group" },
   { name: "Оружие", link: "/group" },
   { name: "Свойства предметов", link: "/group" },
-  { name: "Состояния", link: "/group" },
+  { name: translations.states, link: generateLinkPath(groups.states) },
   { name: "Местность", link: "/group" },
   { name: "Фигуры", link: "/group" },
 ];

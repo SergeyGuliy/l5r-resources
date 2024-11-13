@@ -58,9 +58,11 @@ export default function MyCardPreview({ cardData }) {
         <HStack gap="0" justifyContent={"space-between"}>
           <Card.Title mb="2">
             {cardData.name}
-            <Text color="fg.muted" textStyle="sm">
-              Ранг: {cardData.rank}
-            </Text>
+            {cardData.rank && (
+              <Text color="fg.muted" textStyle="sm">
+                Ранг: {cardData.rank}
+              </Text>
+            )}
           </Card.Title>
           <Button
             size={"small"}

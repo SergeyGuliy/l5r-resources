@@ -1,7 +1,7 @@
 import { replaceCharacter } from "@/helpers/replaceCharacter";
 import { generateLink } from "@/helpers/generateLink";
 
-import { injectImages, techGroups } from "@/mockData/constants";
+import { injectImages, groups } from "@/mockData/constants";
 
 import { _kihoFire } from "@/mockData/techniques/_kiho/_kihoFire";
 import { _kihoWater } from "@/mockData/techniques/_kiho/_kihoWater";
@@ -10,25 +10,25 @@ import { _kihoEarth } from "@/mockData/techniques/_kiho/_kihoEarth";
 import { _kihoVoid } from "@/mockData/techniques/_kiho/_kihoVoid";
 
 export const kiho = [
-  ..._kihoFire.map((i) => ({ ...i, subgroup: techGroups.kihoFire })),
-  ..._kihoWater.map((i) => ({ ...i, subgroup: techGroups.kihoWater })),
-  ..._kihoAir.map((i) => ({ ...i, subgroup: techGroups.kihoAir })),
-  ..._kihoEarth.map((i) => ({ ...i, subgroup: techGroups.kihoEarth })),
-  ..._kihoVoid.map((i) => ({ ...i, subgroup: techGroups.kihoVoid })),
+  ..._kihoFire.map((i) => ({ ...i, subgroup: groups.kihoFire })),
+  ..._kihoWater.map((i) => ({ ...i, subgroup: groups.kihoWater })),
+  ..._kihoAir.map((i) => ({ ...i, subgroup: groups.kihoAir })),
+  ..._kihoEarth.map((i) => ({ ...i, subgroup: groups.kihoEarth })),
+  ..._kihoVoid.map((i) => ({ ...i, subgroup: groups.kihoVoid })),
 ].map((i) => ({
   ...i,
   description: replaceCharacter(i.description, injectImages),
-  group: techGroups.kiho,
+  group: groups.kiho,
   link: generateLink(i.name),
 }));
 
 export const kihoFilterSettings = {
-  techGroup: techGroups.kiho,
+  group: groups.kiho,
   subGroups: [
-    techGroups.kihoEarth,
-    techGroups.kihoWater,
-    techGroups.kihoFire,
-    techGroups.kihoAir,
-    techGroups.kihoVoid,
+    groups.kihoEarth,
+    groups.kihoWater,
+    groups.kihoFire,
+    groups.kihoAir,
+    groups.kihoVoid,
   ],
 };

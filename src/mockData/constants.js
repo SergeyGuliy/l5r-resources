@@ -1,6 +1,8 @@
 import { iconOpportunity, iconStrife } from "@/components/MyIcon";
 
-export const techGroups = {
+export const groups = {
+  techniques: "techniques",
+
   ritual: "ritual",
   ninjutsu: "ninjutsu",
 
@@ -30,6 +32,8 @@ export const techGroups = {
   appealWater: "appealWater",
 
   maho: "maho",
+
+  states: "states",
 };
 
 export const translations = {
@@ -63,6 +67,8 @@ export const translations = {
   appealWater: "Воззвания Воды",
 
   maho: "Махо",
+
+  states: "Состояния",
 };
 
 export const injectImages = [

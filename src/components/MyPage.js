@@ -2,26 +2,12 @@ import MySearchFilter from "@/components/search-filter/MySearchFilter";
 import MyCardList from "@/components/card/MyCardList";
 import { Box, HStack, Text } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
-import { translations } from "@/mockData/constants";
 import MyLinks from "@/components/link/MyLinks";
-
-function parseFilters(filters) {
-  return filters.map((i) => ({
-    techGroup: i.techGroup,
-    label: translations[i.techGroup],
-    subGroups: i.subGroups?.length
-      ? i.subGroups.map((j) => ({
-          label: translations[j],
-          checked: true,
-          value: j,
-        }))
-      : [],
-  }));
-}
+import { parseFilters } from "@/helpers/parseFilters";
 
 export default function MyPage({
   title,
-  tech,
+  list,
   filterGroups,
   useTechLvls,
   useSearch,
@@ -36,7 +22,6 @@ export default function MyPage({
   const [lvls, setLvls] = useState([]);
 
   useEffect(() => {
-    console.warn(filterGroups);
     setDefaultFilters(parseFilters(filterGroups));
     setFilters(parseFilters(filterGroups));
   }, [filterGroups]);
@@ -49,6 +34,8 @@ export default function MyPage({
   const filterKeys = useMemo(() => {
     const toReturn = [];
 
+    if (!filters) return [];
+
     filters.forEach((group) =>
       group.subGroups.forEach(
         (subGroup) => subGroup.checked && toReturn.push(subGroup.value)
@@ -59,24 +46,26 @@ export default function MyPage({
   }, [filters]);
 
   const filteredTech = useMemo(() => {
-    let techToReturn = [...tech];
+    let listToReturn = [...list];
 
-    if (lvls.length) {
-      techToReturn = techToReturn.filter((i) => lvls.includes(i.rank));
+    if (useTechLvls && lvls.length) {
+      listToReturn = listToReturn.filter((i) => lvls.includes(i.rank));
     }
 
-    if (search.length) {
-      techToReturn = techToReturn.filter((i) =>
+    if (useSearch && search.length) {
+      listToReturn = listToReturn.filter((i) =>
         i.name.toUpperCase().includes(search.toUpperCase())
       );
     }
 
-    // if (filterKeys.length) {
-    techToReturn = techToReturn.filter((i) => filterKeys.includes(i.subgroup));
-    // }
+    if (filters) {
+      listToReturn = listToReturn.filter((i) =>
+        filterKeys.includes(i.subgroup)
+      );
+    }
 
-    return techToReturn;
-  }, [tech, lvls, search, filterKeys]);
+    return listToReturn;
+  }, [list, lvls, search, filterKeys]);
 
   function clearFilters() {
     setFilters(defaultFilters);
@@ -105,7 +94,7 @@ export default function MyPage({
       />
 
       <HStack alignItems={"start"} overflow={"hidden"} top={"0"}>
-        <MyCardList tech={filteredTech} />
+        <MyCardList list={filteredTech} />
         {children}
       </HStack>
     </Box>

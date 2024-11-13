@@ -1,7 +1,7 @@
 import { replaceCharacter } from "@/helpers/replaceCharacter";
 import { generateLink } from "@/helpers/generateLink";
 
-import { injectImages, techGroups } from "@/mockData/constants";
+import { injectImages, groups } from "@/mockData/constants";
 
 import { _shujiEarth } from "@/mockData/techniques/_shuji/_shujiEarth";
 import { _shujiAir } from "@/mockData/techniques/_shuji/_shujiAir";
@@ -10,25 +10,25 @@ import { _shujiWater } from "@/mockData/techniques/_shuji/_shujiWater";
 import { _shujiVoid } from "@/mockData/techniques/_shuji/_shujiVoid";
 
 export const shuji = [
-  ..._shujiEarth.map((i) => ({ ...i, subgroup: techGroups.shujiEarth })),
-  ..._shujiAir.map((i) => ({ ...i, subgroup: techGroups.shujiAir })),
-  ..._shujiFire.map((i) => ({ ...i, subgroup: techGroups.shujiFire })),
-  ..._shujiWater.map((i) => ({ ...i, subgroup: techGroups.shujiWater })),
-  ..._shujiVoid.map((i) => ({ ...i, subgroup: techGroups.shujiVoid })),
+  ..._shujiEarth.map((i) => ({ ...i, subgroup: groups.shujiEarth })),
+  ..._shujiAir.map((i) => ({ ...i, subgroup: groups.shujiAir })),
+  ..._shujiFire.map((i) => ({ ...i, subgroup: groups.shujiFire })),
+  ..._shujiWater.map((i) => ({ ...i, subgroup: groups.shujiWater })),
+  ..._shujiVoid.map((i) => ({ ...i, subgroup: groups.shujiVoid })),
 ].map((i) => ({
   ...i,
   description: replaceCharacter(i.description, injectImages),
-  group: techGroups.shuji,
+  group: groups.shuji,
   link: generateLink(i.name),
 }));
 
 export const shujiFilterSettings = {
-  techGroup: techGroups.shuji,
+  group: groups.shuji,
   subGroups: [
-    techGroups.shujiEarth,
-    techGroups.shujiWater,
-    techGroups.shujiAir,
-    techGroups.shujiFire,
-    techGroups.shujiVoid,
+    groups.shujiEarth,
+    groups.shujiWater,
+    groups.shujiAir,
+    groups.shujiFire,
+    groups.shujiVoid,
   ],
 };

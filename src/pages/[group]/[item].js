@@ -1,29 +1,34 @@
-import MyPage from "@/components/MyPage";
 import { useRouter } from "next/router";
-import { routeData } from "@/mockData";
 import { useMemo, useState } from "react";
+
+import MyPage from "@/components/MyPage";
 import MyCardPreview from "@/components/card/MyCardPreview";
+import { routeData } from "@/mockData";
 
 export default function Home() {
   const router = useRouter();
   const [cardData, setCardData] = useState({});
 
-  const groupData = useMemo(() => {
-    return routeData[router.query.group];
-  }, [router.query.group]);
+  const groupData = useMemo(
+    () => routeData[router.query.group],
+    [router.query.group]
+  );
 
-  const itemData = useMemo(() => {
-    return groupData?.list?.find((i) => i.link === router.query.item);
-  }, [groupData?.list, router.query.item]);
+  const itemData = useMemo(
+    () => groupData?.list?.find((i) => i.link === router.query.item),
+    [groupData?.list, router.query.item]
+  );
+
+  console.log(router.query.item);
 
   if (!groupData) return;
   if (!itemData) return;
 
   return (
     <MyPage
-      links={groupData.links}
-      tech={groupData.list}
       title={groupData.title}
+      links={groupData.links}
+      list={groupData.list}
       filterGroups={groupData.filterSettings}
       useTechLvls={groupData.useTechLvls}
       useSearch={groupData.useSearch}
