@@ -1,12 +1,13 @@
-import { katas, katasFilterSettings } from "./techniques/_katas";
+import { katas, katasFilterSettings } from "./techniques/_kata";
 import { ninjutsu, ninjutsuFilterSettings } from "./techniques/_ninjutsu";
 import { translations } from "./constants";
-import { rituals, ritualsFilterSettings } from "@/mockData/techniques/_rituals";
+import { ritual, ritualFilterSettings } from "@/mockData/techniques/_ritual";
+import { kiho, kihoFilterSettings } from "@/mockData/techniques/_kiho";
 
 export const routeData = {
   techniques: {
     title: translations.techniques,
-    list: [...katas, ...ninjutsu],
+    list: [...katas, ...kiho, ...ninjutsu, ...ritual],
     links: [
       {
         name: translations.kata,
@@ -17,14 +18,13 @@ export const routeData = {
         link: "/ninjutsu",
       },
       {
-        name: translations.rituals,
-        link: "/rituals",
+        name: translations.ritual,
+        link: "/ritual",
       },
-
-      // {
-      //   name: translations.kihos,
-      //   link: "/kihos",
-      // },
+      {
+        name: translations.kiho,
+        link: "/kiho",
+      },
       // {
       //   name: translations.appeals,
       //   link: "/appeals",
@@ -39,7 +39,12 @@ export const routeData = {
       //   link: "/mahos",
       // },
     ],
-    filterSettings: [katasFilterSettings, ninjutsuFilterSettings],
+    filterSettings: [
+      katasFilterSettings,
+      ninjutsuFilterSettings,
+      ritualFilterSettings,
+      kihoFilterSettings,
+    ],
     useTechLvls: true,
     useSearch: true,
   },
@@ -59,11 +64,19 @@ export const routeData = {
     useTechLvls: true,
     useSearch: true,
   },
-  rituals: {
-    title: translations.rituals,
-    list: rituals,
+  ritual: {
+    title: translations.ritual,
+    list: ritual,
     links: [],
-    filterSettings: [ritualsFilterSettings],
+    filterSettings: [ritualFilterSettings],
+    useTechLvls: true,
+    useSearch: true,
+  },
+  kiho: {
+    title: translations.kiho,
+    list: kiho,
+    links: [],
+    filterSettings: [kihoFilterSettings],
     useTechLvls: true,
     useSearch: true,
   },

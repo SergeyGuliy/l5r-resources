@@ -6,6 +6,7 @@ import {
   injectImages,
   techGroups,
 } from "@/mockData/constants";
+
 import { _ninjutsu } from "@/mockData/techniques/_ninjutsu/_ninjutsu";
 
 export const ninjutsu = _ninjutsu.map((i) => ({

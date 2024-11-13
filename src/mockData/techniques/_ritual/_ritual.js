@@ -1,4 +1,4 @@
-export const _rituals = [
+export const _ritual = [
   {
     name: "Обряд очищения",
     rank: 1,
