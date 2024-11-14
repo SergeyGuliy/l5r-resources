@@ -9,6 +9,8 @@ export function generateLink(text) {
     [/\(/g, ""],
     [/\)/g, ""],
     [/:/g, ""],
+    [/\[/g, ""],
+    [/]/g, ""],
   ]);
 
   return toReturn;

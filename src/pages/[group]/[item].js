@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { useMemo, useState } from "react";
 
-import MyPage from "@/components/MyPage";
-import MyCardPreview from "@/components/card/MyCardPreview";
+import MyGroupPage from "@/components/layout/MyGroupPage";
+import MyCardPreview from "@/components/layout/MyCardPreview";
 import { routeData } from "@/mockData/routeData";
 
-export default function Home() {
+export default function GroupItem() {
   const router = useRouter();
   const [cardData, setCardData] = useState({});
 
@@ -25,7 +25,7 @@ export default function Home() {
   if (!itemData) return;
 
   return (
-    <MyPage
+    <MyGroupPage
       title={groupData.title}
       links={groupData.links}
       list={groupData.list}
@@ -36,6 +36,6 @@ export default function Home() {
       {cardData && (
         <MyCardPreview cardData={itemData} setCardData={setCardData} />
       )}
-    </MyPage>
+    </MyGroupPage>
   );
 }

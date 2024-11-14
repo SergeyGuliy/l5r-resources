@@ -16,8 +16,8 @@ const linksData = [
   // { name: "Семьи", link: "/group" },
   // { name: "Школы", link: "/group" },
 
-  // { name: "Броня таблица", link: "/group" },
-  // { name: "Оружие таблица", link: "/group" },
+  { name: "Оружие", link: "/weapons" },
+  // { name: "Броня", link: "/group" },
 
   // { name: "Действия в бою", link: "/group" },
 

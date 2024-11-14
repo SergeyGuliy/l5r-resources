@@ -4,8 +4,9 @@ import { Box, HStack, Text } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
 import MyLinks from "@/components/link/MyLinks";
 import { parseFilters } from "@/helpers/parseFilters";
+import { MyPageTitle } from "@/components/MyPageTitle";
 
-export default function MyPage({
+export default function MyGroupPage({
   title,
   list,
   filterGroups,
@@ -74,9 +75,7 @@ export default function MyPage({
 
   return (
     <Box display="flex" flexDirection="column" w={"100%"} h={"100%"}>
-      <Text textStyle="xl" mb={5} top={"0"}>
-        {title}
-      </Text>
+      <MyPageTitle title={title} />
 
       {!!links?.length && <MyLinks linksData={links} />}
 

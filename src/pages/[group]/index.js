@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 
-import MyPage from "@/components/MyPage";
+import MyGroupPage from "@/components/layout/MyGroupPage";
 
 import { routeData } from "@/mockData/routeData";
 
-export default function Home() {
+export default function GroupIndex() {
   const router = useRouter();
 
   const groupData = useMemo(
@@ -16,7 +16,7 @@ export default function Home() {
   if (!groupData) return;
 
   return (
-    <MyPage
+    <MyGroupPage
       title={groupData.title}
       links={groupData.links}
       list={groupData.list}
