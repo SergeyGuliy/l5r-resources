@@ -1,5 +1,5 @@
 import { Button, HStack } from "@chakra-ui/react";
-import { allLvls } from "@/mockData/constants";
+import { allLvls } from "@/mockData/routeData/constants";
 
 export default function MySearchFilterLvls({ lvls, setLvls }) {
   function toggleLvl(lvlToToggle) {

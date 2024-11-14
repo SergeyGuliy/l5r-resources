@@ -3,7 +3,7 @@ import { Box, Button, Group, Input } from "@chakra-ui/react";
 import { LuX } from "react-icons/lu";
 import { useState } from "react";
 import MyLinks from "@/components/link/MyLinks";
-import { groups, translations } from "@/mockData/constants";
+import { groups, translations } from "@/mockData/routeData/constants";
 import { generateLinkPath } from "@/helpers/generateLinkPath";
 
 const linksData = [

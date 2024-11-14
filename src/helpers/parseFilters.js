@@ -1,4 +1,4 @@
-import { translations } from "@/mockData/constants";
+import { translations } from "@/mockData/routeData/constants";
 
 export function parseFilters(filters) {
   if (!filters) return false;

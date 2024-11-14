@@ -1,6 +1,6 @@
 import { Badge, Box, Card, HStack, Stack, Text } from "@chakra-ui/react";
 
-import { translations } from "@/mockData/constants";
+import { translations } from "@/mockData/routeData/constants";
 import { useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";

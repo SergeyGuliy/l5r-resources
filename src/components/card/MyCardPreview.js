@@ -7,7 +7,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { translations } from "@/mockData/constants";
+import { translations } from "@/mockData/routeData/constants";
 import "./MyCardPreview.css";
 import { useMemo } from "react";
 import { LuX } from "react-icons/lu";

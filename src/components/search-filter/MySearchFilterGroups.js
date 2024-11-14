@@ -1,6 +1,6 @@
 import { Button, HStack } from "@chakra-ui/react";
 import { Switch } from "@/components/ui/switch";
-import { hiddenFilter } from "@/mockData/constants";
+import { hiddenFilter } from "@/mockData/routeData/constants";
 
 export default function MySearchFilterGroups({
   filter,

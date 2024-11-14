@@ -3,7 +3,7 @@ import { useMemo } from "react";
 
 import MyPage from "@/components/MyPage";
 
-import { routeData } from "@/mockData";
+import { routeData } from "@/mockData/routeData";
 
 export default function Home() {
   const router = useRouter();
