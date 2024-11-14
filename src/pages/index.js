@@ -8,17 +8,29 @@ import { generateLinkPath } from "@/helpers/generateLinkPath";
 
 const linksData = [
   { name: translations.techniques, link: generateLinkPath(groups.techniques) },
+  { name: translations.skills, link: generateLinkPath(groups.skills) },
   { name: translations.stances, link: generateLinkPath(groups.stances) },
+  { name: translations.states, link: generateLinkPath(groups.states) },
+
   // { name: "Кланы", link: "/group" },
   // { name: "Семьи", link: "/group" },
   // { name: "Школы", link: "/group" },
-  // { name: "Броня", link: "/group" },
-  // { name: "Оружие", link: "/group" },
-  // { name: "Свойства предметов", link: "/group" },
-  { name: translations.states, link: generateLinkPath(groups.states) },
-  // { name: "Местность", link: "/group" },
-  // { name: "Фигуры", link: "/group" },
+
+  // { name: "Броня таблица", link: "/group" },
+  // { name: "Оружие таблица", link: "/group" },
+
+  // { name: "Действия в бою", link: "/group" },
+
+  // { name: "Преимущества и недостатки (стр 100-137)", link: "/group" },
+  // { name: "Принципы Бусидо", link: "/group" },
 ];
+
+// Спрятаные свойства
+// { name: "Фигуры", link: "/group" },
+// { name: "Свойства предметов", link: "/group" },
+// { name: "Описание оружия", link: "/group" },
+// { name: "Местность", link: "/group" },
+// { name: "Кольца", link: "/group" },
 
 export default function Home() {
   const [search, setSearch] = useState("");
