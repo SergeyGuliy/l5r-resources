@@ -1,6 +1,9 @@
 import { techniquesRouteData } from "@/mockData/techniques";
 import { statesRouteData } from "@/mockData/states";
+import { stancesRouteData } from "@/mockData/stances";
 
-console.log(techniquesRouteData);
-console.log(statesRouteData);
-export const routeData = { ...techniquesRouteData, ...statesRouteData };
+export const routeData = {
+  ...techniquesRouteData,
+  ...statesRouteData,
+  ...stancesRouteData,
+};

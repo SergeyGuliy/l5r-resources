@@ -34,6 +34,7 @@ export const groups = {
   maho: "maho",
 
   states: "states",
+  stances: "stances",
 };
 
 export const translations = {
@@ -69,6 +70,7 @@ export const translations = {
   maho: "Махо",
 
   states: "Состояния",
+  stances: "Стойки",
 };
 
 export const injectImages = [

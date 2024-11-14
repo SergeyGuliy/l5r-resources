@@ -73,11 +73,6 @@ export default function MyCardPreview({ cardData }) {
           </Button>
         </HStack>
         <HStack mt="1" mb={3}>
-          {!!translations[cardData.group] && (
-            <Badge variant="surface" size="md">
-              {translations[cardData.group]}
-            </Badge>
-          )}
           {!!translations[cardData.subgroup] && (
             <Badge variant="surface" size="md">
               {translations[cardData.subgroup]}

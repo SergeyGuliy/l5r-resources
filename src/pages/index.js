@@ -8,16 +8,16 @@ import { generateLinkPath } from "@/helpers/generateLinkPath";
 
 const linksData = [
   { name: translations.techniques, link: generateLinkPath(groups.techniques) },
-  { name: "Стойки", link: "/group" },
-  { name: "Кланы", link: "/group" },
-  { name: "Семьи", link: "/group" },
-  { name: "Школы", link: "/group" },
-  { name: "Броня", link: "/group" },
-  { name: "Оружие", link: "/group" },
-  { name: "Свойства предметов", link: "/group" },
+  { name: translations.stances, link: generateLinkPath(groups.stances) },
+  // { name: "Кланы", link: "/group" },
+  // { name: "Семьи", link: "/group" },
+  // { name: "Школы", link: "/group" },
+  // { name: "Броня", link: "/group" },
+  // { name: "Оружие", link: "/group" },
+  // { name: "Свойства предметов", link: "/group" },
   { name: translations.states, link: generateLinkPath(groups.states) },
-  { name: "Местность", link: "/group" },
-  { name: "Фигуры", link: "/group" },
+  // { name: "Местность", link: "/group" },
+  // { name: "Фигуры", link: "/group" },
 ];
 
 export default function Home() {
