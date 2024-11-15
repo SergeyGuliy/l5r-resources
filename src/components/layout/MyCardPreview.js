@@ -7,11 +7,12 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { translations } from "@/mockData/routeData/constants";
-import "./MyCardPreview.css";
-import { useMemo } from "react";
 import { LuX } from "react-icons/lu";
+import { useMemo } from "react";
 import { useRouter } from "next/router";
+
+import { translations } from "@/mockData/routeData/constants";
+import "@/static/styles/card-preview.css";
 
 export default function MyCardPreview({ cardData }) {
   const router = useRouter();
