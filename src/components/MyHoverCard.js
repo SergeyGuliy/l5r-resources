@@ -7,7 +7,6 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 
-import "@/static/styles/card-preview.css";
 import Link from "next/link";
 
 export default function MyHoverCard({ children, cardData }) {

@@ -1,7 +1,7 @@
 import { MyTableArmorsPage } from "@/components/layout/MyTableArmorsPage";
 
-import { armorCharacteristics } from "@/mockData/hoverData/weaponsAndArmorCharacteristics";
-import { armors } from "@/mockData/tables/armors";
+import { armorCharacteristics } from "@/mockData/otherData/weaponsAndArmorCharacteristics";
+import { armors } from "@/mockData/tableData/armors";
 
 const title = "Броня";
 const headers = Object.values(armorCharacteristics);

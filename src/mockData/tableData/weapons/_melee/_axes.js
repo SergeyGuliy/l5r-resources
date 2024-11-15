@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/hoverData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/hoverData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/hoverData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
+import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/otherData/weaponGroups";
 
 export const axes = [
   {

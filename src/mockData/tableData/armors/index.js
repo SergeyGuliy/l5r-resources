@@ -1,5 +1,5 @@
-import { weaponsAndArmorData } from "@/mockData/hoverData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/hoverData/weaponsAndArmorProperties";
+import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
+import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
 
 export const armors = [
   {

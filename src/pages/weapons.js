@@ -1,7 +1,7 @@
 import { MyTableWeaponsPage } from "@/components/layout/MyTableWeaponsPage";
 
-import { weaponsCharacteristics } from "@/mockData/hoverData/weaponsAndArmorCharacteristics";
-import { weapons } from "@/mockData/tables/weapons";
+import { weaponsCharacteristics } from "@/mockData/otherData/weaponsAndArmorCharacteristics";
+import { weapons } from "@/mockData/tableData/weapons";
 
 const title = "Оружие";
 const headers = Object.values(weaponsCharacteristics);

@@ -6,25 +6,30 @@ import MyLinks from "@/components/link/MyLinks";
 import { groups, translations } from "@/mockData/routeData/constants";
 import { generateLinkPath } from "@/helpers/generateLinkPath";
 
-const linksData = [
+const a = [
   { title: translations.techniques, link: generateLinkPath(groups.techniques) },
   { title: translations.skills, link: generateLinkPath(groups.skills) },
-  { title: translations.stances, link: generateLinkPath(groups.stances) },
-  { title: translations.states, link: generateLinkPath(groups.states) },
-
-  // { title: "Кланы", link: "/group" },
-  // { title: "Семьи", link: "/group" },
-  // { title: "Школы", link: "/group" },
-
-  { title: "Оружие", link: "/weapons" },
-  { title: "Броня", link: "/armors" },
-
-  { title: "Действия в бою", link: "/group" },
 
   // { title: "Преимущества и недостатки (стр 100-137)", link: "/group" },
   // { title: "Принципы Бусидо", link: "/group" },
+];
 
+const b = [
+  { title: "Оружие", link: "/weapons" },
+  { title: "Броня", link: "/armors" },
+];
+
+const c = [
+  { title: translations.stances, link: generateLinkPath(groups.stances) },
+  { title: translations.states, link: generateLinkPath(groups.states) },
+  { title: "Действия в бою", link: "/group" },
   { title: "Другое", link: "/other" },
+];
+
+const d = [
+  { title: "Кланы", link: "/group" },
+  { title: "Семьи", link: "/group" },
+  { title: "Школы", link: "/group" },
 ];
 
 // Спрятаные свойства
@@ -71,7 +76,10 @@ export default function Home() {
         </InputGroup>
       </Group>
 
-      <MyLinks linksData={linksData} />
+      <MyLinks linksData={a} />
+      <MyLinks linksData={b} />
+      <MyLinks linksData={c} />
+      <MyLinks linksData={d} />
     </Box>
   );
 }

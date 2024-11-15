@@ -12,7 +12,6 @@ import { useMemo } from "react";
 import { useRouter } from "next/router";
 
 import { translations } from "@/mockData/routeData/constants";
-import "@/static/styles/card-preview.css";
 
 export default function MyCardPreview({ cardData }) {
   const router = useRouter();

@@ -1,6 +1,5 @@
 import { Table } from "@chakra-ui/react";
 import MyHoverCard from "@/components/MyHoverCard";
-import "@/static/styles/table.css";
 
 export default function MyTableWeapons({ headers, items }) {
   if (!headers.length) return;
