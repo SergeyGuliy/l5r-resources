@@ -28,37 +28,20 @@ export default function MyTableWeapons({ headers, items }) {
           {items.map((i, iIndex) => (
             <Table.Row key={iIndex}>
               <Table.Cell textAlign="center">
-                <MyHoverCard cardData={i.weaponsCharacteristics_Category} />
-              </Table.Cell>
-              <Table.Cell textAlign="center">
-                <MyHoverCard cardData={i.weaponsCharacteristics_Name} />
-              </Table.Cell>
-              <Table.Cell
-                textAlign="center"
-                className="weaponsCharacteristics_Skill"
-              >
-                <MyHoverCard cardData={i.weaponsCharacteristics_Skill} />
-              </Table.Cell>
-              <Table.Cell textAlign="center">
-                {i.weaponsCharacteristics_Range}
-              </Table.Cell>
-              <Table.Cell textAlign="center">
-                {i.weaponsCharacteristics_BaseDamage}
-              </Table.Cell>
-              <Table.Cell textAlign="center">
-                {i.weaponsCharacteristics_Deadliness}
+                <MyHoverCard cardData={i.armorCharacteristics_Name} />
               </Table.Cell>
               <Table.Cell
                 textAlign="center"
                 dangerouslySetInnerHTML={{
-                  __html: i.weaponsCharacteristics_Grip,
+                  __html: i.armorCharacteristics_Resistance,
                 }}
               />
               <Table.Cell textAlign="center">
-                {i.weaponsCharacteristics_Properties.map((j, jIndex) => (
-                  <div key={jIndex}>
+                {i.armorCharacteristics_Properties.map((j, jIndex) => (
+                  <span key={jIndex}>
                     <MyHoverCard cardData={j} />
-                  </div>
+                    &nbsp;
+                  </span>
                 ))}
               </Table.Cell>
               <Table.Cell textAlign="center">

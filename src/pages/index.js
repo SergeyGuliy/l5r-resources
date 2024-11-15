@@ -19,7 +19,7 @@ const linksData = [
   { name: "Оружие", link: "/weapons" },
   { name: "Броня", link: "/armors" },
 
-  // { name: "Действия в бою", link: "/group" },
+  { name: "Действия в бою", link: "/group" },
 
   // { name: "Преимущества и недостатки (стр 100-137)", link: "/group" },
   // { name: "Принципы Бусидо", link: "/group" },
