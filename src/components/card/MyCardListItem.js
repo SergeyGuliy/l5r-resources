@@ -26,7 +26,7 @@ export function MyCardListItem({ data }) {
           >
             <Stack gap="0">
               <Text fontWeight="semibold" textStyle="sm">
-                {data.name}
+                {data.title}
               </Text>
               <HStack mt="2">
                 {!!translations[data.group] && (

@@ -25,12 +25,12 @@ export const techniquesRouteData = {
     title: translations.techniques,
     list: [...katas, ...kiho, ...ninjutsu, ...ritual],
     links: [
-      { name: translations.kata, link: generateLinkPath(groups.kata) },
-      { name: translations.ninjutsu, link: generateLinkPath(groups.ninjutsu) },
-      { name: translations.ritual, link: generateLinkPath(groups.ritual) },
-      { name: translations.kiho, link: generateLinkPath(groups.kiho) },
-      { name: translations.appeal, link: generateLinkPath(groups.appeal) },
-      { name: translations.shuji, link: generateLinkPath(groups.shuji) },
+      { title: translations.kata, link: generateLinkPath(groups.kata) },
+      { title: translations.ninjutsu, link: generateLinkPath(groups.ninjutsu) },
+      { title: translations.ritual, link: generateLinkPath(groups.ritual) },
+      { title: translations.kiho, link: generateLinkPath(groups.kiho) },
+      { title: translations.appeal, link: generateLinkPath(groups.appeal) },
+      { title: translations.shuji, link: generateLinkPath(groups.shuji) },
     ],
     filterSettings: [
       katasFilterSettings,

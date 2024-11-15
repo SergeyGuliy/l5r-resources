@@ -19,7 +19,7 @@ export const kiho = [
   ...i,
   description: replaceCharacter(i.description, injectImages),
   group: groups.kiho,
-  link: generateLink(i.name),
+  link: generateLink(i.title),
 }));
 
 export const kihoFilterSettings = {

@@ -1,6 +1,6 @@
 export const _kihoAir = [
   {
-    name: "Воздушный кулак",
+    title: "Воздушный кулак",
     rank: 1,
     description: `
 <p><em>Монах закручивает руки в замысловатый узор, направляя своё ки в воздух и превращая даже спокойный ветерок в воронку ревущего торнадо. За ударами монаха следует шторм, отбрасывающий противников назад и ударяющий их об окружающие предметы. </em></p>
@@ -10,77 +10,77 @@ export const _kihoAir = [
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 
   `,
   },
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 

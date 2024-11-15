@@ -1,6 +1,6 @@
 export const _kihoVoid = [
   {
-    name: "Пробивной",
+    title: "Пробивной",
     rank: 1,
     description: `
 

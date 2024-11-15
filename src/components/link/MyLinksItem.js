@@ -9,7 +9,7 @@ export default function MyLinksItem({ linkData }) {
       <Link href={linkData.link}>
         <Card.Root p={2}>
           <Text fontWeight="semibold" textStyle="sm">
-            {linkData.name}
+            {linkData.title}
           </Text>
         </Card.Root>
       </Link>

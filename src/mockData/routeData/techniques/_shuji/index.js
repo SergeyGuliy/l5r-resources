@@ -19,7 +19,7 @@ export const shuji = [
   ...i,
   description: replaceCharacter(i.description, injectImages),
   group: groups.shuji,
-  link: generateLink(i.name),
+  link: generateLink(i.title),
 }));
 
 export const shujiFilterSettings = {

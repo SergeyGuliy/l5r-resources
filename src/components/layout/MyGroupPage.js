@@ -55,7 +55,7 @@ export default function MyGroupPage({
 
     if (useSearch && search.length) {
       listToReturn = listToReturn.filter((i) =>
-        i.name.toUpperCase().includes(search.toUpperCase())
+        i.title.toUpperCase().includes(search.toUpperCase())
       );
     }
 

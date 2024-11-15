@@ -14,7 +14,7 @@ export const ninjutsu = _ninjutsu.map((i) => ({
   description: replaceCharacter(i.description, injectImages),
   subgroup: hiddenNinjutsuTrue,
   group: groups.ninjutsu,
-  link: generateLink(i.name),
+  link: generateLink(i.title),
 }));
 
 export const ninjutsuFilterSettings = {

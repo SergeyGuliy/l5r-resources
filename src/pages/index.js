@@ -7,32 +7,32 @@ import { groups, translations } from "@/mockData/routeData/constants";
 import { generateLinkPath } from "@/helpers/generateLinkPath";
 
 const linksData = [
-  { name: translations.techniques, link: generateLinkPath(groups.techniques) },
-  { name: translations.skills, link: generateLinkPath(groups.skills) },
-  { name: translations.stances, link: generateLinkPath(groups.stances) },
-  { name: translations.states, link: generateLinkPath(groups.states) },
+  { title: translations.techniques, link: generateLinkPath(groups.techniques) },
+  { title: translations.skills, link: generateLinkPath(groups.skills) },
+  { title: translations.stances, link: generateLinkPath(groups.stances) },
+  { title: translations.states, link: generateLinkPath(groups.states) },
 
-  // { name: "Кланы", link: "/group" },
-  // { name: "Семьи", link: "/group" },
-  // { name: "Школы", link: "/group" },
+  // { title: "Кланы", link: "/group" },
+  // { title: "Семьи", link: "/group" },
+  // { title: "Школы", link: "/group" },
 
-  { name: "Оружие", link: "/weapons" },
-  { name: "Броня", link: "/armors" },
+  { title: "Оружие", link: "/weapons" },
+  { title: "Броня", link: "/armors" },
 
-  { name: "Действия в бою", link: "/group" },
+  { title: "Действия в бою", link: "/group" },
 
-  // { name: "Преимущества и недостатки (стр 100-137)", link: "/group" },
-  // { name: "Принципы Бусидо", link: "/group" },
+  // { title: "Преимущества и недостатки (стр 100-137)", link: "/group" },
+  // { title: "Принципы Бусидо", link: "/group" },
 
-  { name: "Другое", link: "/other" },
+  { title: "Другое", link: "/other" },
 ];
 
 // Спрятаные свойства
-// { name: "Фигуры", link: "/group" },
-// { name: "Свойства предметов", link: "/group" },
-// { name: "Описание оружия", link: "/group" },
-// { name: "Местность", link: "/group" },
-// { name: "Кольца", link: "/group" },
+// { title: "Фигуры", link: "/group" },
+// { title: "Свойства предметов", link: "/group" },
+// { title: "Описание оружия", link: "/group" },
+// { title: "Местность", link: "/group" },
+// { title: "Кольца", link: "/group" },
 
 export default function Home() {
   const [search, setSearch] = useState("");

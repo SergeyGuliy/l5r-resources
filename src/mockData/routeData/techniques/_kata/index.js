@@ -15,7 +15,7 @@ export const katas = [
   ...i,
   description: replaceCharacter(i.description, injectImages),
   group: groups.kata,
-  link: generateLink(i.name),
+  link: generateLink(i.title),
 }));
 
 export const katasFilterSettings = {

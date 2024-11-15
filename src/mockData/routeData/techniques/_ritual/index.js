@@ -12,7 +12,7 @@ export const ritual = _ritual.map((i) => ({
   description: replaceCharacter(i.description, injectImages),
   subgroup: hiddenRitualsTrue,
   group: groups.ritual,
-  link: generateLink(i.name),
+  link: generateLink(i.title),
 }));
 
 export const ritualFilterSettings = {

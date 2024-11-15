@@ -1,5 +1,5 @@
 export const example = {
-  name: "Пробивной",
+  title: "Пробивной",
   rank: 1,
   description: `
 

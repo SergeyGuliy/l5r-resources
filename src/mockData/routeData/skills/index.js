@@ -23,7 +23,7 @@ export const skills = [
   ...i,
   group: groups.skills,
   description: replaceCharacter(i.description, injectImages),
-  link: generateLink(i.name),
+  link: generateLink(i.title),
 }));
 
 const skillsFilterSettings = {

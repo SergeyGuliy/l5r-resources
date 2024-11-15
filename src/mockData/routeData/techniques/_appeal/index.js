@@ -17,7 +17,7 @@ export const appeal = [
   ...i,
   description: replaceCharacter(i.description, injectImages),
   group: groups.appeal,
-  link: generateLink(i.name),
+  link: generateLink(i.title),
 }));
 
 export const appealFilterSettings = {

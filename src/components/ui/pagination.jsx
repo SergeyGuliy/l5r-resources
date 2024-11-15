@@ -17,7 +17,7 @@ import {
 import { LinkButton } from "./link-button";
 
 const [RootPropsProvider, useRootProps] = createContext({
-  name: "RootPropsProvider",
+  title: "RootPropsProvider",
 });
 
 const variantMap = {
