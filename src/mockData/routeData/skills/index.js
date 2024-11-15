@@ -13,7 +13,7 @@ import { _skillsSocial } from "@/mockData/routeData/skills/_skillsSocial";
 import { _skillsWorking } from "@/mockData/routeData/skills/_skillsWorking";
 import { _skillsCraft } from "@/mockData/routeData/skills/_skillsCraft";
 
-const skills = [
+export const skills = [
   ..._skillsCombat.map((i) => ({ ...i, subgroup: groups.skillsCombat })),
   ..._skillsCraft.map((i) => ({ ...i, subgroup: groups.skillsCraft })),
   ..._skillsSocial.map((i) => ({ ...i, subgroup: groups.skillSocial })),

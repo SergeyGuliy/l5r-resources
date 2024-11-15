@@ -1,6 +1,6 @@
-export const propertiesOfWeapons = {
-  propertiesOfWeapons_Category: {
-    key: "propertiesOfWeapons_Category",
+export const weaponsAndArmorCharacteristics = {
+  weaponsAndArmorCharacteristics_Category: {
+    key: "weaponsAndArmorCharacteristics_Category",
     title: "Категория",
     description: `
 <p>Архетип оружия, такой как “мечи”,
@@ -8,15 +8,15 @@ export const propertiesOfWeapons = {
 требуют особенные категории.</p>
     `,
   },
-  propertiesOfWeapons_Name: {
-    key: "propertiesOfWeapons_Name",
+  weaponsAndArmorCharacteristics_Name: {
+    key: "weaponsAndArmorCharacteristics_Name",
     title: "Название",
     description: `
 <p>Название оружия</p>
     `,
   },
-  propertiesOfWeapons_Skill: {
-    key: "propertiesOfWeapons_Skill",
+  weaponsAndArmorCharacteristics_Skill: {
+    key: "weaponsAndArmorCharacteristics_Skill",
     title: "Навык",
     description: `
   <p>Особый навык для владения этим
@@ -25,8 +25,8 @@ export const propertiesOfWeapons = {
   бой], [Стрельба] или [Безоружный бой]</p>
       `,
   },
-  propertiesOfWeapons_Range: {
-    key: "propertiesOfWeapons_Range",
+  weaponsAndArmorCharacteristics_Range: {
+    key: "weaponsAndArmorCharacteristics_Range",
     title: "Дистанция (ДСТ)",
     description: `
   <p>Расстояние, в диапазоне дистанции которого, атакующий может
@@ -39,8 +39,8 @@ export const propertiesOfWeapons = {
   при атаке этим оружием</p>
       `,
   },
-  propertiesOfWeapons_BaseDamage: {
-    key: "propertiesOfWeapons_BaseDamage",
+  weaponsAndArmorCharacteristics_BaseDamage: {
+    key: "weaponsAndArmorCharacteristics_BaseDamage",
     title: "Базовый урон (УРН)",
     description: `
   <p>Отображает то, как быстро такое оружие может
@@ -50,8 +50,8 @@ export const propertiesOfWeapons = {
   </p>
       `,
   },
-  propertiesOfWeapons_Deadliness: {
-    key: "propertiesOfWeapons_Deadliness",
+  weaponsAndArmorCharacteristics_Deadliness: {
+    key: "weaponsAndArmorCharacteristics_Deadliness",
     title: "Смертоносность (СМТ)",
     description: `
   <p>Летальность этого оружия.
@@ -60,8 +60,8 @@ export const propertiesOfWeapons = {
   стр. 269)</p>
       `,
   },
-  propertiesOfWeapons_Grip: {
-    key: "propertiesOfWeapons_Grip",
+  weaponsAndArmorCharacteristics_Grip: {
+    key: "weaponsAndArmorCharacteristics_Grip",
     title: "Хват",
     description: `
   <p>Способ хвата этого оружия (одноручный, двуручный). Если в списке оружия
@@ -71,23 +71,23 @@ export const propertiesOfWeapons = {
   этого хвата</p>
       `,
   },
-  propertiesOfWeapons_Properties: {
-    key: "propertiesOfWeapons_Properties",
+  weaponsAndArmorCharacteristics_Properties: {
+    key: "weaponsAndArmorCharacteristics_Properties",
     title: "Свойства",
     description: `
   <p>Любые дополнительные эффекты, не предусмотренные характеристиками
   оружия.</p>
       `,
   },
-  propertiesOfWeapons_Rare: {
-    key: "propertiesOfWeapons_Rare",
+  weaponsAndArmorCharacteristics_Rare: {
+    key: "weaponsAndArmorCharacteristics_Rare",
     title: "Редкость",
     description: `
   <p>Определяет насколько сложно навти в продаже</p>
       `,
   },
-  propertiesOfWeapons_Price: {
-    key: "propertiesOfWeapons_Price",
+  weaponsAndArmorCharacteristics_Price: {
+    key: "weaponsAndArmorCharacteristics_Price",
     title: "Цена",
     description: `
   <p>Цена предмета</p>

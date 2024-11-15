@@ -19,11 +19,11 @@ export default function MyHoverCard({ children, cardData }) {
           style={{ cursor: "cell" }}
           onClick={(e) => e.preventDefault()}
         >
-          {children ? children : cardData.title}
+          {children ? children : cardData.title || cardData.name}
         </Link>
       </HoverCardTrigger>
 
-      <HoverCardContent>
+      <HoverCardContent maxHeight={500} overflow={"auto"}>
         <HoverCardArrow />
 
         {cardData?.description && (

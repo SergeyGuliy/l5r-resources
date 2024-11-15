@@ -25,11 +25,50 @@ export default function MyTable({ headers, items }) {
         </Table.Header>
 
         <Table.Body>
-          {items.map((item, index) => (
+          {items.map((i, index) => (
             <Table.Row key={index}>
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell>{item.category}</Table.Cell>
-              <Table.Cell textAlign="end">{item.price}</Table.Cell>
+              <Table.Cell textAlign="center">
+                <MyHoverCard
+                  cardData={i.weaponsAndArmorCharacteristics_Category}
+                />
+              </Table.Cell>
+              <Table.Cell textAlign="center">
+                <MyHoverCard cardData={i.weaponsAndArmorCharacteristics_Name} />
+              </Table.Cell>
+              <Table.Cell textAlign="center">
+                <MyHoverCard
+                  cardData={i.weaponsAndArmorCharacteristics_Skill}
+                />
+              </Table.Cell>
+              <Table.Cell textAlign="center">
+                {i.weaponsAndArmorCharacteristics_BaseDamage}
+              </Table.Cell>
+              <Table.Cell textAlign="center">
+                {i.weaponsAndArmorCharacteristics_BaseDamage}
+              </Table.Cell>
+              <Table.Cell textAlign="center">
+                {i.weaponsAndArmorCharacteristics_Deadliness}
+              </Table.Cell>
+              <Table.Cell
+                textAlign="center"
+                dangerouslySetInnerHTML={{
+                  __html: i.weaponsAndArmorCharacteristics_Grip,
+                }}
+              />
+              <Table.Cell textAlign="center">
+                {i.weaponsAndArmorCharacteristics_Properties.map((j) => (
+                  <>
+                    <MyHoverCard cardData={j} />
+                    <br />
+                  </>
+                ))}
+              </Table.Cell>
+              <Table.Cell textAlign="center">
+                {i.weaponsAndArmorCharacteristics_Rare}
+              </Table.Cell>
+              <Table.Cell textAlign="center">
+                {i.weaponsAndArmorCharacteristics_Price}
+              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
