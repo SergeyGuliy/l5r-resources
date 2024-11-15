@@ -17,12 +17,14 @@ const linksData = [
   // { name: "Школы", link: "/group" },
 
   { name: "Оружие", link: "/weapons" },
-  // { name: "Броня", link: "/group" },
+  { name: "Броня", link: "/armors" },
 
   // { name: "Действия в бою", link: "/group" },
 
   // { name: "Преимущества и недостатки (стр 100-137)", link: "/group" },
   // { name: "Принципы Бусидо", link: "/group" },
+
+  { name: "Другое", link: "/other" },
 ];
 
 // Спрятаные свойства

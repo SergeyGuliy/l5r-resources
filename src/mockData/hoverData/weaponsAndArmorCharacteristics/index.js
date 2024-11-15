@@ -1,4 +1,23 @@
-const weaponsCharacteristics = {
+const weaponsAndArmorCharacteristics = {
+  weaponsAndArmorCharacteristics_Rare: {
+    key: "weaponsAndArmorCharacteristics_Rare",
+    title: "Редкость",
+    width: "80px",
+    description: `
+  <p>Определяет насколько сложно найти в продаже</p>
+      `,
+  },
+  weaponsAndArmorCharacteristics_Price: {
+    key: "weaponsAndArmorCharacteristics_Price",
+    title: "Цена",
+    width: "70px",
+    description: `
+  <p>Цена предмета</p>
+      `,
+  },
+};
+
+export const weaponsCharacteristics = {
   weaponsCharacteristics_Name: {
     key: "weaponsCharacteristics_Name",
     title: "Название",
@@ -86,9 +105,10 @@ const weaponsCharacteristics = {
   оружия.</p>
       `,
   },
+  ...weaponsAndArmorCharacteristics,
 };
 
-const armorCharacteristics = {
+export const armorCharacteristics = {
   armorCharacteristics_Name: {
     key: "armorCharacteristics",
     title: "Название",
@@ -121,25 +141,5 @@ const armorCharacteristics = {
 или описанием брони</p>
       `,
   },
-};
-
-export const weaponsAndArmorCharacteristics = {
-  ...weaponsCharacteristics,
-  ...armorCharacteristics,
-  weaponsAndArmorCharacteristics_Rare: {
-    key: "weaponsAndArmorCharacteristics_Rare",
-    title: "Редкость",
-    width: "80px",
-    description: `
-  <p>Определяет насколько сложно найти в продаже</p>
-      `,
-  },
-  weaponsAndArmorCharacteristics_Price: {
-    key: "weaponsAndArmorCharacteristics_Price",
-    title: "Цена",
-    width: "70px",
-    description: `
-  <p>Цена предмета</p>
-      `,
-  },
+  ...weaponsAndArmorCharacteristics,
 };
