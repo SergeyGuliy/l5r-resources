@@ -2,7 +2,7 @@ import { Table } from "@chakra-ui/react";
 import MyHoverCard from "@/components/MyHoverCard";
 import "@/static/styles/table.css";
 
-export default function MyTable({ headers, items }) {
+export default function MyTableWeapons({ headers, items }) {
   if (!headers.length) return;
   if (!items.length) return;
 
@@ -28,44 +28,38 @@ export default function MyTable({ headers, items }) {
           {items.map((i, iIndex) => (
             <Table.Row key={iIndex}>
               <Table.Cell textAlign="center">
-                <MyHoverCard
-                  cardData={i.weaponsAndArmorCharacteristics_Category}
-                />
+                <MyHoverCard cardData={i.weaponsCharacteristics_Category} />
               </Table.Cell>
               <Table.Cell textAlign="center">
-                <MyHoverCard cardData={i.weaponsAndArmorCharacteristics_Name} />
+                <MyHoverCard cardData={i.weaponsCharacteristics_Name} />
               </Table.Cell>
               <Table.Cell
                 textAlign="center"
-                className="weaponsAndArmorCharacteristics_Skill"
+                className="weaponsCharacteristics_Skill"
               >
-                <MyHoverCard
-                  cardData={i.weaponsAndArmorCharacteristics_Skill}
-                />
+                <MyHoverCard cardData={i.weaponsCharacteristics_Skill} />
               </Table.Cell>
               <Table.Cell textAlign="center">
-                {i.weaponsAndArmorCharacteristics_Range}
+                {i.weaponsCharacteristics_Range}
               </Table.Cell>
               <Table.Cell textAlign="center">
-                {i.weaponsAndArmorCharacteristics_BaseDamage}
+                {i.weaponsCharacteristics_BaseDamage}
               </Table.Cell>
               <Table.Cell textAlign="center">
-                {i.weaponsAndArmorCharacteristics_Deadliness}
+                {i.weaponsCharacteristics_Deadliness}
               </Table.Cell>
               <Table.Cell
                 textAlign="center"
                 dangerouslySetInnerHTML={{
-                  __html: i.weaponsAndArmorCharacteristics_Grip,
+                  __html: i.weaponsCharacteristics_Grip,
                 }}
               />
               <Table.Cell textAlign="center">
-                {i.weaponsAndArmorCharacteristics_Properties.map(
-                  (j, jIndex) => (
-                    <div key={jIndex}>
-                      <MyHoverCard cardData={j} />
-                    </div>
-                  )
-                )}
+                {i.weaponsCharacteristics_Properties.map((j, jIndex) => (
+                  <div key={jIndex}>
+                    <MyHoverCard cardData={j} />
+                  </div>
+                ))}
               </Table.Cell>
               <Table.Cell textAlign="center">
                 {i.weaponsAndArmorCharacteristics_Rare}

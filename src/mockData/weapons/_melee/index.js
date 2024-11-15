@@ -8,7 +8,7 @@ import { skills } from "@/mockData/routeData/skills";
 export const melee = [...swords, ...axes, ...blunt, ...hand, ...pole].map(
   (i) => ({
     ...i,
-    weaponsAndArmorCharacteristics_Skill: skills.find(
+    weaponsCharacteristics_Skill: skills.find(
       (i) => i.link === "Boevye_iskusstva_Blizhniy_boy"
     ),
   })

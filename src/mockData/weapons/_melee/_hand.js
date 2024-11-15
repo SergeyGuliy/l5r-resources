@@ -8,14 +8,14 @@ import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 
 export const hand = [
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Jitte,
-    weaponsAndArmorCharacteristics_Range: "0",
-    weaponsAndArmorCharacteristics_BaseDamage: 3,
-    weaponsAndArmorCharacteristics_Deadliness: 2,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Jitte,
+    weaponsCharacteristics_Range: "0",
+    weaponsCharacteristics_BaseDamage: 3,
+    weaponsCharacteristics_Deadliness: 2,
+    weaponsCharacteristics_Grip: `
     Одноручный: –
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Secret,
       weaponsAndArmorProperties.Grasping,
     ],
@@ -23,16 +23,16 @@ export const hand = [
     weaponsAndArmorCharacteristics_Price: "5 бу",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Knife,
-    weaponsAndArmorCharacteristics_Range: "0",
-    weaponsAndArmorCharacteristics_BaseDamage: 2,
-    weaponsAndArmorCharacteristics_Deadliness: 4,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Knife,
+    weaponsCharacteristics_Range: "0",
+    weaponsCharacteristics_BaseDamage: 2,
+    weaponsCharacteristics_Deadliness: 4,
+    weaponsCharacteristics_Grip: `
     Одноручный: –
     <br>
     Двуручный: Смертоносность +2
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Secret,
       weaponsAndArmorProperties.Secular,
       weaponsAndArmorProperties.RazorSharp,
@@ -41,11 +41,11 @@ export const hand = [
     weaponsAndArmorCharacteristics_Price: "1 коку",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Nunchucks,
-    weaponsAndArmorCharacteristics_Range: "0-1",
-    weaponsAndArmorCharacteristics_BaseDamage: 4,
-    weaponsAndArmorCharacteristics_Deadliness: 2,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Nunchucks,
+    weaponsCharacteristics_Range: "0-1",
+    weaponsCharacteristics_BaseDamage: 4,
+    weaponsCharacteristics_Deadliness: 2,
+    weaponsCharacteristics_Grip: `
     Одноручный: –
     <br>
     Двуручный: ${renderToString(
@@ -54,19 +54,19 @@ export const hand = [
       </ChakraProvider>
     )}
     `,
-    weaponsAndArmorCharacteristics_Properties: [],
+    weaponsCharacteristics_Properties: [],
     weaponsAndArmorCharacteristics_Rare: 6,
     weaponsAndArmorCharacteristics_Price: "1 коку",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Tessen,
-    weaponsAndArmorCharacteristics_Range: "0-1",
-    weaponsAndArmorCharacteristics_BaseDamage: 4,
-    weaponsAndArmorCharacteristics_Deadliness: 3,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Tessen,
+    weaponsCharacteristics_Range: "0-1",
+    weaponsCharacteristics_BaseDamage: 4,
+    weaponsCharacteristics_Deadliness: 3,
+    weaponsCharacteristics_Grip: `
     Одноручный: –
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Ceremonial,
       weaponsAndArmorProperties.Secret,
     ],
@@ -75,5 +75,5 @@ export const hand = [
   },
 ].map((i) => ({
   ...i,
-  weaponsAndArmorCharacteristics_Category: weaponGroups.HandWeapons,
+  weaponsCharacteristics_Category: weaponGroups.HandWeapons,
 }));

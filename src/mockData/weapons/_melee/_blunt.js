@@ -4,46 +4,42 @@ import { weaponGroups } from "@/mockData/hoverData/weaponGroups";
 
 export const blunt = [
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Club,
-    weaponsAndArmorCharacteristics_Range: "0-1",
-    weaponsAndArmorCharacteristics_BaseDamage: 5,
-    weaponsAndArmorCharacteristics_Deadliness: 2,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Club,
+    weaponsCharacteristics_Range: "0-1",
+    weaponsCharacteristics_BaseDamage: 5,
+    weaponsCharacteristics_Deadliness: 2,
+    weaponsCharacteristics_Grip: `
     Одноручный: –
     <br>
     Двуручный: Урон +1
     `,
-    weaponsAndArmorCharacteristics_Properties: [
-      weaponsAndArmorProperties.Secular,
-    ],
+    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
     weaponsAndArmorCharacteristics_Rare: 1,
     weaponsAndArmorCharacteristics_Price: "1 бу",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Hammer,
-    weaponsAndArmorCharacteristics_Range: "0-1",
-    weaponsAndArmorCharacteristics_BaseDamage: 5,
-    weaponsAndArmorCharacteristics_Deadliness: 2,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Hammer,
+    weaponsCharacteristics_Range: "0-1",
+    weaponsCharacteristics_BaseDamage: 5,
+    weaponsCharacteristics_Deadliness: 2,
+    weaponsCharacteristics_Grip: `
     Одноручный: –
     <br>
     Двуручный: Урон +2
     `,
-    weaponsAndArmorCharacteristics_Properties: [
-      weaponsAndArmorProperties.Secular,
-    ],
+    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
     weaponsAndArmorCharacteristics_Rare: 4,
     weaponsAndArmorCharacteristics_Price: "3 бу",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Kiseru,
-    weaponsAndArmorCharacteristics_Range: "0",
-    weaponsAndArmorCharacteristics_BaseDamage: 2,
-    weaponsAndArmorCharacteristics_Deadliness: 2,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Kiseru,
+    weaponsCharacteristics_Range: "0",
+    weaponsCharacteristics_BaseDamage: 2,
+    weaponsCharacteristics_Deadliness: 2,
+    weaponsCharacteristics_Grip: `
     Одноручный: –
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Secret,
       weaponsAndArmorProperties.Secular,
     ],
@@ -51,14 +47,14 @@ export const blunt = [
     weaponsAndArmorCharacteristics_Price: "1 коку",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Otsuchi,
-    weaponsAndArmorCharacteristics_Range: "1",
-    weaponsAndArmorCharacteristics_BaseDamage: 8,
-    weaponsAndArmorCharacteristics_Deadliness: 3,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Otsuchi,
+    weaponsCharacteristics_Range: "1",
+    weaponsCharacteristics_BaseDamage: 8,
+    weaponsCharacteristics_Deadliness: 3,
+    weaponsCharacteristics_Grip: `
     Двуручный: –
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Bulky,
       weaponsAndArmorProperties.Combat,
     ],
@@ -66,14 +62,14 @@ export const blunt = [
     weaponsAndArmorCharacteristics_Price: "30 коку",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Tetsubo,
-    weaponsAndArmorCharacteristics_Range: "1-2",
-    weaponsAndArmorCharacteristics_BaseDamage: 7,
-    weaponsAndArmorCharacteristics_Deadliness: 3,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Tetsubo,
+    weaponsCharacteristics_Range: "1-2",
+    weaponsCharacteristics_BaseDamage: 7,
+    weaponsCharacteristics_Deadliness: 3,
+    weaponsCharacteristics_Grip: `
     Двуручный: –
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Bulky,
       weaponsAndArmorProperties.Combat,
       weaponsAndArmorProperties.Strong,
@@ -83,5 +79,5 @@ export const blunt = [
   },
 ].map((i) => ({
   ...i,
-  weaponsAndArmorCharacteristics_Category: weaponGroups.BluntWeapons,
+  weaponsCharacteristics_Category: weaponGroups.BluntWeapons,
 }));

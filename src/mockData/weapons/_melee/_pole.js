@@ -4,16 +4,16 @@ import { weaponGroups } from "@/mockData/hoverData/weaponGroups";
 
 export const pole = [
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Bisento,
-    weaponsAndArmorCharacteristics_Range: "2",
-    weaponsAndArmorCharacteristics_BaseDamage: 4,
-    weaponsAndArmorCharacteristics_Deadliness: 6,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Bisento,
+    weaponsCharacteristics_Range: "2",
+    weaponsCharacteristics_BaseDamage: 4,
+    weaponsCharacteristics_Deadliness: 6,
+    weaponsCharacteristics_Grip: `
     Одноручный: Дистанция 1
     <br>
     Двуручный: Урон +2
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Bulky,
       weaponsAndArmorProperties.Strong,
       weaponsAndArmorProperties.Combat,
@@ -22,28 +22,26 @@ export const pole = [
     weaponsAndArmorCharacteristics_Price: "15 коку",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Bo,
-    weaponsAndArmorCharacteristics_Range: "1-2",
-    weaponsAndArmorCharacteristics_BaseDamage: 6,
-    weaponsAndArmorCharacteristics_Deadliness: 2,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Bo,
+    weaponsCharacteristics_Range: "1-2",
+    weaponsCharacteristics_BaseDamage: 6,
+    weaponsCharacteristics_Deadliness: 2,
+    weaponsCharacteristics_Grip: `
     Двуручный: -
     `,
-    weaponsAndArmorCharacteristics_Properties: [
-      weaponsAndArmorProperties.Secular,
-    ],
+    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
     weaponsAndArmorCharacteristics_Rare: 2,
     weaponsAndArmorCharacteristics_Price: "2 бу",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Dzi,
-    weaponsAndArmorCharacteristics_Range: "2",
-    weaponsAndArmorCharacteristics_BaseDamage: 5,
-    weaponsAndArmorCharacteristics_Deadliness: 2,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Dzi,
+    weaponsCharacteristics_Range: "2",
+    weaponsCharacteristics_BaseDamage: 5,
+    weaponsCharacteristics_Deadliness: 2,
+    weaponsCharacteristics_Grip: `
     Двуручный: -
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Grasping,
       weaponsAndArmorProperties.Combat,
     ],
@@ -51,14 +49,14 @@ export const pole = [
     weaponsAndArmorCharacteristics_Price: "7 бу",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Naginata,
-    weaponsAndArmorCharacteristics_Range: "2",
-    weaponsAndArmorCharacteristics_BaseDamage: 6,
-    weaponsAndArmorCharacteristics_Deadliness: 6,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Naginata,
+    weaponsCharacteristics_Range: "2",
+    weaponsCharacteristics_BaseDamage: 6,
+    weaponsCharacteristics_Deadliness: 6,
+    weaponsCharacteristics_Grip: `
     Двуручный: -
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Bulky,
       weaponsAndArmorProperties.Combat,
       weaponsAndArmorProperties.RazorSharp,
@@ -67,14 +65,14 @@ export const pole = [
     weaponsAndArmorCharacteristics_Price: "10 коку",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Trident,
-    weaponsAndArmorCharacteristics_Range: "2",
-    weaponsAndArmorCharacteristics_BaseDamage: 4,
-    weaponsAndArmorCharacteristics_Deadliness: 4,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Trident,
+    weaponsCharacteristics_Range: "2",
+    weaponsCharacteristics_BaseDamage: 4,
+    weaponsCharacteristics_Deadliness: 4,
+    weaponsCharacteristics_Grip: `
     Двуручный: -
     `,
-    weaponsAndArmorCharacteristics_Properties: [
+    weaponsCharacteristics_Properties: [
       weaponsAndArmorProperties.Grasping,
       weaponsAndArmorProperties.Combat,
     ],
@@ -82,20 +80,18 @@ export const pole = [
     weaponsAndArmorCharacteristics_Price: "10 коку",
   },
   {
-    weaponsAndArmorCharacteristics_Name: weaponsAndArmorData.Yari,
-    weaponsAndArmorCharacteristics_Range: "2",
-    weaponsAndArmorCharacteristics_BaseDamage: 5,
-    weaponsAndArmorCharacteristics_Deadliness: 3,
-    weaponsAndArmorCharacteristics_Grip: `
+    weaponsCharacteristics_Name: weaponsAndArmorData.Yari,
+    weaponsCharacteristics_Range: "2",
+    weaponsCharacteristics_BaseDamage: 5,
+    weaponsCharacteristics_Deadliness: 3,
+    weaponsCharacteristics_Grip: `
     Двуручный: -
     `,
-    weaponsAndArmorCharacteristics_Properties: [
-      weaponsAndArmorProperties.Combat,
-    ],
+    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Combat],
     weaponsAndArmorCharacteristics_Rare: 3,
     weaponsAndArmorCharacteristics_Price: "5 коку",
   },
 ].map((i) => ({
   ...i,
-  weaponsAndArmorCharacteristics_Category: weaponGroups.PoleWeapons,
+  weaponsCharacteristics_Category: weaponGroups.PoleWeapons,
 }));
