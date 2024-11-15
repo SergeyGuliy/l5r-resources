@@ -2,6 +2,7 @@ export const weaponsAndArmorCharacteristics = {
   weaponsAndArmorCharacteristics_Category: {
     key: "weaponsAndArmorCharacteristics_Category",
     title: "Категория",
+    width: "110px",
     description: `
 <p>Архетип оружия, такой как “мечи”,
 “древковое” или “луки”. Некоторые техники
@@ -11,6 +12,7 @@ export const weaponsAndArmorCharacteristics = {
   weaponsAndArmorCharacteristics_Name: {
     key: "weaponsAndArmorCharacteristics_Name",
     title: "Название",
+    width: "110px",
     description: `
 <p>Название оружия</p>
     `,
@@ -18,6 +20,7 @@ export const weaponsAndArmorCharacteristics = {
   weaponsAndArmorCharacteristics_Skill: {
     key: "weaponsAndArmorCharacteristics_Skill",
     title: "Навык",
+    width: "150px",
     description: `
   <p>Особый навык для владения этим
   оружием. Обычно, это один из навыков
@@ -27,7 +30,8 @@ export const weaponsAndArmorCharacteristics = {
   },
   weaponsAndArmorCharacteristics_Range: {
     key: "weaponsAndArmorCharacteristics_Range",
-    title: "Дистанция (ДСТ)",
+    title: "Дистанция",
+    width: "100px",
     description: `
   <p>Расстояние, в диапазоне дистанции которого, атакующий может
   поразить цель. Обозначается как одно число
@@ -41,7 +45,8 @@ export const weaponsAndArmorCharacteristics = {
   },
   weaponsAndArmorCharacteristics_BaseDamage: {
     key: "weaponsAndArmorCharacteristics_BaseDamage",
-    title: "Базовый урон (УРН)",
+    title: "Базовый урон",
+    width: "110px",
     description: `
   <p>Отображает то, как быстро такое оружие может
   повергнуть защищающегося. Атакующие действия
@@ -52,7 +57,8 @@ export const weaponsAndArmorCharacteristics = {
   },
   weaponsAndArmorCharacteristics_Deadliness: {
     key: "weaponsAndArmorCharacteristics_Deadliness",
-    title: "Смертоносность (СМТ)",
+    title: "Смертоносность",
+    width: "130px",
     description: `
   <p>Летальность этого оружия.
   Оружие с высокой смертоносностью легче наносит
@@ -82,6 +88,7 @@ export const weaponsAndArmorCharacteristics = {
   weaponsAndArmorCharacteristics_Rare: {
     key: "weaponsAndArmorCharacteristics_Rare",
     title: "Редкость",
+    width: "80px",
     description: `
   <p>Определяет насколько сложно навти в продаже</p>
       `,
@@ -89,6 +96,7 @@ export const weaponsAndArmorCharacteristics = {
   weaponsAndArmorCharacteristics_Price: {
     key: "weaponsAndArmorCharacteristics_Price",
     title: "Цена",
+    width: "70px",
     description: `
   <p>Цена предмета</p>
       `,

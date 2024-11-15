@@ -1,23 +1,23 @@
-import { Box, Table } from "@chakra-ui/react";
+import { Table } from "@chakra-ui/react";
 import MyHoverCard from "@/components/MyHoverCard";
+import "@/static/styles/table.css";
 
 export default function MyTable({ headers, items }) {
-  console.log(headers);
   if (!headers.length) return;
   if (!items.length) return;
 
   return (
-    <Table.ScrollArea
-      showColumnBorder
-      borderWidth="1px"
-      rounded="md"
-      height="500px"
-    >
+    <Table.ScrollArea showColumnBorder borderWidth="1px" rounded="md">
       <Table.Root size="sm" stickyHeader>
         <Table.Header>
           <Table.Row bg="bg.subtle">
-            {headers.map((i, index) => (
-              <Table.ColumnHeader key={index} textAlign="center">
+            {headers.map((i, iIndex) => (
+              <Table.ColumnHeader
+                key={iIndex}
+                textAlign="center"
+                maxW={i.width}
+                minW={i.width}
+              >
                 <MyHoverCard cardData={i} />
               </Table.ColumnHeader>
             ))}
@@ -25,8 +25,8 @@ export default function MyTable({ headers, items }) {
         </Table.Header>
 
         <Table.Body>
-          {items.map((i, index) => (
-            <Table.Row key={index}>
+          {items.map((i, iIndex) => (
+            <Table.Row key={iIndex}>
               <Table.Cell textAlign="center">
                 <MyHoverCard
                   cardData={i.weaponsAndArmorCharacteristics_Category}
@@ -35,13 +35,16 @@ export default function MyTable({ headers, items }) {
               <Table.Cell textAlign="center">
                 <MyHoverCard cardData={i.weaponsAndArmorCharacteristics_Name} />
               </Table.Cell>
-              <Table.Cell textAlign="center">
+              <Table.Cell
+                textAlign="center"
+                className="weaponsAndArmorCharacteristics_Skill"
+              >
                 <MyHoverCard
                   cardData={i.weaponsAndArmorCharacteristics_Skill}
                 />
               </Table.Cell>
               <Table.Cell textAlign="center">
-                {i.weaponsAndArmorCharacteristics_BaseDamage}
+                {i.weaponsAndArmorCharacteristics_Range}
               </Table.Cell>
               <Table.Cell textAlign="center">
                 {i.weaponsAndArmorCharacteristics_BaseDamage}
@@ -56,12 +59,13 @@ export default function MyTable({ headers, items }) {
                 }}
               />
               <Table.Cell textAlign="center">
-                {i.weaponsAndArmorCharacteristics_Properties.map((j) => (
-                  <>
-                    <MyHoverCard cardData={j} />
-                    <br />
-                  </>
-                ))}
+                {i.weaponsAndArmorCharacteristics_Properties.map(
+                  (j, jIndex) => (
+                    <div key={jIndex}>
+                      <MyHoverCard cardData={j} />
+                    </div>
+                  )
+                )}
               </Table.Cell>
               <Table.Cell textAlign="center">
                 {i.weaponsAndArmorCharacteristics_Rare}

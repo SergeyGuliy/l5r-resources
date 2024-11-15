@@ -1,9 +1,5 @@
 import { replaceCharacter } from "@/helpers/replaceCharacter";
-import {
-  groups,
-  hiddenNinjutsuTrue,
-  injectImages,
-} from "@/mockData/routeData/constants";
+import { injectImages } from "@/mockData/routeData/constants";
 import { generateLink } from "@/helpers/generateLink";
 
 export const _states = [

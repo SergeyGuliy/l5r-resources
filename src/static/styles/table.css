@@ -1,0 +1,6 @@
+.weaponsAndArmorCharacteristics_Skill a {
+  max-width: 150px;
+  text-wrap-mode: wrap;
+  display: block;
+  margin: 0 auto;
+}

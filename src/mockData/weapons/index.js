@@ -1,11 +1,6 @@
-import { swords } from "@/mockData/weapons/_swords";
-import { skills } from "@/mockData/routeData/skills";
+import { range } from "@/mockData/weapons/_range";
+import { unarmed } from "@/mockData/weapons/_unarmed";
+import { special } from "@/mockData/weapons/_special";
+import { melee } from "@/mockData/weapons/_melee";
 
-const meleeWeapons = [...swords].map((i) => ({
-  ...i,
-  weaponsAndArmorCharacteristics_Skill: skills.find(
-    (i) => i.link === "Boevye_iskusstva_Blizhniy_boy"
-  ),
-}));
-
-export const weapons = [...meleeWeapons];
+export const weapons = [...melee, ...unarmed, ...special, ...range];

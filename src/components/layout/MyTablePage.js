@@ -7,18 +7,6 @@ export function MyTablePage({ title, headers, items }) {
     <Box display="flex" flexDirection="column" w={"100%"} h={"100%"}>
       <MyPageTitle title={title} />
 
-      {/*<MySearchFilter*/}
-      {/*  useSearch={useSearch}*/}
-      {/*  search={search}*/}
-      {/*  setSearch={setSearch}*/}
-      {/*  isTouched={isTouched}*/}
-      {/*  filters={filters}*/}
-      {/*  setFilters={setFilters}*/}
-      {/*  clearFilters={clearFilters}*/}
-      {/*  useTechLvls={useTechLvls}*/}
-      {/*  lvls={lvls}*/}
-      {/*  setLvls={setLvls}*/}
-      {/*/>*/}
       <MyTable headers={headers} items={items} />
     </Box>
   );

@@ -1,4 +1,4 @@
-export const swordsData = {
+export const _swordsData = {
   Bokken: {
     key: "Bokken",
     title: "Боккэн",
@@ -11,7 +11,6 @@ export const swordsData = {
 отсутствие “Бритвенно-острого” свойства.</p>
     `,
   },
-
   Chokuto: {
     key: "Chokuto",
     title: "Тёкуто",

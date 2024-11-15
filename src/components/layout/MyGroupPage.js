@@ -1,6 +1,6 @@
 import MySearchFilter from "@/components/search-filter/MySearchFilter";
 import MyCardList from "@/components/card/MyCardList";
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
 import MyLinks from "@/components/link/MyLinks";
 import { parseFilters } from "@/helpers/parseFilters";
