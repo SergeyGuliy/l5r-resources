@@ -66,7 +66,7 @@ export default function MyGroupPage({
     }
 
     return listToReturn;
-  }, [list, lvls, search, filterKeys]);
+  }, [list, useTechLvls, lvls, useSearch, search, filters, filterKeys]);
 
   function clearFilters() {
     setFilters(defaultFilters);

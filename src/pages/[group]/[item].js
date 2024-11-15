@@ -19,8 +19,6 @@ export default function GroupItem() {
     [groupData?.list, router.query.item]
   );
 
-  console.log(router.query.item);
-
   if (!groupData) return;
   if (!itemData) return;
 

@@ -1,5 +1,7 @@
-.card-preview p {
+.card-preview p,
+.card-preview li{
   padding-bottom: 10px;
+  font-weight: 300 !important;
 }
 .card-preview em {
   font-style: italic;
@@ -7,4 +9,8 @@
 }
 .card-preview ul {
   padding-left: 10px;
+}
+.card-preview strong {
+  font-weight: 800;
+  color: lightblue;
 }

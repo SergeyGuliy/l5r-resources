@@ -5,7 +5,6 @@ import { useMemo } from "react";
 
 export default function MyCardList({ list, setCardData }) {
   const router = useRouter();
-  console.log(list);
 
   const dynamicWidthGrid = useMemo(() => {
     if (router.query.item)
