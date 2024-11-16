@@ -1,3 +1,5 @@
+import { generateLinkPath } from "@/helpers/generateLinkPath";
+
 import { groups, translations } from "../constants";
 
 import { katas, katasFilterSettings } from "./_kata";
@@ -18,12 +20,11 @@ import {
   shuji,
   shujiFilterSettings,
 } from "@/mockData/routeData/techniques/_shuji";
-import { generateLinkPath } from "@/helpers/generateLinkPath";
 
 export const techniquesRouteData = {
   [groups.techniques]: {
     title: translations.techniques,
-    list: [...katas, ...kiho, ...ninjutsu, ...ritual],
+    list: { ...appeal, ...katas, ...kiho, ...ninjutsu, ...ritual, ...shuji },
     links: [
       { title: translations.kata, link: generateLinkPath(groups.kata) },
       { title: translations.ninjutsu, link: generateLinkPath(groups.ninjutsu) },
@@ -41,11 +42,27 @@ export const techniquesRouteData = {
     useTechLvls: true,
     useSearch: true,
   },
+  [groups.appeal]: {
+    title: translations.appeal,
+    list: appeal,
+    links: [],
+    filterSettings: [appealFilterSettings],
+    useTechLvls: true,
+    useSearch: true,
+  },
   [groups.kata]: {
     title: translations.kata,
     list: katas,
     links: [],
     filterSettings: [katasFilterSettings],
+    useTechLvls: true,
+    useSearch: true,
+  },
+  [groups.kiho]: {
+    title: translations.kiho,
+    list: kiho,
+    links: [],
+    filterSettings: [kihoFilterSettings],
     useTechLvls: true,
     useSearch: true,
   },
@@ -62,22 +79,6 @@ export const techniquesRouteData = {
     list: ritual,
     links: [],
     filterSettings: [ritualFilterSettings],
-    useTechLvls: true,
-    useSearch: true,
-  },
-  [groups.kiho]: {
-    title: translations.kiho,
-    list: kiho,
-    links: [],
-    filterSettings: [kihoFilterSettings],
-    useTechLvls: true,
-    useSearch: true,
-  },
-  [groups.appeal]: {
-    title: translations.appeal,
-    list: appeal,
-    links: [],
-    filterSettings: [appealFilterSettings],
     useTechLvls: true,
     useSearch: true,
   },

@@ -8,7 +8,7 @@ export const groups = {
   skills: "skills",
   skillsCombat: "skillsCombat",
   skillsCraft: "skillsCraft",
-  skillSocial: "skillSocial",
+  skillsSocial: "skillsSocial",
   skillsScience: "skillsScience",
   skillsWorking: "skillsWorking",
 
@@ -46,7 +46,7 @@ export const translations = {
   skills: "Навыки",
   skillsCombat: "Боевые",
   skillsCraft: "Ремесленные",
-  skillSocial: "Социальные",
+  skillsSocial: "Социальные",
   skillsScience: "Учёные",
   skillsWorking: "Трудовые",
 

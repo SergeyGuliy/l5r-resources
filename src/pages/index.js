@@ -81,7 +81,7 @@ export default function Home() {
         </InputGroup>
       </Group>
 
-      <MyLinks linksData={d} />
+      {/*<MyLinks linksData={d} />*/}
       <MyLinks linksData={a} />
       <MyLinks linksData={b} />
       <MyLinks linksData={c} />

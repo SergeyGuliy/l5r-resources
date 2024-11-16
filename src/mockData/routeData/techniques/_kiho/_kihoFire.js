@@ -1,9 +1,1 @@
-export const _kihoFire = [
-  {
-    title: "Пробивной",
-    rank: 1,
-    description: `
-
-  `,
-  },
-];
+export const _kihoFire = {};

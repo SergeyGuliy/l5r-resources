@@ -4,15 +4,13 @@ import { translations } from "@/mockData/routeData/constants";
 import { useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { generateLinkPath } from "@/helpers/generateLinkPath";
 
 export function MyCardListItem({ data }) {
   const router = useRouter();
   const link = useMemo(
-    () => ({
-      pathname: "/[group]/[item]",
-      query: { group: router.query.group, item: data.link },
-    }),
-    [data.link, router.query.group]
+    () => generateLinkPath([router.query.group, data.key]),
+    [data.key, router.query.group]
   );
 
   return (

@@ -15,7 +15,7 @@ export default function GroupItem() {
   );
 
   const itemData = useMemo(
-    () => groupData?.list?.find((i) => i.link === router.query.item),
+    () => groupData?.list?.[router.query.item],
     [groupData?.list, router.query.item]
   );
 
@@ -26,7 +26,7 @@ export default function GroupItem() {
     <MyGroupPage
       title={groupData.title}
       links={groupData.links}
-      list={groupData.list}
+      list={Object.values(groupData.list)}
       filterGroups={groupData.filterSettings}
       useTechLvls={groupData.useTechLvls}
       useSearch={groupData.useSearch}
