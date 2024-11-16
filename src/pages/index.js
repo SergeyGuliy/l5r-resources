@@ -9,6 +9,7 @@ import { generateLinkPath } from "@/helpers/generateLinkPath";
 const a = [
   { title: translations.techniques, link: generateLinkPath(groups.techniques) },
   { title: translations.skills, link: generateLinkPath(groups.skills) },
+  { title: translations.stances, link: generateLinkPath(groups.stances) },
 
   // { title: "Преимущества и недостатки (стр 100-137)", link: "/group" },
   // { title: "Принципы Бусидо", link: "/group" },
@@ -20,16 +21,20 @@ const b = [
 ];
 
 const c = [
-  { title: translations.stances, link: generateLinkPath(groups.stances) },
   { title: translations.states, link: generateLinkPath(groups.states) },
   { title: "Действия в бою", link: "/group" },
-  { title: "Другое", link: "/other" },
 ];
 
 const d = [
   { title: "Кланы", link: "/group" },
   { title: "Семьи", link: "/group" },
   { title: "Школы", link: "/group" },
+];
+
+const e = [
+  { title: "Кольца", link: "/rings" },
+  { title: "Принципы Бушидо", link: "/bushido" },
+  { title: "Другое", link: "/other" },
 ];
 
 // Спрятаные свойства
@@ -76,10 +81,11 @@ export default function Home() {
         </InputGroup>
       </Group>
 
+      <MyLinks linksData={d} />
       <MyLinks linksData={a} />
       <MyLinks linksData={b} />
       <MyLinks linksData={c} />
-      <MyLinks linksData={d} />
+      <MyLinks linksData={e} />
     </Box>
   );
 }
