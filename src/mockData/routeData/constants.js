@@ -1,4 +1,8 @@
-import { iconOpportunity, iconStrife } from "@/components/MyIcon";
+import {
+  iconExplosive,
+  iconOpportunity,
+  iconStrife,
+} from "@/components/MyIcon";
 
 export const groups = {
   techniques: "techniques",
@@ -79,6 +83,7 @@ export const translations = {
 export const injectImages = [
   ["Y", iconOpportunity],
   ["T", iconStrife],
+  ["E", iconExplosive],
 ];
 export const allLvls = [1, 2, 3, 4, 5];
 
