@@ -4,8 +4,8 @@ import { Box, Button, Group, Input } from "@chakra-ui/react";
 
 import { generateLinkPath } from "@/helpers/generateLinkPath";
 
-import { InputGroup } from "@/components/ui/input-group";
 import MyLinks from "@/components/link/MyLinks";
+import { InputGroup } from "@/components/ui/input-group";
 import { groups, translations } from "@/mockData/routeData/constants";
 import { titleArmor, titleWeapons } from "@/mockData/tableData/constants";
 
@@ -30,6 +30,8 @@ const group3 = [
   { title: translations.states, link: generateLinkPath(groups.states) },
   { title: translations.other, link: generateLinkPath(groups.other) },
   // { title: "Действия в бою", link: "/group" },
+  // { title: "Типы техник", link: "/group" },
+  // { title: "Роли персонажей", link: "/group" },
 ];
 const group4 = [
   { title: translations.clans, link: generateLinkPath(groups.clans) },
