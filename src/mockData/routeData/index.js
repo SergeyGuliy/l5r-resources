@@ -8,6 +8,7 @@ import { weapArmPropRouteData } from "@/mockData/routeData/weaponsAndArmorProper
 import { otherRouteData } from "@/mockData/routeData/otherRouteData";
 import { familiesRouteData } from "@/mockData/clansFamiliesSchools/families";
 import { clansRouteData } from "@/mockData/clansFamiliesSchools/clans";
+import { schoolsRouteData } from "@/mockData/clansFamiliesSchools/schools";
 
 export const routeData = {
   ...techniquesRouteData,
@@ -20,4 +21,5 @@ export const routeData = {
   ...otherRouteData,
   ...clansRouteData,
   ...familiesRouteData,
+  ...schoolsRouteData,
 };

@@ -22,7 +22,7 @@ export default function MyHoverCard({ children, cardData }) {
         </Link>
       </HoverCardTrigger>
 
-      <HoverCardContent maxHeight={500} overflow={"auto"}>
+      <HoverCardContent maxHeight={"40vh"} maxWidth={"50vw"} overflow={"auto"}>
         <HoverCardArrow />
 
         {cardData?.description && (

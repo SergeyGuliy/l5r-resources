@@ -1,0 +1,29 @@
+{
+  "_rings": {
+    "air": "Воздух",
+    "earth": "Земля",
+    "fire": "Огонь",
+    "water": "Вода",
+    "void": "Пустота"
+  },
+
+
+  "techniquesGroups": {
+    "Ката": "kataGroup",
+    "Кихо": "kihoGroup",
+    "Воззвания": "appealGroup",
+    "Ритуалы": "ritualGroup",
+    "Сюдзи": "shujiGroup",
+    "Ниндзюцу": "ninjutsuGroup"
+  },
+
+
+  "techniques": {
+    "appeal": "appeal",
+    "katas": "katas",
+    "kiho": "kiho",
+    "ninjutsu": "ninjutsu",
+    "ritual": "ritual",
+    "shuji": "shuji"
+  }
+}

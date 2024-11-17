@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 
 import { translations } from "@/mockData/routeData/constants";
 import MyHoverCard from "@/components/MyHoverCard";
+import { techniquesGroups } from "@/mockData/routeData/techniquesGroups";
 
 export default function MyCardPreview({ cardData }) {
   const router = useRouter();
@@ -30,6 +31,23 @@ export default function MyCardPreview({ cardData }) {
     () => ["base", "sm"].includes(currentBreakpoint),
     [currentBreakpoint]
   );
+
+  const selectN = {
+    1: " (выберите одно)",
+    2: " (выберите два)",
+    3: " (выберите три)",
+    4: " (выберите четыре)",
+    5: " (выберите пять)",
+  };
+
+  const techniquesGroupsN = {
+    [techniquesGroups.kataGroup]: "Ката",
+    [techniquesGroups.kihoGroup]: "Кихо",
+    [techniquesGroups.appealGroup]: "Воззвания",
+    [techniquesGroups.ritualGroup]: "Ритуалы",
+    [techniquesGroups.shujiGroup]: "Сюдзи",
+    [techniquesGroups.ninjutsuGroup]: "Ниндзюцу",
+  };
 
   return (
     <Card.Root
@@ -93,53 +111,110 @@ export default function MyCardPreview({ cardData }) {
         </HStack>
         {cardData?.ringIncrease?.length && (
           <Text mb={3}>
-            <span style={{ fontWeight: 800 }}>Повышение ранга Кольца: </span>
+            <span style={{ fontWeight: 700 }}>Повышение ранга Кольца: </span>
             {cardData.ringIncrease.map((i, iIndex) => (
-              <>
+              <span key={iIndex}>
                 {iIndex > 0 ? ", " : ""}
-                <MyHoverCard
-                  style={{ fontWeight: 400 }}
-                  cardData={i}
-                  key={iIndex}
-                >
+                <MyHoverCard style={{ fontWeight: 400 }} cardData={i}>
                   +1 {i.title}
                 </MyHoverCard>
-              </>
+              </span>
             ))}
           </Text>
         )}
-        {cardData?.skillIncrease?.length && (
+        {cardData?.skillAvailable && (
           <Text mb={3}>
-            <span style={{ fontWeight: 800 }}>Повышение ранга Навыка: </span>
-            {cardData.skillIncrease.map((i, iIndex) => (
-              <>
+            <span style={{ fontWeight: 700 }}>
+              Стартовые навыки{selectN[cardData?.skillAvailable.toSelect]}
+              :&nbsp;
+            </span>
+            {cardData.skillAvailable.items.map((i, iIndex) => (
+              <span key={iIndex}>
                 {iIndex > 0 ? ", " : ""}
-                <MyHoverCard
-                  style={{ fontWeight: 400 }}
-                  cardData={i}
-                  key={iIndex}
-                >
+                <MyHoverCard style={{ fontWeight: 400 }} cardData={i}>
                   +1 {i.title}
                 </MyHoverCard>
-              </>
+              </span>
+            ))}
+          </Text>
+        )}
+        {cardData?.startHonor && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 700 }}>Честь: </span>
+            {cardData.startHonor}
+          </Text>
+        )}
+        {cardData?.availableTechniques?.length && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 700 }}>Доступные техники: </span>
+            {cardData.availableTechniques.map((i, iIndex) => (
+              <span key={iIndex}>
+                {iIndex > 0 ? ", " : ""}
+                <MyHoverCard style={{ fontWeight: 400 }} cardData={i}>
+                  {i.title}
+                </MyHoverCard>
+              </span>
+            ))}
+          </Text>
+        )}
+        {cardData?.startingTechniques?.length && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 700 }}>Стартовые техники: </span>
+            {cardData.startingTechniques.map((i, iIndex) => (
+              <Box key={iIndex} pl={3}>
+                <span style={{ fontWeight: 700 }}>
+                  {i.type.title}
+                  {selectN[i?.toSelect]}:&nbsp;
+                </span>
+                {i.items.map((j, jIndex) => (
+                  <span key={jIndex}>
+                    {jIndex > 0 ? ", " : ""}
+                    <MyHoverCard style={{ fontWeight: 400 }} cardData={j}>
+                      {i.title}
+                    </MyHoverCard>
+                  </span>
+                ))}
+              </Box>
+            ))}
+          </Text>
+        )}
+        {!!cardData?.schoolAbility && (
+          <MyHoverCard
+            style={{ fontWeight: 400 }}
+            cardData={cardData.schoolAbility}
+          >
+            <span style={{ fontWeight: 700 }}>Способность школы: </span>
+            {cardData.schoolAbility.title}
+          </MyHoverCard>
+        )}
+        {cardData?.skillIncrease?.length && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 700 }}>Повышение ранга Навыка: </span>
+            {cardData.skillIncrease.map((i, iIndex) => (
+              <span key={iIndex}>
+                {iIndex > 0 ? ", " : ""}
+                <MyHoverCard style={{ fontWeight: 400 }} cardData={i}>
+                  +1 {i.title}
+                </MyHoverCard>
+              </span>
             ))}
           </Text>
         )}
         {cardData?.startStatus && (
           <Text mb={3}>
-            <span style={{ fontWeight: 800 }}>Статус: </span>
+            <span style={{ fontWeight: 700 }}>Статус: </span>
             {cardData.startStatus}
           </Text>
         )}
         {cardData?.startGlory && (
           <Text mb={3}>
-            <span style={{ fontWeight: 800 }}>Слава: </span>
+            <span style={{ fontWeight: 700 }}>Слава: </span>
             {cardData.startGlory}
           </Text>
         )}
         {cardData?.startMoney && (
           <Text mb={3}>
-            <span style={{ fontWeight: 800 }}>Стартовые деньги:: </span>
+            <span style={{ fontWeight: 700 }}>Стартовые деньги:: </span>
             {cardData.startMoney}
           </Text>
         )}
