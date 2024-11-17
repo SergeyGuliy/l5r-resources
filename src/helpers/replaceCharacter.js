@@ -1,4 +1,4 @@
-export function replaceCharacter(originString, replaceMap) {
+export function replaceCharacter(originString = "", replaceMap) {
   let toReturn = originString;
 
   replaceMap.map(([oldString, newString]) => {

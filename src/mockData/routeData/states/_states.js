@@ -2,8 +2,6 @@ import { replaceCharacter } from "@/helpers/replaceCharacter";
 import { injector } from "@/helpers/injector";
 
 import { groups, injectImages } from "@/mockData/routeData/constants";
-import { TEMPCONVER } from "@/helpers/TEMPCONVER";
-import { _kihoEarth } from "@/mockData/routeData/techniques/_kiho/_kihoEarth";
 
 const obj = {
   Oderzhimyy: {
@@ -185,5 +183,3 @@ export const _states = injector(obj, (original) => ({
   description: replaceCharacter(original.description, injectImages),
   group: groups.states,
 }));
-
-// TEMPCONVER(_kataRange, "_kataRange", "groups.kata", "groups.kataRange");

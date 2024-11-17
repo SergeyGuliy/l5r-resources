@@ -32,8 +32,8 @@ const group3 = [
   { title: "Действия в бою", link: "/group" },
 ];
 const group4 = [
-  // { title: "Кланы", link: "/group" },
-  // { title: "Семьи", link: "/group" },
+  { title: translations.clans, link: generateLinkPath(groups.clans) },
+  { title: translations.families, link: generateLinkPath(groups.families) },
   // { title: "Школы", link: "/group" },
 ];
 

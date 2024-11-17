@@ -13,6 +13,7 @@ export default function GroupIndex() {
     [router.query.group]
   );
 
+  console.log(groupData);
   if (!groupData) return;
 
   return (

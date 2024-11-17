@@ -1,7 +1,6 @@
 import { injector } from "@/helpers/injector";
 import { replaceCharacter } from "@/helpers/replaceCharacter";
 import { groups, injectImages } from "@/mockData/routeData/constants";
-import { generateLink } from "@/helpers/generateLink";
 
 export const obj = {
   Kultura: {

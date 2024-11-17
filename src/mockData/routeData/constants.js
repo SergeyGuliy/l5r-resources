@@ -12,6 +12,8 @@ export const groups = {
   rings: "rings",
   weapArmProp: "weapArmProp",
   other: "other",
+  clans: "clans",
+  families: "families",
 
   skills: "skills",
   skillsCombat: "skillsCombat",
@@ -54,6 +56,8 @@ export const translations = {
   rings: "Кольца",
   weapArmProp: "Свойства предметов",
   other: "Другое",
+  clans: "Кланы",
+  families: "Семьи",
 
   skills: "Навыки",
   skillsCombat: "Боевые",

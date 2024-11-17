@@ -20,5 +20,4 @@ export const ${key} = injector(obj, (original) => ({
   description: replaceCharacter(original.description, injectImages),
 }));
   `);
-  debugger;
 }
