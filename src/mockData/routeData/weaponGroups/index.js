@@ -8,8 +8,8 @@ import { replaceCharacter } from "@/helpers/replaceCharacter";
 
 const obj = {
   Swords: {
-    key: "Swords",
     title: "Мечи",
+    key: "Swords",
     description: `
 <p>Пусть копье и лук используется так же часто, как и клинок,
 но меч - это символ касты
@@ -21,8 +21,8 @@ const obj = {
     `,
   },
   Axes: {
-    key: "Axes",
     title: "Топоры",
+    key: "Axes",
     description: `
 <p>Воины Рокугана обычно не пользуются топорами.
 Разработанное на основе сельскохозяйственных
@@ -31,8 +31,8 @@ const obj = {
     `,
   },
   BluntWeapons: {
-    key: "bluntWeapons",
     title: "Тупое оружие",
+    key: "bluntWeapons",
     description: `
 <p>Дубинки, молоты и подобное оружие - все это подпадает под категорию тупого оружия. Тупое оружие
 часто чрезвычайно эффективно пробивает тяжелую
@@ -40,8 +40,8 @@ const obj = {
     `,
   },
   HandWeapons: {
-    key: "handWeapons",
     title: "Ручное оружие",
+    key: "handWeapons",
     description: `
 <p>Это простое оружие, часто приспособленное из инструментов. Многие из них по-прежнему являются
 в первую очередь инструментами, такие как нож,
@@ -52,8 +52,8 @@ const obj = {
     `,
   },
   PoleWeapons: {
-    key: "poleWeapons",
     title: "Древковое оружие",
+    key: "poleWeapons",
     description: `
 <p>Древковое оружие - это широкий класс оружия,
 который включает в себя простые копья, прочные
@@ -64,8 +64,8 @@ const obj = {
     `,
   },
   Bows: {
-    key: "Bows",
     title: "Луки",
+    key: "Bows",
     description: `
 <p>После катаны и, возможно,
 копья лук, вероятно, является самым культовым из самурайских видов оружия. От
@@ -76,8 +76,8 @@ const obj = {
     `,
   },
   Crossbows: {
-    key: "Crossbows",
     title: "Арбалеты",
+    key: "Crossbows",
     description: `
 <p>Большинство самураев, не являющихся членами
 клана Краба, относятся к арбалетам в равной степени с презрением и недоверием. Презрение вызвано тем, что арбалет полагается на механические
@@ -91,8 +91,8 @@ const obj = {
     `,
   },
   SpecialWeapons: {
-    key: "SpecialWeapons",
     title: "Особое оружие",
+    key: "SpecialWeapons",
     description: `
 <p>Оружие, используемое убийцами и шпионами,
 представляет собой смесь подручных средств, модифицированных сельскохозяйственных орудий и
@@ -104,8 +104,8 @@ const obj = {
     `,
   },
   UnarmedAttacks: {
-    key: "UnarmedAttacks",
     title: "Безоружные атаки",
+    key: "UnarmedAttacks",
     description: `
 <p></p>
     `,

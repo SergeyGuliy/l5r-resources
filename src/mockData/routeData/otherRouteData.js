@@ -2,6 +2,7 @@ import { groups, translations } from "@/mockData/routeData/constants";
 
 import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { techniquesGroups } from "@/mockData/routeData/techniquesGroups";
 
 export const otherRouteData = {
   [groups.other]: {
@@ -9,6 +10,7 @@ export const otherRouteData = {
     list: {
       ...weaponGroups,
       ...weaponsAndArmorData,
+      ...techniquesGroups,
     },
     useTechLvls: false,
     useSearch: true,
