@@ -1,19 +1,21 @@
-import { InputGroup } from "@/components/ui/input-group";
-import { Box, Button, Group, Input } from "@chakra-ui/react";
-import { LuX } from "react-icons/lu";
 import { useState } from "react";
+import { LuX } from "react-icons/lu";
+import { Box, Button, Group, Input } from "@chakra-ui/react";
+
+import { generateLinkPath } from "@/helpers/generateLinkPath";
+
+import { InputGroup } from "@/components/ui/input-group";
 import MyLinks from "@/components/link/MyLinks";
 import { groups, translations } from "@/mockData/routeData/constants";
-import { generateLinkPath } from "@/helpers/generateLinkPath";
 import { titleArmor, titleWeapons } from "@/mockData/tableData/constants";
 
-const a = [
+const group1 = [
   { title: translations.techniques, link: generateLinkPath(groups.techniques) },
-  { title: translations.skills, link: generateLinkPath(groups.skills) },
   { title: translations.stances, link: generateLinkPath(groups.stances) },
+  { title: translations.skills, link: generateLinkPath(groups.skills) },
 ];
 
-const b = [
+const group2 = [
   { title: titleWeapons, link: "/weapons" },
   { title: titleArmor, link: "/armors" },
   {
@@ -22,19 +24,17 @@ const b = [
   },
 ];
 
-const c = [{ title: "Действия в бою", link: "/group" }];
-
-const d = [
-  // { title: "Кланы", link: "/group" },
-  // { title: "Семьи", link: "/group" },
-  // { title: "Школы", link: "/group" },
-];
-
-const e = [
+const group3 = [
   { title: translations.bushido, link: generateLinkPath(groups.bushido) },
   { title: translations.rings, link: generateLinkPath(groups.rings) },
   { title: translations.states, link: generateLinkPath(groups.states) },
   { title: translations.other, link: generateLinkPath(groups.other) },
+  { title: "Действия в бою", link: "/group" },
+];
+const group4 = [
+  // { title: "Кланы", link: "/group" },
+  // { title: "Семьи", link: "/group" },
+  // { title: "Школы", link: "/group" },
 ];
 
 // Спрятаные свойства
@@ -80,10 +80,10 @@ export default function Home() {
       </Group>
 
       {/*<MyLinks linksData={d} />*/}
-      <MyLinks linksData={a} />
-      <MyLinks linksData={b} />
-      <MyLinks linksData={c} />
-      <MyLinks linksData={e} />
+      <MyLinks linksData={group1} />
+      <MyLinks linksData={group2} />
+      <MyLinks linksData={group3} />
+      <MyLinks linksData={group4} />
     </Box>
   );
 }
