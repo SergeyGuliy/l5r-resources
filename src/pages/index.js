@@ -11,8 +11,6 @@ const a = [
   { title: translations.techniques, link: generateLinkPath(groups.techniques) },
   { title: translations.skills, link: generateLinkPath(groups.skills) },
   { title: translations.stances, link: generateLinkPath(groups.stances) },
-
-  // { title: "Преимущества и недостатки (стр 100-137)", link: "/group" },
 ];
 
 const b = [
@@ -24,10 +22,7 @@ const b = [
   },
 ];
 
-const c = [
-  { title: "Действия в бою", link: "/group" },
-  { title: "Другое", link: "/other" },
-];
+const c = [{ title: "Действия в бою", link: "/group" }];
 
 const d = [
   // { title: "Кланы", link: "/group" },
@@ -39,12 +34,13 @@ const e = [
   { title: translations.bushido, link: generateLinkPath(groups.bushido) },
   { title: translations.rings, link: generateLinkPath(groups.rings) },
   { title: translations.states, link: generateLinkPath(groups.states) },
+  { title: translations.other, link: generateLinkPath(groups.other) },
 ];
 
 // Спрятаные свойства
 // { title: "Фигуры", link: "/group" },
 // { title: "Местность", link: "/group" },
-// { title: "Кольца", link: "/group" },
+// { title: "Преимущества и недостатки (стр 100-137)", link: "/group" },
 
 export default function Home() {
   const [search, setSearch] = useState("");

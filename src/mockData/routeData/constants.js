@@ -11,6 +11,7 @@ export const groups = {
   bushido: "bushido",
   rings: "rings",
   weapArmProp: "weapArmProp",
+  other: "other",
 
   skills: "skills",
   skillsCombat: "skillsCombat",
@@ -52,6 +53,7 @@ export const translations = {
   bushido: "Принципы Бусидо",
   rings: "Кольца",
   weapArmProp: "Свойства предметов",
+  other: "Другое",
 
   skills: "Навыки",
   skillsCombat: "Боевые",
@@ -95,4 +97,9 @@ export const allLvls = [1, 2, 3, 4, 5];
 
 export const hiddenNinjutsuTrue = "hiddenNinjutsuTrue";
 export const hiddenRitualsTrue = "hiddenRitualsTrue";
-export const hiddenFilter = [hiddenNinjutsuTrue, hiddenRitualsTrue];
+export const hiddenOtherTrue = "hiddenOtherTrue";
+export const hiddenFilter = [
+  hiddenNinjutsuTrue,
+  hiddenRitualsTrue,
+  hiddenOtherTrue,
+];

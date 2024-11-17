@@ -1,4 +1,12 @@
-export const weaponGroups = {
+import { injector } from "@/helpers/injector";
+import {
+  groups,
+  hiddenOtherTrue,
+  injectImages,
+} from "@/mockData/routeData/constants";
+import { replaceCharacter } from "@/helpers/replaceCharacter";
+
+const obj = {
   Swords: {
     key: "Swords",
     title: "Мечи",
@@ -103,3 +111,9 @@ export const weaponGroups = {
     `,
   },
 };
+
+export const weaponGroups = injector(obj, (original) => ({
+  group: groups.other,
+  subgroup: hiddenOtherTrue,
+  description: replaceCharacter(original.description, injectImages),
+}));

@@ -5,6 +5,7 @@ import { skillsRouteData } from "@/mockData/routeData/skills";
 import { bushidoRouteData } from "@/mockData/routeData/bushido";
 import { ringsRouteData } from "@/mockData/routeData/rings";
 import { weapArmPropRouteData } from "@/mockData/routeData/weaponsAndArmorProperties";
+import { otherRouteData } from "@/mockData/routeData/otherRouteData";
 
 export const routeData = {
   ...techniquesRouteData,
@@ -14,4 +15,5 @@ export const routeData = {
   ...bushidoRouteData,
   ...ringsRouteData,
   ...weapArmPropRouteData,
+  ...otherRouteData,
 };
