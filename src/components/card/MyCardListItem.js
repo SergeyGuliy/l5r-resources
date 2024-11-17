@@ -40,11 +40,13 @@ export function MyCardListItem({ data }) {
                 )}
               </HStack>
             </Stack>
-            <Stack gap="0">
-              <Text color="fg.muted" textStyle="sm">
-                Ранг: {data.rank}
-              </Text>
-            </Stack>
+            {typeof data.rank === "number" && (
+              <Stack gap="0">
+                <Text color="fg.muted" textStyle="sm">
+                  Ранг: {data.rank}
+                </Text>
+              </Stack>
+            )}
           </Stack>
         </Card.Root>
       </Link>

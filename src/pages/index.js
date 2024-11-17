@@ -29,12 +29,12 @@ const group3 = [
   { title: translations.rings, link: generateLinkPath(groups.rings) },
   { title: translations.states, link: generateLinkPath(groups.states) },
   { title: translations.other, link: generateLinkPath(groups.other) },
-  { title: "Действия в бою", link: "/group" },
+  // { title: "Действия в бою", link: "/group" },
 ];
 const group4 = [
   { title: translations.clans, link: generateLinkPath(groups.clans) },
   { title: translations.families, link: generateLinkPath(groups.families) },
-  // { title: "Школы", link: "/group" },
+  { title: translations.schools, link: generateLinkPath(groups.schools) },
 ];
 
 // Спрятаные свойства

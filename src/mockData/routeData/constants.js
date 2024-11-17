@@ -14,6 +14,7 @@ export const groups = {
   other: "other",
   clans: "clans",
   families: "families",
+  schools: "schools",
 
   skills: "skills",
   skillsCombat: "skillsCombat",
@@ -58,6 +59,7 @@ export const translations = {
   other: "Другое",
   clans: "Кланы",
   families: "Семьи",
+  schools: "Школы",
 
   skills: "Навыки",
   skillsCombat: "Боевые",

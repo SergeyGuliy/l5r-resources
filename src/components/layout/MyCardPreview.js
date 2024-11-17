@@ -12,6 +12,7 @@ import { useMemo } from "react";
 import { useRouter } from "next/router";
 
 import { translations } from "@/mockData/routeData/constants";
+import MyHoverCard from "@/components/MyHoverCard";
 
 export default function MyCardPreview({ cardData }) {
   const router = useRouter();
@@ -58,8 +59,6 @@ export default function MyCardPreview({ cardData }) {
         <HStack gap="0" justifyContent={"space-between"}>
           <Card.Title mb="2">
             {cardData.title}
-            <br />
-            {cardData.link}
 
             {cardData.rank && (
               <Text color="fg.muted" textStyle="sm">
@@ -82,6 +81,58 @@ export default function MyCardPreview({ cardData }) {
             </Badge>
           )}
         </HStack>
+        {cardData?.ringIncrease?.length && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 800 }}>Повышение ранга Кольца: </span>
+            {cardData.ringIncrease.map((i, iIndex) => (
+              <>
+                {iIndex > 0 ? ", " : ""}
+                <MyHoverCard
+                  style={{ fontWeight: 400 }}
+                  cardData={i}
+                  key={iIndex}
+                >
+                  +1 {i.title}
+                </MyHoverCard>
+              </>
+            ))}
+          </Text>
+        )}
+        {cardData?.skillIncrease?.length && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 800 }}>Повышение ранга Навыка: </span>
+            {cardData.skillIncrease.map((i, iIndex) => (
+              <>
+                {iIndex > 0 ? ", " : ""}
+                <MyHoverCard
+                  style={{ fontWeight: 400 }}
+                  cardData={i}
+                  key={iIndex}
+                >
+                  +1 {i.title}
+                </MyHoverCard>
+              </>
+            ))}
+          </Text>
+        )}
+        {cardData?.startStatus && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 800 }}>Статус: </span>
+            {cardData.startStatus}
+          </Text>
+        )}
+        {cardData?.startGlory && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 800 }}>Слава: </span>
+            {cardData.startGlory}
+          </Text>
+        )}
+        {cardData?.startMoney && (
+          <Text mb={3}>
+            <span style={{ fontWeight: 800 }}>Стартовые деньги:: </span>
+            {cardData.startMoney}
+          </Text>
+        )}
         <Box
           className={"card-preview"}
           dangerouslySetInnerHTML={{ __html: cardData.description }}
