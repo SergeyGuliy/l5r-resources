@@ -8,6 +8,9 @@ export const groups = {
   techniques: "techniques",
   stances: "stances",
   states: "states",
+  bushido: "bushido",
+  rings: "rings",
+  weapArmProp: "weapArmProp",
 
   skills: "skills",
   skillsCombat: "skillsCombat",
@@ -46,6 +49,9 @@ export const translations = {
   techniques: "Техники",
   stances: "Стойки",
   states: "Состояния",
+  bushido: "Принципы Бусидо",
+  rings: "Кольца",
+  weapArmProp: "Свойства предметов",
 
   skills: "Навыки",
   skillsCombat: "Боевые",

@@ -1,4 +1,8 @@
-export const weaponsAndArmorProperties = {
+import { injector } from "@/helpers/injector";
+import { replaceCharacter } from "@/helpers/replaceCharacter";
+import { groups, injectImages } from "@/mockData/routeData/constants";
+
+export const obj = {
   Ceremonial: {
     key: "Ceremonial",
     title: "Церемониальное",
@@ -142,3 +146,8 @@ export const weaponsAndArmorProperties = {
     `,
   },
 };
+
+export const _weapArmProp = injector(obj, (original) => ({
+  description: replaceCharacter(original.description, injectImages),
+  group: groups.weapArmProp,
+}));

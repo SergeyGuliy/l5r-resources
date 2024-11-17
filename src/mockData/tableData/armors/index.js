@@ -1,5 +1,5 @@
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
 
 export const armors = [
   {
@@ -12,7 +12,7 @@ export const armors = [
   {
     armorCharacteristics_Name: weaponsAndArmorData.RegularClothes,
     armorCharacteristics_Resistance: "Физическое 1",
-    armorCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
+    armorCharacteristics_Properties: [_weapArmProp.Secular],
     weaponsAndArmorCharacteristics_Rare: 1,
     weaponsAndArmorCharacteristics_Price: "1 бу",
   },
@@ -20,8 +20,8 @@ export const armors = [
     armorCharacteristics_Name: weaponsAndArmorData.CeremonialClothes,
     armorCharacteristics_Resistance: "Физическое 1",
     armorCharacteristics_Properties: [
-      weaponsAndArmorProperties.Ceremonial,
-      weaponsAndArmorProperties.Magnificent,
+      _weapArmProp.Ceremonial,
+      _weapArmProp.Magnificent,
     ],
     weaponsAndArmorCharacteristics_Rare: 4,
     weaponsAndArmorCharacteristics_Price: "1 коку",
@@ -33,7 +33,7 @@ export const armors = [
     <br>
     Сверхъестественное 3
     `,
-    armorCharacteristics_Properties: [weaponsAndArmorProperties.Ceremonial],
+    armorCharacteristics_Properties: [_weapArmProp.Ceremonial],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "4 коку",
   },
@@ -41,9 +41,9 @@ export const armors = [
     armorCharacteristics_Name: weaponsAndArmorData.RoadClothing,
     armorCharacteristics_Resistance: "Физическое 2",
     armorCharacteristics_Properties: [
-      weaponsAndArmorProperties.Strong,
-      weaponsAndArmorProperties.Secular,
-      weaponsAndArmorProperties.Skillful,
+      _weapArmProp.Strong,
+      _weapArmProp.Secular,
+      _weapArmProp.Skillful,
     ],
     weaponsAndArmorCharacteristics_Rare: 2,
     weaponsAndArmorCharacteristics_Price: "2 бу",
@@ -51,14 +51,14 @@ export const armors = [
   {
     armorCharacteristics_Name: weaponsAndArmorData.HiddenArmor,
     armorCharacteristics_Resistance: "Физическое 2",
-    armorCharacteristics_Properties: [weaponsAndArmorProperties.Secret],
+    armorCharacteristics_Properties: [_weapArmProp.Secret],
     weaponsAndArmorCharacteristics_Rare: 4,
     weaponsAndArmorCharacteristics_Price: "5 коку",
   },
   {
     armorCharacteristics_Name: weaponsAndArmorData.AshigaruArmor,
     armorCharacteristics_Resistance: "Физическое 3",
-    armorCharacteristics_Properties: [weaponsAndArmorProperties.Combat],
+    armorCharacteristics_Properties: [_weapArmProp.Combat],
     weaponsAndArmorCharacteristics_Rare: 3,
     weaponsAndArmorCharacteristics_Price: "5 коку",
   },
@@ -66,9 +66,9 @@ export const armors = [
     armorCharacteristics_Name: weaponsAndArmorData.LacqueredArmor,
     armorCharacteristics_Resistance: "Физическое 4",
     armorCharacteristics_Properties: [
-      weaponsAndArmorProperties.Ceremonial,
-      weaponsAndArmorProperties.Bulky,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.Ceremonial,
+      _weapArmProp.Bulky,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 6,
     weaponsAndArmorCharacteristics_Price: "25 коку",
@@ -77,9 +77,9 @@ export const armors = [
     armorCharacteristics_Name: weaponsAndArmorData.PlateArmor,
     armorCharacteristics_Resistance: "Физическое 5",
     armorCharacteristics_Properties: [
-      weaponsAndArmorProperties.Bulky,
-      weaponsAndArmorProperties.Strong,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.Bulky,
+      _weapArmProp.Strong,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 8,
     weaponsAndArmorCharacteristics_Price: "40 коку",

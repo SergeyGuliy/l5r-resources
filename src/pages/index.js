@@ -5,6 +5,7 @@ import { useState } from "react";
 import MyLinks from "@/components/link/MyLinks";
 import { groups, translations } from "@/mockData/routeData/constants";
 import { generateLinkPath } from "@/helpers/generateLinkPath";
+import { titleArmor, titleWeapons } from "@/mockData/tableData/constants";
 
 const a = [
   { title: translations.techniques, link: generateLinkPath(groups.techniques) },
@@ -12,35 +13,36 @@ const a = [
   { title: translations.stances, link: generateLinkPath(groups.stances) },
 
   // { title: "Преимущества и недостатки (стр 100-137)", link: "/group" },
-  // { title: "Принципы Бусидо", link: "/group" },
 ];
 
 const b = [
-  { title: "Оружие", link: "/weapons" },
-  { title: "Броня", link: "/armors" },
+  { title: titleWeapons, link: "/weapons" },
+  { title: titleArmor, link: "/armors" },
+  {
+    title: translations.weapArmProp,
+    link: generateLinkPath(groups.weapArmProp),
+  },
 ];
 
 const c = [
-  { title: translations.states, link: generateLinkPath(groups.states) },
   { title: "Действия в бою", link: "/group" },
+  { title: "Другое", link: "/other" },
 ];
 
 const d = [
-  { title: "Кланы", link: "/group" },
-  { title: "Семьи", link: "/group" },
-  { title: "Школы", link: "/group" },
+  // { title: "Кланы", link: "/group" },
+  // { title: "Семьи", link: "/group" },
+  // { title: "Школы", link: "/group" },
 ];
 
 const e = [
-  { title: "Кольца", link: "/rings" },
-  { title: "Принципы Бушидо", link: "/bushido" },
-  { title: "Другое", link: "/other" },
+  { title: translations.bushido, link: generateLinkPath(groups.bushido) },
+  { title: translations.rings, link: generateLinkPath(groups.rings) },
+  { title: translations.states, link: generateLinkPath(groups.states) },
 ];
 
 // Спрятаные свойства
 // { title: "Фигуры", link: "/group" },
-// { title: "Свойства предметов", link: "/group" },
-// { title: "Описание оружия", link: "/group" },
 // { title: "Местность", link: "/group" },
 // { title: "Кольца", link: "/group" },
 

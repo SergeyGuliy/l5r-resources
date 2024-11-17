@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/otherData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 import { skills } from "@/mockData/routeData/skills";
 
 export const special = [
@@ -10,12 +10,10 @@ export const special = [
     weaponsCharacteristics_BaseDamage: 1,
     weaponsCharacteristics_Deadliness: 2,
     weaponsCharacteristics_Grip: "Одноручный: -",
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secret],
+    weaponsCharacteristics_Properties: [_weapArmProp.Secret],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "5 бу",
-    weaponsCharacteristics_Skill: skills.find(
-      (i) => i.link === "Boevye_iskusstva_Strelba"
-    ),
+    weaponsCharacteristics_Skill: skills.Boevye_iskusstva_Strelba,
   },
   {
     weaponsCharacteristics_Name: weaponsAndArmorData.Kama,
@@ -23,12 +21,10 @@ export const special = [
     weaponsCharacteristics_BaseDamage: 3,
     weaponsCharacteristics_Deadliness: 3,
     weaponsCharacteristics_Grip: "Одноручный: -",
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secret],
+    weaponsCharacteristics_Properties: [_weapArmProp.Secret],
     weaponsAndArmorCharacteristics_Rare: 4,
     weaponsAndArmorCharacteristics_Price: "1 коку",
-    weaponsCharacteristics_Skill: skills.find(
-      (i) => i.link === "Boevye_iskusstva_Blizhniy_boy"
-    ),
+    weaponsCharacteristics_Skill: skills.Boevye_iskusstva_Blizhniy_boy,
   },
   {
     weaponsCharacteristics_Name: weaponsAndArmorData.KusariGama,
@@ -41,15 +37,13 @@ export const special = [
    Двуручный: Дистанция 2-3
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Secret,
-      weaponsAndArmorProperties.Grasping,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.Secret,
+      _weapArmProp.Grasping,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 6,
     weaponsAndArmorCharacteristics_Price: "5 коку",
-    weaponsCharacteristics_Skill: skills.find(
-      (i) => i.link === "Boevye_iskusstva_Blizhniy_boy"
-    ),
+    weaponsCharacteristics_Skill: skills.Boevye_iskusstva_Blizhniy_boy,
   },
   {
     weaponsCharacteristics_Name: weaponsAndArmorData.Shuriken,
@@ -61,12 +55,10 @@ export const special = [
    <br>
    Одноручный [Стрельба]: Дистанция 1-3
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secret],
+    weaponsCharacteristics_Properties: [_weapArmProp.Secret],
     weaponsAndArmorCharacteristics_Rare: 6,
     weaponsAndArmorCharacteristics_Price: "1 коку",
-    weaponsCharacteristics_Skill: skills.find(
-      (i) => i.link === "Boevye_iskusstva_Blizhniy_boy"
-    ),
+    weaponsCharacteristics_Skill: skills.Boevye_iskusstva_Blizhniy_boy,
   },
 ].map((i) => ({
   ...i,

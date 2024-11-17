@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/otherData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 
 export const swords = [
   {
@@ -13,7 +13,7 @@ export const swords = [
     <br>
     Двуручный: Урон +2
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
+    weaponsCharacteristics_Properties: [_weapArmProp.Secular],
     weaponsAndArmorCharacteristics_Rare: 3,
     weaponsAndArmorCharacteristics_Price: "1 бу",
   },
@@ -26,8 +26,8 @@ export const swords = [
     Одноручный: –
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Ceremonial,
-      weaponsAndArmorProperties.RazorSharp,
+      _weapArmProp.Ceremonial,
+      _weapArmProp.RazorSharp,
     ],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "20 коку",
@@ -52,7 +52,7 @@ export const swords = [
     weaponsCharacteristics_Grip: `
     Одноручный: –
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Grasping],
+    weaponsCharacteristics_Properties: [_weapArmProp.Grasping],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "15 коку",
   },
@@ -66,7 +66,7 @@ export const swords = [
     <br>
     Двуручный: Смертоносность +1    
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.RazorSharp],
+    weaponsCharacteristics_Properties: [_weapArmProp.RazorSharp],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "15 коку",
   },
@@ -81,8 +81,8 @@ export const swords = [
     Двуручный: Смертоносность +2    
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Ceremonial,
-      weaponsAndArmorProperties.RazorSharp,
+      _weapArmProp.Ceremonial,
+      _weapArmProp.RazorSharp,
     ],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "20 коку",
@@ -96,8 +96,8 @@ export const swords = [
     Двуручный: -
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Ceremonial,
-      weaponsAndArmorProperties.RazorSharp,
+      _weapArmProp.Ceremonial,
+      _weapArmProp.RazorSharp,
     ],
     weaponsAndArmorCharacteristics_Rare: 8,
     weaponsAndArmorCharacteristics_Price: "20 коку",
@@ -111,8 +111,8 @@ export const swords = [
     Одноручный: –
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Strong,
-      weaponsAndArmorProperties.RazorSharp,
+      _weapArmProp.Strong,
+      _weapArmProp.RazorSharp,
     ],
     weaponsAndArmorCharacteristics_Rare: 8,
     weaponsAndArmorCharacteristics_Price: "20 коку",
@@ -128,8 +128,8 @@ export const swords = [
     Двуручный: Смертоносность +2
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Ceremonial,
-      weaponsAndArmorProperties.RazorSharp,
+      _weapArmProp.Ceremonial,
+      _weapArmProp.RazorSharp,
     ],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "15 коку",
@@ -143,8 +143,8 @@ export const swords = [
     Двуручный: –
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Bulky,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.Bulky,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 8,
     weaponsAndArmorCharacteristics_Price: "40 коку",

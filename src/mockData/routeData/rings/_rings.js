@@ -1,4 +1,8 @@
-export const rings = {
+import { injector } from "@/helpers/injector";
+import { groups, injectImages } from "@/mockData/routeData/constants";
+import { replaceCharacter } from "@/helpers/replaceCharacter";
+
+const obj = {
   air: {
     title: "Воздух",
     key: "air",
@@ -186,3 +190,8 @@ export const rings = {
     `,
   },
 };
+
+export const _rings = injector(obj, (original) => ({
+  group: groups.rings,
+  description: replaceCharacter(original.description, injectImages),
+}));

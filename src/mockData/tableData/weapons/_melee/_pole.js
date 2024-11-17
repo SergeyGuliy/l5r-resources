@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/otherData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 
 export const pole = [
   {
@@ -14,9 +14,9 @@ export const pole = [
     Двуручный: Урон +2
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Bulky,
-      weaponsAndArmorProperties.Strong,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.Bulky,
+      _weapArmProp.Strong,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 8,
     weaponsAndArmorCharacteristics_Price: "15 коку",
@@ -29,7 +29,7 @@ export const pole = [
     weaponsCharacteristics_Grip: `
     Двуручный: -
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
+    weaponsCharacteristics_Properties: [_weapArmProp.Secular],
     weaponsAndArmorCharacteristics_Rare: 2,
     weaponsAndArmorCharacteristics_Price: "2 бу",
   },
@@ -42,8 +42,8 @@ export const pole = [
     Двуручный: -
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Grasping,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.Grasping,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 6,
     weaponsAndArmorCharacteristics_Price: "7 бу",
@@ -57,9 +57,9 @@ export const pole = [
     Двуручный: -
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Bulky,
-      weaponsAndArmorProperties.Combat,
-      weaponsAndArmorProperties.RazorSharp,
+      _weapArmProp.Bulky,
+      _weapArmProp.Combat,
+      _weapArmProp.RazorSharp,
     ],
     weaponsAndArmorCharacteristics_Rare: 8,
     weaponsAndArmorCharacteristics_Price: "10 коку",
@@ -73,8 +73,8 @@ export const pole = [
     Двуручный: -
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Grasping,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.Grasping,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "10 коку",
@@ -87,7 +87,7 @@ export const pole = [
     weaponsCharacteristics_Grip: `
     Двуручный: -
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Combat],
+    weaponsCharacteristics_Properties: [_weapArmProp.Combat],
     weaponsAndArmorCharacteristics_Rare: 3,
     weaponsAndArmorCharacteristics_Price: "5 коку",
   },

@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/otherData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 
 export const blunt = [
   {
@@ -13,7 +13,7 @@ export const blunt = [
     <br>
     Двуручный: Урон +1
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
+    weaponsCharacteristics_Properties: [_weapArmProp.Secular],
     weaponsAndArmorCharacteristics_Rare: 1,
     weaponsAndArmorCharacteristics_Price: "1 бу",
   },
@@ -27,7 +27,7 @@ export const blunt = [
     <br>
     Двуручный: Урон +2
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
+    weaponsCharacteristics_Properties: [_weapArmProp.Secular],
     weaponsAndArmorCharacteristics_Rare: 4,
     weaponsAndArmorCharacteristics_Price: "3 бу",
   },
@@ -40,8 +40,8 @@ export const blunt = [
     Одноручный: –
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Secret,
-      weaponsAndArmorProperties.Secular,
+      _weapArmProp.Secret,
+      _weapArmProp.Secular,
     ],
     weaponsAndArmorCharacteristics_Rare: 5,
     weaponsAndArmorCharacteristics_Price: "1 коку",
@@ -55,8 +55,8 @@ export const blunt = [
     Двуручный: –
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Bulky,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.Bulky,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 8,
     weaponsAndArmorCharacteristics_Price: "30 коку",
@@ -70,9 +70,9 @@ export const blunt = [
     Двуручный: –
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Bulky,
-      weaponsAndArmorProperties.Combat,
-      weaponsAndArmorProperties.Strong,
+      _weapArmProp.Bulky,
+      _weapArmProp.Combat,
+      _weapArmProp.Strong,
     ],
     weaponsAndArmorCharacteristics_Rare: 5,
     weaponsAndArmorCharacteristics_Price: "20 коку",

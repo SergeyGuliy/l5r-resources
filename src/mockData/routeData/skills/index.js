@@ -17,16 +17,18 @@ const skillsFilterSettings = {
   ],
 };
 
+export const skills = {
+  ..._skillsCombat,
+  ..._skillsCraft,
+  ..._skillsSocial,
+  ..._skillsScience,
+  ..._skillsWorking,
+};
+
 export const skillsRouteData = {
   [groups.skills]: {
     title: translations.skills,
-    list: {
-      ..._skillsCombat,
-      ..._skillsCraft,
-      ..._skillsSocial,
-      ..._skillsScience,
-      ..._skillsWorking,
-    },
+    list: skills,
     filterSettings: [skillsFilterSettings],
     useSearch: true,
   },

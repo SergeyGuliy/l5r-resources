@@ -1,9 +1,9 @@
 import { renderToString } from "react-dom/server";
 import MyHoverCard from "@/components/MyHoverCard";
 
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/otherData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 
 export const hand = [
@@ -16,8 +16,8 @@ export const hand = [
     Одноручный: –
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Secret,
-      weaponsAndArmorProperties.Grasping,
+      _weapArmProp.Secret,
+      _weapArmProp.Grasping,
     ],
     weaponsAndArmorCharacteristics_Rare: 5,
     weaponsAndArmorCharacteristics_Price: "5 бу",
@@ -33,9 +33,9 @@ export const hand = [
     Двуручный: Смертоносность +2
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Secret,
-      weaponsAndArmorProperties.Secular,
-      weaponsAndArmorProperties.RazorSharp,
+      _weapArmProp.Secret,
+      _weapArmProp.Secular,
+      _weapArmProp.RazorSharp,
     ],
     weaponsAndArmorCharacteristics_Rare: 1,
     weaponsAndArmorCharacteristics_Price: "1 коку",
@@ -50,7 +50,7 @@ export const hand = [
     <br>
     Двуручный: ${renderToString(
       <ChakraProvider value={defaultSystem}>
-        <MyHoverCard cardData={weaponsAndArmorProperties.Grasping} />
+        <MyHoverCard cardData={_weapArmProp.Grasping} />
       </ChakraProvider>
     )}
     `,
@@ -67,8 +67,8 @@ export const hand = [
     Одноручный: –
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.Ceremonial,
-      weaponsAndArmorProperties.Secret,
+      _weapArmProp.Ceremonial,
+      _weapArmProp.Secret,
     ],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "15 коку",

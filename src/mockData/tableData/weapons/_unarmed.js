@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/otherData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 import { skills } from "@/mockData/routeData/skills";
 
 export const unarmed = [
@@ -10,7 +10,7 @@ export const unarmed = [
     weaponsCharacteristics_BaseDamage: 1,
     weaponsCharacteristics_Deadliness: 2,
     weaponsCharacteristics_Grip: "",
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Grasping],
+    weaponsCharacteristics_Properties: [_weapArmProp.Grasping],
     weaponsAndArmorCharacteristics_Rare: "",
     weaponsAndArmorCharacteristics_Price: "",
   },
@@ -37,7 +37,5 @@ export const unarmed = [
 ].map((i) => ({
   ...i,
   weaponsCharacteristics_Category: weaponGroups.UnarmedAttacks,
-  weaponsCharacteristics_Skill: skills.find(
-    (i) => i.link === "Boevye_iskusstva_Bezoruzhnyy_boy"
-  ),
+  weaponsCharacteristics_Skill: skills.Boevye_iskusstva_Bezoruzhnyy_boy,
 }));

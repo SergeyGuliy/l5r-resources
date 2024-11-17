@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/otherData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 import { skills } from "@/mockData/routeData/skills";
 
 export const range = [
@@ -12,7 +12,7 @@ export const range = [
     weaponsCharacteristics_Grip: `
    Двуручный: -
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Combat],
+    weaponsCharacteristics_Properties: [_weapArmProp.Combat],
     weaponsAndArmorCharacteristics_Rare: 6,
     weaponsAndArmorCharacteristics_Price: "6 коку",
     weaponsCharacteristics_Category: weaponGroups.Bows,
@@ -25,7 +25,7 @@ export const range = [
     weaponsCharacteristics_Grip: `
    Двуручный: -
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Combat],
+    weaponsCharacteristics_Properties: [_weapArmProp.Combat],
     weaponsAndArmorCharacteristics_Rare: 4,
     weaponsAndArmorCharacteristics_Price: "6 коку",
     weaponsCharacteristics_Category: weaponGroups.Bows,
@@ -52,8 +52,8 @@ export const range = [
     Двуручный: -
     `,
     weaponsCharacteristics_Properties: [
-      weaponsAndArmorProperties.InPreparation,
-      weaponsAndArmorProperties.Combat,
+      _weapArmProp.InPreparation,
+      _weapArmProp.Combat,
     ],
     weaponsAndArmorCharacteristics_Rare: 8,
     weaponsAndArmorCharacteristics_Price: "40 коку",
@@ -61,7 +61,5 @@ export const range = [
   },
 ].map((i) => ({
   ...i,
-  weaponsCharacteristics_Skill: skills.find(
-    (i) => i.link === "Boevye_iskusstva_Strelba"
-  ),
+  weaponsCharacteristics_Skill: skills.Boevye_iskusstva_Strelba,
 }));

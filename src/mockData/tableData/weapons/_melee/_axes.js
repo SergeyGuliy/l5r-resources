@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/otherData/weaponsAndArmorData";
-import { weaponsAndArmorProperties } from "@/mockData/otherData/weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/otherData/weaponGroups";
+import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
+import { weaponGroups } from "@/mockData/routeData/weaponGroups";
 
 export const axes = [
   {
@@ -13,7 +13,7 @@ export const axes = [
     <br>
     Двуручный: Смертоносность +2
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Secular],
+    weaponsCharacteristics_Properties: [_weapArmProp.Secular],
     weaponsAndArmorCharacteristics_Rare: 5,
     weaponsAndArmorCharacteristics_Price: "3 бу",
   },
@@ -25,7 +25,7 @@ export const axes = [
     weaponsCharacteristics_Grip: `
     Двуручный: -
     `,
-    weaponsCharacteristics_Properties: [weaponsAndArmorProperties.Combat],
+    weaponsCharacteristics_Properties: [_weapArmProp.Combat],
     weaponsAndArmorCharacteristics_Rare: 7,
     weaponsAndArmorCharacteristics_Price: "5 коку",
   },

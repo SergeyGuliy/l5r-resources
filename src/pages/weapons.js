@@ -1,11 +1,15 @@
 import { MyTableWeaponsPage } from "@/components/layout/MyTableWeaponsPage";
 
-import { weaponsCharacteristics } from "@/mockData/otherData/weaponsAndArmorCharacteristics";
+import { weaponsCharacteristics } from "@/mockData/tableData/weaponsAndArmorCharacteristics";
 import { weapons } from "@/mockData/tableData/weapons";
-
-const title = "Оружие";
-const headers = Object.values(weaponsCharacteristics);
+import { titleWeapons } from "@/mockData/tableData/constants";
 
 export default function Weapons() {
-  return <MyTableWeaponsPage title={title} headers={headers} items={weapons} />;
+  return (
+    <MyTableWeaponsPage
+      title={titleWeapons}
+      headers={Object.values(weaponsCharacteristics)}
+      items={weapons}
+    />
+  );
 }
