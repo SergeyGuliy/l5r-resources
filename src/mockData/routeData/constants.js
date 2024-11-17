@@ -2,6 +2,7 @@ import {
   iconExplosive,
   iconOpportunity,
   iconStrife,
+  iconSuccess,
 } from "@/components/MyIcon";
 
 export const groups = {
@@ -47,6 +48,7 @@ export const groups = {
   maho: "maho",
   ritual: "ritual",
   ninjutsu: "ninjutsu",
+  schoolAbilities: "schoolAbilities",
 };
 
 export const translations = {
@@ -92,20 +94,24 @@ export const translations = {
   maho: "Махо",
   ritual: "Ритуалы",
   ninjutsu: "Ниндзюцу",
+  schoolAbilities: "Способность школы",
 };
 
 export const injectImages = [
   ["Y", iconOpportunity],
   ["T", iconStrife],
   ["E", iconExplosive],
+  ["R", iconSuccess],
 ];
 export const allLvls = [1, 2, 3, 4, 5];
 
 export const hiddenNinjutsuTrue = "hiddenNinjutsuTrue";
 export const hiddenRitualsTrue = "hiddenRitualsTrue";
+export const hiddenSchoolAbilities = "hiddenSchoolAbilities";
 export const hiddenOtherTrue = "hiddenOtherTrue";
 export const hiddenFilter = [
   hiddenNinjutsuTrue,
   hiddenRitualsTrue,
+  hiddenSchoolAbilities,
   hiddenOtherTrue,
 ];

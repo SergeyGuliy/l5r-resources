@@ -4,12 +4,13 @@ import { replaceCharacter } from "@/helpers/replaceCharacter";
 import { groups, injectImages } from "@/mockData/routeData/constants";
 import { _rings } from "@/mockData/routeData/rings/_rings";
 import { skills } from "@/mockData/routeData/skills";
+import { techniquesGroups } from "@/mockData/routeData/techniquesGroups";
 
 const obj = {
   CrabClanHida: {
     title: "111",
     key: "CrabClanHida",
-    description: `
+    descriptionAbout: `
 <p>111</p>
     `,
     ringIncrease: [_rings.earth, _rings.water],
@@ -18,15 +19,24 @@ const obj = {
       toSelect: 5,
     },
     startHonor: 40,
-    availableTechniques: [],
-    startingTechniques: {
-      katas: {
+    availableTechniques: [
+      techniquesGroups.kataGroup,
+      techniquesGroups.ritualGroup,
+      techniquesGroups.shujiGroup,
+    ],
+    startingTechniques: [
+      {
+        type: techniquesGroups.kataGroup,
         items: [],
-        toSelect: 2,
       },
-    },
+      {
+        type: techniquesGroups.kataGroup,
+        items: [],
+        toSelect: 1,
+      },
+    ],
     schoolAbility: `
-<p>111</p>
+<p><strong>111</strong>222</p>
     `,
     startingEquipment: `
 <p>111</p>

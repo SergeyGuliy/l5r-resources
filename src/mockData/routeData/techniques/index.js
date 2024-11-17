@@ -20,11 +20,23 @@ import {
   shuji,
   shujiFilterSettings,
 } from "@/mockData/routeData/techniques/_shuji";
+import {
+  schoolAbilities,
+  schoolAbilitiesFilterSettings,
+} from "@/mockData/routeData/techniques/_schoolAbilities";
 
 export const techniquesRouteData = {
   [groups.techniques]: {
     title: translations.techniques,
-    list: { ...appeal, ...katas, ...kiho, ...ninjutsu, ...ritual, ...shuji },
+    list: {
+      ...appeal,
+      ...katas,
+      ...kiho,
+      ...ninjutsu,
+      ...ritual,
+      ...shuji,
+      ...schoolAbilities,
+    },
     links: [
       { title: translations.kata, link: generateLinkPath(groups.kata) },
       { title: translations.ninjutsu, link: generateLinkPath(groups.ninjutsu) },
@@ -32,12 +44,19 @@ export const techniquesRouteData = {
       { title: translations.kiho, link: generateLinkPath(groups.kiho) },
       { title: translations.appeal, link: generateLinkPath(groups.appeal) },
       { title: translations.shuji, link: generateLinkPath(groups.shuji) },
+      {
+        title: translations.schoolAbilities,
+        link: generateLinkPath(groups.schoolAbilities),
+      },
     ],
     filterSettings: [
+      appealFilterSettings,
       katasFilterSettings,
+      kihoFilterSettings,
       ninjutsuFilterSettings,
       ritualFilterSettings,
-      kihoFilterSettings,
+      shujiFilterSettings,
+      schoolAbilitiesFilterSettings,
     ],
     useTechLvls: true,
     useSearch: true,
@@ -88,6 +107,14 @@ export const techniquesRouteData = {
     links: [],
     filterSettings: [shujiFilterSettings],
     useTechLvls: true,
+    useSearch: true,
+  },
+  [groups.schoolAbilities]: {
+    title: translations.schoolAbilities,
+    list: schoolAbilities,
+    links: [],
+    filterSettings: [schoolAbilitiesFilterSettings],
+    useTechLvls: false,
     useSearch: true,
   },
 };

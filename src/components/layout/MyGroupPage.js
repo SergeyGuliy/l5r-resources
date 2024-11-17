@@ -50,7 +50,9 @@ export default function MyGroupPage({
     let listToReturn = [...list];
 
     if (useTechLvls && lvls.length) {
-      listToReturn = listToReturn.filter((i) => lvls.includes(i.rank));
+      listToReturn = listToReturn.filter((i) =>
+        i.rank > 0 ? lvls.includes(i.rank) : true
+      );
     }
 
     if (useSearch && search.length) {

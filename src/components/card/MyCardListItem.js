@@ -40,7 +40,7 @@ export function MyCardListItem({ data }) {
                 )}
               </HStack>
             </Stack>
-            {typeof data.rank === "number" && (
+            {typeof data.rank === "number" && data.rank > 0 && (
               <Stack gap="0">
                 <Text color="fg.muted" textStyle="sm">
                   Ранг: {data.rank}

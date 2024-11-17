@@ -60,9 +60,19 @@ export default function MyCardPreview({ cardData }) {
           <Card.Title mb="2">
             {cardData.title}
 
-            {cardData.rank && (
+            {!!cardData.rank && cardData.rank > 0 && (
               <Text color="fg.muted" textStyle="sm">
                 Ранг: {cardData.rank}
+              </Text>
+            )}
+            {cardData?.clan && (
+              <Text color="fg.muted" textStyle="sm">
+                Клан: {cardData.clan}
+              </Text>
+            )}
+            {cardData?.school && (
+              <Text color="fg.muted" textStyle="sm">
+                Школа: {cardData.school}
               </Text>
             )}
           </Card.Title>
