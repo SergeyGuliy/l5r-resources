@@ -6,41 +6,42 @@ import { _rings } from "@/mockData/routeData/rings/_rings";
 import { skills } from "@/mockData/routeData/skills";
 import { techniquesGroups } from "@/mockData/routeData/techniquesGroups";
 import { schoolAbilities } from "@/mockData/routeData/techniques/_schoolAbilities";
+import { shuji } from "@/mockData/routeData/techniques/_shuji";
+import { appeal } from "@/mockData/routeData/techniques/_appeal";
+import { ritual } from "@/mockData/routeData/techniques/_ritual";
+import { katas } from "@/mockData/routeData/techniques/_kata";
 
 const obj = {
-  CrabClanHida: {
-    title: "111",
-    key: "CrabClanHida",
-    ringIncrease: [_rings.earth, _rings.water],
+  UnicornClanIde: {
+    title: "Школа Купцов Идэ [Придворный]",
+    key: "UnicornClanIde",
+    ringIncrease: [_rings.air, _rings.water],
     skillAvailable: {
       items: [
         skills.Torgovlya,
         skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
+        skills.Igry,
+        skills.Rabota,
+        skills.Boevye_iskusstva_Strelba,
+        skills.Medicina,
+        skills.Vyzhivanie,
       ],
       toSelect: 5,
     },
-    startHonor: 40,
+    startHonor: 45,
     availableTechniques: [
       techniquesGroups.kataGroup,
       techniquesGroups.ritualGroup,
       techniquesGroups.shujiGroup,
-
-      techniquesGroups.kihoGroup,
-      techniquesGroups.appealGroup,
-      techniquesGroups.ninjutsuGroup,
     ],
     startingTechniques: [
       {
-        type: techniquesGroups.kataGroup,
-        items: [],
+        type: techniquesGroups.shujiGroup,
+        items: [shuji.Pritoki_torgovli],
       },
       {
         type: techniquesGroups.kataGroup,
-        items: [],
+        items: [shuji.Intonaciya, shuji.Melkovode],
         toSelect: 1,
       },
     ],
@@ -52,39 +53,44 @@ const obj = {
 <p>111</p>
     `,
   },
-  CrabClanHida: {
-    title: "111",
-    key: "CrabClanHida",
+  UnicornClanIuti: {
+    title: "Школа Мастеров Мейсёдо Иути [Сюгендзя, Ремесленник]",
+    key: "UnicornClanIuti",
     ringIncrease: [_rings.earth, _rings.water],
     skillAvailable: {
       items: [
-        skills.Torgovlya,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
+        skills.Estetika,
+        skills.Dizayn,
+        skills.Boevye_iskusstva_Bezoruzhnyy_boy,
+        skills.Meditaciya,
+        skills.Vyzhivanie,
+        skills.Teologiya,
       ],
-      toSelect: 5,
+      toSelect: 3,
     },
     startHonor: 40,
     availableTechniques: [
-      techniquesGroups.kataGroup,
+      techniquesGroups.appealGroup,
       techniquesGroups.ritualGroup,
       techniquesGroups.shujiGroup,
-
-      techniquesGroups.kihoGroup,
-      techniquesGroups.appealGroup,
-      techniquesGroups.ninjutsuGroup,
     ],
     startingTechniques: [
       {
-        type: techniquesGroups.kataGroup,
-        items: [],
+        type: techniquesGroups.appealGroup,
+        items: [
+          appeal.Zahvat_Zemli,
+          appeal.Balzam_Dzjorodzina,
+          appeal.Stremitelnaya_volna,
+        ],
+        toSelect: 2,
       },
       {
-        type: techniquesGroups.kataGroup,
-        items: [],
+        type: techniquesGroups.ritualGroup,
+        items: [ritual.Obshchenie_s_duhami],
+      },
+      {
+        type: techniquesGroups.shujiGroup,
+        items: [shuji.Raskopannaya_rodoslovnaya, shuji.Kolodec_zhelaniy],
         toSelect: 1,
       },
     ],
@@ -96,40 +102,37 @@ const obj = {
 <p>111</p>
     `,
   },
-  CrabClanHida: {
-    title: "111",
-    key: "CrabClanHida",
-    ringIncrease: [_rings.earth, _rings.water],
+  UnicornClanMoto: {
+    title: "Школа Завоевателей Мото [Буси]",
+    key: "UnicornClanMoto",
+    ringIncrease: [_rings.fire, _rings.water],
     skillAvailable: {
       items: [
-        skills.Torgovlya,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
+        skills.Komandovanie,
+        skills.Fizicheskaya_podgotovka,
+        skills.Vystuplenie,
+        skills.Boevye_iskusstva_Blizhniy_boy,
+        skills.Boevye_iskusstva_Bezoruzhnyy_boy,
+        skills.Vyzhivanie,
+        skills.Taktika,
       ],
       toSelect: 5,
     },
-    startHonor: 40,
+    startHonor: 35,
     availableTechniques: [
       techniquesGroups.kataGroup,
       techniquesGroups.ritualGroup,
       techniquesGroups.shujiGroup,
-
-      techniquesGroups.kihoGroup,
-      techniquesGroups.appealGroup,
-      techniquesGroups.ninjutsuGroup,
     ],
     startingTechniques: [
       {
-        type: techniquesGroups.kataGroup,
-        items: [],
+        type: techniquesGroups.shujiGroup,
+        items: [shuji.Molnienosnyy_reyd, shuji.Skolzkie_manyovry],
+        toSelect: 1,
       },
       {
-        type: techniquesGroups.kataGroup,
-        items: [],
-        toSelect: 1,
+        type: techniquesGroups.shujiGroup,
+        items: [shuji.Vsyo_v_shutku],
       },
     ],
     schoolAbility: schoolAbilities.WindOfDesert,
@@ -140,18 +143,19 @@ const obj = {
 <p>111</p>
     `,
   },
-  CrabClanHida: {
-    title: "111",
-    key: "CrabClanHida",
-    ringIncrease: [_rings.earth, _rings.water],
+  UnicornClanSindze: {
+    title: "Школа Наездников Синдзё [Буси, Придворный]",
+    key: "UnicornClanSindze",
+    ringIncrease: [_rings.earth, _rings.fire],
     skillAvailable: {
       items: [
         skills.Torgovlya,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
+        skills.Boevye_iskusstva_Blizhniy_boy,
+        skills.Boevye_iskusstva_Strelba,
+        skills.Medicina,
+        skills.Zhulnichestvo,
+        skills.Vyzhivanie,
+        skills.Taktika,
       ],
       toSelect: 5,
     },
@@ -160,20 +164,16 @@ const obj = {
       techniquesGroups.kataGroup,
       techniquesGroups.ritualGroup,
       techniquesGroups.shujiGroup,
-
-      techniquesGroups.kihoGroup,
-      techniquesGroups.appealGroup,
-      techniquesGroups.ninjutsuGroup,
     ],
     startingTechniques: [
       {
         type: techniquesGroups.kataGroup,
-        items: [],
+        items: [katas.Razrushitelnyy_kak_Ogon, katas.Probivnoy_kak_Voda],
+        toSelect: 1,
       },
       {
-        type: techniquesGroups.kataGroup,
-        items: [],
-        toSelect: 1,
+        type: techniquesGroups.shujiGroup,
+        items: [shuji.Skorost_Gospozhi_Sindzyo_Edinorog],
       },
     ],
     schoolAbility: schoolAbilities.BurnOnHorse,
@@ -184,40 +184,37 @@ const obj = {
 <p>111</p>
     `,
   },
-  CrabClanHida: {
-    title: "111",
-    key: "CrabClanHida",
-    ringIncrease: [_rings.earth, _rings.water],
+  UnicornClanYtaku: {
+    title: "Школа Боевых Дев Утаку [Буси]",
+    key: "UnicornClanYtaku",
+    ringIncrease: [_rings.air, _rings.earth],
     skillAvailable: {
       items: [
-        skills.Torgovlya,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
-        skills.Uchtivost,
+        skills.Komandovanie,
+        skills.Fizicheskaya_podgotovka,
+        skills.Pravitelstvo,
+        skills.Boevye_iskusstva_Blizhniy_boy,
+        skills.Meditaciya,
+        skills.Kuznechnoe_delo,
+        skills.Vyzhivanie,
       ],
       toSelect: 5,
     },
-    startHonor: 40,
+    startHonor: 50,
     availableTechniques: [
       techniquesGroups.kataGroup,
       techniquesGroups.ritualGroup,
       techniquesGroups.shujiGroup,
-
-      techniquesGroups.kihoGroup,
-      techniquesGroups.appealGroup,
-      techniquesGroups.ninjutsuGroup,
     ],
     startingTechniques: [
       {
         type: techniquesGroups.kataGroup,
-        items: [],
+        items: [katas.Stil_polumesyaca, katas.Stil_zheleznogo_lesa],
+        toSelect: 1,
       },
       {
         type: techniquesGroups.kataGroup,
-        items: [],
-        toSelect: 1,
+        items: [katas.Reshimost_voina],
       },
     ],
     schoolAbility: schoolAbilities.HeroicAttack,

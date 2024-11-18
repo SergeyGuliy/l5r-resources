@@ -4,9 +4,9 @@ import MySidebar from "@/components/layout/MySidebar";
 
 import "@/styles/table.css";
 import "@/styles/card-preview.css";
-import { techniquesRouteData } from "@/mockData/routeData/techniques";
-import { groups, translations } from "@/mockData/routeData/constants";
-import { skillsRouteData } from "@/mockData/routeData/skills";
+// import { techniquesRouteData } from "@/mockData/routeData/techniques";
+// import { groups, translations } from "@/mockData/routeData/constants";
+// import { skillsRouteData } from "@/mockData/routeData/skills";
 
 export const metadata = {
   title: "L5R База знаний",

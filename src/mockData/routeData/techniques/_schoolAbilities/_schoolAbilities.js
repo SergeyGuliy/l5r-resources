@@ -6,7 +6,6 @@ import {
   hiddenSchoolAbilities,
   injectImages,
 } from "@/mockData/routeData/constants";
-import { clans } from "@/mockData/clansFamiliesSchools/clans";
 
 const obj = {
   PathOfCrab: {

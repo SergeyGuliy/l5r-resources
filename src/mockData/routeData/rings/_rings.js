@@ -195,3 +195,8 @@ export const _rings = injector(obj, (original) => ({
   group: groups.rings,
   description: replaceCharacter(original.description, injectImages),
 }));
+
+export const _ringSelect = {
+  title: "к двум разным Кольцам",
+  key: "select",
+};

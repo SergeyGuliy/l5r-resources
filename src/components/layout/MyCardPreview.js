@@ -40,15 +40,6 @@ export default function MyCardPreview({ cardData }) {
     5: " (выберите пять)",
   };
 
-  const techniquesGroupsN = {
-    [techniquesGroups.kataGroup]: "Ката",
-    [techniquesGroups.kihoGroup]: "Кихо",
-    [techniquesGroups.appealGroup]: "Воззвания",
-    [techniquesGroups.ritualGroup]: "Ритуалы",
-    [techniquesGroups.shujiGroup]: "Сюдзи",
-    [techniquesGroups.ninjutsuGroup]: "Ниндзюцу",
-  };
-
   return (
     <Card.Root
       flexDirection="row"
