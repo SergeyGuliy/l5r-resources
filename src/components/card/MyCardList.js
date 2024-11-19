@@ -14,7 +14,7 @@ export default function MyCardList({ list }) {
         md: "calc(50% - 8px)",
         lg: "calc(50% - 8px)",
         xl: "calc(50% - 8px)",
-        "2xl": "calc(50% - 8px)",
+        "2xl": "calc(34% - 8px)",
       };
     return {
       base: "100%",
@@ -39,10 +39,10 @@ export default function MyCardList({ list }) {
     return {
       base: "12",
       sm: "12",
-      md: "6",
+      md: "12",
       lg: "6",
-      xl: "4",
-      "2xl": "3",
+      xl: "6",
+      "2xl": "4",
     };
   }, [router.query.item]);
 

@@ -25,6 +25,58 @@ import {
   schoolAbilitiesFilterSettings,
 } from "@/mockData/routeData/techniques/_schoolAbilities";
 
+const links = [
+  {
+    key: groups.techniques,
+    title: translations.techniques,
+    link: generateLinkPath(groups.techniques),
+  },
+  {
+    key: groups.kata,
+    title: translations.kata,
+    link: generateLinkPath(groups.kata),
+  },
+  {
+    key: groups.ninjutsu,
+    title: translations.ninjutsu,
+    link: generateLinkPath(groups.ninjutsu),
+  },
+  {
+    key: groups.ritual,
+    title: translations.ritual,
+    link: generateLinkPath(groups.ritual),
+  },
+  {
+    key: groups.kiho,
+    title: translations.kiho,
+    link: generateLinkPath(groups.kiho),
+  },
+  {
+    key: groups.appeal,
+    title: translations.appeal,
+    link: generateLinkPath(groups.appeal),
+  },
+  {
+    key: groups.shuji,
+    title: translations.shuji,
+    link: generateLinkPath(groups.shuji),
+  },
+  {
+    key: groups.schoolAbilities,
+    title: translations.schoolAbilities,
+    link: generateLinkPath(groups.schoolAbilities),
+  },
+];
+
+function linksWIthActive(activeKey) {
+  return links.map((i) => {
+    return {
+      ...i,
+      isActive: activeKey === i.key,
+    };
+  });
+}
+
 export const techniquesRouteData = {
   [groups.techniques]: {
     title: translations.techniques,
@@ -37,18 +89,7 @@ export const techniquesRouteData = {
       ...shuji,
       ...schoolAbilities,
     },
-    links: [
-      { title: translations.kata, link: generateLinkPath(groups.kata) },
-      { title: translations.ninjutsu, link: generateLinkPath(groups.ninjutsu) },
-      { title: translations.ritual, link: generateLinkPath(groups.ritual) },
-      { title: translations.kiho, link: generateLinkPath(groups.kiho) },
-      { title: translations.appeal, link: generateLinkPath(groups.appeal) },
-      { title: translations.shuji, link: generateLinkPath(groups.shuji) },
-      {
-        title: translations.schoolAbilities,
-        link: generateLinkPath(groups.schoolAbilities),
-      },
-    ],
+    links: linksWIthActive(groups.techniques),
     filterSettings: [
       appealFilterSettings,
       katasFilterSettings,
@@ -64,7 +105,7 @@ export const techniquesRouteData = {
   [groups.appeal]: {
     title: translations.appeal,
     list: appeal,
-    links: [],
+    links: linksWIthActive(groups.appeal),
     filterSettings: [appealFilterSettings],
     useTechLvls: true,
     useSearch: true,
@@ -72,7 +113,7 @@ export const techniquesRouteData = {
   [groups.kata]: {
     title: translations.kata,
     list: katas,
-    links: [],
+    links: linksWIthActive(groups.kata),
     filterSettings: [katasFilterSettings],
     useTechLvls: true,
     useSearch: true,
@@ -80,7 +121,7 @@ export const techniquesRouteData = {
   [groups.kiho]: {
     title: translations.kiho,
     list: kiho,
-    links: [],
+    links: linksWIthActive(groups.kiho),
     filterSettings: [kihoFilterSettings],
     useTechLvls: true,
     useSearch: true,
@@ -88,7 +129,7 @@ export const techniquesRouteData = {
   [groups.ninjutsu]: {
     title: translations.ninjutsu,
     list: ninjutsu,
-    links: [],
+    links: linksWIthActive(groups.ninjutsu),
     filterSettings: [ninjutsuFilterSettings],
     useTechLvls: true,
     useSearch: true,
@@ -96,7 +137,7 @@ export const techniquesRouteData = {
   [groups.ritual]: {
     title: translations.ritual,
     list: ritual,
-    links: [],
+    links: linksWIthActive(groups.ritual),
     filterSettings: [ritualFilterSettings],
     useTechLvls: true,
     useSearch: true,
@@ -104,7 +145,7 @@ export const techniquesRouteData = {
   [groups.shuji]: {
     title: translations.shuji,
     list: shuji,
-    links: [],
+    links: linksWIthActive(groups.shuji),
     filterSettings: [shujiFilterSettings],
     useTechLvls: true,
     useSearch: true,
@@ -112,7 +153,7 @@ export const techniquesRouteData = {
   [groups.schoolAbilities]: {
     title: translations.schoolAbilities,
     list: schoolAbilities,
-    links: [],
+    links: linksWIthActive(groups.schoolAbilities),
     filterSettings: [schoolAbilitiesFilterSettings],
     useTechLvls: false,
     useSearch: true,

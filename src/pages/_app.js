@@ -2,6 +2,7 @@ import { Provider } from "@/components/ui/provider";
 import { Box, ClientOnly, Flex } from "@chakra-ui/react";
 import MySidebar from "@/components/layout/MySidebar";
 
+import "@/styles/scrollbar.css";
 import "@/styles/table.css";
 import "@/styles/card-preview.css";
 

@@ -10,8 +10,17 @@ export default function MyLinksItem({ linkData }) {
         href={linkData.link}
         style={{ pointerEvents: linkData.disabled ? "none" : "auto" }}
       >
-        <Card.Root p={2} opacity={linkData.disabled ? 0.5 : 1}>
-          <Text fontWeight="semibold" textStyle="sm">
+        <Card.Root
+          colorPalette={"red"}
+          p={2}
+          opacity={linkData.disabled ? 0.5 : 1}
+          variant={linkData.isActive ? "subtle" : "elevated"}
+        >
+          <Text
+            fontWeight={linkData.isActive ? "semibold" : "normal"}
+            textStyle="md"
+            truncate
+          >
             {linkData.title}
           </Text>
         </Card.Root>

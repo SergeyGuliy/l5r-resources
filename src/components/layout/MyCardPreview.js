@@ -28,7 +28,7 @@ export default function MyCardPreview({ cardData }) {
   });
 
   const isSmall = useMemo(
-    () => ["base", "sm"].includes(currentBreakpoint),
+    () => ["base", "sm", "md"].includes(currentBreakpoint),
     [currentBreakpoint]
   );
 
@@ -49,7 +49,7 @@ export default function MyCardPreview({ cardData }) {
       height={{
         base: "calc(100dvh - 65px)",
         sm: "calc(100dvh - 65px)",
-        md: "100%",
+        md: "calc(100dvh - 65px)",
         lg: "100%",
         xl: "100%",
         "2xl": "100%",
@@ -57,10 +57,10 @@ export default function MyCardPreview({ cardData }) {
       width={{
         base: "100%",
         sm: "100%",
-        md: "calc(50% - 8px)",
+        md: "100%",
         lg: "calc(50% - 8px)",
         xl: "calc(50% - 8px)",
-        "2xl": "calc(50% - 8px)",
+        "2xl": "calc(68% - 8px)",
       }}
     >
       <Card.Body p={0}>
@@ -68,26 +68,27 @@ export default function MyCardPreview({ cardData }) {
           <Stack ml={5} mt={3} mr={5}>
             <HStack gap="0" justifyContent={"space-between"}>
               <Card.Title>
-                {cardData.title}
+                <Text fontWeight="semibold" textStyle="2xl">
+                  {cardData.title}
+                </Text>
 
                 {!!cardData.rank && cardData.rank > 0 && (
-                  <Text color="fg.muted" textStyle="sm">
+                  <Text color="fg.muted" textStyle="md">
                     Ранг: {cardData.rank}
                   </Text>
                 )}
                 {cardData?.clan && (
-                  <Text color="fg.muted" textStyle="sm">
+                  <Text color="fg.muted" textStyle="md">
                     Клан: {cardData.clan}
                   </Text>
                 )}
                 {cardData?.school && (
-                  <Text color="fg.muted" textStyle="sm">
+                  <Text color="fg.muted" textStyle="md">
                     Школа: {cardData.school}
                   </Text>
                 )}
               </Card.Title>
               <Button
-                size={"small"}
                 variant="ghost"
                 onClick={() => router.push(`/${router.query.group}`)}
               >
@@ -108,11 +109,11 @@ export default function MyCardPreview({ cardData }) {
             overflow={"auto"}
             pl={5}
             pr={5}
-            pt={3}
+            pt={0}
             pb={3}
           >
             {cardData?.ringIncrease?.length && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>
                   Повышение ранга Кольца:{" "}
                 </span>
@@ -127,7 +128,7 @@ export default function MyCardPreview({ cardData }) {
               </Text>
             )}
             {cardData?.skillAvailable && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>
                   Стартовые навыки{selectN[cardData?.skillAvailable.toSelect]}
                   :&nbsp;
@@ -143,13 +144,13 @@ export default function MyCardPreview({ cardData }) {
               </Text>
             )}
             {cardData?.startHonor && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>Честь: </span>
                 {cardData.startHonor}
               </Text>
             )}
             {cardData?.availableTechniques?.length && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>Доступные техники: </span>
                 {cardData.availableTechniques.map((i, iIndex) => (
                   <span key={iIndex}>
@@ -162,7 +163,7 @@ export default function MyCardPreview({ cardData }) {
               </Text>
             )}
             {cardData?.startingTechniques?.length && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>Стартовые техники: </span>
                 {cardData.startingTechniques.map((i, iIndex) => (
                   <Box key={iIndex} pl={3}>
@@ -183,16 +184,18 @@ export default function MyCardPreview({ cardData }) {
               </Text>
             )}
             {!!cardData?.schoolAbility && (
-              <MyHoverCard
-                style={{ fontWeight: 400 }}
-                cardData={cardData.schoolAbility}
-              >
+              <Text>
                 <span style={{ fontWeight: 700 }}>Способность школы: </span>
-                {cardData.schoolAbility.title}
-              </MyHoverCard>
+                <MyHoverCard
+                  style={{ fontWeight: 400 }}
+                  cardData={cardData.schoolAbility}
+                >
+                  {cardData.schoolAbility.title}
+                </MyHoverCard>
+              </Text>
             )}
             {cardData?.skillIncrease?.length && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>
                   Повышение ранга Навыка:{" "}
                 </span>
@@ -207,24 +210,25 @@ export default function MyCardPreview({ cardData }) {
               </Text>
             )}
             {cardData?.startStatus && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>Статус: </span>
                 {cardData.startStatus}
               </Text>
             )}
             {cardData?.startGlory && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>Слава: </span>
                 {cardData.startGlory}
               </Text>
             )}
             {cardData?.startMoney && (
-              <Text mb={3}>
+              <Text>
                 <span style={{ fontWeight: 700 }}>Стартовые деньги:: </span>
                 {cardData.startMoney}
               </Text>
             )}
             <Box
+              mt={2}
               className={"card-preview"}
               dangerouslySetInnerHTML={{ __html: cardData.description }}
             />

@@ -34,37 +34,36 @@ export function MyCardListItem({ data }) {
   return (
     <Box width={"100%"}>
       <Link href={getLink()} onClick={navigate}>
-        <Card.Root p={3}>
+        <Card.Root p={3} variant={data.isActive ? "subtle" : "elevated"}>
           <Stack
             direction="row"
             justifyContent={"space-between"}
             width={"100%"}
           >
             <Stack gap="0">
-              <Text fontWeight="semibold" textStyle="sm">
+              <Text fontWeight="normal" textStyle="md" truncate>
                 {data.title}
               </Text>
               <HStack mt="2">
+                {typeof data.rank === "number" && data.rank > 0 && (
+                  <Badge variant="surface" size="md" colorPalette="blue">
+                    Ранг: {data.rank}
+                  </Badge>
+                )}
+
                 {!!translations[data.group] && (
-                  <Badge variant="surface" size="md">
+                  <Badge variant="surface" size="md" colorPalette="green">
                     {translations[data.group]}
                   </Badge>
                 )}
 
                 {!!translations[data.subgroup] && (
-                  <Badge variant="surface" size="md">
+                  <Badge variant="surface" size="md" colorPalette="teal">
                     {translations[data.subgroup]}
                   </Badge>
                 )}
               </HStack>
             </Stack>
-            {typeof data.rank === "number" && data.rank > 0 && (
-              <Stack gap="0">
-                <Text color="fg.muted" textStyle="sm">
-                  Ранг: {data.rank}
-                </Text>
-              </Stack>
-            )}
           </Stack>
         </Card.Root>
       </Link>

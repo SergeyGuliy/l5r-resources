@@ -15,6 +15,8 @@ export default function MyHoverCard({ children, cardData }) {
 
   return (
     <HoverCardRoot
+      openDelay={1000}
+      closeDelay={100}
       size="sm"
       open={open}
       onOpenChange={(e) => {
@@ -28,7 +30,7 @@ export default function MyHoverCard({ children, cardData }) {
       <HoverCardTrigger asChild>
         <Link
           href="#"
-          style={{ cursor: "cell" }}
+          style={{ cursor: "cell", textDecoration: "underline" }}
           onClick={(e) => e.preventDefault()}
         >
           {children ? children : cardData?.title}
