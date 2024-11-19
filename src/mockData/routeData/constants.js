@@ -49,6 +49,10 @@ export const groups = {
   ritual: "ritual",
   ninjutsu: "ninjutsu",
   schoolAbilities: "schoolAbilities",
+
+  techniquesGroups: "techniquesGroups",
+  weaponGroups: "weaponGroups",
+  weaponsAndArmorData: "weaponsAndArmorData",
 };
 
 export const translations = {
@@ -95,6 +99,10 @@ export const translations = {
   ritual: "Ритуалы",
   ninjutsu: "Ниндзюцу",
   schoolAbilities: "Способность школы",
+
+  techniquesGroups: "Группы техник",
+  weaponGroups: "Группы оружия",
+  weaponsAndArmorData: "Оружие и Доспехи",
 };
 
 export const injectImages = [
@@ -109,9 +117,16 @@ export const hiddenNinjutsuTrue = "hiddenNinjutsuTrue";
 export const hiddenRitualsTrue = "hiddenRitualsTrue";
 export const hiddenSchoolAbilities = "hiddenSchoolAbilities";
 export const hiddenOtherTrue = "hiddenOtherTrue";
+export const hiddenOtherTechniquesGroupsTrue =
+  "hiddenOtherTechniquesGroupsTrue";
+export const hiddenOtherWeaponGroups = "hiddenOtherWeaponGroups";
+export const hiddenOtherWeaponsAndArmorData = "hiddenOtherWeaponsAndArmorData";
 export const hiddenFilter = [
   hiddenNinjutsuTrue,
   hiddenRitualsTrue,
   hiddenSchoolAbilities,
   hiddenOtherTrue,
+  hiddenOtherTechniquesGroupsTrue,
+  hiddenOtherWeaponGroups,
+  hiddenOtherWeaponsAndArmorData,
 ];

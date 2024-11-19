@@ -2,7 +2,7 @@ import { injector } from "@/helpers/injector";
 import { replaceCharacter } from "@/helpers/replaceCharacter";
 import {
   groups,
-  hiddenOtherTrue,
+  hiddenOtherWeaponsAndArmorData,
   injectImages,
 } from "@/mockData/routeData/constants";
 
@@ -22,6 +22,6 @@ const obj = {
 
 export const weaponsAndArmorData = injector(obj, (original) => ({
   group: groups.other,
-  subgroup: hiddenOtherTrue,
+  subgroup: hiddenOtherWeaponsAndArmorData,
   description: replaceCharacter(original.description, injectImages),
 }));

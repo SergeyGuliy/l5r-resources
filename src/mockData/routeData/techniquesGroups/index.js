@@ -3,7 +3,7 @@ import { injector } from "@/helpers/injector";
 
 import {
   groups,
-  hiddenOtherTrue,
+  hiddenOtherTechniquesGroupsTrue,
   injectImages,
 } from "@/mockData/routeData/constants";
 
@@ -89,6 +89,6 @@ const obj = {
 
 export const techniquesGroups = injector(obj, (original) => ({
   group: groups.other,
-  subgroup: hiddenOtherTrue,
+  subgroup: hiddenOtherTechniquesGroupsTrue,
   description: replaceCharacter(original.description, injectImages),
 }));
