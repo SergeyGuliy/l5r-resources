@@ -18,8 +18,14 @@ export default function MyGroupPage({
   links,
   children,
 }) {
-  const { getQuerySearch, getQueryFilters, setQuerySearch, setQueryFilters } =
-    useSearchAndFilterQuery();
+  const {
+    getQuerySearch,
+    getQueryFilters,
+    getQueryLvls,
+    setQuerySearch,
+    setQueryFilters,
+    setQueryLvls,
+  } = useSearchAndFilterQuery();
 
   const [defaultFilters, setDefaultFilters] = useState(
     parseFilters(filterSettings)
@@ -27,7 +33,7 @@ export default function MyGroupPage({
 
   const [search, setSearch] = useState(getQuerySearch());
   const [filters, setFilters] = useState(getFilterFromQueryOrParsed());
-  const [lvls, setLvls] = useState([]);
+  const [lvls, setLvls] = useState(getQueryLvls());
 
   function getFilterFromQueryOrParsed() {
     if (!filterSettings) return false;
@@ -102,8 +108,9 @@ export default function MyGroupPage({
   }, [list, useTechLvls, lvls, useSearch, search, filters, filterKeys]);
 
   function clearFilters() {
-    setFilters(defaultFilters);
     setQueryFilters(defaultFilters);
+    setQueryLvls([]);
+    setFilters(defaultFilters);
     setLvls([]);
   }
 
@@ -120,6 +127,7 @@ export default function MyGroupPage({
 
   function wrappedSetLvls(value) {
     setLvls(value);
+    setQueryLvls(value);
   }
 
   return (

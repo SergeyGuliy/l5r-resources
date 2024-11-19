@@ -15,6 +15,7 @@ export default function MyLinksItem({ linkData }) {
           p={2}
           opacity={linkData.disabled ? 0.5 : 1}
           variant={linkData.isActive ? "subtle" : "elevated"}
+          background={linkData.isActive ? "#122952" : ""}
         >
           <Text
             fontWeight={linkData.isActive ? "semibold" : "normal"}

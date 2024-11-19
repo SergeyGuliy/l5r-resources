@@ -1,5 +1,6 @@
 const search = "search";
 const filters = "filters";
+const lvls = "lvls";
 
 export function useSearchAndFilterQuery() {
   const params = new URLSearchParams(window.location.search);
@@ -23,7 +24,9 @@ export function useSearchAndFilterQuery() {
   return {
     getQuerySearch: () => getQueryGet(search) || "",
     getQueryFilters: () => getQueryGet(filters),
+    getQueryLvls: () => getQueryGet(lvls) || [],
     setQuerySearch: (value) => setQuery(search, value),
     setQueryFilters: (value) => setQuery(filters, value),
+    setQueryLvls: (value) => setQuery(lvls, value),
   };
 }

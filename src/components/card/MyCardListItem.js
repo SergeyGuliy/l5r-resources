@@ -8,17 +8,20 @@ import { useSearchAndFilterQuery } from "@/hooks/useSearchAndFilterQuery";
 
 export function MyCardListItem({ data }) {
   const router = useRouter();
-  const { getQuerySearch, getQueryFilters } = useSearchAndFilterQuery();
+  const { getQuerySearch, getQueryFilters, getQueryLvls } =
+    useSearchAndFilterQuery();
 
   function getLink() {
     if (["/[group]", "/[group]/[item]"].includes(router.pathname)) {
       const search = getQuerySearch();
       const filters = getQueryFilters();
+      const lvls = getQueryLvls();
 
       const query = {};
 
       if (search) query.search = search;
       if (filters) query.filters = filters;
+      if (lvls) query.lvls = lvls;
 
       return generateLinkPath([router.query.group, data.key], query);
     }
@@ -34,7 +37,11 @@ export function MyCardListItem({ data }) {
   return (
     <Box width={"100%"}>
       <Link href={getLink()} onClick={navigate}>
-        <Card.Root p={3} variant={data.isActive ? "subtle" : "elevated"}>
+        <Card.Root
+          p={3}
+          variant={data.isActive ? "subtle" : "elevated"}
+          background={data.isActive ? "#122952" : ""}
+        >
           <Stack
             direction="row"
             justifyContent={"space-between"}

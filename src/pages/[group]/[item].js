@@ -56,16 +56,21 @@ export default function GroupItem() {
     [groupData?.list, router.query.item]
   );
 
+  const groupListWrapped = useMemo(() => {
+    return Object.values(groupData.list).map((i) => ({
+      ...i,
+      isActive: router.query.item === i.key,
+    }));
+  }, [groupData.list, router.query.item]);
+
   if (!groupData) return;
   if (!itemData) return;
-
-  console.log(groupData.filterSettings);
 
   return (
     <MyGroupPage
       title={groupData.title}
       links={groupData.links}
-      list={Object.values(groupData.list)}
+      list={groupListWrapped}
       filterSettings={groupData.filterSettings}
       useTechLvls={groupData.useTechLvls}
       useSearch={groupData.useSearch}

@@ -48,11 +48,7 @@ export const hand = [
     weaponsCharacteristics_Grip: `
     Одноручный: –
     <br>
-    Двуручный: ${renderToString(
-      <ChakraProvider value={defaultSystem}>
-        <MyHoverCard cardData={_weapArmProp.Grasping} />
-      </ChakraProvider>
-    )}
+    Двуручный: <span style="text-decoration:underline">Хватающее</span>
     `,
     weaponsCharacteristics_Properties: [],
     weaponsAndArmorCharacteristics_Rare: 6,
