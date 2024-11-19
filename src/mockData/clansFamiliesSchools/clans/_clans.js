@@ -1,4 +1,4 @@
-import { _rings } from "@/mockData/routeData/rings/_rings";
+import { _rings } from "@/mockData/routeData/other/rings/_rings";
 import { skills } from "@/mockData/routeData/skills";
 import { _bushido } from "@/mockData/routeData/bushido/_bushido";
 import { injector } from "@/helpers/injector";

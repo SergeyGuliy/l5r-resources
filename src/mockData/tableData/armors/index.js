@@ -1,4 +1,4 @@
-import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { weaponsAndArmorData } from "@/mockData/routeData/other/weaponsAndArmorData";
 import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
 
 export const armors = [

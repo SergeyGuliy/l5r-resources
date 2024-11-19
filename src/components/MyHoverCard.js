@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Link from "next/link";
+
 import { Box } from "@chakra-ui/react";
 
 import {
@@ -7,11 +10,21 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 
-import Link from "next/link";
-
 export default function MyHoverCard({ children, cardData }) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <HoverCardRoot size="sm">
+    <HoverCardRoot
+      size="sm"
+      open={open}
+      onOpenChange={(e) => {
+        if (!cardData?.description && e.open) {
+          setOpen(false);
+        } else {
+          setOpen(e.open);
+        }
+      }}
+    >
       <HoverCardTrigger asChild>
         <Link
           href="#"

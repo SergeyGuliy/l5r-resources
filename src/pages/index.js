@@ -10,14 +10,16 @@ import { groups, translations } from "@/mockData/routeData/constants";
 import { titleArmor, titleWeapons } from "@/mockData/tableData/constants";
 
 const group1 = [
+  { title: translations.skills, link: generateLinkPath(groups.skills) },
   { title: translations.techniques, link: generateLinkPath(groups.techniques) },
   { title: translations.stances, link: generateLinkPath(groups.stances) },
-  { title: translations.skills, link: generateLinkPath(groups.skills) },
+  { title: "Действия в бою", link: "/", disabled: true },
 ];
 
 const group2 = [
   { title: titleWeapons, link: "/weapons" },
   { title: titleArmor, link: "/armors" },
+  { title: "Личные вещи", link: "/armors", disabled: true },
   {
     title: translations.weapArmProp,
     link: generateLinkPath(groups.weapArmProp),
@@ -25,23 +27,21 @@ const group2 = [
 ];
 
 const group3 = [
-  { title: translations.bushido, link: generateLinkPath(groups.bushido) },
-  { title: translations.rings, link: generateLinkPath(groups.rings) },
-  { title: translations.states, link: generateLinkPath(groups.states) },
-  { title: translations.other, link: generateLinkPath(groups.other) },
-  // { title: "Действия в бою", link: "/group" },
-  // { title: "Типы техник", link: "/group" },
-  // { title: "Роли персонажей", link: "/group" },
-];
-const group4 = [
   { title: translations.clans, link: generateLinkPath(groups.clans) },
   { title: translations.families, link: generateLinkPath(groups.families) },
   { title: translations.schools, link: generateLinkPath(groups.schools) },
+  { title: "Генератор персонажа", link: "/", disabled: true },
+];
+
+const group4 = [
+  { title: translations.bushido, link: generateLinkPath(groups.bushido) },
+  { title: translations.states, link: generateLinkPath(groups.states) },
+  { title: "Местность", link: "/group", disabled: true },
+  { title: translations.other, link: generateLinkPath(groups.other) },
 ];
 
 // Спрятаные свойства
 // { title: "Фигуры", link: "/group" },
-// { title: "Местность", link: "/group" },
 // { title: "Преимущества и недостатки (стр 100-137)", link: "/group" },
 
 export default function Home() {

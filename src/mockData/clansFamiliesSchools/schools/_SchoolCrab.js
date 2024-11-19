@@ -2,9 +2,9 @@ import { injector } from "@/helpers/injector";
 import { replaceCharacter } from "@/helpers/replaceCharacter";
 
 import { groups, injectImages } from "@/mockData/routeData/constants";
-import { _rings } from "@/mockData/routeData/rings/_rings";
+import { _rings } from "@/mockData/routeData/other/rings/_rings";
 import { skills } from "@/mockData/routeData/skills";
-import { techniquesGroups } from "@/mockData/routeData/techniquesGroups";
+import { techniquesGroups } from "@/mockData/routeData/other/techniquesGroups";
 import { schoolAbilities } from "@/mockData/routeData/techniques/_schoolAbilities";
 import { katas } from "@/mockData/routeData/techniques/_kata";
 import { shuji } from "@/mockData/routeData/techniques/_shuji";

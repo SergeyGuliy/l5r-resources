@@ -121,6 +121,7 @@ export const hiddenOtherTechniquesGroupsTrue =
   "hiddenOtherTechniquesGroupsTrue";
 export const hiddenOtherWeaponGroups = "hiddenOtherWeaponGroups";
 export const hiddenOtherWeaponsAndArmorData = "hiddenOtherWeaponsAndArmorData";
+export const hiddenOtherRings = "hiddenOtherRings";
 export const hiddenFilter = [
   hiddenNinjutsuTrue,
   hiddenRitualsTrue,
@@ -129,4 +130,5 @@ export const hiddenFilter = [
   hiddenOtherTechniquesGroupsTrue,
   hiddenOtherWeaponGroups,
   hiddenOtherWeaponsAndArmorData,
+  hiddenOtherRings,
 ];

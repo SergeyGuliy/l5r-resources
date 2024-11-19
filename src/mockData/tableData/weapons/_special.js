@@ -1,6 +1,6 @@
-import { weaponsAndArmorData } from "@/mockData/routeData/weaponsAndArmorData";
+import { weaponsAndArmorData } from "@/mockData/routeData/other/weaponsAndArmorData";
 import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
-import { weaponGroups } from "@/mockData/routeData/weaponGroups";
+import { weaponGroups } from "@/mockData/routeData/other/weaponGroups";
 import { skills } from "@/mockData/routeData/skills";
 
 export const special = [

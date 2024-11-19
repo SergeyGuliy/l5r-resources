@@ -1,5 +1,9 @@
 import { injector } from "@/helpers/injector";
-import { groups, injectImages } from "@/mockData/routeData/constants";
+import {
+  groups,
+  hiddenOtherRings,
+  injectImages,
+} from "@/mockData/routeData/constants";
 import { replaceCharacter } from "@/helpers/replaceCharacter";
 
 const obj = {
@@ -193,10 +197,11 @@ const obj = {
 
 export const _rings = injector(obj, (original) => ({
   group: groups.rings,
+  subgroup: hiddenOtherRings,
   description: replaceCharacter(original.description, injectImages),
 }));
 
 export const _ringSelect = {
-  title: "к двум разным Кольцам",
+  title: "к кольцу по вашему выбору",
   key: "select",
 };
