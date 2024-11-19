@@ -5,6 +5,16 @@ import MyGroupPage from "@/components/layout/MyGroupPage";
 
 import { routeData } from "@/mockData/routeData";
 
+export async function getStaticPaths() {
+  const paths = Object.keys(routeData).map((i) => ({ params: { group: i } }));
+
+  return { paths: paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  return { props: { group: params.group } };
+}
+
 export default function GroupIndex() {
   const router = useRouter();
 

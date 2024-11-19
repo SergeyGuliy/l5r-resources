@@ -42,7 +42,7 @@ export default function RootLayout({ Component, pageProps }) {
             p={{ base: 2, lg: 6 }}
             ml={{ base: "0px", lg: "65px" }}
             mb="0px"
-            height={{ base: "calc(100vh - 70px)", lg: "100vh" }}
+            height={{ base: "calc(100dvh - 70px)", lg: "100vh" }}
             width={{
               base: "100%",
               sm: "400px",

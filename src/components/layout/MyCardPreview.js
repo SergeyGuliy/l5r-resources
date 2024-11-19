@@ -13,7 +13,6 @@ import { useRouter } from "next/router";
 
 import { translations } from "@/mockData/routeData/constants";
 import MyHoverCard from "@/components/MyHoverCard";
-import { techniquesGroups } from "@/mockData/routeData/techniquesGroups";
 
 export default function MyCardPreview({ cardData }) {
   const router = useRouter();
@@ -48,8 +47,8 @@ export default function MyCardPreview({ cardData }) {
       top={"0"}
       left={0}
       height={{
-        base: "calc(100vh - 65px)",
-        sm: "calc(100vh - 65px)",
+        base: "calc(100dvh - 65px)",
+        sm: "calc(100dvh - 65px)",
         md: "100%",
         lg: "100%",
         xl: "100%",

@@ -5,6 +5,27 @@ import MyGroupPage from "@/components/layout/MyGroupPage";
 import MyCardPreview from "@/components/layout/MyCardPreview";
 import { routeData } from "@/mockData/routeData";
 
+export async function getStaticPaths() {
+  const obj = Object.fromEntries(
+    Object.entries(routeData).map(([key, value]) => [
+      key,
+      Object.values(value.list).map((i) => i.key),
+    ])
+  );
+
+  const paths = Object.keys(obj).flatMap((group) =>
+    obj[group].map((item) => ({
+      params: { group, item },
+    }))
+  );
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  return { props: { group: params.group } };
+}
+
 export default function GroupItem() {
   const router = useRouter();
   const [cardData, setCardData] = useState({});
