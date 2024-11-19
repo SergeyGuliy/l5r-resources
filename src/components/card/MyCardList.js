@@ -48,7 +48,7 @@ export default function MyCardList({ list, setCardData }) {
 
   return (
     <Grid
-      h="100%"
+      maxHeight="100%"
       overflow={"auto"}
       w={dynamicWidthGrid}
       templateColumns="repeat(12, 1fr)"

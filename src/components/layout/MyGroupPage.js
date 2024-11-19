@@ -7,29 +7,54 @@ import MyLinks from "@/components/link/MyLinks";
 import { MyPageTitle } from "@/components/MyPageTitle";
 
 import { parseFilters } from "@/helpers/parseFilters";
+import { useSearchAndFilterQuery } from "@/hooks/useSearchAndFilterQuery";
 
 export default function MyGroupPage({
   title,
   list,
-  filterGroups,
+  filterSettings,
   useTechLvls,
   useSearch,
   links,
   children,
 }) {
-  const params = new URLSearchParams(window.location.search);
+  const { getQuerySearch, getQueryFilters, setQuerySearch, setQueryFilters } =
+    useSearchAndFilterQuery(filterSettings);
 
   const [defaultFilters, setDefaultFilters] = useState(
-    parseFilters(filterGroups)
+    parseFilters(filterSettings)
   );
-  const [search, setSearch] = useState(params.get("search") || "");
-  const [filters, setFilters] = useState(defaultFilters);
+
+  const [search, setSearch] = useState(getQuerySearch());
+  const [filters, setFilters] = useState(qqqqqqq());
   const [lvls, setLvls] = useState([]);
 
   useEffect(() => {
-    setDefaultFilters(parseFilters(filterGroups));
-    setFilters(parseFilters(filterGroups));
-  }, [filterGroups]);
+    setDefaultFilters(parseFilters(filterSettings));
+    setFilters(qqqqqqq());
+  }, [filterSettings]);
+
+  function qqqqqqq() {
+    const parsedFilterSettings = parseFilters(filterSettings);
+    const queryFilters = getQueryFilters();
+
+    return parsedFilterSettings.map((pFilter) => {
+      if (!queryFilters) return pFilter;
+
+      const qFilter = queryFilters.find((i) => pFilter.group === i.group);
+
+      return {
+        ...pFilter,
+        subGroups: pFilter.subGroups.map((i) => {
+          const value = qFilter.subGroups?.find((j) => i.value === j.value);
+          return {
+            ...i,
+            checked: value ? value.checked : i.value,
+          };
+        }),
+      };
+    });
+  }
 
   const isTouched = useMemo(() => {
     if (lvls.length) return true;
@@ -79,6 +104,21 @@ export default function MyGroupPage({
     setLvls([]);
   }
 
+  function wrappedSetSearch(value) {
+    setSearch(value);
+    setQuerySearch(value);
+  }
+
+  function wrappedSetFilters(callback) {
+    const value = callback(filters);
+    setQueryFilters(value);
+    setFilters(value);
+  }
+
+  function wrappedSetLvls(value) {
+    setLvls(value);
+  }
+
   return (
     <Box display="flex" flexDirection="column" w={"100%"} h={"100%"}>
       <MyPageTitle title={title} />
@@ -88,14 +128,14 @@ export default function MyGroupPage({
       <MySearchFilter
         useSearch={useSearch}
         search={search}
-        setSearch={setSearch}
+        wrappedSetSearch={wrappedSetSearch}
         isTouched={isTouched}
         filters={filters}
-        setFilters={setFilters}
+        wrappedSetFilters={wrappedSetFilters}
         clearFilters={clearFilters}
         useTechLvls={useTechLvls}
         lvls={lvls}
-        setLvls={setLvls}
+        wrappedSetLvls={wrappedSetLvls}
       />
 
       <HStack alignItems={"start"} overflow={"hidden"} top={"0"}>

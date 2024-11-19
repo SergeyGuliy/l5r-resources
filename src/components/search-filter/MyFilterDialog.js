@@ -14,10 +14,10 @@ export function MyFilterDialog({
   open,
   setOpen,
   filters,
-  setFilters,
+  wrappedSetFilters,
   useTechLvls,
   lvls,
-  setLvls,
+  wrappedSetLvls,
 }) {
   return (
     <DialogRoot
@@ -46,11 +46,11 @@ export function MyFilterDialog({
                 filter={filter}
                 key={groupIndex}
                 groupIndex={groupIndex}
-                setFilters={setFilters}
+                wrappedSetFilters={wrappedSetFilters}
               />
             ))}
             {useTechLvls && (
-              <MySearchFilterLvls lvls={lvls} setLvls={setLvls} />
+              <MySearchFilterLvls lvls={lvls} wrappedSetLvls={wrappedSetLvls} />
             )}
           </Stack>
         </DialogBody>

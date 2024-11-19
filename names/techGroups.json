@@ -7,7 +7,6 @@
     "void": "Пустота"
   },
 
-
   "techniquesGroups": {
     "Ката": "kataGroup",
     "Кихо": "kihoGroup",
@@ -16,7 +15,6 @@
     "Сюдзи": "shujiGroup",
     "Ниндзюцу": "ninjutsuGroup"
   },
-
 
   "techniques": {
     "appeal": "appeal",

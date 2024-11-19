@@ -5,14 +5,14 @@ import { hiddenFilter } from "@/mockData/routeData/constants";
 export default function MySearchFilterGroups({
   filter,
   groupIndex,
-  setFilters,
+  wrappedSetFilters,
 }) {
   const allChecked = filter.subGroups.every((value) => value.checked);
   const indeterminate =
     filter.subGroups.some((value) => value.checked) && !allChecked;
 
   function onCheckedGroup({ checked }) {
-    setFilters((current) => {
+    wrappedSetFilters((current) => {
       const newValues = [...current];
       newValues[groupIndex] = {
         ...newValues[groupIndex],
@@ -27,7 +27,7 @@ export default function MySearchFilterGroups({
   }
 
   function onCheckedSubGroup(checked, subGroupIndexToUpdate) {
-    setFilters((current) => {
+    wrappedSetFilters((current) => {
       const newValues = [...current];
       newValues[groupIndex] = {
         ...newValues[groupIndex],
@@ -39,6 +39,7 @@ export default function MySearchFilterGroups({
           }
         ),
       };
+
       return newValues;
     });
   }

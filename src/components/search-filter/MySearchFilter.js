@@ -8,29 +8,22 @@ import { MyFilterDialog } from "@/components/search-filter/MyFilterDialog";
 export default function MySearchFilter({
   useSearch,
   search,
-  setSearch,
+  wrappedSetSearch,
   isTouched,
   filters,
-  setFilters,
+  wrappedSetFilters,
   clearFilters,
   useTechLvls,
   lvls,
-  setLvls,
+  wrappedSetLvls,
 }) {
   const [open, setOpen] = useState(false);
-
-  function localSetSearch(value) {
-    setSearch(value);
-    const url = new URL(window.location.href);
-    url.searchParams.set("search", value); // Set or update the 'search' query parameter
-    window.history.replaceState({}, "", url);
-  }
 
   return (
     <Group mb={2}>
       <MySearch
         search={search}
-        setSearch={(value) => localSetSearch(value)}
+        setSearch={(value) => wrappedSetSearch(value)}
         useSearch={useSearch}
       />
 
@@ -62,10 +55,10 @@ export default function MySearchFilter({
           open={open}
           setOpen={setOpen}
           filters={filters}
-          setFilters={setFilters}
+          wrappedSetFilters={wrappedSetFilters}
           useTechLvls={useTechLvls}
           lvls={lvls}
-          setLvls={setLvls}
+          wrappedSetLvls={wrappedSetLvls}
         />
       )}
     </Group>

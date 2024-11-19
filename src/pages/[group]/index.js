@@ -23,7 +23,6 @@ export default function GroupIndex() {
     [router.query.group]
   );
 
-  console.log(groupData);
   if (!groupData) return;
 
   return (
@@ -31,7 +30,7 @@ export default function GroupIndex() {
       title={groupData.title}
       links={groupData.links}
       list={Object.values(groupData.list)}
-      filterGroups={groupData.filterSettings}
+      filterSettings={groupData.filterSettings}
       useTechLvls={groupData.useTechLvls}
       useSearch={groupData.useSearch}
     />

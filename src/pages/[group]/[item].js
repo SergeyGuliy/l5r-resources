@@ -28,6 +28,22 @@ export async function getStaticProps({ params }) {
 
 export default function GroupItem() {
   const router = useRouter();
+
+  // useEffect(() => {
+  //   router.beforePopState(({ url }) => {
+  //     console.log(url);
+  //     if (url === "/") {
+  //       router.replace("/target"); // Redirect to custom path
+  //       return false; // Prevent the default back navigation
+  //     }
+  //     return true; // Allow other navigations
+  //   });
+  //
+  //   return () => {
+  //     router.beforePopState(() => true); // Reset to default behavior on unmount
+  //   };
+  // }, [router]);
+
   const [cardData, setCardData] = useState({});
 
   const groupData = useMemo(
