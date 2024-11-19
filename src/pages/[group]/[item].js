@@ -59,12 +59,14 @@ export default function GroupItem() {
   if (!groupData) return;
   if (!itemData) return;
 
+  console.log(groupData.filterSettings);
+
   return (
     <MyGroupPage
       title={groupData.title}
       links={groupData.links}
       list={Object.values(groupData.list)}
-      filterGroups={groupData.filterSettings}
+      filterSettings={groupData.filterSettings}
       useTechLvls={groupData.useTechLvls}
       useSearch={groupData.useSearch}
     >

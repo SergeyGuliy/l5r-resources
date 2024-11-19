@@ -3,7 +3,7 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 
-export default function MyCardList({ list, setCardData }) {
+export default function MyCardList({ list }) {
   const router = useRouter();
 
   const dynamicWidthGrid = useMemo(() => {
@@ -56,7 +56,7 @@ export default function MyCardList({ list, setCardData }) {
     >
       {list.map((data, index) => (
         <GridItem key={index} colSpan={dynamicWidthColumnCount}>
-          <MyCardListItem data={data} setCardData={setCardData} />
+          <MyCardListItem data={data} />
         </GridItem>
       ))}
     </Grid>

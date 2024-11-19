@@ -1,27 +1,28 @@
-import { parseFilters } from "@/helpers/parseFilters";
-import { useState } from "react";
-
 const search = "search";
 const filters = "filters";
 
-export function useSearchAndFilterQuery(defaultFilters) {
+export function useSearchAndFilterQuery() {
   const params = new URLSearchParams(window.location.search);
   const url = new URL(window.location.href);
 
-  const getQueryGet = (key) => JSON.parse(params.get(key));
+  const getQueryGet = (key) => {
+    try {
+      return JSON.parse(params.get(key));
+    } catch {
+      return params.get(key);
+    }
+  };
 
   function setQuery(key, value) {
-    url.searchParams.set(key, JSON.stringify(value));
-    window.history.replaceState({}, "", url);
-  }
+    const newVal = typeof value === "object" ? JSON.stringify(value) : value;
 
-  function getQueryFilters() {
-    return getQueryGet(filters);
+    url.searchParams.set(key, newVal);
+    window.history.replaceState({}, "", url);
   }
 
   return {
     getQuerySearch: () => getQueryGet(search) || "",
-    getQueryFilters,
+    getQueryFilters: () => getQueryGet(filters),
     setQuerySearch: (value) => setQuery(search, value),
     setQueryFilters: (value) => setQuery(filters, value),
   };

@@ -19,22 +19,19 @@ export default function MyGroupPage({
   children,
 }) {
   const { getQuerySearch, getQueryFilters, setQuerySearch, setQueryFilters } =
-    useSearchAndFilterQuery(filterSettings);
+    useSearchAndFilterQuery();
 
   const [defaultFilters, setDefaultFilters] = useState(
     parseFilters(filterSettings)
   );
 
   const [search, setSearch] = useState(getQuerySearch());
-  const [filters, setFilters] = useState(qqqqqqq());
+  const [filters, setFilters] = useState(getFilterFromQueryOrParsed());
   const [lvls, setLvls] = useState([]);
 
-  useEffect(() => {
-    setDefaultFilters(parseFilters(filterSettings));
-    setFilters(qqqqqqq());
-  }, [filterSettings]);
+  function getFilterFromQueryOrParsed() {
+    if (!filterSettings) return false;
 
-  function qqqqqqq() {
     const parsedFilterSettings = parseFilters(filterSettings);
     const queryFilters = getQueryFilters();
 
@@ -55,6 +52,11 @@ export default function MyGroupPage({
       };
     });
   }
+
+  useEffect(() => {
+    setDefaultFilters(parseFilters(filterSettings));
+    setFilters(getFilterFromQueryOrParsed());
+  }, [filterSettings]);
 
   const isTouched = useMemo(() => {
     if (lvls.length) return true;
@@ -101,6 +103,7 @@ export default function MyGroupPage({
 
   function clearFilters() {
     setFilters(defaultFilters);
+    setQueryFilters(defaultFilters);
     setLvls([]);
   }
 

@@ -1,21 +1,39 @@
+import { useRouter } from "next/router";
 import { Badge, Box, Card, HStack, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 import { translations } from "@/mockData/routeData/constants";
-import { useMemo } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
 import { generateLinkPath } from "@/helpers/generateLinkPath";
+import { useSearchAndFilterQuery } from "@/hooks/useSearchAndFilterQuery";
 
 export function MyCardListItem({ data }) {
   const router = useRouter();
-  const link = useMemo(
-    () => generateLinkPath([router.query.group, data.key]),
-    [data.key, router.query.group]
-  );
+  const { getQuerySearch, getQueryFilters } = useSearchAndFilterQuery();
+
+  function getLink() {
+    if (["/[group]", "/[group]/[item]"].includes(router.pathname)) {
+      const search = getQuerySearch();
+      const filters = getQueryFilters();
+
+      const query = {};
+
+      if (search) query.search = search;
+      if (filters) query.filters = filters;
+
+      return generateLinkPath([router.query.group, data.key], query);
+    }
+    return generateLinkPath([router.query.group, data.key]);
+  }
+
+  function navigate(e) {
+    e.preventDefault();
+
+    router.push(getLink());
+  }
 
   return (
     <Box width={"100%"}>
-      <Link href={link}>
+      <Link href={getLink()} onClick={navigate}>
         <Card.Root p={3}>
           <Stack
             direction="row"

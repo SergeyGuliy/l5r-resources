@@ -25,6 +25,8 @@ export default function GroupIndex() {
 
   if (!groupData) return;
 
+  console.log(groupData.filterSettings);
+
   return (
     <MyGroupPage
       title={groupData.title}
