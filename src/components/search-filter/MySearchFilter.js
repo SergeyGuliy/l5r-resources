@@ -19,9 +19,20 @@ export default function MySearchFilter({
 }) {
   const [open, setOpen] = useState(false);
 
+  function localSetSearch(value) {
+    setSearch(value);
+    const url = new URL(window.location.href);
+    url.searchParams.set("search", value); // Set or update the 'search' query parameter
+    window.history.replaceState({}, "", url);
+  }
+
   return (
     <Group mb={2}>
-      <MySearch search={search} setSearch={setSearch} useSearch={useSearch} />
+      <MySearch
+        search={search}
+        setSearch={(value) => localSetSearch(value)}
+        useSearch={useSearch}
+      />
 
       {filters && (
         <Button

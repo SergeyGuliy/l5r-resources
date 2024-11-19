@@ -1,10 +1,12 @@
+import { useEffect, useMemo, useState } from "react";
+import { Box, HStack } from "@chakra-ui/react";
+
 import MySearchFilter from "@/components/search-filter/MySearchFilter";
 import MyCardList from "@/components/card/MyCardList";
-import { Box, HStack } from "@chakra-ui/react";
-import { useEffect, useMemo, useState } from "react";
 import MyLinks from "@/components/link/MyLinks";
-import { parseFilters } from "@/helpers/parseFilters";
 import { MyPageTitle } from "@/components/MyPageTitle";
+
+import { parseFilters } from "@/helpers/parseFilters";
 
 export default function MyGroupPage({
   title,
@@ -15,10 +17,12 @@ export default function MyGroupPage({
   links,
   children,
 }) {
+  const params = new URLSearchParams(window.location.search);
+
   const [defaultFilters, setDefaultFilters] = useState(
     parseFilters(filterGroups)
   );
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(params.get("search") || "");
   const [filters, setFilters] = useState(defaultFilters);
   const [lvls, setLvls] = useState([]);
 
