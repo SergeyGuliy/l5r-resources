@@ -8,7 +8,7 @@ import { _PhoenixClan } from "@/mockData/clansFamiliesSchools/families/_PhoenixC
 import { _ScorpionClan } from "@/mockData/clansFamiliesSchools/families/_ScorpionClan";
 import { _UnicornClan } from "@/mockData/clansFamiliesSchools/families/_UnicornClan";
 
-export const families = {
+export const _families = {
   ..._CrabClan,
   ..._CraneClan,
   ..._DragonClan,
@@ -21,7 +21,7 @@ export const families = {
 export const familiesRouteData = {
   [groups.families]: {
     title: translations.families,
-    list: families,
+    list: _families,
     useTechLvls: false,
     useSearch: true,
   },

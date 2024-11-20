@@ -78,5 +78,6 @@ const obj = {
 
 export const _ScorpionClan = injector(obj, (original) => ({
   group: groups.families,
+  clan: "ScorpionClan",
   description: replaceCharacter(original.description, injectImages),
 }));

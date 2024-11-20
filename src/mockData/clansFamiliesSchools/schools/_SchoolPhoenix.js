@@ -226,5 +226,6 @@ const obj = {
 
 export const _SchoolPhoenix = injector(obj, (original) => ({
   group: groups.schools,
+  clan: "PhoenixClan",
   description: replaceCharacter(original.description, injectImages),
 }));

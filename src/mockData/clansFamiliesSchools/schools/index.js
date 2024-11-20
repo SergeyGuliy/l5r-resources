@@ -8,7 +8,7 @@ import { _SchoolPhoenix } from "@/mockData/clansFamiliesSchools/schools/_SchoolP
 import { _SchoolScorpion } from "@/mockData/clansFamiliesSchools/schools/_SchoolScorpion";
 import { _SchoolUnicorn } from "@/mockData/clansFamiliesSchools/schools/_SchoolUnicorn";
 
-export const schools = {
+export const _schools = {
   ..._SchoolCrab,
   ..._SchoolCrane,
   ..._SchoolDragon,
@@ -21,7 +21,7 @@ export const schools = {
 export const schoolsRouteData = {
   [groups.schools]: {
     title: translations.schools,
-    list: schools,
+    list: _schools,
     useTechLvls: false,
     useSearch: true,
   },

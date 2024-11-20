@@ -1,10 +1,6 @@
-import { renderToString } from "react-dom/server";
-import MyHoverCard from "@/components/MyHoverCard";
-
 import { weaponsAndArmorData } from "@/mockData/routeData/other/weaponsAndArmorData";
 import { _weapArmProp } from "@/mockData/routeData/weaponsAndArmorProperties/_weaponsAndArmorProperties";
 import { weaponGroups } from "@/mockData/routeData/other/weaponGroups";
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 
 export const hand = [
   {
