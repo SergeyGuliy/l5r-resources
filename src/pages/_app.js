@@ -1,6 +1,7 @@
 import { Provider } from "@/components/ui/provider";
 import { Box, ClientOnly, Flex } from "@chakra-ui/react";
 import MySidebar from "@/components/layout/MySidebar";
+import { MyAlerts } from "@/components/layout/MyAlerts";
 
 import "@/styles/scrollbar.css";
 import "@/styles/table.css";
@@ -19,6 +20,7 @@ export default function RootLayout({ Component, pageProps }) {
       <ClientOnly>
         <Flex position={"relative"}>
           <MySidebar />
+          {/*<MyAlerts />*/}
           <Box
             flex="1"
             p={{ base: 2, lg: 6 }}
