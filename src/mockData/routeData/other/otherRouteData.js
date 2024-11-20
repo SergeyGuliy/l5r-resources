@@ -1,5 +1,6 @@
 import {
   groups,
+  hiddenOtherHeroStats,
   hiddenOtherRings,
   hiddenOtherTechniquesGroupsTrue,
   hiddenOtherWeaponGroups,
@@ -11,6 +12,7 @@ import { weaponGroups } from "@/mockData/routeData/other/weaponGroups";
 import { weaponsAndArmorData } from "@/mockData/routeData/other/weaponsAndArmorData";
 import { techniquesGroups } from "@/mockData/routeData/other/techniquesGroups";
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
+import { _heroStats } from "@/mockData/routeData/other/heroStats/_heroStats";
 
 const filterSettings = [
   {
@@ -29,6 +31,10 @@ const filterSettings = [
     group: groups.rings,
     subGroups: [hiddenOtherRings],
   },
+  {
+    group: groups.heroStats,
+    subGroups: [hiddenOtherHeroStats],
+  },
 ];
 
 export const otherRouteData = {
@@ -39,6 +45,7 @@ export const otherRouteData = {
       ...weaponGroups,
       ...weaponsAndArmorData,
       ..._rings,
+      ..._heroStats,
     },
     filterSettings,
     useTechLvls: false,
