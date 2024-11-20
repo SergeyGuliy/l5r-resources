@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Card, CheckboxGroup, Flex, Text } from "@chakra-ui/react";
 import { createListCollection } from "@chakra-ui/react";
 
 import {
@@ -10,21 +10,19 @@ import {
   SelectTrigger,
   SelectValueText,
 } from "@/components/ui/select";
+import { CheckboxCard } from "@/components/ui/checkbox-card";
 
 import { _clans } from "@/mockData/clansFamiliesSchools/clans/_clans";
 import { _families } from "@/mockData/clansFamiliesSchools/families";
 import { _schools } from "@/mockData/clansFamiliesSchools/schools";
-import { CheckboxCard } from "@/components/ui/checkbox-card";
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
 
 export function MyQuestion({
   questionIndex,
   questionData,
-  questions,
+  answers,
   answerQuestion,
 }) {
-  // const honorOrSkillOptions = createListCollection(Object.values(_rings));
-
   const clans = createListCollection({
     items: Object.values(_clans).map((i) => ({
       label: i.title,
@@ -40,49 +38,36 @@ export function MyQuestion({
   const families = useMemo(() => {
     return createListCollection({
       items: Object.values(_families)
-        .filter((i) => i.clan === questions[1].answer)
+        .filter((i) => i.clan === answers[1])
         .map((i) => ({
           label: i.title,
           value: i.key,
         })),
     });
-  }, [questions]);
+  }, [answers]);
 
   const schools = useMemo(() => {
     return createListCollection({
       items: Object.values(_schools)
-        .filter((i) => i.clan === questions[1].answer)
+        .filter((i) => i.clan === answers[1])
         .map((i) => ({
           label: i.title,
           value: i.key,
         })),
     });
-  }, [questions]);
+  }, [answers]);
 
   const questionState = useMemo(() => {
-    if (questionData.answer) return "correct";
-    return "invalid";
-  }, [questionData.answer]);
-
-  function localAnswerQuestion(answer) {
-    answerQuestion({
-      ...questionData,
-      answer,
-    });
-  }
+    if (answers[questionIndex]) return "border.disabled";
+    return "border.warning";
+  }, [answers, questionIndex]);
 
   if (["discussWithMaster", "notReady"].includes(questionData.trigger)) return;
 
   return (
-    <Box
-      mb={2}
-      borderWidth="1px"
-      borderColor="border.disabled"
-      color="fg.disabled"
-      p={2}
-    >
-      <Text textStyle={"md"} fontWeight="semibold">
-        {questionIndex}. {questionData.question} = {questionState}
+    <Card.Root mb={2} p={3} borderColor={questionState}>
+      <Text textStyle={"md"} fontWeight="semibold" mb={2}>
+        {questionIndex}. {questionData.question}
       </Text>
 
       {questionIndex === "1" && (
@@ -90,8 +75,8 @@ export function MyQuestion({
           collection={clans}
           size="sm"
           mt={1}
-          value={[questionData.answer]}
-          onValueChange={(e) => localAnswerQuestion(e.value[0])}
+          value={[answers[questionIndex]]}
+          onValueChange={(e) => answerQuestion(e.value[0])}
         >
           <SelectTrigger>
             <SelectValueText placeholder="Клан" />
@@ -112,8 +97,8 @@ export function MyQuestion({
           collection={families}
           size="sm"
           mt={1}
-          value={[questionData.answer]}
-          onValueChange={(e) => localAnswerQuestion(e.value[0])}
+          value={[answers[questionIndex]]}
+          onValueChange={(e) => answerQuestion(e.value[0])}
         >
           <SelectTrigger>
             <SelectValueText placeholder="Семья" />
@@ -134,8 +119,8 @@ export function MyQuestion({
           collection={schools}
           size="sm"
           mt={1}
-          value={[questionData.answer]}
-          onValueChange={(e) => localAnswerQuestion(e.value[0])}
+          value={[answers[questionIndex]]}
+          onValueChange={(e) => answerQuestion(e.value[0])}
         >
           <SelectTrigger>
             <SelectValueText placeholder="Школа" />
@@ -151,22 +136,25 @@ export function MyQuestion({
       )}
 
       {questionIndex === "4" && (
-        <HStack mt={1}>
-          {rings.map((ring, ringIndex) => (
-            // <MyHoverCard>
-            //
-            // </MyHoverCard>
-            <CheckboxCard
-              checked={questionData.answer === ring.value}
-              key={ringIndex}
-              label={ring.label}
-              colorPalette="teal"
-              variant="subtle"
-              onClick={() => localAnswerQuestion(ring.value)}
-            />
-          ))}
-        </HStack>
+        <CheckboxGroup>
+          <Flex gap="2">
+            {rings.map((ring, ringIndex) => (
+              // <MyHoverCard>
+              //
+              // </MyHoverCard>
+              <CheckboxCard
+                checked={answers[questionIndex] === ring.value}
+                key={ringIndex}
+                label={ring.label}
+                colorPalette="teal"
+                variant="subtle"
+                onClick={() => answerQuestion(ring.value)}
+                indicator={""}
+              />
+            ))}
+          </Flex>
+        </CheckboxGroup>
       )}
-    </Box>
+    </Card.Root>
   );
 }

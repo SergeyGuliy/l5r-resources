@@ -11,6 +11,7 @@ export const groups = {
   states: "states",
   bushido: "bushido",
   rings: "rings",
+  heroStats: "heroStats",
   weapArmProp: "weapArmProp",
   other: "other",
   clans: "clans",
@@ -61,6 +62,7 @@ export const translations = {
   states: "Состояния",
   bushido: "Принципы Бусидо",
   rings: "Кольца",
+  heroStats: "Характеристики персонажа",
   weapArmProp: "Свойства предметов",
   other: "Другое",
   clans: "Кланы",
@@ -122,6 +124,7 @@ export const hiddenOtherTechniquesGroupsTrue =
 export const hiddenOtherWeaponGroups = "hiddenOtherWeaponGroups";
 export const hiddenOtherWeaponsAndArmorData = "hiddenOtherWeaponsAndArmorData";
 export const hiddenOtherRings = "hiddenOtherRings";
+export const hiddenOtherHeroStats = "hiddenOtherHeroStats";
 export const hiddenFilter = [
   hiddenNinjutsuTrue,
   hiddenRitualsTrue,
@@ -131,4 +134,5 @@ export const hiddenFilter = [
   hiddenOtherWeaponGroups,
   hiddenOtherWeaponsAndArmorData,
   hiddenOtherRings,
+  hiddenOtherHeroStats,
 ];

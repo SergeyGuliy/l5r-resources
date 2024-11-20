@@ -10,7 +10,7 @@ export function MyAnswersRings({ accumulatedRings }) {
       <Table.Header>
         <Table.Row>
           {Object.values(_rings).map((i) => (
-            <Table.ColumnHeader key={i.key} textAlign="center">
+            <Table.ColumnHeader key={i.key} textAlign="center" w={"20%"}>
               <MyHoverCard cardData={i} />
             </Table.ColumnHeader>
           ))}
