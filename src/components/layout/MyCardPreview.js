@@ -14,6 +14,9 @@ import { useRouter } from "next/router";
 
 import { translations } from "@/mockData/routeData/constants";
 import MyHoverCard from "@/components/MyHoverCard";
+import { MyPreviewList } from "@/components/MyPreviewList";
+import { MyPreviewText } from "@/components/MyPreviewText";
+import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
 
 export default function MyCardPreview({ cardData }) {
   const router = useRouter();
@@ -112,56 +115,24 @@ export default function MyCardPreview({ cardData }) {
             pt={0}
             pb={3}
           >
-            {cardData?.ringIncrease?.length && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>
-                  Повышение ранга Кольца:{" "}
-                </span>
-                {cardData.ringIncrease.map((i, iIndex) => (
-                  <span key={iIndex}>
-                    {iIndex > 0 ? ", " : ""}
-                    <MyHoverCard style={{ fontWeight: 400 }} cardData={i}>
-                      +1 {i.title}
-                    </MyHoverCard>
-                  </span>
-                ))}
-              </Text>
-            )}
-            {cardData?.skillAvailable && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>
-                  Стартовые навыки{selectN[cardData?.skillAvailable.toSelect]}
-                  :&nbsp;
-                </span>
-                {cardData.skillAvailable.items.map((i, iIndex) => (
-                  <span key={iIndex}>
-                    {iIndex > 0 ? ", " : ""}
-                    <MyHoverCard style={{ fontWeight: 400 }} cardData={i}>
-                      +1 {i.title}
-                    </MyHoverCard>
-                  </span>
-                ))}
-              </Text>
-            )}
-            {cardData?.startHonor && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>Честь: </span>
-                {cardData.startHonor}
-              </Text>
-            )}
-            {cardData?.availableTechniques?.length && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>Доступные техники: </span>
-                {cardData.availableTechniques.map((i, iIndex) => (
-                  <span key={iIndex}>
-                    {iIndex > 0 ? ", " : ""}
-                    <MyHoverCard style={{ fontWeight: 400 }} cardData={i}>
-                      {i.title}
-                    </MyHoverCard>
-                  </span>
-                ))}
-              </Text>
-            )}
+            <MyPreviewList
+              previewDataArray={cardData?.ringIncrease}
+              previewText={"Повышение ранга Кольца: "}
+              prefix="+1 "
+            />
+            <MyPreviewList
+              previewDataArray={cardData?.skillAvailable?.items}
+              previewText={`Стартовые навыки${selectN[cardData?.skillAvailable?.toSelect]} `}
+            />
+            <MyPreviewText
+              previewData={cardData?.startHonor}
+              previewText={"Честь: "}
+            />
+            <MyPreviewList
+              previewDataArray={cardData?.availableTechniques}
+              previewText={"Доступные техники: "}
+            />
+
             {cardData?.startingTechniques?.length && (
               <Text>
                 <span style={{ fontWeight: 700 }}>Стартовые техники: </span>
@@ -183,50 +154,29 @@ export default function MyCardPreview({ cardData }) {
                 ))}
               </Text>
             )}
-            {!!cardData?.schoolAbility && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>Способность школы: </span>
-                <MyHoverCard
-                  style={{ fontWeight: 400 }}
-                  cardData={cardData.schoolAbility}
-                >
-                  {cardData.schoolAbility.title}
-                </MyHoverCard>
-              </Text>
-            )}
-            {cardData?.skillIncrease?.length && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>
-                  Повышение ранга Навыка:{" "}
-                </span>
-                {cardData.skillIncrease.map((i, iIndex) => (
-                  <span key={iIndex}>
-                    {iIndex > 0 ? ", " : ""}
-                    <MyHoverCard style={{ fontWeight: 400 }} cardData={i}>
-                      +1 {i.title}
-                    </MyHoverCard>
-                  </span>
-                ))}
-              </Text>
-            )}
-            {cardData?.startStatus && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>Статус: </span>
-                {cardData.startStatus}
-              </Text>
-            )}
-            {cardData?.startGlory && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>Слава: </span>
-                {cardData.startGlory}
-              </Text>
-            )}
-            {cardData?.startMoney && (
-              <Text>
-                <span style={{ fontWeight: 700 }}>Стартовые деньги:: </span>
-                {cardData.startMoney}
-              </Text>
-            )}
+
+            <MyPreviewSchoolTech previewData={cardData?.schoolAbility} />
+
+            <MyPreviewList
+              previewDataArray={cardData?.skillIncrease}
+              previewText={"Повышение ранга Навыка: "}
+              prefix="+1 "
+            />
+
+            <MyPreviewText
+              previewData={cardData?.startStatus}
+              previewText={"Статус: "}
+            />
+
+            <MyPreviewText
+              previewData={cardData?.startGlory}
+              previewText={"Слава: "}
+            />
+
+            <MyPreviewText
+              previewData={cardData?.startMoney}
+              previewText={"Стартовые деньги: "}
+            />
             <Box
               mt={2}
               className={"card-preview"}
