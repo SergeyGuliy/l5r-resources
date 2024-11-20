@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card } from "@chakra-ui/react";
+import { Card, HStack, Stack } from "@chakra-ui/react";
 
 import { MyPageTitle } from "@/components/MyPageTitle";
 import { MyAnswersRings } from "@/components/answer-question/MyAnswersRings";
@@ -16,18 +16,24 @@ export function MyAnswers({
   accumulatedHonor,
 }) {
   return (
-    <Card.Root width={"50%"} p={3}>
-      <MyPageTitle title={"Характеристики персонажа"} />
+    <Card.Root width={"50%"} h={"100%"}>
+      <Stack h={"100%"}>
+        <HStack pl={3} pt={3}>
+          <MyPageTitle title={"Характеристики персонажа"} />
+        </HStack>
 
-      <MyAnswersRings accumulatedRings={accumulatedRings} />
-      <MyAnswersStats accumulatedRings={accumulatedRings} />
-      <MyAnswersOtherStats
-        accumulatedRings={accumulatedRings}
-        accumulatedStatus={accumulatedStatus}
-        accumulatedGlory={accumulatedGlory}
-        accumulatedHonor={accumulatedHonor}
-      />
-      <MyAnswersSkills accumulatedSkills={accumulatedSkills} />
+        <Stack overflow={"auto"} h={"100%"} p={2}>
+          <MyAnswersRings accumulatedRings={accumulatedRings} />
+          <MyAnswersStats accumulatedRings={accumulatedRings} />
+          <MyAnswersOtherStats
+            accumulatedRings={accumulatedRings}
+            accumulatedStatus={accumulatedStatus}
+            accumulatedGlory={accumulatedGlory}
+            accumulatedHonor={accumulatedHonor}
+          />
+          <MyAnswersSkills accumulatedSkills={accumulatedSkills} />
+        </Stack>
+      </Stack>
     </Card.Root>
   );
 }

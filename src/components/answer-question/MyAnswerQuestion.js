@@ -54,11 +54,15 @@ export function MyAnswerQuestion() {
   }
 
   return (
-    <HStack width={"100%"} alignItems={"start"}>
+    <HStack width={"100%"} alignItems={"start"} overflow={"hidden"}>
       <MyQuestions
         questions={questions}
         answers={answers}
         answerQuestion={answerQuestion}
+        selectedClan={selectedClan}
+        selectedFamily={selectedFamily}
+        selectedSchool={selectedSchool}
+        accumulatedRings={accumulatedRings}
       />
 
       <MyAnswers

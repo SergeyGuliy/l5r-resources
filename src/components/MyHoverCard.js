@@ -20,11 +20,12 @@ export default function MyHoverCard({ children, cardData }) {
       size="sm"
       open={open}
       onOpenChange={(e) => {
-        if (!cardData?.description && e.open) {
-          setOpen(false);
-        } else {
-          setOpen(e.open);
-        }
+        setOpen(false);
+        // if (!cardData?.description && e.open) {
+        //   setOpen(false);
+        // } else {
+        //   setOpen(e.open);
+        // }
       }}
     >
       <HoverCardTrigger asChild>

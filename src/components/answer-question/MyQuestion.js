@@ -1,6 +1,13 @@
 import { useMemo } from "react";
 
-import { Card, CheckboxGroup, Flex, Text } from "@chakra-ui/react";
+import {
+  Card,
+  CheckboxGroup,
+  Flex,
+  HStack,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { createListCollection } from "@chakra-ui/react";
 
 import {
@@ -16,12 +23,20 @@ import { _clans } from "@/mockData/clansFamiliesSchools/clans/_clans";
 import { _families } from "@/mockData/clansFamiliesSchools/families";
 import { _schools } from "@/mockData/clansFamiliesSchools/schools";
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
+import MyHoverCard from "@/components/MyHoverCard";
+import { MyPreviewList } from "@/components/MyPreviewList";
+import { MyPreviewText } from "@/components/MyPreviewText";
+import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
 
 export function MyQuestion({
   questionIndex,
   questionData,
   answers,
   answerQuestion,
+  selectedClan,
+  selectedFamily,
+  selectedSchool,
+  accumulatedRings,
 }) {
   const clans = createListCollection({
     items: Object.values(_clans).map((i) => ({
@@ -64,6 +79,9 @@ export function MyQuestion({
 
   if (["discussWithMaster", "notReady"].includes(questionData.trigger)) return;
 
+  console.clear();
+  console.log(selectedSchool);
+
   return (
     <Card.Root mb={2} p={3} borderColor={questionState}>
       <Text textStyle={"md"} fontWeight="semibold" mb={2}>
@@ -71,85 +89,155 @@ export function MyQuestion({
       </Text>
 
       {questionIndex === "1" && (
-        <SelectRoot
-          collection={clans}
-          size="sm"
-          mt={1}
-          value={[answers[questionIndex]]}
-          onValueChange={(e) => answerQuestion(e.value[0])}
-        >
-          <SelectTrigger>
-            <SelectValueText placeholder="Клан" />
-          </SelectTrigger>
-          <SelectContent>
-            {clans.items.map((movie) => (
-              <SelectItem item={movie} key={movie.value}>
-                {movie.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </SelectRoot>
+        <Stack>
+          <SelectRoot
+            collection={clans}
+            size="sm"
+            mt={1}
+            value={[answers[questionIndex]]}
+            onValueChange={(e) => answerQuestion(e.value[0])}
+          >
+            <SelectTrigger>
+              <SelectValueText placeholder="Клан" />
+            </SelectTrigger>
+            <SelectContent>
+              {clans.items.map((movie) => (
+                <SelectItem item={movie} key={movie.value}>
+                  {movie.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </SelectRoot>
+
+          <MyPreviewList
+            previewDataArray={selectedClan?.ringIncrease}
+            previewText={"Повышение ранга Кольца: "}
+            prefix="+1 "
+          />
+          <MyPreviewList
+            previewDataArray={selectedClan?.skillIncrease}
+            previewText={"Повышение ранга Навыка: "}
+            prefix="+1 "
+          />
+          <MyPreviewText
+            previewData={selectedClan?.startStatus}
+            previewText={"Статус: "}
+          />
+        </Stack>
       )}
 
       {questionIndex === "2" && (
-        <SelectRoot
-          disabled={families.items.length === 0}
-          collection={families}
-          size="sm"
-          mt={1}
-          value={[answers[questionIndex]]}
-          onValueChange={(e) => answerQuestion(e.value[0])}
-        >
-          <SelectTrigger>
-            <SelectValueText placeholder="Семья" />
-          </SelectTrigger>
-          <SelectContent>
-            {families.items.map((movie) => (
-              <SelectItem item={movie} key={movie.value}>
-                {movie.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </SelectRoot>
+        <Stack>
+          <SelectRoot
+            disabled={families.items.length === 0}
+            collection={families}
+            size="sm"
+            mt={1}
+            value={[answers[questionIndex]]}
+            onValueChange={(e) => answerQuestion(e.value[0])}
+          >
+            <SelectTrigger>
+              <SelectValueText placeholder="Семья" />
+            </SelectTrigger>
+            <SelectContent>
+              {families.items.map((movie) => (
+                <SelectItem item={movie} key={movie.value}>
+                  {movie.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </SelectRoot>
+
+          <MyPreviewList
+            previewDataArray={selectedFamily?.ringIncrease}
+            previewText={"Повышение ранга Кольца: "}
+            prefix="+1 "
+          />
+          <MyPreviewList
+            previewDataArray={selectedFamily?.skillIncrease}
+            previewText={"Повышение ранга Навыка: "}
+            prefix="+1 "
+          />
+          <HStack justifyContent={"space-between"}>
+            <MyPreviewText
+              previewData={selectedFamily?.startGlory}
+              previewText={"Слава: "}
+            />
+
+            <MyPreviewText
+              previewData={selectedFamily?.startMoney}
+              previewText={"Стартовые деньги: "}
+            />
+          </HStack>
+        </Stack>
       )}
 
       {questionIndex === "3" && (
-        <SelectRoot
-          disabled={schools.items.length === 0}
-          collection={schools}
-          size="sm"
-          mt={1}
-          value={[answers[questionIndex]]}
-          onValueChange={(e) => answerQuestion(e.value[0])}
-        >
-          <SelectTrigger>
-            <SelectValueText placeholder="Школа" />
-          </SelectTrigger>
-          <SelectContent>
-            {schools.items.map((movie) => (
-              <SelectItem item={movie} key={movie.value}>
-                {movie.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </SelectRoot>
+        <Stack>
+          <SelectRoot
+            disabled={schools.items.length === 0}
+            collection={schools}
+            size="sm"
+            mt={1}
+            value={[answers[questionIndex]]}
+            onValueChange={(e) => answerQuestion(e.value[0])}
+          >
+            <SelectTrigger>
+              <SelectValueText placeholder="Школа" />
+            </SelectTrigger>
+            <SelectContent>
+              {schools.items.map((movie) => (
+                <SelectItem item={movie} key={movie.value}>
+                  {movie.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </SelectRoot>
+
+          {selectedSchool?.key !== "PhoenixClanIsava" && (
+            <MyPreviewList
+              previewDataArray={selectedSchool?.ringIncrease}
+              previewText={"Повышение ранга Кольца: "}
+              prefix="+1 "
+            />
+          )}
+          <MyPreviewText
+            previewData={selectedSchool?.startHonor}
+            previewText={"Честь: "}
+          />
+          <MyPreviewSchoolTech previewData={selectedSchool?.schoolAbility} />
+          <MyPreviewList
+            previewDataArray={selectedSchool?.availableTechniques}
+            previewText={"Доступные техники: "}
+          />
+        </Stack>
       )}
 
       {questionIndex === "4" && (
         <CheckboxGroup>
-          <Flex gap="2">
+          <Flex gap="1">
             {rings.map((ring, ringIndex) => (
-              // <MyHoverCard>
-              //
-              // </MyHoverCard>
               <CheckboxCard
-                checked={answers[questionIndex] === ring.value}
                 key={ringIndex}
                 label={ring.label}
                 colorPalette="teal"
                 variant="subtle"
-                onClick={() => answerQuestion(ring.value)}
-                indicator={""}
+                indicator=""
+                checked={answers[questionIndex] === ring.value}
+                disabled={
+                  answers[questionIndex] !== ring.value &&
+                  accumulatedRings[ring.value] >= 3
+                }
+                cursor={
+                  answers[questionIndex] !== ring.value &&
+                  accumulatedRings[ring.value] >= 3
+                    ? "no-drop"
+                    : "pointer"
+                }
+                onClick={() => {
+                  if (accumulatedRings[ring.value] <= 3)
+                    answerQuestion(ring.value);
+                }}
               />
             ))}
           </Flex>
