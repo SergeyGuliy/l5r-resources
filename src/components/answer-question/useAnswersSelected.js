@@ -13,7 +13,7 @@ export function useAnswersSelected(answers) {
     return _families[answers[2]];
   }, [answers]);
   const selectedSchool = useMemo(() => {
-    return _schools[answers[3]];
+    return _schools[answers[3].key];
   }, [answers]);
   const selectedRing = useMemo(() => {
     return _rings[answers[4]];

@@ -20,7 +20,7 @@ export default function RootLayout({ Component, pageProps }) {
       <ClientOnly>
         <Flex position={"relative"}>
           <MySidebar />
-          {/*<MyAlerts />*/}
+          <MyAlerts />
           <Box
             flex="1"
             p={{ base: 2, lg: 6 }}

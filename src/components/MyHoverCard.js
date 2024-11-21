@@ -19,7 +19,7 @@ export default function MyHoverCard({ children, cardData }) {
       closeDelay={100}
       size="sm"
       open={open}
-      onOpenChange={(e) => {
+      onOpenChange={() => {
         setOpen(false);
         // if (!cardData?.description && e.open) {
         //   setOpen(false);

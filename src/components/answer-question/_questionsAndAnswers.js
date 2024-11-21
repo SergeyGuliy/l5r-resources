@@ -27,13 +27,11 @@ export const questions = {
   },
   7: {
     question: "Каковы отношения вашего персонажа с его кланом?",
-    // trigger: "gloryOrSkill",
-    trigger: "notReady",
+    trigger: "gloryOrSkill",
   },
   8: {
     question: "Что ваш персонаж думает о бусидо?",
-    // trigger: "honorOrSkill",
-    trigger: "notReady",
+    trigger: "honorOrSkill",
   },
   9: {
     question:
@@ -74,8 +72,7 @@ export const questions = {
   },
   17: {
     question: "Как бы родители вашего персонажа описали его?",
-    // trigger: "increaseUnresearchedSkill",
-    trigger: "notReady",
+    trigger: "increaseUnresearchedSkill",
   },
   18: {
     question: "В честь кого был назван ваш персонаж?",
@@ -91,15 +88,19 @@ export const questions = {
   },
 };
 
+const defaultObj = {
+  key: "",
+};
+
 export const _answers = {
   1: "",
   2: "",
-  3: "",
+  3: defaultObj,
   4: "",
   5: "",
   6: "",
-  7: "",
-  8: "",
+  7: defaultObj,
+  8: defaultObj,
   9: "",
   10: "",
   11: "",

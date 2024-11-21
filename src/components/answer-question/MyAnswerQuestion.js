@@ -13,6 +13,8 @@ import {
 
 export function MyAnswerQuestion() {
   const [answers, setAnswer] = useState(_answers);
+  const [expandedQuestions, setExpandedQuestions] = useState(false);
+  const [expandedAnswers, setExpandedAnswers] = useState(false);
 
   const { selectedClan, selectedFamily, selectedSchool, selectedRing } =
     useAnswersSelected(answers);
@@ -28,6 +30,7 @@ export function MyAnswerQuestion() {
     selectedFamily,
     selectedSchool,
     selectedRing,
+    answers,
   });
 
   function wrappedSetAnswer(newAnswer) {
@@ -63,6 +66,9 @@ export function MyAnswerQuestion() {
         selectedFamily={selectedFamily}
         selectedSchool={selectedSchool}
         accumulatedRings={accumulatedRings}
+        accumulatedSkills={accumulatedSkills}
+        expandedQuestions={expandedQuestions}
+        setExpandedQuestions={setExpandedQuestions}
       />
 
       <MyAnswers
@@ -71,6 +77,8 @@ export function MyAnswerQuestion() {
         accumulatedStatus={accumulatedStatus}
         accumulatedGlory={accumulatedGlory}
         accumulatedHonor={accumulatedHonor}
+        expandedAnswers={expandedAnswers}
+        setExpandedAnswers={setExpandedAnswers}
       />
     </HStack>
   );

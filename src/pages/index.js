@@ -30,7 +30,7 @@ const group3 = [
   { title: translations.clans, link: generateLinkPath(groups.clans) },
   { title: translations.families, link: generateLinkPath(groups.families) },
   { title: translations.schools, link: generateLinkPath(groups.schools) },
-  { title: "Генератор персонажа", link: "/constructor", disabled: true },
+  { title: "Генератор персонажа", link: "/constructor" },
 ];
 
 const group4 = [

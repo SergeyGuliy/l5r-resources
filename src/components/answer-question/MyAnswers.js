@@ -7,6 +7,7 @@ import { MyAnswersRings } from "@/components/answer-question/MyAnswersRings";
 import { MyAnswersSkills } from "@/components/answer-question/MyAnswersSkills";
 import { MyAnswersStats } from "@/components/answer-question/MyAnswersStats";
 import { MyAnswersOtherStats } from "@/components/answer-question/MyAnswersOtherStats";
+import { Switch } from "@/components/ui/switch";
 
 export function MyAnswers({
   accumulatedRings,
@@ -14,12 +15,23 @@ export function MyAnswers({
   accumulatedStatus,
   accumulatedGlory,
   accumulatedHonor,
+  expandedAnswers,
+  setExpandedAnswers,
 }) {
   return (
     <Card.Root width={"50%"} h={"100%"}>
       <Stack h={"100%"}>
         <HStack pl={3} pt={3}>
           <MyPageTitle title={"Характеристики персонажа"} />
+
+          <Switch
+            ml={"auto"}
+            flexDirection="row-reverse"
+            checked={expandedAnswers}
+            onCheckedChange={(e) => setExpandedAnswers(e.checked)}
+          >
+            Switch with tooltip
+          </Switch>
         </HStack>
 
         <Stack overflow={"auto"} h={"100%"} p={2}>

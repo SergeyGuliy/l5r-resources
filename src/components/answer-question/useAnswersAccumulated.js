@@ -10,6 +10,7 @@ export function useAnswersAccumulated({
   selectedFamily,
   selectedSchool,
   selectedRing,
+  answers,
 }) {
   const accumulatedRings = useMemo(() => {
     const baseRings = { ..._baseRings };
@@ -37,32 +38,44 @@ export function useAnswersAccumulated({
     if (selectedFamily)
       selectedFamily.skillIncrease.forEach((i) => baseSkills[i.key]++);
 
+    if (answers && answers[3] && answers[3]?.skills?.length) {
+      answers[3].skills.forEach((i) => baseSkills[i]++);
+    }
+
+    if (answers[7] && answers[7].key === "selectSkill" && answers[7].value)
+      baseSkills[answers[7].value]++;
+
+    if (answers[8] && answers[8].key === "selectSkill" && answers[8].value)
+      baseSkills[answers[8].value]++;
+
     return baseSkills;
-  }, [selectedClan, selectedFamily]);
+  }, [answers, selectedClan, selectedFamily]);
 
   const accumulatedStatus = useMemo(() => {
-    let baseStatus = 0;
+    let base = 0;
 
-    if (selectedClan) baseStatus = baseStatus + selectedClan.startStatus;
+    if (selectedClan) base = base + selectedClan.startStatus;
 
-    return baseStatus;
+    return base;
   }, [selectedClan]);
 
   const accumulatedGlory = useMemo(() => {
-    let baseGlory = 0;
+    let base = 0;
 
-    if (selectedFamily) baseGlory = baseGlory + selectedFamily.startGlory;
+    if (selectedFamily) base = base + selectedFamily.startGlory;
+    if (answers[7] && answers[7].key === "selectGlory") base = base + 5;
 
-    return baseGlory;
-  }, [selectedFamily]);
+    return base;
+  }, [answers, selectedFamily]);
 
   const accumulatedHonor = useMemo(() => {
-    let baseHonor = 0;
+    let base = 0;
 
-    if (selectedSchool) baseHonor = baseHonor + selectedSchool.startHonor;
+    if (selectedSchool) base = base + selectedSchool.startHonor;
+    if (answers[8] && answers[8].key === "selectHonor") base = base + 10;
 
-    return baseHonor;
-  }, [selectedSchool]);
+    return base;
+  }, [answers, selectedSchool]);
 
   return {
     accumulatedRings,
