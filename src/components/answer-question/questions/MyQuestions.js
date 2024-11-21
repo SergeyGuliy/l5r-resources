@@ -1,6 +1,6 @@
 import { Card, HStack, Stack } from "@chakra-ui/react";
 import { MyPageTitle } from "@/components/MyPageTitle";
-import { MyQuestion } from "@/components/answer-question/MyQuestion";
+import { MyQuestion } from "@/components/answer-question/questions/MyQuestion";
 import { Switch } from "@/components/ui/switch";
 
 export function MyQuestions({

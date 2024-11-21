@@ -19,7 +19,7 @@ import { _families } from "@/mockData/clansFamiliesSchools/families";
 import { _schools } from "@/mockData/clansFamiliesSchools/schools";
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
 import MyHoverCard from "@/components/MyHoverCard";
-import { MyQuestionMultiselect } from "@/components/answer-question/MyQuestionMultiselect";
+import { MyQuestionMultiselect } from "@/components/answer-question/questions/MyQuestionMultiselect";
 import { LuInfo } from "react-icons/lu";
 import { skills } from "@/mockData/routeData/skills";
 import { MyPreviewList } from "@/components/MyPreviewList";

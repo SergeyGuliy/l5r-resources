@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 import { HStack } from "@chakra-ui/react";
-import { MyQuestions } from "@/components/answer-question/MyQuestions";
-import { MyAnswers } from "@/components/answer-question/MyAnswers";
-import { useAnswersSelected } from "@/components/answer-question/useAnswersSelected";
-import { useAnswersAccumulated } from "@/components/answer-question/useAnswersAccumulated";
+import { MyQuestions } from "@/components/answer-question/questions/MyQuestions";
+import { MyAnswers } from "@/components/answer-question/answers/MyAnswers";
+import { useAnswersSelected } from "@/hooks/useAnswersSelected";
+import { useAnswersAccumulated } from "@/hooks/useAnswersAccumulated";
 
 import {
   questions,

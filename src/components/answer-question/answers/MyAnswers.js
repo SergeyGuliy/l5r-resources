@@ -3,10 +3,10 @@ import React from "react";
 import { Card, HStack, Stack } from "@chakra-ui/react";
 
 import { MyPageTitle } from "@/components/MyPageTitle";
-import { MyAnswersRings } from "@/components/answer-question/MyAnswersRings";
-import { MyAnswersSkills } from "@/components/answer-question/MyAnswersSkills";
-import { MyAnswersStats } from "@/components/answer-question/MyAnswersStats";
-import { MyAnswersOtherStats } from "@/components/answer-question/MyAnswersOtherStats";
+import { MyAnswersRings } from "@/components/answer-question/answers/MyAnswersRings";
+import { MyAnswersSkills } from "@/components/answer-question/answers/MyAnswersSkills";
+import { MyAnswersStats } from "@/components/answer-question/answers/MyAnswersStats";
+import { MyAnswersOtherStats } from "@/components/answer-question/answers/MyAnswersOtherStats";
 import { Switch } from "@/components/ui/switch";
 
 export function MyAnswers({
