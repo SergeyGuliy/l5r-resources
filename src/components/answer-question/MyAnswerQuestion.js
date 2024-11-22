@@ -50,9 +50,7 @@ export function MyAnswerQuestion() {
         });
         break;
       default:
-        wrappedSetAnswer({
-          [questionIndex]: newAnswer,
-        });
+        wrappedSetAnswer({ [questionIndex]: newAnswer });
     }
   }
 

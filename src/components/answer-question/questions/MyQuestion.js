@@ -1,30 +1,19 @@
 import { useMemo } from "react";
-import { Tabs } from "@chakra-ui/react";
-import { LuCheckSquare, LuFolder, LuUser } from "react-icons/lu";
+import { Box } from "@chakra-ui/react";
 
-import { Card, CheckboxGroup, HStack, Stack, Text } from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import { createListCollection } from "@chakra-ui/react";
 
-import {
-  SelectContent,
-  SelectItem,
-  SelectRoot,
-  SelectTrigger,
-  SelectValueText,
-} from "@/components/ui/select";
-import { CheckboxCard } from "@/components/ui/checkbox-card";
+import { MyQuestionMultiselect } from "@/components/answer-question/questions/MyQuestionMultiselect";
+import { MyQuestionOptions } from "@/components/answer-question/questions/MyQuestionOptions";
+import { MyQuestionRing } from "@/components/answer-question/questions/MyQuestionRing";
+import { MyQuestionPreview } from "@/components/answer-question/questions/MyQuestionPreview";
+import { MyQuestionSelect } from "@/components/answer-question/questions/MyQuestionSelect";
 
 import { _clans } from "@/mockData/clansFamiliesSchools/clans/_clans";
 import { _families } from "@/mockData/clansFamiliesSchools/families";
 import { _schools } from "@/mockData/clansFamiliesSchools/schools";
-import { _rings } from "@/mockData/routeData/other/rings/_rings";
-import MyHoverCard from "@/components/MyHoverCard";
-import { MyQuestionMultiselect } from "@/components/answer-question/questions/MyQuestionMultiselect";
-import { LuInfo } from "react-icons/lu";
 import { skills } from "@/mockData/routeData/skills";
-import { MyPreviewList } from "@/components/MyPreviewList";
-import { MyPreviewText } from "@/components/MyPreviewText";
-import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
 
 const skill8list = {
   Torgovlya: skills.Torgovlya,
@@ -34,6 +23,16 @@ const skill8list = {
   Zhulnichestvo: skills.Zhulnichestvo,
   Vyzhivanie: skills.Vyzhivanie,
 };
+
+const list7 = [
+  { label: "Лоялен (+5 славы)", value: "selectGlory" },
+  { label: "Конфликт (+1 ранг в навыке)", value: "selectSkill" },
+];
+
+const list8 = [
+  { label: "Ортодоксален (+10 чести)", value: "selectHonor" },
+  { label: "Неверен (+1 ранг в навыке:)", value: "selectSkill" },
+];
 
 export function MyQuestion({
   questionIndex,
@@ -48,16 +47,8 @@ export function MyQuestion({
   expandedQuestions,
 }) {
   const clans = createListCollection({
-    items: Object.values(_clans).map((i) => ({
-      label: i.title,
-      value: i.key,
-    })),
+    items: Object.values(_clans).map((i) => ({ label: i.title, value: i.key })),
   });
-
-  const rings = Object.values(_rings).map((i) => ({
-    label: i.title,
-    value: i.key,
-  }));
 
   const families = useMemo(() => {
     return createListCollection({
@@ -84,13 +75,13 @@ export function MyQuestion({
   const skills7 = useMemo(() => {
     return createListCollection({
       items: Object.entries(accumulatedSkills)
-        .filter((i) => !i[1])
+        .filter((i) => !i[1] || i[0] === answers[7]?.value)
         .map(([key]) => ({
           label: skills[key].title,
           value: skills[key].key,
         })),
     });
-  }, [accumulatedSkills]);
+  }, [accumulatedSkills, answers]);
 
   const skills8 = useMemo(() => {
     return createListCollection({
@@ -103,327 +94,148 @@ export function MyQuestion({
     });
   }, [accumulatedSkills]);
 
-  const questionState = useMemo(() => {
-    const toCheck = answers[questionIndex];
-    const isValid = typeof toCheck === "object" ? !!toCheck.key : !!toCheck;
+  const skills17 = useMemo(() => {
+    return createListCollection({
+      items: Object.entries(accumulatedSkills)
+        .filter((i) => i[1] < 3 || i[0] === answers[17])
+        .map(([key]) => ({
+          label: skills[key].title,
+          value: skills[key].key,
+        })),
+    });
+  }, [accumulatedSkills, answers]);
 
-    if (isValid) return "border.disabled";
-    return "border.error";
-  }, [answers, questionIndex]);
+  const answerExtended = (v) =>
+    answerQuestion({ ...answers[questionIndex], ...v });
 
   if (["discussWithMaster", "notReady"].includes(questionData.trigger)) return;
-
   return (
-    <Card.Root mb={2} p={3} borderColor={questionState}>
+    <Box p={1} pl={2}>
       <Text textStyle={"md"} fontWeight="semibold" mb={2}>
         {questionIndex}. {questionData.question}
       </Text>
 
-      {questionIndex === "1" && (
-        <Stack>
-          <SelectRoot
-            collection={clans}
-            size="sm"
-            mt={1}
-            value={[answers[questionIndex]]}
-            onValueChange={(e) => answerQuestion(e.value[0])}
-          >
-            <SelectTrigger>
-              <SelectValueText placeholder="Клан" />
-            </SelectTrigger>
-            <SelectContent>
-              {clans.items.map((movie) => (
-                <SelectItem item={movie} key={movie.value}>
-                  {movie.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </SelectRoot>
-
-          {expandedQuestions && (
-            <>
-              <MyPreviewList
-                previewDataArray={selectedClan?.ringIncrease}
-                previewText={"Повышение ранга Кольца: "}
-                prefix="+1 "
-              />
-              <MyPreviewList
-                previewDataArray={selectedClan?.skillIncrease}
-                previewText={"Повышение ранга Навыка: "}
-                prefix="+1 "
-              />
-              <MyPreviewText
-                previewData={selectedClan?.startStatus}
-                previewText={"Статус: "}
-              />
-            </>
-          )}
-        </Stack>
-      )}
-
-      {questionIndex === "2" && (
-        <Stack>
-          <SelectRoot
-            disabled={families.items.length === 0}
-            collection={families}
-            size="sm"
-            mt={1}
-            value={[answers[questionIndex]]}
-            onValueChange={(e) => answerQuestion(e.value[0])}
-          >
-            <SelectTrigger>
-              <SelectValueText placeholder="Семья" />
-            </SelectTrigger>
-            <SelectContent>
-              {families.items.map((movie) => (
-                <SelectItem item={movie} key={movie.value}>
-                  {movie.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </SelectRoot>
-
-          {expandedQuestions && (
-            <>
-              <MyPreviewList
-                previewDataArray={selectedFamily?.ringIncrease}
-                previewText={"Повышение ранга Кольца: "}
-                prefix="+1 "
-              />
-              <MyPreviewList
-                previewDataArray={selectedFamily?.skillIncrease}
-                previewText={"Повышение ранга Навыка: "}
-                prefix="+1 "
-              />
-              <HStack justifyContent={"space-between"}>
-                <MyPreviewText
-                  previewData={selectedFamily?.startGlory}
-                  previewText={"Слава: "}
-                />
-                <MyPreviewText
-                  previewData={selectedFamily?.startMoney}
-                  previewText={"Стартовые деньги: "}
-                />
-              </HStack>
-            </>
-          )}
-        </Stack>
-      )}
-
-      {questionIndex === "3" && (
-        <Stack>
-          <SelectRoot
-            disabled={schools.items.length === 0}
-            collection={schools}
-            size="sm"
-            mt={1}
-            value={[answers[questionIndex].key]}
-            onValueChange={(e) =>
-              answerQuestion({ ...answers[questionIndex], key: e.value[0] })
-            }
-          >
-            <SelectTrigger>
-              <SelectValueText placeholder="Школа" />
-            </SelectTrigger>
-            <SelectContent>
-              {schools.items.map((movie) => (
-                <SelectItem item={movie} key={movie.value}>
-                  {movie.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </SelectRoot>
-
-          {expandedQuestions && (
-            <>
-              {selectedSchool?.key !== "PhoenixClanIsava" && (
-                <MyPreviewList
-                  previewDataArray={selectedSchool?.ringIncrease}
-                  previewText={"Повышение ранга Кольца: "}
-                  prefix="+1 "
-                />
-              )}
-              <MyPreviewText
-                previewData={selectedSchool?.startHonor}
-                previewText={"Честь: "}
-              />
-              <MyPreviewSchoolTech
-                previewData={selectedSchool?.schoolAbility}
-              />
-              <MyPreviewList
-                previewDataArray={selectedSchool?.availableTechniques}
-                previewText={"Доступные техники: "}
-              />
-            </>
-          )}
-
-          <MyQuestionMultiselect
-            title="Выберете навыки"
-            dataToShow={selectedSchool?.skillAvailable}
-            selectList={answers[questionIndex].skills}
-            onUpdate={(e) =>
-              answerQuestion({ ...answers[questionIndex], skills: e })
-            }
-          />
-          {selectedSchool?.startingTechniques.map((item, index) => (
-            <MyQuestionMultiselect
-              key={index}
-              title="Выберете технику"
-              dataToShow={item}
-              selectList={answers[questionIndex][`techniques_${index + 1}`]}
-              onUpdate={(e) =>
-                answerQuestion({
-                  ...answers[questionIndex],
-                  [`techniques_${index + 1}`]: e,
-                })
-              }
+      <Box pl={4}>
+        {questionIndex === "1" && (
+          <Stack>
+            <MyQuestionOptions
+              placeholder={"Клан "}
+              list={clans}
+              invalid={!answers[questionIndex]}
+              value={answers[questionIndex]}
+              onCustomUpdateValue={(val) => answerQuestion(val)}
             />
-          ))}
-        </Stack>
-      )}
 
-      {questionIndex === "4" && (
-        <CheckboxGroup>
-          <HStack gap="1" wrap={"wrap"} alignItems="stretch">
-            {rings.map((ring, ringIndex) => (
-              <CheckboxCard
-                key={ringIndex}
-                label={ring.label}
-                colorPalette="teal"
-                variant="subtle"
-                indicator={
-                  <MyHoverCard cardData={ring}>
-                    <LuInfo />
-                  </MyHoverCard>
+            <MyQuestionPreview show={expandedQuestions} data={selectedClan} />
+          </Stack>
+        )}
+
+        {questionIndex === "2" && (
+          <Stack>
+            <MyQuestionOptions
+              placeholder={"Клан "}
+              disabled={families.items.length === 0}
+              invalid={!answers[questionIndex]}
+              list={families}
+              value={answers[questionIndex]}
+              onCustomUpdateValue={(val) => answerQuestion(val)}
+            />
+
+            <MyQuestionPreview show={expandedQuestions} data={selectedFamily} />
+          </Stack>
+        )}
+
+        {questionIndex === "3" && (
+          <Stack>
+            <MyQuestionOptions
+              placeholder={"Школа "}
+              disabled={schools.items.length === 0}
+              invalid={!answers[questionIndex]?.key}
+              list={schools}
+              value={answers[questionIndex].key}
+              onCustomUpdateValue={(key) => answerExtended({ key })}
+            />
+
+            <MyQuestionPreview show={expandedQuestions} data={selectedSchool} />
+
+            <MyQuestionMultiselect
+              title="Выберете навыки"
+              data={selectedSchool?.skillAvailable}
+              selectList={answers[questionIndex].skills}
+              onUpdate={(skills) => answerExtended({ skills })}
+            />
+
+            {selectedSchool?.startingTechniques.map((item, index) => (
+              <MyQuestionMultiselect
+                key={index}
+                title="Выберете технику"
+                data={item}
+                selectList={answers[questionIndex][`techniques_${index + 1}`]}
+                onUpdate={(v) =>
+                  answerExtended({ [`techniques_${index + 1}`]: v })
                 }
-                checked={answers[questionIndex] === ring.value}
-                disabled={
-                  answers[questionIndex] !== ring.value &&
-                  accumulatedRings[ring.value] >= 3
-                }
-                cursor={
-                  answers[questionIndex] !== ring.value &&
-                  accumulatedRings[ring.value] >= 3
-                    ? "no-drop"
-                    : "pointer"
-                }
-                onClick={() => {
-                  if (accumulatedRings[ring.value] <= 3)
-                    answerQuestion(ring.value);
-                }}
               />
             ))}
-          </HStack>
-        </CheckboxGroup>
-      )}
+          </Stack>
+        )}
 
-      {questionIndex === "7" && (
-        <Tabs.Root
-          defaultValue="members"
-          variant="plain"
-          value={answers[questionIndex].key}
-          onValueChange={(e) => answerQuestion({ key: e.value })}
-        >
-          <Tabs.List bg="bg.muted" rounded="l3" p="1" w={"100%"}>
-            <Tabs.Trigger value="selectGlory" w={"50%"}>
-              Лоялен (получите +5 славы)
-            </Tabs.Trigger>
-            <Tabs.Trigger value="selectSkill" w={"50%"}>
-              Конфликт (+1 ранг в навыке, в котором у вас 0 рангов)
-            </Tabs.Trigger>
-            <Tabs.Indicator rounded="l2" />
-          </Tabs.List>
-          <Tabs.Content value="selectSkill">
-            <SelectRoot
-              disabled={skills7.items.length === 0}
-              invalid={!answers[questionIndex].value}
-              collection={skills7}
-              size="sm"
-              mt={1}
-              value={[answers[questionIndex].value]}
-              onValueChange={(e) =>
-                answerQuestion({ ...answers[questionIndex], value: e.value[0] })
-              }
-            >
-              <SelectTrigger>
-                <SelectValueText placeholder="Навык" />
-              </SelectTrigger>
-              <SelectContent>
-                {skills7.items.map((movie) => (
-                  <SelectItem item={movie} key={movie.value}>
-                    {movie.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </SelectRoot>
-          </Tabs.Content>
-        </Tabs.Root>
-      )}
+        {questionIndex === "4" && (
+          <MyQuestionRing
+            value={answers[questionIndex]}
+            onCustomUpdateValue={(value) => answerQuestion(value)}
+            accumulatedRings={accumulatedRings}
+          />
+        )}
 
-      {questionIndex === "8" && (
-        <Tabs.Root
-          defaultValue="members"
-          variant="plain"
-          value={answers[questionIndex].key}
-          onValueChange={(e) => answerQuestion({ key: e.value })}
-        >
-          <Tabs.List bg="bg.muted" rounded="l3" p="1" w={"100%"}>
-            <Tabs.Trigger value="selectHonor" w={"50%"}>
-              Ортодоксален (получите +10 чести)
-            </Tabs.Trigger>
-            <Tabs.Trigger value="selectSkill" w={"50%"}>
-              Неверен (+1 ранг в одном из:)
-            </Tabs.Trigger>
-            <Tabs.Indicator rounded="l2" />
-          </Tabs.List>
-          <Tabs.Content value="selectSkill">
-            <SelectRoot
-              disabled={skills8.items.length === 0}
-              invalid={!answers[questionIndex].value}
-              collection={skills8}
-              size="sm"
-              mt={1}
-              value={[answers[questionIndex].value]}
-              onValueChange={(e) =>
-                answerQuestion({ ...answers[questionIndex], value: e.value[0] })
-              }
-            >
-              <SelectTrigger>
-                <SelectValueText placeholder="Навык" />
-              </SelectTrigger>
-              <SelectContent>
-                {skills8.items.map((movie) => (
-                  <SelectItem item={movie} key={movie.value}>
-                    {movie.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </SelectRoot>
-          </Tabs.Content>
-        </Tabs.Root>
-      )}
+        {questionIndex === "7" && (
+          <>
+            <MyQuestionSelect
+              items={list7}
+              value={answers[questionIndex].key}
+              onCustomUpdateValue={(key) => answerQuestion({ key })}
+            />
 
-      {questionIndex === "17" && (
-        <SelectRoot
-          disabled={skills7.items.length === 0}
-          collection={skills7}
-          size="sm"
-          mt={1}
-          value={[answers[questionIndex]]}
-          onValueChange={(e) => answerQuestion(e.value[0])}
-        >
-          <SelectTrigger>
-            <SelectValueText placeholder="Навык" />
-          </SelectTrigger>
-          <SelectContent>
-            {skills7.items.map((movie) => (
-              <SelectItem item={movie} key={movie.value}>
-                {movie.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </SelectRoot>
-      )}
-    </Card.Root>
+            {answers[questionIndex].key === "selectSkill" && (
+              <MyQuestionOptions
+                placeholder={"Навык "}
+                invalid={!answers[questionIndex].value}
+                list={skills7}
+                value={answers[questionIndex].value}
+                onCustomUpdateValue={(value) => answerExtended({ value })}
+              />
+            )}
+          </>
+        )}
+
+        {questionIndex === "8" && (
+          <>
+            <MyQuestionSelect
+              items={list8}
+              value={answers[questionIndex].key}
+              onCustomUpdateValue={(key) => answerQuestion({ key })}
+            />
+
+            {answers[questionIndex].key === "selectSkill" && (
+              <MyQuestionOptions
+                placeholder={"Навык "}
+                invalid={!answers[questionIndex].value}
+                list={skills8}
+                value={answers[questionIndex].value}
+                onCustomUpdateValue={(value) => answerExtended({ value })}
+              />
+            )}
+          </>
+        )}
+
+        {questionIndex === "17" && (
+          <MyQuestionOptions
+            placeholder={"Навык "}
+            list={skills17}
+            value={answers[questionIndex]}
+            onCustomUpdateValue={(val) => answerQuestion(val)}
+          />
+        )}
+      </Box>
+    </Box>
   );
 }

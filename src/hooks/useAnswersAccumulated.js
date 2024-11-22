@@ -38,15 +38,16 @@ export function useAnswersAccumulated({
     if (selectedFamily)
       selectedFamily.skillIncrease.forEach((i) => baseSkills[i.key]++);
 
-    if (answers && answers[3] && answers[3]?.skills?.length) {
+    if (answers && answers[3] && answers[3]?.skills?.length)
       answers[3].skills.forEach((i) => baseSkills[i]++);
-    }
 
     if (answers[7] && answers[7].key === "selectSkill" && answers[7].value)
       baseSkills[answers[7].value]++;
 
     if (answers[8] && answers[8].key === "selectSkill" && answers[8].value)
       baseSkills[answers[8].value]++;
+
+    if (answers[17]) baseSkills[answers[17]]++;
 
     return baseSkills;
   }, [answers, selectedClan, selectedFamily]);

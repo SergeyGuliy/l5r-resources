@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { Card, CheckboxGroup, HStack, Text } from "@chakra-ui/react";
+import { Box, Card, CheckboxGroup, HStack, Text } from "@chakra-ui/react";
 import { CheckboxCard } from "@/components/ui/checkbox-card";
 import { LuInfo } from "react-icons/lu";
 import MyHoverCard from "@/components/MyHoverCard";
@@ -27,27 +27,29 @@ export function MyQuestionMultiselect({
     }
   }
 
-  const questionState = useMemo(() => {
-    if (isMaximusSelected) return "border.disabled";
-    return "border.error";
-  }, [isMaximusSelected]);
-
   if (!dataToShow?.toSelect || !dataToShow?.items?.length) return;
-
   return (
-    <Card.Root mb={2} p={3} borderColor={questionState}>
-      <Text textStyle={"md"} fontWeight="semibold" mb={3}>
-        {title} {`(${selectList?.length} из ${dataToShow?.toSelect})`}
-      </Text>
-      <CheckboxGroup>
-        <HStack gap="1" wrap={"wrap"} alignItems="stretch">
+    <Box mb={2}>
+      {title && (
+        <Text textStyle={"md"} fontWeight="semibold" mb={3}>
+          {title} {`(${selectList?.length} из ${dataToShow?.toSelect})`}
+        </Text>
+      )}
+
+      <CheckboxGroup
+        borderColor={isMaximusSelected ? "transparent" : "border.error"}
+        borderTopRadius="sm"
+        borderWidth="1px"
+      >
+        <HStack gap="0" wrap={"wrap"} alignItems="stretch">
           {dataToShow.items.map((data, ringIndex) => (
             <CheckboxCard
               flex="1 1 auto"
               key={ringIndex}
               label={data.title}
-              colorPalette="teal"
+              colorPalette="blue"
               variant="subtle"
+              size={"sm"}
               indicator={
                 <MyHoverCard cardData={data}>
                   <LuInfo />
@@ -60,6 +62,6 @@ export function MyQuestionMultiselect({
           ))}
         </HStack>
       </CheckboxGroup>
-    </Card.Root>
+    </Box>
   );
 }
