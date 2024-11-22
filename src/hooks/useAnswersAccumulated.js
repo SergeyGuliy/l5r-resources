@@ -22,12 +22,17 @@ export function useAnswersAccumulated({
       selectedFamily.ringIncrease.forEach((i) => baseRings[i.key]++);
 
     if (selectedSchool)
-      selectedSchool.ringIncrease.forEach((i) => baseRings[i.key]++);
+      selectedSchool.ringIncrease
+        .filter((i) => i.key !== "select")
+        .forEach((i) => baseRings[i.key]++);
+
+    if (answers[3]?.ring1) baseRings[answers[3]?.ring1]++;
+    if (answers[3]?.ring2) baseRings[answers[3]?.ring2]++;
 
     if (selectedRing) baseRings[selectedRing.key]++;
 
     return baseRings;
-  }, [selectedClan, selectedFamily, selectedRing, selectedSchool]);
+  }, [answers, selectedClan, selectedFamily, selectedRing, selectedSchool]);
 
   const accumulatedSkills = useMemo(() => {
     const baseSkills = { ..._baseSkills };

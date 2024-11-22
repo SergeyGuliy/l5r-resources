@@ -6,15 +6,39 @@ import MyHoverCard from "@/components/MyHoverCard";
 
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
 
+function Indicator(ring) {
+  return (
+    <MyHoverCard cardData={ring}>
+      <LuInfo />
+    </MyHoverCard>
+  );
+}
+
 export function MyQuestionRing({
   value,
   accumulatedRings,
   onCustomUpdateValue,
+  otherSelectedRing = "",
 }) {
   const rings = Object.values(_rings).map((i) => ({
     label: i.title,
     value: i.key,
   }));
+
+  function isInvalid(ring) {
+    const localInvalid =
+      value !== ring.value && accumulatedRings[ring.value] >= 3;
+
+    const otherInvalid = otherSelectedRing && otherSelectedRing === ring.value;
+
+    return localInvalid || otherInvalid;
+  }
+
+  function getCursor(ring) {
+    return isInvalid(ring) ? "no-drop" : "pointer";
+  }
+
+  const onClick = (ring) => !isInvalid(ring) && onCustomUpdateValue(ring.value);
 
   return (
     <CheckboxGroup
@@ -30,22 +54,11 @@ export function MyQuestionRing({
             colorPalette="blue"
             variant="subtle"
             size={"sm"}
-            indicator={
-              <MyHoverCard cardData={ring}>
-                <LuInfo />
-              </MyHoverCard>
-            }
+            indicator={Indicator(ring)}
             checked={value === ring.value}
-            disabled={value !== ring.value && accumulatedRings[ring.value] >= 3}
-            cursor={
-              value !== ring.value && accumulatedRings[ring.value] >= 3
-                ? "no-drop"
-                : "pointer"
-            }
-            onClick={() => {
-              if (accumulatedRings[ring.value] <= 3)
-                onCustomUpdateValue(ring.value);
-            }}
+            disabled={isInvalid(ring)}
+            cursor={getCursor(ring)}
+            onClick={() => onClick(ring)}
           />
         ))}
       </HStack>

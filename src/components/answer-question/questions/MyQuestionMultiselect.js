@@ -7,13 +7,13 @@ import MyHoverCard from "@/components/MyHoverCard";
 
 export function MyQuestionMultiselect({
   title,
-  dataToShow,
+  data,
   selectList = [],
   onUpdate,
 }) {
   const isMaximusSelected = useMemo(() => {
-    return selectList?.length >= dataToShow?.toSelect;
-  }, [dataToShow?.toSelect, selectList?.length]);
+    return selectList?.length >= data?.toSelect;
+  }, [data?.toSelect, selectList?.length]);
 
   function localUpdate(event, key) {
     event.stopPropagation();
@@ -27,12 +27,12 @@ export function MyQuestionMultiselect({
     }
   }
 
-  if (!dataToShow?.toSelect || !dataToShow?.items?.length) return;
+  if (!data?.toSelect || !data?.items?.length) return;
   return (
     <Box mb={2}>
       {title && (
         <Text textStyle={"md"} fontWeight="semibold" mb={3}>
-          {title} {`(${selectList?.length} из ${dataToShow?.toSelect})`}
+          {title} {`(${selectList?.length} из ${data?.toSelect})`}
         </Text>
       )}
 
@@ -42,7 +42,7 @@ export function MyQuestionMultiselect({
         borderWidth="1px"
       >
         <HStack gap="0" wrap={"wrap"} alignItems="stretch">
-          {dataToShow.items.map((data, ringIndex) => (
+          {data.items.map((data, ringIndex) => (
             <CheckboxCard
               flex="1 1 auto"
               key={ringIndex}

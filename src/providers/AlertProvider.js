@@ -1,29 +1,23 @@
 import { createContext, useContext, useState } from "react";
 
-const AlertContext = createContext();
+const AlertContext = createContext("AlertProvider");
 
 export function AlertProvider({ children }) {
   const [alerts, setAlerts] = useState([]);
 
   const addAlert = (title, status = "info", timeout = 10000) => {
-    const alert = { id: Date.now(), title, status, fading: false };
+    // Add the alert
+    const alert = { title, status };
     setAlerts((prev) => [...prev, alert]);
 
-    // Schedule fade-out and removal
-    setTimeout(() => fadeOutAlert(alert.id), timeout - 500); // Start fade-out 500ms before removal
-    setTimeout(() => removeAlert(alert.id), timeout);
+    // Schedule removal of the alert after the timeout
+    setTimeout(() => {
+      setAlerts((prev) => prev.filter((a) => a !== alert));
+    }, timeout);
   };
 
-  const fadeOutAlert = (id) => {
-    setAlerts((prev) =>
-      prev.map((alert) =>
-        alert.id === id ? { ...alert, fading: true } : alert
-      )
-    );
-  };
-
-  const removeAlert = (id) =>
-    setAlerts((prev) => prev.filter((alert) => alert.id !== id));
+  const removeAlert = (index) =>
+    setAlerts((prev) => prev.filter((_, i) => i !== index));
 
   return (
     <AlertContext.Provider value={{ alerts, addAlert, removeAlert }}>

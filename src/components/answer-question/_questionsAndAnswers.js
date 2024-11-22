@@ -88,7 +88,7 @@ export const questions = {
   },
 };
 
-const defaultObj = {
+export const defaultObj = {
   key: "",
 };
 

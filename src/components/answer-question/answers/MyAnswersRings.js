@@ -6,7 +6,14 @@ import MyHoverCard from "@/components/MyHoverCard";
 
 export function MyAnswersRings({ accumulatedRings }) {
   return (
-    <Table.Root size="sm">
+    <Table.Root size="sm" showColumnBorder>
+      <Table.ColumnGroup>
+        <Table.Column width="20%" />
+        <Table.Column width="20%" />
+        <Table.Column width="20%" />
+        <Table.Column width="20%" />
+        <Table.Column width="20%" />
+      </Table.ColumnGroup>
       <Table.Header>
         <Table.Row>
           {Object.values(_rings).map((i) => (

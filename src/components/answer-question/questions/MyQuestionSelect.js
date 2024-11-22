@@ -21,7 +21,6 @@ export function MyQuestionSelect({ value, items, onCustomUpdateValue }) {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              console.log("click");
               onCustomUpdateValue(item.value);
             }}
           />

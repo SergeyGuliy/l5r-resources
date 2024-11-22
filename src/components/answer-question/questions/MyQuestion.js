@@ -158,6 +158,26 @@ export function MyQuestion({
 
             <MyQuestionPreview show={expandedQuestions} data={selectedSchool} />
 
+            {selectedSchool?.ringIncrease?.find((i) => i.key === "select") && (
+              <>
+                <Text textStyle={"md"} fontWeight="semibold">
+                  Выберите +1 к двум разным Кольцам
+                </Text>
+                <MyQuestionRing
+                  value={answers[questionIndex].ring1}
+                  otherSelectedRing={answers[questionIndex].ring2}
+                  onCustomUpdateValue={(ring1) => answerExtended({ ring1 })}
+                  accumulatedRings={accumulatedRings}
+                />
+                <MyQuestionRing
+                  value={answers[questionIndex].ring2}
+                  otherSelectedRing={answers[questionIndex].ring1}
+                  onCustomUpdateValue={(ring2) => answerExtended({ ring2 })}
+                  accumulatedRings={accumulatedRings}
+                />
+              </>
+            )}
+
             <MyQuestionMultiselect
               title="Выберете навыки"
               data={selectedSchool?.skillAvailable}
@@ -230,6 +250,7 @@ export function MyQuestion({
         {questionIndex === "17" && (
           <MyQuestionOptions
             placeholder={"Навык "}
+            invalid={!answers[questionIndex]}
             list={skills17}
             value={answers[questionIndex]}
             onCustomUpdateValue={(val) => answerQuestion(val)}
