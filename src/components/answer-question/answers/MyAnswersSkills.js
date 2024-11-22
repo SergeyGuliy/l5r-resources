@@ -6,7 +6,6 @@ import { translations } from "@/mockData/routeData/constants";
 
 export function MyAnswersSkills({ accumulatedSkills }) {
   const [showAll] = useState(false);
-  // console.log(skills.subgroup);
 
   const skillsToShow = useMemo(() => {
     if (showAll) return Object.entries(accumulatedSkills);

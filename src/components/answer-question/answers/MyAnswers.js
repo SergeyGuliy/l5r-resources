@@ -8,6 +8,8 @@ import { MyAnswersSkills } from "@/components/answer-question/answers/MyAnswersS
 import { MyAnswersStats } from "@/components/answer-question/answers/MyAnswersStats";
 import { MyAnswersOtherStats } from "@/components/answer-question/answers/MyAnswersOtherStats";
 import { Switch } from "@/components/ui/switch";
+import { MyAnswersTechniques } from "@/components/answer-question/answers/MyAnswersTechniques";
+import { MyHtml } from "@/components/MyHtml";
 
 export function MyAnswers({
   accumulatedRings,
@@ -17,7 +19,10 @@ export function MyAnswers({
   accumulatedHonor,
   expandedAnswers,
   setExpandedAnswers,
+  selectedSchool,
+  selectedFamily,
 }) {
+  console.log(selectedSchool);
   return (
     <Card.Root width={"50%"} h={"100%"}>
       <Stack h={"100%"}>
@@ -38,12 +43,20 @@ export function MyAnswers({
           <MyAnswersRings accumulatedRings={accumulatedRings} />
           <MyAnswersStats accumulatedRings={accumulatedRings} />
           <MyAnswersOtherStats
-            accumulatedRings={accumulatedRings}
             accumulatedStatus={accumulatedStatus}
             accumulatedGlory={accumulatedGlory}
             accumulatedHonor={accumulatedHonor}
+            selectedFamily={selectedFamily}
           />
           <MyAnswersSkills accumulatedSkills={accumulatedSkills} />
+          <MyAnswersTechniques selectedSchool={selectedSchool} />
+
+          {selectedSchool?.startingEquipment && (
+            <>
+              <span style={{ fontWeight: 700 }}>Стартовое снаряжение:</span>
+              <MyHtml content={selectedSchool.startingEquipment} />
+            </>
+          )}
         </Stack>
       </Stack>
     </Card.Root>

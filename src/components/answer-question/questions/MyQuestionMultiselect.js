@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { Box, Card, CheckboxGroup, HStack, Text } from "@chakra-ui/react";
+import { Box, CheckboxGroup, HStack, Text } from "@chakra-ui/react";
 import { CheckboxCard } from "@/components/ui/checkbox-card";
 import { LuInfo } from "react-icons/lu";
 import MyHoverCard from "@/components/MyHoverCard";

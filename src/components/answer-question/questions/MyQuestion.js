@@ -97,7 +97,7 @@ export function MyQuestion({
   const skills17 = useMemo(() => {
     return createListCollection({
       items: Object.entries(accumulatedSkills)
-        .filter((i) => i[1] < 3 || i[0] === answers[17])
+        .filter((i) => !i[1] || i[0] === answers[17])
         .map(([key]) => ({
           label: skills[key].title,
           value: skills[key].key,

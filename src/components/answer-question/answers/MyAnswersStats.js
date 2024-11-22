@@ -10,24 +10,28 @@ const localHeroStats = {
   coldBlooded: _heroStats.coldBlooded,
   concentration: _heroStats.concentration,
   vigilance: _heroStats.vigilance,
+  voidPoints: _heroStats.voidPoints,
 };
 
 export function MyAnswersStats({ accumulatedRings }) {
-  const accumulatedStats = useMemo(() => {
-    return {
+  const accumulatedStats = useMemo(
+    () => ({
       endurance: (accumulatedRings.earth + accumulatedRings.fire) * 2,
       coldBlooded: (accumulatedRings.earth + accumulatedRings.water) * 2,
       concentration: accumulatedRings.fire + accumulatedRings.air,
       vigilance: Math.round(
         (accumulatedRings.air + accumulatedRings.water) / 2
       ),
-    };
-  }, [
-    accumulatedRings.air,
-    accumulatedRings.earth,
-    accumulatedRings.fire,
-    accumulatedRings.water,
-  ]);
+      voidPoints: accumulatedRings.void,
+    }),
+    [
+      accumulatedRings.air,
+      accumulatedRings.earth,
+      accumulatedRings.fire,
+      accumulatedRings.water,
+      accumulatedRings.void,
+    ]
+  );
 
   return (
     <Table.Root size="sm" showColumnBorder>
@@ -40,9 +44,9 @@ export function MyAnswersStats({ accumulatedRings }) {
       </Table.ColumnGroup>
       <Table.Header>
         <Table.Row>
-          {Object.values(localHeroStats).map((i) => (
-            <Table.ColumnHeader key={i.key} textAlign="center" w={"25%"}>
-              <MyHoverCard cardData={i} />
+          {Object.values(localHeroStats).map((i, index) => (
+            <Table.ColumnHeader key={index} textAlign="center">
+              {typeof i === "string" ? i : <MyHoverCard cardData={i} />}
             </Table.ColumnHeader>
           ))}
         </Table.Row>

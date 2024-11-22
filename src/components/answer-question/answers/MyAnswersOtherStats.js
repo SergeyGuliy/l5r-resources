@@ -6,46 +6,45 @@ import MyHoverCard from "@/components/MyHoverCard";
 import { _heroStats } from "@/mockData/routeData/other/heroStats/_heroStats";
 
 const localHeroStats = {
-  voidPoints: _heroStats.voidPoints,
   honor: _heroStats.honor,
   glory: _heroStats.glory,
   status: _heroStats.status,
+  money: "Стартовые деньги",
 };
 
 export function MyAnswersOtherStats({
-  accumulatedRings,
   accumulatedStatus,
   accumulatedGlory,
   accumulatedHonor,
+  selectedFamily,
 }) {
   const accumulatedStats = useMemo(() => {
     return {
-      voidPoints: accumulatedRings.void,
       honor: accumulatedHonor,
       glory: accumulatedGlory,
       status: accumulatedStatus,
+      money: selectedFamily?.startMoney || "",
     };
   }, [
     accumulatedGlory,
     accumulatedHonor,
-    accumulatedRings.void,
     accumulatedStatus,
+    selectedFamily?.money,
   ]);
 
   return (
     <Table.Root size="sm" showColumnBorder>
       <Table.ColumnGroup>
-        <Table.Column width="20%" />
-        <Table.Column width="20%" />
-        <Table.Column width="20%" />
-        <Table.Column width="20%" />
-        <Table.Column width="20%" />
+        <Table.Column width="25%" />
+        <Table.Column width="25%" />
+        <Table.Column width="25%" />
+        <Table.Column width="25%" />
       </Table.ColumnGroup>
       <Table.Header>
         <Table.Row>
-          {Object.values(localHeroStats).map((i) => (
-            <Table.ColumnHeader key={i.key} textAlign="center" w={"25%"}>
-              <MyHoverCard cardData={i} />
+          {Object.values(localHeroStats).map((i, index) => (
+            <Table.ColumnHeader key={index} textAlign="center">
+              {typeof i === "string" ? i : <MyHoverCard cardData={i} />}
             </Table.ColumnHeader>
           ))}
         </Table.Row>

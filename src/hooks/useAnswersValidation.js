@@ -8,38 +8,34 @@ export function useAnswersValidation(
   selectedSchool,
   selectedRing,
   accumulatedRings,
+  accumulatedSkills,
   setAnswer,
   addAlert
 ) {
-  const validationsMap = {
-    1: (newAnswer, questionIndex, newAnswers) => {
-      if (questionIndex === 1) {
-        if (selectedFamily?.clan && selectedFamily?.clan !== newAnswer) {
-          newAnswers[2] = "";
-          addAlert("Клан был изменен! Выберите новую семью.");
-        }
-        if (selectedSchool?.clan && selectedSchool?.clan !== newAnswer) {
-          newAnswers[3] = defaultObj;
-          addAlert("Клан был изменен! Выберите новую школу.");
-        }
-      }
-    },
-  };
-
+  /**
+   * Validate family and school
+   */
   useEffect(() => {
     const newAnswers = { ...answers };
+    let changed = false;
 
     if (selectedFamily?.clan && selectedFamily?.clan !== selectedClan.key) {
       newAnswers[2] = "";
       addAlert("Клан был изменен! Выберите новую семью!");
+      changed = true;
     }
     if (selectedSchool?.clan && selectedSchool?.clan !== selectedClan.key) {
       newAnswers[3] = defaultObj;
       addAlert("Клан был изменен! Выберите новую школу!");
+      changed = true;
     }
-    setAnswer(newAnswers);
+
+    changed && setAnswer(newAnswers);
   }, [answers[1]]);
 
+  /**
+   * Validate ring
+   */
   useEffect(() => {
     const a = Object.fromEntries(
       Object.entries(accumulatedRings).filter((i) => i[1] > 3)
@@ -53,14 +49,41 @@ export function useAnswersValidation(
     setAnswer({ ...answers, [4]: "" });
   }, [answers[1], answers[2], answers[3]]);
 
-  function validateAnswer(newAnswer, questionIndex) {
-    const newAnswers = { ...answers, [questionIndex]: newAnswer };
+  /**
+   * Validate skills
+   */
+  useEffect(() => {
+    const newAnswers = { ...answers };
+    let changed = false;
 
-    // validationsMap[1](newAnswer, questionIndex, newAnswers);
-    // validationsMap[4](newAnswer, questionIndex, newAnswers);
+    if (
+      newAnswers[7] &&
+      newAnswers[7].key === "selectSkill" &&
+      newAnswers[7].value &&
+      accumulatedSkills[newAnswers[7].value] > 1
+    ) {
+      newAnswers[7] = { key: "selectSkill" };
+      addAlert("Выбраный навык в 7м вопросе не может быть выше 1го ранга!");
+      changed = true;
+    }
 
-    setAnswer(newAnswers);
-  }
+    if (
+      newAnswers[8] &&
+      newAnswers[8].key === "selectSkill" &&
+      newAnswers[8].value &&
+      accumulatedSkills[newAnswers[8].value] > 3
+    ) {
+      newAnswers[8] = { key: "selectSkill" };
+      addAlert("Выбраный навык в 8м вопросе не может быть выше 3го ранга!");
+      changed = true;
+    }
 
-  return { validateAnswer };
+    if (newAnswers[17] && accumulatedSkills[newAnswers[17]] > 1) {
+      newAnswers[17] = "";
+      addAlert("Выбраный навык в 17м вопросе не может быть выше 1го ранга!");
+      changed = true;
+    }
+
+    changed && setAnswer(newAnswers);
+  }, [accumulatedSkills]);
 }
