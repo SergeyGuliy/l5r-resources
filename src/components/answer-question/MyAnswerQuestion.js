@@ -10,8 +10,15 @@ import {
   questions,
   _answers,
 } from "@/components/answer-question/_questionsAndAnswers";
+import { useAlerts } from "@/providers/AlertProvider";
 
 export function MyAnswerQuestion() {
+  const { addAlert } = useAlerts();
+
+  setTimeout(() => {
+    addAlert("This is an alert!", "info");
+  }, 3000);
+
   const [answers, setAnswer] = useState(_answers);
   const [expandedQuestions, setExpandedQuestions] = useState(false);
   const [expandedAnswers, setExpandedAnswers] = useState(false);

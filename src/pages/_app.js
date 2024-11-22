@@ -1,11 +1,14 @@
-import { Provider } from "@/components/ui/provider";
 import { Box, ClientOnly, Flex } from "@chakra-ui/react";
+
+import { Provider as ChakraProvider } from "@/components/ui/provider";
 import MySidebar from "@/components/layout/MySidebar";
 import { MyAlerts } from "@/components/layout/MyAlerts";
 
+import "@/styles/alert.css";
 import "@/styles/scrollbar.css";
 import "@/styles/table.css";
 import "@/styles/card-preview.css";
+import { AlertProvider } from "@/providers/AlertProvider";
 
 export const metadata = {
   title: "L5R База знаний",
@@ -16,30 +19,32 @@ console.clear();
 
 export default function RootLayout({ Component, pageProps }) {
   return (
-    <Provider>
-      <ClientOnly>
-        <Flex position={"relative"}>
-          <MySidebar />
-          <MyAlerts />
-          <Box
-            flex="1"
-            p={{ base: 2, lg: 6 }}
-            ml={{ base: "0px", lg: "65px" }}
-            mb="0px"
-            height={{ base: "calc(100dvh - 70px)", lg: "100vh" }}
-            width={{
-              base: "100%",
-              sm: "400px",
-              md: "768px",
-              lg: "1024px",
-              xl: "1280px",
-              "2xl": "1536px",
-            }}
-          >
-            <Component {...pageProps} />
-          </Box>
-        </Flex>
-      </ClientOnly>
-    </Provider>
+    <ClientOnly>
+      <ChakraProvider>
+        <AlertProvider>
+          <Flex position={"relative"}>
+            <MySidebar />
+            <MyAlerts />
+            <Box
+              flex="1"
+              p={{ base: 2, lg: 6 }}
+              ml={{ base: "0px", lg: "65px" }}
+              mb="0px"
+              height={{ base: "calc(100dvh - 70px)", lg: "100vh" }}
+              width={{
+                base: "100%",
+                sm: "400px",
+                md: "768px",
+                lg: "1024px",
+                xl: "1280px",
+                "2xl": "1536px",
+              }}
+            >
+              <Component {...pageProps} />
+            </Box>
+          </Flex>
+        </AlertProvider>
+      </ChakraProvider>
+    </ClientOnly>
   );
 }
