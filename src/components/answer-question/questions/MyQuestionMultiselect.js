@@ -2,8 +2,7 @@ import { useMemo } from "react";
 
 import { Box, CheckboxGroup, HStack, Text } from "@chakra-ui/react";
 import { CheckboxCard } from "@/components/ui/checkbox-card";
-import { LuInfo } from "react-icons/lu";
-import MyHoverCard from "@/components/MyHoverCard";
+import { MyHoverCard } from "@/components/MyHoverCard";
 
 export function MyQuestionMultiselect({
   title,
@@ -28,6 +27,7 @@ export function MyQuestionMultiselect({
   }
 
   if (!data?.toSelect || !data?.items?.length) return;
+
   return (
     <Box mb={2}>
       {title && (
@@ -41,20 +41,16 @@ export function MyQuestionMultiselect({
         borderTopRadius="sm"
         borderWidth="1px"
       >
-        <HStack gap="0" wrap={"wrap"} alignItems="stretch">
+        <HStack p={2} gap="1.5" wrap={"wrap"} alignItems="stretch">
           {data.items.map((data, ringIndex) => (
             <CheckboxCard
               flex="1 1 auto"
               key={ringIndex}
-              label={data.title}
+              label={<MyHoverCard cardData={data}></MyHoverCard>}
               colorPalette="blue"
               variant="subtle"
               size={"sm"}
-              indicator={
-                <MyHoverCard cardData={data}>
-                  <LuInfo />
-                </MyHoverCard>
-              }
+              indicator=""
               checked={selectList && selectList.includes(data.key)}
               disabled={isMaximusSelected}
               onClick={(event) => localUpdate(event, data.key)}

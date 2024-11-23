@@ -2,7 +2,7 @@ import { Table } from "@chakra-ui/react";
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
 
 import React from "react";
-import MyHoverCard from "@/components/MyHoverCard";
+import { MyHoverCard } from "@/components/MyHoverCard";
 
 export function MyAnswersRings({ accumulatedRings }) {
   return (

@@ -1,7 +1,7 @@
 import { Table } from "@chakra-ui/react";
 import React, { useMemo, useState } from "react";
 import { skills } from "@/mockData/routeData/skills";
-import MyHoverCard from "@/components/MyHoverCard";
+import { MyHoverCard } from "@/components/MyHoverCard";
 import { translations } from "@/mockData/routeData/constants";
 
 export function MyAnswersSkills({ accumulatedSkills }) {

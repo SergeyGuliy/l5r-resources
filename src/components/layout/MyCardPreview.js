@@ -13,12 +13,12 @@ import { useMemo } from "react";
 import { useRouter } from "next/router";
 
 import { translations } from "@/mockData/routeData/constants";
-import MyHoverCard from "@/components/MyHoverCard";
+import { MyHoverCard } from "@/components/MyHoverCard";
 import { MyPreviewList } from "@/components/MyPreviewList";
 import { MyPreviewText } from "@/components/MyPreviewText";
 import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
 
-export default function MyCardPreview({ cardData }) {
+export function MyCardPreview({ cardData }) {
   const router = useRouter();
 
   const currentBreakpoint = useBreakpointValue({

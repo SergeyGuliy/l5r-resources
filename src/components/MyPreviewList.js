@@ -1,5 +1,5 @@
 import { Text } from "@chakra-ui/react";
-import MyHoverCard from "@/components/MyHoverCard";
+import { MyHoverCard } from "@/components/MyHoverCard";
 
 export function MyPreviewList({ previewDataArray, previewText, prefix = "" }) {
   if (!previewDataArray?.length) return;

@@ -12,17 +12,17 @@ import { MyAnswersTechniques } from "@/components/answer-question/answers/MyAnsw
 import { MyHtml } from "@/components/MyHtml";
 
 export function MyAnswers({
-  accumulatedRings,
-  accumulatedSkills,
   accumulatedStatus,
   accumulatedGlory,
   accumulatedHonor,
+  accumulatedRings,
+  accumulatedSkills,
+  accumulatedTechniques,
   expandedAnswers,
   setExpandedAnswers,
   selectedSchool,
   selectedFamily,
 }) {
-  console.log(selectedSchool);
   return (
     <Card.Root width={"50%"} h={"100%"}>
       <Stack h={"100%"}>
@@ -41,15 +41,22 @@ export function MyAnswers({
 
         <Stack overflow={"auto"} h={"100%"} p={2}>
           <MyAnswersRings accumulatedRings={accumulatedRings} />
+
           <MyAnswersStats accumulatedRings={accumulatedRings} />
+
           <MyAnswersOtherStats
             accumulatedStatus={accumulatedStatus}
             accumulatedGlory={accumulatedGlory}
             accumulatedHonor={accumulatedHonor}
             selectedFamily={selectedFamily}
           />
+
           <MyAnswersSkills accumulatedSkills={accumulatedSkills} />
-          <MyAnswersTechniques selectedSchool={selectedSchool} />
+
+          <MyAnswersTechniques
+            selectedSchool={selectedSchool}
+            accumulatedTechniques={accumulatedTechniques}
+          />
 
           {selectedSchool?.startingEquipment && (
             <>

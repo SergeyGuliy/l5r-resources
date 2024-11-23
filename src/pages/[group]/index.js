@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 
-import MyGroupPage from "@/components/layout/MyGroupPage";
+import { MyGroupPage } from "@/components/layout/MyGroupPage";
 
 import { routeData } from "@/mockData/routeData";
 

@@ -1,7 +1,7 @@
 import { Table } from "@chakra-ui/react";
-import MyHoverCard from "@/components/MyHoverCard";
+import { MyHoverCard } from "@/components/MyHoverCard";
 
-export default function MyTableWeapons({ headers, items }) {
+export function MyTableArmors({ headers, items }) {
   if (!headers.length) return;
   if (!items.length) return;
 

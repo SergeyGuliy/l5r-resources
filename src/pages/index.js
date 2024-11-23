@@ -4,7 +4,7 @@ import { Box, Button, Group, Input } from "@chakra-ui/react";
 
 import { generateLinkPath } from "@/helpers/generateLinkPath";
 
-import MyLinks from "@/components/link/MyLinks";
+import { MyLinks } from "@/components/link/MyLinks";
 import { InputGroup } from "@/components/ui/input-group";
 import { groups, translations } from "@/mockData/routeData/constants";
 import { titleArmor, titleWeapons } from "@/mockData/tableData/constants";

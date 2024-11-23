@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 import { Box } from "@chakra-ui/react";
@@ -9,45 +9,39 @@ import {
   HoverCardRoot,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { LuInfo } from "react-icons/lu";
 
-export default function MyHoverCard({ children, cardData }) {
-  const [open, setOpen] = useState(false);
-
+export function MyHoverCard({ children, cardData }) {
   return (
-    <HoverCardRoot
-      openDelay={1000}
-      closeDelay={100}
-      size="sm"
-      open={open}
-      onOpenChange={() => {
-        setOpen(false);
-        // if (!cardData?.description && e.open) {
-        //   setOpen(false);
-        // } else {
-        //   setOpen(e.open);
-        // }
-      }}
-    >
-      <HoverCardTrigger asChild>
-        <Link
-          href="#"
-          style={{ cursor: "cell", textDecoration: "underline" }}
-          onClick={(e) => e.preventDefault()}
-        >
-          {children ? children : cardData?.title}
-        </Link>
-      </HoverCardTrigger>
-
-      <HoverCardContent maxHeight={"40dvh"} maxWidth={"50vw"} overflow={"auto"}>
-        <HoverCardArrow />
-
-        {cardData?.description && (
-          <Box
-            className={"card-preview"}
-            dangerouslySetInnerHTML={{ __html: cardData.description }}
+    <Link href="#" onClick={(e) => e.preventDefault()}>
+      <span style={{ textDecoration: "underline" }}>
+        {children ? children : cardData?.title}
+      </span>
+      <span> </span>
+      <HoverCardRoot openDelay={500} closeDelay={100} size="sm">
+        <HoverCardTrigger asChild>
+          <LuInfo
+            size={"19px"}
+            color={"orange"}
+            style={{ display: "inline", cursor: "cell" }}
           />
-        )}
-      </HoverCardContent>
-    </HoverCardRoot>
+        </HoverCardTrigger>
+
+        <HoverCardContent
+          maxHeight={"40dvh"}
+          maxWidth={"50vw"}
+          overflow={"auto"}
+        >
+          <HoverCardArrow />
+
+          {cardData?.description && (
+            <Box
+              className={"card-preview"}
+              dangerouslySetInnerHTML={{ __html: cardData.description }}
+            />
+          )}
+        </HoverCardContent>
+      </HoverCardRoot>
+    </Link>
   );
 }

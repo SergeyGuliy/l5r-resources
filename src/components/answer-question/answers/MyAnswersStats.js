@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 
 import { Table } from "@chakra-ui/react";
-import MyHoverCard from "@/components/MyHoverCard";
+import { MyHoverCard } from "@/components/MyHoverCard";
 
 import { _heroStats } from "@/mockData/routeData/other/heroStats/_heroStats";
 

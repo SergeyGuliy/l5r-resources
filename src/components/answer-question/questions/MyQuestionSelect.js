@@ -8,7 +8,7 @@ export function MyQuestionSelect({ value, items, onCustomUpdateValue }) {
       borderTopRadius="sm"
       borderWidth="1px"
     >
-      <HStack gap="0" wrap={"wrap"} alignItems="stretch">
+      <HStack p={2} gap="1.5" wrap={"wrap"} alignItems="stretch">
         {items.map((item, itemIndex) => (
           <CheckboxCard
             key={itemIndex}

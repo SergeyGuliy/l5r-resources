@@ -5,7 +5,7 @@ import { MySearch } from "@/components/search-filter/MySearch";
 import { useState } from "react";
 import { MyFilterDialog } from "@/components/search-filter/MyFilterDialog";
 
-export default function MySearchFilter({
+export function MySearchFilter({
   useSearch,
   search,
   wrappedSetSearch,

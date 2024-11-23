@@ -1,6 +1,7 @@
-import { MyPageTitle } from "@/components/MyPageTitle";
 import { Box } from "@chakra-ui/react";
-import MyTableWeapons from "@/components/MyTableWeapons";
+
+import { MyPageTitle } from "@/components/MyPageTitle";
+import { MyTableWeapons } from "@/components/MyTableWeapons";
 
 export function MyTableWeaponsPage({ title, headers, items }) {
   return (

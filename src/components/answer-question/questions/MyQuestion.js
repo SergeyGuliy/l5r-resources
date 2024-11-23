@@ -14,6 +14,7 @@ import { _clans } from "@/mockData/clansFamiliesSchools/clans/_clans";
 import { _families } from "@/mockData/clansFamiliesSchools/families";
 import { _schools } from "@/mockData/clansFamiliesSchools/schools";
 import { skills } from "@/mockData/routeData/skills";
+import { _techniques } from "@/mockData/routeData/techniques";
 
 const skill8list = {
   Torgovlya: skills.Torgovlya,
@@ -183,6 +184,7 @@ export function MyQuestion({
               data={selectedSchool?.skillAvailable}
               selectList={answers[questionIndex].skills}
               onUpdate={(skills) => answerExtended({ skills })}
+              typeData={skills}
             />
 
             {selectedSchool?.startingTechniques.map((item, index) => (
@@ -194,6 +196,7 @@ export function MyQuestion({
                 onUpdate={(v) =>
                   answerExtended({ [`techniques_${index + 1}`]: v })
                 }
+                typeData={_techniques}
               />
             ))}
           </Stack>

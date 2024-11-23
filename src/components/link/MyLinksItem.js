@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Card, GridItem, Text } from "@chakra-ui/react";
 
-export default function MyLinksItem({ linkData }) {
+export function MyLinksItem({ linkData }) {
   return (
     <GridItem
       colSpan={{ base: "12", sm: "8", md: "6", lg: "6", xl: "4", "2xl": "3" }}

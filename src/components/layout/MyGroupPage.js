@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { Box, HStack } from "@chakra-ui/react";
 
-import MySearchFilter from "@/components/search-filter/MySearchFilter";
-import MyCardList from "@/components/card/MyCardList";
-import MyLinks from "@/components/link/MyLinks";
+import { MySearchFilter } from "@/components/search-filter/MySearchFilter";
+import { MyCardList } from "@/components/card/MyCardList";
+import { MyLinks } from "@/components/link/MyLinks";
 import { MyPageTitle } from "@/components/MyPageTitle";
 
 import { parseFilters } from "@/helpers/parseFilters";
 import { useSearchAndFilterQuery } from "@/hooks/useSearchAndFilterQuery";
 
-export default function MyGroupPage({
+export function MyGroupPage({
   title,
   list,
   filterSettings,

@@ -1,18 +1,9 @@
 import { CheckboxGroup, HStack } from "@chakra-ui/react";
-import { LuInfo } from "react-icons/lu";
 
 import { CheckboxCard } from "@/components/ui/checkbox-card";
-import MyHoverCard from "@/components/MyHoverCard";
 
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
-
-function Indicator(ring) {
-  return (
-    <MyHoverCard cardData={ring}>
-      <LuInfo />
-    </MyHoverCard>
-  );
-}
+import { MyHoverCard } from "@/components/MyHoverCard";
 
 export function MyQuestionRing({
   value,
@@ -46,15 +37,15 @@ export function MyQuestionRing({
       borderTopRadius="sm"
       borderWidth="1px"
     >
-      <HStack gap="0" wrap={"wrap"} alignItems="stretch">
+      <HStack p={2} gap="1.5" wrap={"wrap"} alignItems="stretch">
         {rings.map((ring, ringIndex) => (
           <CheckboxCard
             key={ringIndex}
-            label={ring.label}
+            label={<MyHoverCard cardData={_rings[ring.value]} />}
             colorPalette="blue"
             variant="subtle"
             size={"sm"}
-            indicator={Indicator(ring)}
+            indicator=""
             checked={value === ring.value}
             disabled={isInvalid(ring)}
             cursor={getCursor(ring)}

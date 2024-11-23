@@ -7,8 +7,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Stack } from "@chakra-ui/react";
-import MySearchFilterGroups from "@/components/search-filter/MySearchFilterGroups";
-import MySearchFilterLvls from "@/components/search-filter/MySearchFilterLvls";
+import { MySearchFilterGroups } from "@/components/search-filter/MySearchFilterGroups";
+import { MySearchFilterLvls } from "@/components/search-filter/MySearchFilterLvls";
 
 export function MyFilterDialog({
   open,

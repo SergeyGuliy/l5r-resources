@@ -1,7 +1,7 @@
 import { Box, ClientOnly, Flex } from "@chakra-ui/react";
 
 import { Provider as ChakraProvider } from "@/components/ui/provider";
-import MySidebar from "@/components/layout/MySidebar";
+import { MySidebar } from "@/components/layout/MySidebar";
 import { MyAlerts } from "@/components/layout/MyAlerts";
 
 import "@/styles/alert.css";

@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useMemo, useState } from "react";
 
-import MyGroupPage from "@/components/layout/MyGroupPage";
-import MyCardPreview from "@/components/layout/MyCardPreview";
+import { MyGroupPage } from "@/components/layout/MyGroupPage";
+import { MyCardPreview } from "@/components/layout/MyCardPreview";
+
 import { routeData } from "@/mockData/routeData";
 
 export async function getStaticPaths() {

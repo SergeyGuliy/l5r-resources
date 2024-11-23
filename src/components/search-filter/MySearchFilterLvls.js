@@ -1,7 +1,7 @@
 import { Button, HStack } from "@chakra-ui/react";
 import { allLvls } from "@/mockData/routeData/constants";
 
-export default function MySearchFilterLvls({ lvls, wrappedSetLvls }) {
+export function MySearchFilterLvls({ lvls, wrappedSetLvls }) {
   function toggleLvl(lvlToToggle) {
     lvls.includes(lvlToToggle)
       ? wrappedSetLvls(lvls.filter((i) => i !== lvlToToggle))

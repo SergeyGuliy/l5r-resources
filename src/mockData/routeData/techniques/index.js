@@ -77,18 +77,20 @@ function linksWIthActive(activeKey) {
   });
 }
 
+export const _techniques = {
+  ...appeal,
+  ...katas,
+  ...kiho,
+  ...ninjutsu,
+  ...ritual,
+  ...shuji,
+  ...schoolAbilities,
+};
+
 export const techniquesRouteData = {
   [groups.techniques]: {
     title: translations.techniques,
-    list: {
-      ...appeal,
-      ...katas,
-      ...kiho,
-      ...ninjutsu,
-      ...ritual,
-      ...shuji,
-      ...schoolAbilities,
-    },
+    list: _techniques,
     links: linksWIthActive(groups.techniques),
     filterSettings: [
       appealFilterSettings,

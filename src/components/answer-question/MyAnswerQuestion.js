@@ -25,11 +25,12 @@ export function MyAnswerQuestion() {
     useAnswersSelected(answers);
 
   const {
-    accumulatedRings,
-    accumulatedSkills,
     accumulatedStatus,
     accumulatedGlory,
     accumulatedHonor,
+    accumulatedRings,
+    accumulatedSkills,
+    accumulatedTechniques,
   } = useAnswersAccumulated({
     selectedClan,
     selectedFamily,
@@ -69,11 +70,12 @@ export function MyAnswerQuestion() {
       />
 
       <MyAnswers
-        accumulatedRings={accumulatedRings}
-        accumulatedSkills={accumulatedSkills}
         accumulatedStatus={accumulatedStatus}
         accumulatedGlory={accumulatedGlory}
         accumulatedHonor={accumulatedHonor}
+        accumulatedRings={accumulatedRings}
+        accumulatedSkills={accumulatedSkills}
+        accumulatedTechniques={accumulatedTechniques}
         expandedAnswers={expandedAnswers}
         setExpandedAnswers={setExpandedAnswers}
         selectedSchool={selectedSchool}

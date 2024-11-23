@@ -3,7 +3,7 @@ import { LuBookMarked, LuLanguages, LuMoon, LuSun } from "react-icons/lu";
 import { LinkButton } from "@/components/ui/link-button";
 import { useRouter } from "next/router";
 
-export default function MySidebar() {
+export function MySidebar() {
   const router = useRouter();
 
   function onClick(e) {

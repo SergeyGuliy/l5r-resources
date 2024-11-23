@@ -1,15 +1,20 @@
 import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
 import { MyPreviewList } from "@/components/MyPreviewList";
 
-export function MyAnswersTechniques({ selectedSchool }) {
+export function MyAnswersTechniques({ selectedSchool, accumulatedTechniques }) {
+  console.log(accumulatedTechniques);
+
   return (
     <>
       <MyPreviewSchoolTech previewData={selectedSchool?.schoolAbility} />
 
-      {/*<MyPreviewList*/}
-      {/*  previewDataArray={cardData?.availableTechniques}*/}
-      {/*  previewText={"Доступные техники: "}*/}
-      {/*/>*/}
+      {accumulatedTechniques.map(([previewText, previewDataArray]) => (
+        <MyPreviewList
+          key={previewText}
+          previewDataArray={previewDataArray}
+          previewText={previewText}
+        />
+      ))}
     </>
   );
 }
