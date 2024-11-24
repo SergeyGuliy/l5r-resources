@@ -17,6 +17,7 @@ import { skills } from "@/mockData/routeData/skills";
 import { _techniques } from "@/mockData/routeData/techniques";
 import { questions } from "@/components/answer-question/_questionsAndAnswers";
 import { MyHtml } from "@/components/MyHtml";
+import { MyQuestionQuill } from "@/components/answer-question/questions/MyQuestionQuill";
 
 const skill8list = {
   Torgovlya: skills.Torgovlya,
@@ -287,6 +288,29 @@ export function MyQuestion({
             onCustomUpdateValue={(val) => answerQuestion(val)}
           />
         )}
+
+        {[
+          "5",
+          "6",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "19",
+          "20",
+        ].includes(questionIndex) &&
+          expandedQuestions && (
+            <Box pt={2}>
+              <MyQuestionQuill
+                value={answers[questionIndex]}
+                onCustomUpdateValue={(val) => answerQuestion(val)}
+              />
+            </Box>
+          )}
       </Box>
     </Box>
   );

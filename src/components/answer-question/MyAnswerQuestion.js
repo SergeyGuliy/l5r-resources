@@ -61,6 +61,9 @@ export function MyAnswerQuestion() {
   const answerQuestion = (newAnswer, questionIndex) =>
     setAnswer({ ...answers, [questionIndex]: newAnswer });
 
+  // console.clear();
+  console.log(answers);
+
   return (
     <Box display="flex" flexDirection="column" w={"100%"} h={"100%"}>
       <MyPageTitle title={"Конструктор персонажа"} />

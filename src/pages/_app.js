@@ -4,10 +4,13 @@ import { Provider as ChakraProvider } from "@/components/ui/provider";
 import { MySidebar } from "@/components/layout/MySidebar";
 import { MyAlerts } from "@/components/layout/MyAlerts";
 
+import "quill/dist/quill.core.css";
+import "quill/dist/quill.snow.css";
 import "@/styles/alert.css";
 import "@/styles/scrollbar.css";
 import "@/styles/table.css";
 import "@/styles/card-preview.css";
+
 import { AlertProvider } from "@/providers/AlertProvider";
 
 export const metadata = {
