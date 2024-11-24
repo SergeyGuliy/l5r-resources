@@ -1,12 +1,12 @@
 import { MyPreviewList } from "@/components/MyPreviewList";
 import { MyPreviewText } from "@/components/MyPreviewText";
-import { Box, HStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
 
 export function MyQuestionPreview({ show, data }) {
   if (!show) return;
   return (
-    <Box pb={2}>
+    <>
       {data?.key !== "PhoenixClanIsava" && data?.ringIncrease && (
         <MyPreviewList
           previewDataArray={data?.ringIncrease}
@@ -57,6 +57,6 @@ export function MyQuestionPreview({ show, data }) {
           previewText={"Доступные техники: "}
         />
       )}
-    </Box>
+    </>
   );
 }

@@ -27,7 +27,7 @@ export function MyQuestions({
             checked={expandedQuestions}
             onCheckedChange={(e) => setExpandedQuestions(e.checked)}
           >
-            Switch with tooltip
+            Расширенная информация
           </Switch>
         </HStack>
 

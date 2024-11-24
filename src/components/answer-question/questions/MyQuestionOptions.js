@@ -9,6 +9,7 @@ import { useMemo } from "react";
 import { Box, Button } from "@chakra-ui/react";
 import { LuX } from "react-icons/lu";
 import { InputGroup } from "@/components/ui/input-group";
+import { MyHoverCard } from "@/components/MyHoverCard";
 
 export function MyQuestionOptions({
   placeholder,
@@ -52,12 +53,37 @@ export function MyQuestionOptions({
         onValueChange={(e) => onCustomUpdateValue(e.value[0])}
       >
         <SelectTrigger>
-          <SelectValueText placeholder={placeholder} />
+          <SelectValueText placeholder={placeholder}>
+            {(items) => {
+              const item = items[0];
+              return (
+                <Box mr={"auto"}>
+                  {item.label}
+                  {item.data && (
+                    <MyHoverCard cardData={item.data}>
+                      <span />
+                    </MyHoverCard>
+                  )}
+                </Box>
+              );
+            }}
+          </SelectValueText>
         </SelectTrigger>
         <SelectContent>
           {list.items.map((item) => (
-            <SelectItem item={item} key={item.value}>
-              {item.label}
+            <SelectItem
+              item={item}
+              key={item.value}
+              justifyContent="flex-start"
+            >
+              <Box mr={"auto"}>
+                {item.label}
+                {item.data && (
+                  <MyHoverCard cardData={item.data}>
+                    <span />
+                  </MyHoverCard>
+                )}
+              </Box>
             </SelectItem>
           ))}
         </SelectContent>

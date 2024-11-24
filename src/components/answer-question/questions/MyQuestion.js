@@ -15,6 +15,8 @@ import { _families } from "@/mockData/clansFamiliesSchools/families";
 import { _schools } from "@/mockData/clansFamiliesSchools/schools";
 import { skills } from "@/mockData/routeData/skills";
 import { _techniques } from "@/mockData/routeData/techniques";
+import { questions } from "@/components/answer-question/_questionsAndAnswers";
+import { MyHtml } from "@/components/MyHtml";
 
 const skill8list = {
   Torgovlya: skills.Torgovlya,
@@ -48,73 +50,99 @@ export function MyQuestion({
   expandedQuestions,
 }) {
   const clans = createListCollection({
-    items: Object.values(_clans).map((i) => ({ label: i.title, value: i.key })),
+    items: Object.values(_clans).map((i) => ({
+      label: i.title,
+      value: i.key,
+      data: i,
+    })),
   });
 
-  const families = useMemo(() => {
-    return createListCollection({
-      items: Object.values(_families)
-        .filter((i) => i.clan === answers[1])
-        .map((i) => ({
-          label: i.title,
-          value: i.key,
-        })),
-    });
-  }, [answers]);
+  const families = useMemo(
+    () =>
+      createListCollection({
+        items: Object.values(_families)
+          .filter((i) => i.clan === answers[1])
+          .map((i) => ({
+            label: i.title,
+            value: i.key,
+            data: i,
+          })),
+      }),
+    [answers]
+  );
 
-  const schools = useMemo(() => {
-    return createListCollection({
-      items: Object.values(_schools)
-        .filter((i) => i.clan === answers[1])
-        .map((i) => ({
-          label: i.title,
-          value: i.key,
-        })),
-    });
-  }, [answers]);
+  const schools = useMemo(
+    () =>
+      createListCollection({
+        items: Object.values(_schools)
+          .filter((i) => i.clan === answers[1])
+          .map((i) => ({
+            label: i.title,
+            value: i.key,
+          })),
+      }),
+    [answers]
+  );
 
-  const skills7 = useMemo(() => {
-    return createListCollection({
-      items: Object.entries(accumulatedSkills)
-        .filter((i) => !i[1] || i[0] === answers[7]?.value)
-        .map(([key]) => ({
-          label: skills[key].title,
-          value: skills[key].key,
-        })),
-    });
-  }, [accumulatedSkills, answers]);
+  const skills7 = useMemo(
+    () =>
+      createListCollection({
+        items: Object.entries(accumulatedSkills)
+          .filter((i) => !i[1] || i[0] === answers[7]?.value)
+          .map(([key]) => ({
+            label: skills[key].title,
+            value: skills[key].key,
+          })),
+      }),
+    [accumulatedSkills, answers]
+  );
 
-  const skills8 = useMemo(() => {
-    return createListCollection({
-      items: Object.entries(accumulatedSkills)
-        .filter((i) => i[1] < 3 && skill8list[i[0]])
-        .map(([key]) => ({
-          label: skills[key].title,
-          value: skills[key].key,
-        })),
-    });
-  }, [accumulatedSkills]);
+  const skills8 = useMemo(
+    () =>
+      createListCollection({
+        items: Object.entries(accumulatedSkills)
+          .filter((i) => i[1] < 3 && skill8list[i[0]])
+          .map(([key]) => ({
+            label: skills[key].title,
+            value: skills[key].key,
+          })),
+      }),
+    [accumulatedSkills]
+  );
 
-  const skills17 = useMemo(() => {
-    return createListCollection({
-      items: Object.entries(accumulatedSkills)
-        .filter((i) => !i[1] || i[0] === answers[17])
-        .map(([key]) => ({
-          label: skills[key].title,
-          value: skills[key].key,
-        })),
-    });
-  }, [accumulatedSkills, answers]);
+  const skills17 = useMemo(
+    () =>
+      createListCollection({
+        items: Object.entries(accumulatedSkills)
+          .filter((i) => !i[1] || i[0] === answers[17])
+          .map(([key]) => ({
+            label: skills[key].title,
+            value: skills[key].key,
+          })),
+      }),
+    [accumulatedSkills, answers]
+  );
 
   const answerExtended = (v) =>
     answerQuestion({ ...answers[questionIndex], ...v });
 
-  if (["discussWithMaster", "notReady"].includes(questionData.trigger)) return;
+  if (
+    !expandedQuestions &&
+    ["discussWithMaster", "notReady"].includes(questionData.trigger)
+  )
+    return;
+
   return (
     <Box p={1} pl={2}>
       <Text textStyle={"md"} fontWeight="semibold" mb={2}>
         {questionIndex}. {questionData.question}
       </Text>
+
+      {questions[questionIndex].description && expandedQuestions && (
+        <Box pl={4}>
+          <MyHtml content={questions[questionIndex].description} />
+        </Box>
+      )}
 
       <Box pl={4}>
         {questionIndex === "1" && (
