@@ -20,6 +20,10 @@ export function MyAnswerQuestion() {
   const [answers, setAnswer] = useState(_answers);
   const [expandedQuestions, setExpandedQuestions] = useState(false);
   const [expandedAnswers, setExpandedAnswers] = useState(false);
+  const [swapRings, setSwapRings] = useState({
+    toBeDecreased: "",
+    toBeIncreased: "",
+  });
 
   const { selectedClan, selectedFamily, selectedSchool, selectedRing } =
     useAnswersSelected(answers);
@@ -37,6 +41,7 @@ export function MyAnswerQuestion() {
     selectedSchool,
     selectedRing,
     answers,
+    swapRings,
   });
 
   useAnswersValidation(
@@ -48,6 +53,8 @@ export function MyAnswerQuestion() {
     accumulatedRings,
     accumulatedSkills,
     setAnswer,
+    swapRings,
+    setSwapRings,
     addAlert
   );
 
@@ -80,6 +87,8 @@ export function MyAnswerQuestion() {
         setExpandedAnswers={setExpandedAnswers}
         selectedSchool={selectedSchool}
         selectedFamily={selectedFamily}
+        swapRings={swapRings}
+        setSwapRings={setSwapRings}
       />
     </HStack>
   );

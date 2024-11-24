@@ -10,9 +10,10 @@ export function MyQuestionMultiselect({
   selectList = [],
   onUpdate,
 }) {
-  const isMaximusSelected = useMemo(() => {
-    return selectList?.length >= data?.toSelect;
-  }, [data?.toSelect, selectList?.length]);
+  const isMaximusSelected = useMemo(
+    () => selectList?.length >= data?.toSelect,
+    [data?.toSelect, selectList?.length]
+  );
 
   function localUpdate(event, key) {
     event.stopPropagation();

@@ -25,11 +25,13 @@ export function MyQuestionRing({
     return localInvalid || otherInvalid;
   }
 
-  function getCursor(ring) {
-    return isInvalid(ring) ? "no-drop" : "pointer";
-  }
+  const getCursor = (ring) => (isInvalid(ring) ? "no-drop" : "pointer");
 
-  const onClick = (ring) => !isInvalid(ring) && onCustomUpdateValue(ring.value);
+  const onClick = (e, ring) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return !isInvalid(ring) && onCustomUpdateValue(ring.value);
+  };
 
   return (
     <CheckboxGroup
@@ -49,7 +51,7 @@ export function MyQuestionRing({
             checked={value === ring.value}
             disabled={isInvalid(ring)}
             cursor={getCursor(ring)}
-            onClick={() => onClick(ring)}
+            onClick={(e) => onClick(e, ring)}
           />
         ))}
       </HStack>

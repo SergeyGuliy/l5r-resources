@@ -134,7 +134,7 @@ export function MyQuestion({
         {questionIndex === "2" && (
           <Stack>
             <MyQuestionOptions
-              placeholder={"Клан "}
+              placeholder={"Семья "}
               disabled={families.items.length === 0}
               invalid={!answers[questionIndex]}
               list={families}
@@ -154,7 +154,7 @@ export function MyQuestion({
               invalid={!answers[questionIndex]?.key}
               list={schools}
               value={answers[questionIndex].key}
-              onCustomUpdateValue={(key) => answerExtended({ key })}
+              onCustomUpdateValue={(key) => answerQuestion({ key })}
             />
 
             <MyQuestionPreview show={expandedQuestions} data={selectedSchool} />
@@ -190,7 +190,7 @@ export function MyQuestion({
             {selectedSchool?.startingTechniques.map((item, index) => (
               <MyQuestionMultiselect
                 key={index}
-                title="Выберете технику"
+                title={`Выберете технику (${item?.type?.title})`}
                 data={item}
                 selectList={answers[questionIndex][`techniques_${index + 1}`]}
                 onUpdate={(v) =>

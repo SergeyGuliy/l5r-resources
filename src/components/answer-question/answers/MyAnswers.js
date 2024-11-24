@@ -22,6 +22,8 @@ export function MyAnswers({
   setExpandedAnswers,
   selectedSchool,
   selectedFamily,
+  swapRings,
+  setSwapRings,
 }) {
   return (
     <Card.Root width={"50%"} h={"100%"}>
@@ -40,7 +42,11 @@ export function MyAnswers({
         </HStack>
 
         <Stack overflow={"auto"} h={"100%"} p={2}>
-          <MyAnswersRings accumulatedRings={accumulatedRings} />
+          <MyAnswersRings
+            accumulatedRings={accumulatedRings}
+            swapRings={swapRings}
+            setSwapRings={setSwapRings}
+          />
 
           <MyAnswersStats accumulatedRings={accumulatedRings} />
 

@@ -6,6 +6,9 @@ import {
   SelectValueText,
 } from "@/components/ui/select";
 import { useMemo } from "react";
+import { Box, Button } from "@chakra-ui/react";
+import { LuX } from "react-icons/lu";
+import { InputGroup } from "@/components/ui/input-group";
 
 export function MyQuestionOptions({
   placeholder,
@@ -16,27 +19,49 @@ export function MyQuestionOptions({
   onCustomUpdateValue,
 }) {
   const localValue = useMemo(() => [value], [value]);
-
   return (
-    <SelectRoot
-      mt={1}
-      size="sm"
-      disabled={disabled || list.items.length === 0}
-      invalid={invalid}
-      collection={list}
-      value={localValue}
-      onValueChange={(e) => onCustomUpdateValue(e.value[0])}
+    <InputGroup
+      w={"100%"}
+      endElement={
+        value && (
+          <Box
+            position="absolute"
+            top="50%"
+            right="2rem"
+            transform="translateY(-50%)"
+          >
+            <Button
+              onClick={() => onCustomUpdateValue("")}
+              aria-label="Clear input"
+              size="xsm"
+              variant="ghost"
+            >
+              <LuX />
+            </Button>
+          </Box>
+        )
+      }
     >
-      <SelectTrigger>
-        <SelectValueText placeholder={placeholder} />
-      </SelectTrigger>
-      <SelectContent>
-        {list.items.map((item) => (
-          <SelectItem item={item} key={item.value}>
-            {item.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </SelectRoot>
+      <SelectRoot
+        mt={1}
+        size="sm"
+        disabled={disabled || list.items.length === 0}
+        invalid={invalid}
+        collection={list}
+        value={localValue}
+        onValueChange={(e) => onCustomUpdateValue(e.value[0])}
+      >
+        <SelectTrigger>
+          <SelectValueText placeholder={placeholder} />
+        </SelectTrigger>
+        <SelectContent>
+          {list.items.map((item) => (
+            <SelectItem item={item} key={item.value}>
+              {item.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </SelectRoot>
+    </InputGroup>
   );
 }

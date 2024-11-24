@@ -10,6 +10,8 @@ export function useAnswersValidation(
   accumulatedRings,
   accumulatedSkills,
   setAnswer,
+  swapRings,
+  setSwapRings,
   addAlert
 ) {
   /**
@@ -19,12 +21,12 @@ export function useAnswersValidation(
     const newAnswers = { ...answers };
     let changed = false;
 
-    if (selectedFamily?.clan && selectedFamily?.clan !== selectedClan.key) {
+    if (selectedFamily?.clan && selectedFamily?.clan !== selectedClan?.key) {
       newAnswers[2] = "";
       addAlert("Клан был изменен! Выберите новую семью!");
       changed = true;
     }
-    if (selectedSchool?.clan && selectedSchool?.clan !== selectedClan.key) {
+    if (selectedSchool?.clan && selectedSchool?.clan !== selectedClan?.key) {
       newAnswers[3] = defaultObj;
       addAlert("Клан был изменен! Выберите новую школу!");
       changed = true;
@@ -48,6 +50,20 @@ export function useAnswersValidation(
     );
     setAnswer({ ...answers, [4]: "" });
   }, [answers[1], answers[2], answers[3]]);
+
+  /**
+   * Validate ring switch
+   */
+  useEffect(() => {
+    if (
+      swapRings?.toBeDecreased &&
+      accumulatedRings[swapRings.toBeDecreased] < 3
+    )
+      setSwapRings({
+        toBeDecreased: "",
+        toBeIncreased: "",
+      });
+  }, [accumulatedRings, swapRings.toBeDecreased, swapRings.toBeIncreased]);
 
   /**
    * Validate skills

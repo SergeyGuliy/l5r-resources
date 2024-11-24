@@ -14,6 +14,7 @@ export function useAnswersAccumulated({
   selectedSchool,
   selectedRing,
   answers,
+  swapRings,
 }) {
   const accumulatedStatus = useMemo(() => {
     let base = 0;
@@ -50,8 +51,19 @@ export function useAnswersAccumulated({
     if (answers[3]?.ring2) baseRings[answers[3]?.ring2]++;
     if (selectedRing) baseRings[selectedRing.key]++;
 
+    if (swapRings.toBeDecreased) baseRings[swapRings.toBeDecreased]--;
+    if (swapRings.toBeIncreased) baseRings[swapRings.toBeIncreased]++;
+
     return baseRings;
-  }, [answers, selectedClan, selectedFamily, selectedRing, selectedSchool]);
+  }, [
+    answers,
+    selectedClan,
+    selectedFamily,
+    selectedRing,
+    selectedSchool,
+    swapRings.toBeDecreased,
+    swapRings.toBeIncreased,
+  ]);
 
   const accumulatedSkills = useMemo(() => {
     const baseSkills = { ..._baseSkills };
