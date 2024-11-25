@@ -53,6 +53,7 @@ export function MyCardList({ list }) {
       w={dynamicWidthGrid}
       templateColumns="repeat(12, 1fr)"
       gap={"8px"}
+      style={{ alignItems: "stretch" }}
     >
       {list.map((data, index) => (
         <GridItem key={index} colSpan={dynamicWidthColumnCount}>

@@ -13,7 +13,10 @@ const group1 = [
   { title: translations.skills, link: generateLinkPath(groups.skills) },
   { title: translations.techniques, link: generateLinkPath(groups.techniques) },
   { title: translations.stances, link: generateLinkPath(groups.stances) },
-  { title: "Действия в бою", link: "/", disabled: true },
+  {
+    title: translations.conflictActions,
+    link: generateLinkPath(groups.conflictActions),
+  },
 ];
 
 const group2 = [

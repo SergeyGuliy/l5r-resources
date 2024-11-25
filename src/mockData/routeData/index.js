@@ -9,6 +9,7 @@ import { familiesRouteData } from "@/mockData/clansFamiliesSchools/families";
 import { clansRouteData } from "@/mockData/clansFamiliesSchools/clans";
 import { schoolsRouteData } from "@/mockData/clansFamiliesSchools/schools";
 import { terrainRouteData } from "@/mockData/routeData/terrain";
+import { conflictActionsRouteData } from "@/mockData/routeData/conflictActions";
 
 export const routeData = {
   ...techniquesRouteData,
@@ -22,4 +23,5 @@ export const routeData = {
   ...familiesRouteData,
   ...schoolsRouteData,
   ...terrainRouteData,
+  ...conflictActionsRouteData,
 };

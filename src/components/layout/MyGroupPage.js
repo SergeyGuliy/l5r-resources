@@ -99,9 +99,12 @@ export function MyGroupPage({
     }
 
     if (filters) {
-      listToReturn = listToReturn.filter((i) =>
-        filterKeys.includes(i.subgroup)
-      );
+      listToReturn = listToReturn.filter((i) => {
+        if (typeof i.subgroup === "string")
+          return filterKeys.includes(i.subgroup);
+
+        return i.subgroup.some((i) => filterKeys.includes(i));
+      });
     }
 
     return listToReturn;

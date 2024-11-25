@@ -18,6 +18,10 @@ export const groups = {
   families: "families",
   schools: "schools",
   terrain: "terrain",
+  conflictActions: "conflictActions",
+  conflictActionsIntrigues: "conflictActionsIntrigues",
+  conflictActionsBattle: "conflictActionsBattle",
+  conflictActionsDuels: "conflictActionsDuels",
 
   skills: "skills",
   skillsCombat: "skillsCombat",
@@ -70,6 +74,10 @@ export const translations = {
   families: "Семьи",
   schools: "Школы",
   terrain: "Местность",
+  conflictActions: "Действия в конфликтах",
+  conflictActionsIntrigues: "Действия в Интригах",
+  conflictActionsBattle: "Действия в Схватке",
+  conflictActionsDuels: "Действия в Дуэлях",
 
   skills: "Навыки",
   skillsCombat: "Боевые",

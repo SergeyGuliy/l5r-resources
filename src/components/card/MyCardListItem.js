@@ -35,10 +35,15 @@ export function MyCardListItem({ data }) {
   }
 
   return (
-    <Box width={"100%"}>
-      <Link href={getLink()} onClick={navigate}>
+    <Box w={"100%"} h={"100%"}>
+      <Link
+        href={getLink()}
+        onClick={navigate}
+        style={{ display: "block", height: "100%" }}
+      >
         <Card.Root
           p={3}
+          h={"100%"}
           variant={data.isActive ? "subtle" : "elevated"}
           background={data.isActive ? "#122952" : ""}
         >
@@ -48,10 +53,10 @@ export function MyCardListItem({ data }) {
             width={"100%"}
           >
             <Stack gap="0">
-              <Text fontWeight="normal" textStyle="md" truncate>
+              <Text fontWeight="normal" textStyle="md">
                 {data.title}
               </Text>
-              <HStack mt="2">
+              <Stack direction="row" mt="2" wrap={"wrap"} maxW={"100%"}>
                 {typeof data.rank === "number" && data.rank > 0 && (
                   <Badge variant="surface" size="md" colorPalette="blue">
                     Ранг: {data.rank}
@@ -64,12 +69,25 @@ export function MyCardListItem({ data }) {
                   </Badge>
                 )}
 
-                {!!translations[data.subgroup] && (
-                  <Badge variant="surface" size="md" colorPalette="teal">
-                    {translations[data.subgroup]}
-                  </Badge>
-                )}
-              </HStack>
+                {typeof data.subgroup === "string" &&
+                  !!translations[data.subgroup] && (
+                    <Badge variant="surface" size="md" colorPalette="teal">
+                      {translations[data.subgroup]}
+                    </Badge>
+                  )}
+                {typeof data.subgroup === "object" &&
+                  !!data.subgroup.length &&
+                  data.subgroup.map((i, key) => (
+                    <Badge
+                      key={key}
+                      variant="surface"
+                      size="md"
+                      colorPalette="teal"
+                    >
+                      {translations[i]}
+                    </Badge>
+                  ))}
+              </Stack>
             </Stack>
           </Stack>
         </Card.Root>

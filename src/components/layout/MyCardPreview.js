@@ -9,7 +9,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { LuX } from "react-icons/lu";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import { useRouter } from "next/router";
 
 import { translations } from "@/mockData/routeData/constants";
@@ -17,6 +17,7 @@ import { MyHoverCard } from "@/components/MyHoverCard";
 import { MyPreviewList } from "@/components/MyPreviewList";
 import { MyPreviewText } from "@/components/MyPreviewText";
 import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
+import { _clans } from "@/mockData/clansFamiliesSchools/clans/_clans";
 
 export function MyCardPreview({ cardData }) {
   const router = useRouter();
@@ -82,7 +83,7 @@ export function MyCardPreview({ cardData }) {
                 )}
                 {cardData?.clan && (
                   <Text color="fg.muted" textStyle="md">
-                    Клан: {cardData.clan}
+                    Клан: {_clans[cardData.clan].title}
                   </Text>
                 )}
                 {cardData?.school && (
@@ -166,6 +167,22 @@ export function MyCardPreview({ cardData }) {
             <MyPreviewText
               previewData={cardData?.startStatus}
               previewText={"Статус: "}
+            />
+
+            <MyPreviewList
+              previewDataArray={
+                cardData?.importantBushido && [cardData?.importantBushido]
+              }
+              previewText={"Главный принцип Бусидо: "}
+            />
+
+            <MyPreviewList
+              previewDataArray={
+                cardData?.insignificantBushido && [
+                  cardData?.insignificantBushido,
+                ]
+              }
+              previewText={"Малозначительный принцип Бусидо: "}
             />
 
             <MyPreviewText
