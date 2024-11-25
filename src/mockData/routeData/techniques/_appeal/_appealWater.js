@@ -1,6 +1,5 @@
 import { injector } from "@/helpers/injector";
-import { groups, injectImages } from "@/mockData/routeData/constants";
-import { replaceCharacter } from "@/helpers/replaceCharacter";
+import { groups } from "@/mockData/routeData/constants";
 import { addAppealOpportunities } from "@/mockData/routeData/techniques/_appeal/appealOpportunities";
 
 const obj = {

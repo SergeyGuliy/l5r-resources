@@ -83,7 +83,7 @@ export function MyCardPreview({ cardData }) {
                 )}
                 {cardData?.clan && (
                   <Text color="fg.muted" textStyle="md">
-                    Клан: {_clans[cardData.clan].title}
+                    {_clans[cardData.clan].title}
                   </Text>
                 )}
                 {cardData?.school && (

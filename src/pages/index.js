@@ -53,8 +53,23 @@ const group4 = [
 export default function Home() {
   const [search, setSearch] = useState("");
 
+  const colSpan = {
+    base: "24",
+    sm: "12",
+    md: "6",
+    lg: "6",
+    xl: "6",
+    "2xl": "6",
+  };
+
   return (
-    <Box display="flex" flexDirection="column">
+    <Box
+      display="flex"
+      flexDirection="column"
+      maxW={"1100px"}
+      ml={"auto"}
+      mr={"auto"}
+    >
       <Group mb={2}>
         <InputGroup
           flex="1"
@@ -87,10 +102,10 @@ export default function Home() {
         </InputGroup>
       </Group>
 
-      <MyLinks linksData={group1} />
-      <MyLinks linksData={group2} />
-      <MyLinks linksData={group3} />
-      <MyLinks linksData={group4} />
+      <MyLinks linksData={group1} colSpan={colSpan} />
+      <MyLinks linksData={group2} colSpan={colSpan} />
+      <MyLinks linksData={group3} colSpan={colSpan} />
+      <MyLinks linksData={group4} colSpan={colSpan} />
     </Box>
   );
 }

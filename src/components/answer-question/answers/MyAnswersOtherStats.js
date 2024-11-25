@@ -29,7 +29,7 @@ export function MyAnswersOtherStats({
     accumulatedGlory,
     accumulatedHonor,
     accumulatedStatus,
-    selectedFamily?.money,
+    selectedFamily?.startMoney,
   ]);
 
   return (

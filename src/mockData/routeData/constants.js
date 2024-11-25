@@ -74,7 +74,7 @@ export const translations = {
   families: "Семьи",
   schools: "Школы",
   terrain: "Местность",
-  conflictActions: "Действия в конфликтах",
+  conflictActions: "Действия",
   conflictActionsIntrigues: "Действия в Интригах",
   conflictActionsBattle: "Действия в Схватке",
   conflictActionsDuels: "Действия в Дуэлях",
