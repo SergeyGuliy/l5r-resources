@@ -1,6 +1,7 @@
 import { injector } from "@/helpers/injector";
 import { groups, injectImages } from "@/mockData/routeData/constants";
 import { replaceCharacter } from "@/helpers/replaceCharacter";
+import { addAppealOpportunities } from "@/mockData/routeData/techniques/_appeal/appealOpportunities";
 
 export const obj = {
   Blagoslovennyy_veter: {
@@ -233,5 +234,5 @@ export const obj = {
 export const _appealAir = injector(obj, (original) => ({
   group: groups.appeal,
   subgroup: groups.appealAir,
-  description: replaceCharacter(original.description, injectImages),
+  description: addAppealOpportunities(original.description, "air"),
 }));

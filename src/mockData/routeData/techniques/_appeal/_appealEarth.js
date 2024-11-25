@@ -1,6 +1,7 @@
 import { injector } from "@/helpers/injector";
 import { groups, injectImages } from "@/mockData/routeData/constants";
 import { replaceCharacter } from "@/helpers/replaceCharacter";
+import { addAppealOpportunities } from "@/mockData/routeData/techniques/_appeal/appealOpportunities";
 
 export const obj = {
   Dosekh_Zemli: {
@@ -241,5 +242,5 @@ export const obj = {
 export const _appealEarth = injector(obj, (original) => ({
   group: groups.appeal,
   subgroup: groups.appealEarth,
-  description: replaceCharacter(original.description, injectImages),
+  description: addAppealOpportunities(original.description, "earth"),
 }));
