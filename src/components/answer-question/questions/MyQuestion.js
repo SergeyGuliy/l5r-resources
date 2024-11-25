@@ -80,6 +80,7 @@ export function MyQuestion({
           .map((i) => ({
             label: i.title,
             value: i.key,
+            data: i,
           })),
       }),
     [answers]
@@ -93,6 +94,7 @@ export function MyQuestion({
           .map(([key]) => ({
             label: skills[key].title,
             value: skills[key].key,
+            data: skills[key],
           })),
       }),
     [accumulatedSkills, answers]
@@ -106,6 +108,7 @@ export function MyQuestion({
           .map(([key]) => ({
             label: skills[key].title,
             value: skills[key].key,
+            data: skills[key],
           })),
       }),
     [accumulatedSkills]
@@ -119,6 +122,7 @@ export function MyQuestion({
           .map(([key]) => ({
             label: skills[key].title,
             value: skills[key].key,
+            data: skills[key],
           })),
       }),
     [accumulatedSkills, answers]

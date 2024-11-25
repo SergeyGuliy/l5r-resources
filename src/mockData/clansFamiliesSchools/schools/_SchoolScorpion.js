@@ -58,7 +58,7 @@ const obj = {
 чтобы угрожать Императору.</p>
     `,
     startingEquipment: `
-<p>церемониальная одежда;
+<p>Церемониальная одежда;
 повседневная одежда; дорожная одежда; вакидзаси (короткий меч); любое оружие редкости 6 или
 ниже; набор для каллиграфии; набор для путешествий.</p>
     `,
@@ -128,7 +128,7 @@ const obj = {
         skills.Zhulnichestvo,
         skills.Teologiya,
       ],
-      toSelect: 5,
+      toSelect: 3,
     },
     startHonor: 30,
     availableTechniques: [

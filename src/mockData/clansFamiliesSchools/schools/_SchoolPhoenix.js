@@ -197,7 +197,6 @@ const obj = {
       {
         type: techniquesGroups.appealGroup,
         items: [appeal.Burya_Vozduha],
-        toSelect: 1,
       },
       {
         type: techniquesGroups.ritualGroup,
