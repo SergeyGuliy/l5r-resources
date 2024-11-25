@@ -36,7 +36,10 @@ const group3 = [
 const group4 = [
   { title: translations.bushido, link: generateLinkPath(groups.bushido) },
   { title: translations.states, link: generateLinkPath(groups.states) },
-  { title: "Местность", link: "/group", disabled: true },
+  {
+    title: translations.terrain,
+    link: generateLinkPath(groups.terrain),
+  },
   { title: translations.other, link: generateLinkPath(groups.other) },
 ];
 

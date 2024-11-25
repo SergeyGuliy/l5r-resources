@@ -17,6 +17,7 @@ export const groups = {
   clans: "clans",
   families: "families",
   schools: "schools",
+  terrain: "terrain",
 
   skills: "skills",
   skillsCombat: "skillsCombat",
@@ -68,6 +69,7 @@ export const translations = {
   clans: "Кланы",
   families: "Семьи",
   schools: "Школы",
+  terrain: "Местность",
 
   skills: "Навыки",
   skillsCombat: "Боевые",
