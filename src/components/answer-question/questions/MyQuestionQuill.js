@@ -37,7 +37,6 @@ const Editor = forwardRef(
 
         ref.current = quill;
 
-        console.log(defaultValueRef.current);
         if (defaultValueRef.current)
           quill.setContents(JSON.parse(defaultValueRef.current), "api");
 

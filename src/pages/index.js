@@ -3,9 +3,11 @@ import { Box } from "@chakra-ui/react";
 import { genLinkPath } from "@/helpers/genLinkPath";
 
 import { MyLinks } from "@/components/link/MyLinks";
-import { groups, text } from "@/mockData/routeData/constants";
+import { groups, injectImages, text } from "@/mockData/routeData/constants";
 import { titleArmor, titleWeapons } from "@/mockData/tableData/constants";
 import { MyGlobalSearch } from "@/components/MyGlobalSearch";
+import { MyHtml } from "@/components/MyHtml";
+import { replaceCharacter } from "@/helpers/replaceCharacter";
 
 const linksData = [
   [
@@ -37,6 +39,24 @@ const linksData = [
 export default function Home() {
   const col = { base: 24, sm: 12, md: 6, lg: 6, xl: 6, "2xl": 6 };
 
+  const mock = replaceCharacter(
+    `
+  Y
+  <br />
+  T
+  <br />
+  E
+  <br />
+  R
+  <br />
+  Y
+  <br />
+  Y
+  <br />
+  `,
+    injectImages
+  );
+
   return (
     <Box
       display="flex"
@@ -46,6 +66,7 @@ export default function Home() {
       overflow={"auto"}
       h={"100%"}
     >
+      <MyHtml content={mock} />
       <MyGlobalSearch />
 
       {linksData.map((links, index) => (

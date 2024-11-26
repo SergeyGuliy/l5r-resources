@@ -1,22 +1,35 @@
 import { Table } from "@chakra-ui/react";
 import { MyHoverCard } from "@/components/MyHoverCard";
+import React from "react";
 
 export function MyTableWeapons({ headers, items }) {
   if (!headers.length) return;
   if (!items.length) return;
 
   return (
-    <Table.ScrollArea showColumnBorder borderWidth="1px" rounded="md">
-      <Table.Root size="sm" stickyHeader>
+    <Table.ScrollArea
+      borderWidth="1px"
+      borderTopRadius="sm"
+      borderColor="border.disabled"
+    >
+      <Table.Root size="sm" stickyHeader showColumnBorder interactive>
+        <Table.ColumnGroup>
+          <Table.Column width="200px" />
+          <Table.Column width="200px" />
+          <Table.Column width="200px" />
+          <Table.Column width="180px" />
+          <Table.Column width="180px" />
+          <Table.Column width="180px" />
+          <Table.Column />
+          <Table.Column />
+          <Table.Column />
+          <Table.Column width="120px" />
+          <Table.Column width="120px" />
+        </Table.ColumnGroup>
         <Table.Header>
           <Table.Row bg="bg.subtle">
             {headers.map((i, iIndex) => (
-              <Table.ColumnHeader
-                key={iIndex}
-                textAlign="center"
-                maxW={i.width}
-                minW={i.width}
-              >
+              <Table.ColumnHeader key={iIndex} textAlign="center">
                 <MyHoverCard cardData={i} />
               </Table.ColumnHeader>
             ))}

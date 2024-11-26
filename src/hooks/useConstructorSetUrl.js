@@ -2,10 +2,16 @@ import { useEffect } from "react";
 
 export const urlDataKey = "urlData";
 
-export function useConstructorUrl({ answers, swapRings, expandedQuestions }) {
+export function useConstructorSetUrl({
+  answers,
+  swapRings,
+  expandedQuestions,
+  isMounted,
+}) {
   const url = new URL(window.location.href);
 
   useEffect(() => {
+    if (!isMounted) return;
     const urlData = JSON.stringify({
       answers,
       swapRings,

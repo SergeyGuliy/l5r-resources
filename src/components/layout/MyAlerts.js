@@ -8,11 +8,11 @@ export function MyAlerts() {
   return (
     <Stack
       gap="2"
-      width={"400px"}
+      width={{ base: "calc(100% - 20px)", lg: "400px" }}
       position={"fixed"}
       zIndex={1}
       right={"10px"}
-      bottom={"10px"}
+      top={"10px"}
     >
       {alerts.map((alert, key) => (
         <Alert

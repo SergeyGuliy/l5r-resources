@@ -51,9 +51,9 @@ export function MyCardPreview({ cardData }) {
       top={"0"}
       left={0}
       height={{
-        base: "calc(100dvh - 65px)",
-        sm: "calc(100dvh - 65px)",
-        md: "calc(100dvh - 65px)",
+        base: "calc(100dvh - 60px)",
+        sm: "calc(100dvh - 60px)",
+        md: "calc(100dvh - 60px)",
         lg: "100%",
         xl: "100%",
         "2xl": "100%",

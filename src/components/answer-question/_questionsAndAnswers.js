@@ -357,3 +357,5 @@ export const _answers = {
   19: "",
   20: "",
 };
+
+export const _swapRings = { toBeDecreased: "", toBeIncreased: "" };

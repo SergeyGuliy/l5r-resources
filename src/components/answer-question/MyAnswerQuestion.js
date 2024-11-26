@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import { Box, HStack, Tabs, useBreakpointValue } from "@chakra-ui/react";
 import { MyQuestions } from "@/components/answer-question/questions/MyQuestions";
@@ -9,38 +9,23 @@ import { useAnswersSelected } from "@/hooks/useAnswersSelected";
 import { useAnswersAccumulated } from "@/hooks/useAnswersAccumulated";
 import { useAnswersValidation } from "@/hooks/useAnswersValidation";
 
-import {
-  questions,
-  _answers,
-} from "@/components/answer-question/_questionsAndAnswers";
+import { questions } from "@/components/answer-question/_questionsAndAnswers";
 import { MyPageTitle } from "@/components/MyPageTitle";
 import { Switch } from "@/components/ui/switch";
-import { urlDataKey, useConstructorUrl } from "@/hooks/useConstructorUrl";
+import { useConstructorSetUrl } from "@/hooks/useConstructorSetUrl";
+import { useConstructorGetUrlData } from "@/hooks/useConstructorGetUrlData";
 
 export function MyAnswerQuestion() {
-  const params = new URLSearchParams(window.location.search);
   const { addAlert } = useAlerts();
-
-  function getUrlData() {
-    // console.log("getUrlData");
-    try {
-      // console.log(params.get(urlDataKey));
-      return JSON.parse(params.get(urlDataKey));
-    } catch {
-      return {
-        answers: _answers,
-        swapRings: { toBeDecreased: "", toBeIncreased: "" },
-        expandedQuestions: false,
-      };
-    }
-  }
-  const urlData = getUrlData();
-
-  const [answers, setAnswer] = useState(urlData.answers);
-  const [swapRings, setSwapRings] = useState(urlData.swapRings);
-  const [expandedQuestions, setExpandedQuestions] = useState(
-    urlData.expandedQuestions
-  );
+  const {
+    isMounted,
+    answers,
+    setAnswer,
+    swapRings,
+    setSwapRings,
+    expandedQuestions,
+    setExpandedQuestions,
+  } = useConstructorGetUrlData();
 
   const { selectedClan, selectedFamily, selectedSchool, selectedRing } =
     useAnswersSelected(answers);
@@ -92,11 +77,14 @@ export function MyAnswerQuestion() {
     [currentBreakpoint]
   );
 
-  useConstructorUrl({
+  useConstructorSetUrl({
     answers,
     swapRings,
     expandedQuestions,
+    isMounted,
   });
+
+  if (!isMounted) return;
 
   return (
     <Box display="flex" flexDirection="column" w={"100%"} h={"100%"}>

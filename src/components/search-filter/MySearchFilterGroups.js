@@ -1,4 +1,4 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { Button, Stack } from "@chakra-ui/react";
 import { Switch } from "@/components/ui/switch";
 import { hiddenFilter } from "@/mockData/routeData/constants";
 
@@ -48,35 +48,39 @@ export function MySearchFilterGroups({
 
   return (
     <>
-      <Switch
-        checked={indeterminate ? "indeterminate" : allChecked}
-        colorPalette={"blue"}
-        onCheckedChange={(e) => onCheckedGroup(e)}
-        size="md"
-        mb={2}
-      >
-        {filter.label}
-      </Switch>
+      {!filter.hidden && (
+        <Switch
+          checked={indeterminate ? "indeterminate" : allChecked}
+          colorPalette={"blue"}
+          onCheckedChange={(e) => onCheckedGroup(e)}
+          size="md"
+          my={0}
+        >
+          {filter.label}
+        </Switch>
+      )}
 
-      <HStack>
-        {filter.subGroups.map((subGroup, subGroupIndexToUpdate) => {
-          if (hiddenFilter.includes(subGroup.value)) return;
+      {!!filter.subGroups.length && (
+        <Stack warp={"wrap"} direction="row" mb={4}>
+          {filter.subGroups.map((subGroup, subGroupIndexToUpdate) => {
+            if (hiddenFilter.includes(subGroup.value)) return;
 
-          return (
-            <Button
-              size="xs"
-              key={subGroup.value}
-              colorPalette={subGroup.checked ? "blue" : "blue"}
-              variant={subGroup.checked ? "solid" : "outline"}
-              onClick={() =>
-                onCheckedSubGroup(!subGroup.checked, subGroupIndexToUpdate)
-              }
-            >
-              {subGroup.label}
-            </Button>
-          );
-        })}
-      </HStack>
+            return (
+              <Button
+                size="xs"
+                key={subGroup.value}
+                colorPalette={subGroup.checked ? "blue" : "blue"}
+                variant={subGroup.checked ? "solid" : "outline"}
+                onClick={() =>
+                  onCheckedSubGroup(!subGroup.checked, subGroupIndexToUpdate)
+                }
+              >
+                {subGroup.label}
+              </Button>
+            );
+          })}
+        </Stack>
+      )}
     </>
   );
 }

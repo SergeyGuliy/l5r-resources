@@ -32,9 +32,9 @@ export default function RootLayout({ Component, pageProps }) {
               flex="1"
               px={{ base: 2, lg: 6 }}
               py={{ base: 1, lg: 2 }}
-              ml={{ base: "0px", lg: "65px" }}
+              ml={{ base: "0px", lg: "60px" }}
               mb="0px"
-              height={{ base: "calc(100dvh - 65px)", lg: "100vh" }}
+              height={{ base: "calc(100dvh - 60px)", lg: "100vh" }}
               width={{
                 base: "100%",
                 sm: "400px",

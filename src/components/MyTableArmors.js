@@ -1,22 +1,29 @@
-import { Table } from "@chakra-ui/react";
+import { Box, Table } from "@chakra-ui/react";
 import { MyHoverCard } from "@/components/MyHoverCard";
+import React from "react";
 
 export function MyTableArmors({ headers, items }) {
   if (!headers.length) return;
   if (!items.length) return;
 
   return (
-    <Table.ScrollArea showColumnBorder borderWidth="1px" rounded="md">
-      <Table.Root size="sm" stickyHeader>
+    <Table.ScrollArea
+      borderWidth="1px"
+      borderTopRadius="sm"
+      borderColor="border.disabled"
+    >
+      <Table.Root size="sm" stickyHeader showColumnBorder interactive>
+        <Table.ColumnGroup>
+          <Table.Column width="calc(33% - 50px)" />
+          <Table.Column width="calc(33% - 50px)" />
+          <Table.Column width="calc(33% - 50px)" />
+          <Table.Column width="150px" />
+          <Table.Column width="150px" />
+        </Table.ColumnGroup>
         <Table.Header>
           <Table.Row bg="bg.subtle">
             {headers.map((i, iIndex) => (
-              <Table.ColumnHeader
-                key={iIndex}
-                textAlign="center"
-                maxW={i.width}
-                minW={i.width}
-              >
+              <Table.ColumnHeader key={iIndex} textAlign="center">
                 <MyHoverCard cardData={i} />
               </Table.ColumnHeader>
             ))}
@@ -37,10 +44,9 @@ export function MyTableArmors({ headers, items }) {
               />
               <Table.Cell textAlign="center">
                 {i.armorCharacteristics_Properties.map((j, jIndex) => (
-                  <span key={jIndex}>
+                  <div key={jIndex}>
                     <MyHoverCard cardData={j} />
-                    &nbsp;
-                  </span>
+                  </div>
                 ))}
               </Table.Cell>
               <Table.Cell textAlign="center">

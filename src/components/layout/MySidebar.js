@@ -18,15 +18,15 @@ export function MySidebar() {
       alignItems={"center"}
       justifyContent={"space-between"}
       direction={{ base: "row", lg: "column" }}
-      width={{ base: "100vw", lg: "65px" }}
-      height={{ base: "65px", lg: "100dvh" }}
+      width={{ base: "100vw", lg: "60px" }}
+      height={{ base: "60px", lg: "100dvh" }}
       pt={{ base: 0, lg: 5 }}
       pb={{ base: 0, lg: 5 }}
       pl={{ base: 5, lg: 0 }}
       pr={{ base: 5, lg: 0 }}
       position="fixed"
       zIndex={1}
-      top={{ base: "calc(100dvh - 65px)", lg: "0" }}
+      top={{ base: "calc(100dvh - 60px)", lg: "0" }}
       left={0}
     >
       <LinkButton

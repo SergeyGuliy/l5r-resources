@@ -3,7 +3,7 @@ import { Badge, Box, Card, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 import { text } from "@/mockData/routeData/constants";
-import { genLinkPath } from "@/helpers/genLinkPath";
+import { genLinkPath } from "@/helpers/generateLinkPath";
 import { useSearchAndFilterQuery } from "@/hooks/useSearchAndFilterQuery";
 
 export function MyCardListItem({ data }) {
@@ -13,6 +13,7 @@ export function MyCardListItem({ data }) {
 
   function getLink() {
     if (["/[group]", "/[group]/[item]"].includes(router.pathname)) {
+      console.log(router.pathname);
       const search = getQuerySearch();
       const filters = getQueryFilters();
       const lvls = getQueryLvls();
@@ -25,6 +26,7 @@ export function MyCardListItem({ data }) {
 
       return genLinkPath([router.query.group, data.key], query);
     }
+    console.log(router.pathname);
     return genLinkPath([router.query.group, data.key]);
   }
 

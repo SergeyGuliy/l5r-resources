@@ -5,7 +5,7 @@ const AlertContext = createContext("AlertProvider");
 export function AlertProvider({ children }) {
   const [alerts, setAlerts] = useState([]);
 
-  const addAlert = (title, status = "info", timeout = 10000) => {
+  const addAlert = (title, status = "warning", timeout = 10000) => {
     // Add the alert
     const alert = { title, status };
     setAlerts((prev) => [...prev, alert]);
