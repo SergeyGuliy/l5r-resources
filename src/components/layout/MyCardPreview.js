@@ -12,7 +12,7 @@ import { LuX } from "react-icons/lu";
 import React, { useMemo } from "react";
 import { useRouter } from "next/router";
 
-import { translations } from "@/mockData/routeData/constants";
+import { text } from "@/mockData/routeData/constants";
 import { MyHoverCard } from "@/components/MyHoverCard";
 import { MyPreviewList } from "@/components/MyPreviewList";
 import { MyPreviewText } from "@/components/MyPreviewText";
@@ -100,9 +100,9 @@ export function MyCardPreview({ cardData }) {
               </Button>
             </HStack>
             <HStack>
-              {!!translations[cardData.subgroup] && (
+              {!!text[cardData.subgroup] && (
                 <Badge variant="surface" size="md">
-                  {translations[cardData.subgroup]}
+                  {text[cardData.subgroup]}
                 </Badge>
               )}
             </HStack>

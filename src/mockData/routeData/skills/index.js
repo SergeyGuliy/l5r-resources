@@ -1,4 +1,4 @@
-import { groups, translations } from "@/mockData/routeData/constants";
+import { groups, text } from "@/mockData/routeData/constants";
 
 import { _skillsCombat } from "@/mockData/routeData/skills/_skillsCombat";
 import { _skillsScience } from "@/mockData/routeData/skills/_skillsScience";
@@ -27,7 +27,7 @@ export const skills = {
 
 export const skillsRouteData = {
   [groups.skills]: {
-    title: translations.skills,
+    title: text.skills,
     list: skills,
     filterSettings: [skillsFilterSettings],
     useSearch: true,

@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 import { Badge, Box, Card, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
-import { translations } from "@/mockData/routeData/constants";
-import { generateLinkPath } from "@/helpers/generateLinkPath";
+import { text } from "@/mockData/routeData/constants";
+import { genLinkPath } from "@/helpers/genLinkPath";
 import { useSearchAndFilterQuery } from "@/hooks/useSearchAndFilterQuery";
 
 export function MyCardListItem({ data }) {
@@ -23,9 +23,9 @@ export function MyCardListItem({ data }) {
       if (filters) query.filters = filters;
       if (lvls) query.lvls = lvls;
 
-      return generateLinkPath([router.query.group, data.key], query);
+      return genLinkPath([router.query.group, data.key], query);
     }
-    return generateLinkPath([router.query.group, data.key]);
+    return genLinkPath([router.query.group, data.key]);
   }
 
   function navigate(e) {
@@ -63,18 +63,17 @@ export function MyCardListItem({ data }) {
                   </Badge>
                 )}
 
-                {!!translations[data.group] && (
+                {!!text[data.group] && (
                   <Badge variant="surface" size="md" colorPalette="green">
-                    {translations[data.group]}
+                    {text[data.group]}
                   </Badge>
                 )}
 
-                {typeof data.subgroup === "string" &&
-                  !!translations[data.subgroup] && (
-                    <Badge variant="surface" size="md" colorPalette="teal">
-                      {translations[data.subgroup]}
-                    </Badge>
-                  )}
+                {typeof data.subgroup === "string" && !!text[data.subgroup] && (
+                  <Badge variant="surface" size="md" colorPalette="teal">
+                    {text[data.subgroup]}
+                  </Badge>
+                )}
                 {typeof data.subgroup === "object" &&
                   !!data.subgroup.length &&
                   data.subgroup.map((i, key) => (
@@ -84,7 +83,7 @@ export function MyCardListItem({ data }) {
                       size="md"
                       colorPalette="teal"
                     >
-                      {translations[i]}
+                      {text[i]}
                     </Badge>
                   ))}
               </Stack>

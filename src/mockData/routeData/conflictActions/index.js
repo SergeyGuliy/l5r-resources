@@ -1,4 +1,4 @@
-import { groups, translations } from "@/mockData/routeData/constants";
+import { groups, text } from "@/mockData/routeData/constants";
 
 import { _conflictActionsBattle } from "@/mockData/routeData/conflictActions/_conflictActionsBattle";
 import { _conflictActionsIntrigues } from "@/mockData/routeData/conflictActions/_conflictActionsIntrigues";
@@ -6,7 +6,7 @@ import { _conflictActionsDuels } from "@/mockData/routeData/conflictActions/_con
 
 export const conflictActionsRouteData = {
   [groups.conflictActions]: {
-    title: translations.conflictActions,
+    title: text.conflictActions,
     list: {
       ..._conflictActionsIntrigues,
       ..._conflictActionsBattle,

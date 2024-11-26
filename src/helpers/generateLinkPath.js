@@ -1,4 +1,4 @@
-export function generateLinkPath(slugs, query) {
+export function genLinkPath(slugs, query) {
   const path = typeof slugs === "object" ? `/${slugs.join("/")}` : `/${slugs}`;
 
   if (!query || !Object.keys(query).length) return path;

@@ -1,7 +1,7 @@
 import { transliterate } from "transliteration";
 import { replaceCharacter } from "@/helpers/replaceCharacter";
 
-export function generateLink(text) {
+export function genLinkPath(text) {
   let toReturn = transliterate(text);
 
   toReturn = replaceCharacter(toReturn, [

@@ -7,7 +7,7 @@ export function MySearch({ useSearch, search, setSearch }) {
 
   return (
     <InputGroup
-      mb={5}
+      mb={2}
       flex="1"
       endElement={
         search && (

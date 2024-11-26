@@ -1,4 +1,4 @@
-import { groups, translations } from "@/mockData/routeData/constants";
+import { groups, text } from "@/mockData/routeData/constants";
 
 import { _CrabClan } from "@/mockData/clansFamiliesSchools/families/_CrabClan";
 import { _CraneClan } from "@/mockData/clansFamiliesSchools/families/_CraneClan";
@@ -20,7 +20,7 @@ export const _families = {
 
 export const familiesRouteData = {
   [groups.families]: {
-    title: translations.families,
+    title: text.families,
     list: _families,
     useTechLvls: false,
     useSearch: true,

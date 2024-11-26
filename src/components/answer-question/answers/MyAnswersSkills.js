@@ -2,7 +2,7 @@ import { Table } from "@chakra-ui/react";
 import React, { useMemo, useState } from "react";
 import { skills } from "@/mockData/routeData/skills";
 import { MyHoverCard } from "@/components/MyHoverCard";
-import { translations } from "@/mockData/routeData/constants";
+import { text } from "@/mockData/routeData/constants";
 
 export function MyAnswersSkills({ accumulatedSkills }) {
   const [showAll] = useState(false);
@@ -24,7 +24,7 @@ export function MyAnswersSkills({ accumulatedSkills }) {
         {skillsToShow.map(([key, value]) => (
           <Table.Row key={key}>
             <Table.Cell textAlign="left">
-              {translations[skills[key].subgroup]}
+              {text[skills[key].subgroup]}
             </Table.Cell>
             <Table.Cell textAlign="left">
               <MyHoverCard cardData={skills[key]} />

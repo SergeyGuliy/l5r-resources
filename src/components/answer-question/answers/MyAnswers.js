@@ -23,10 +23,10 @@ export function MyAnswers({
   setSwapRings,
 }) {
   return (
-    <Card.Root width={"50%"} h={"100%"}>
+    <Card.Root width={{ base: "100%", xl: "50%" }} h={"100%"}>
       <Stack h={"100%"}>
-        <HStack pl={3} pt={3}>
-          <MyPageTitle title={"Характеристики персонажа"} />
+        <HStack pl={3} pt={3} display={{ base: "none", xl: "block" }}>
+          <MyPageTitle title={"Характеристики"} />
         </HStack>
 
         <Stack overflow={"auto"} h={"100%"} p={2}>

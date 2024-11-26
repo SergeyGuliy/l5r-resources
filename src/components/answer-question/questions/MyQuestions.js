@@ -1,7 +1,6 @@
 import { Card, HStack, Stack } from "@chakra-ui/react";
 import { MyPageTitle } from "@/components/MyPageTitle";
 import { MyQuestion } from "@/components/answer-question/questions/MyQuestion";
-import { Switch } from "@/components/ui/switch";
 
 export function MyQuestions({
   questions,
@@ -13,22 +12,12 @@ export function MyQuestions({
   accumulatedRings,
   accumulatedSkills,
   expandedQuestions,
-  setExpandedQuestions,
 }) {
   return (
-    <Card.Root width={"50%"} h={"100%"}>
+    <Card.Root width={{ base: "100%", xl: "50%" }} h={"100%"}>
       <Stack h={"100%"}>
-        <HStack pl={3} pt={3} pr={3}>
-          <MyPageTitle title={"Вопросы"} mb={1} />
-
-          <Switch
-            ml={"auto"}
-            flexDirection="row-reverse"
-            checked={expandedQuestions}
-            onCheckedChange={(e) => setExpandedQuestions(e.checked)}
-          >
-            Расширенная информация
-          </Switch>
+        <HStack pl={3} pt={3} display={{ base: "none", xl: "block" }}>
+          <MyPageTitle title={"Вопросы"} />
         </HStack>
 
         <Stack overflow={"auto"} h={"100%"} p={2}>

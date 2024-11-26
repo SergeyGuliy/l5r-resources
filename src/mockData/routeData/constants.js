@@ -61,7 +61,7 @@ export const groups = {
   weaponsAndArmorData: "weaponsAndArmorData",
 };
 
-export const translations = {
+export const text = {
   techniques: "Техники",
   stances: "Стойки",
   states: "Состояния",

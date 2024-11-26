@@ -1,6 +1,6 @@
-import { generateLinkPath } from "@/helpers/generateLinkPath";
+import { genLinkPath } from "@/helpers/genLinkPath";
 
-import { groups, translations } from "../constants";
+import { groups, text } from "../constants";
 
 import { katas, katasFilterSettings } from "./_kata";
 import { ninjutsu, ninjutsuFilterSettings } from "./_ninjutsu";
@@ -28,43 +28,43 @@ import {
 const links = [
   {
     key: groups.techniques,
-    title: translations.techniques,
-    link: generateLinkPath(groups.techniques),
+    title: text.techniques,
+    link: genLinkPath(groups.techniques),
   },
   {
     key: groups.kata,
-    title: translations.kata,
-    link: generateLinkPath(groups.kata),
+    title: text.kata,
+    link: genLinkPath(groups.kata),
   },
   {
     key: groups.ninjutsu,
-    title: translations.ninjutsu,
-    link: generateLinkPath(groups.ninjutsu),
+    title: text.ninjutsu,
+    link: genLinkPath(groups.ninjutsu),
   },
   {
     key: groups.ritual,
-    title: translations.ritual,
-    link: generateLinkPath(groups.ritual),
+    title: text.ritual,
+    link: genLinkPath(groups.ritual),
   },
   {
     key: groups.kiho,
-    title: translations.kiho,
-    link: generateLinkPath(groups.kiho),
+    title: text.kiho,
+    link: genLinkPath(groups.kiho),
   },
   {
     key: groups.appeal,
-    title: translations.appeal,
-    link: generateLinkPath(groups.appeal),
+    title: text.appeal,
+    link: genLinkPath(groups.appeal),
   },
   {
     key: groups.shuji,
-    title: translations.shuji,
-    link: generateLinkPath(groups.shuji),
+    title: text.shuji,
+    link: genLinkPath(groups.shuji),
   },
   {
     key: groups.schoolAbilities,
-    title: translations.schoolAbilities,
-    link: generateLinkPath(groups.schoolAbilities),
+    title: text.schoolAbilities,
+    link: genLinkPath(groups.schoolAbilities),
   },
 ];
 
@@ -89,7 +89,7 @@ export const _techniques = {
 
 export const techniquesRouteData = {
   [groups.techniques]: {
-    title: translations.techniques,
+    title: text.techniques,
     list: _techniques,
     links: linksWIthActive(groups.techniques),
     filterSettings: [
@@ -105,7 +105,7 @@ export const techniquesRouteData = {
     useSearch: true,
   },
   [groups.appeal]: {
-    title: translations.appeal,
+    title: text.appeal,
     list: appeal,
     links: linksWIthActive(groups.appeal),
     filterSettings: [appealFilterSettings],
@@ -113,7 +113,7 @@ export const techniquesRouteData = {
     useSearch: true,
   },
   [groups.kata]: {
-    title: translations.kata,
+    title: text.kata,
     list: katas,
     links: linksWIthActive(groups.kata),
     filterSettings: [katasFilterSettings],
@@ -121,7 +121,7 @@ export const techniquesRouteData = {
     useSearch: true,
   },
   [groups.kiho]: {
-    title: translations.kiho,
+    title: text.kiho,
     list: kiho,
     links: linksWIthActive(groups.kiho),
     filterSettings: [kihoFilterSettings],
@@ -129,7 +129,7 @@ export const techniquesRouteData = {
     useSearch: true,
   },
   [groups.ninjutsu]: {
-    title: translations.ninjutsu,
+    title: text.ninjutsu,
     list: ninjutsu,
     links: linksWIthActive(groups.ninjutsu),
     filterSettings: [ninjutsuFilterSettings],
@@ -137,7 +137,7 @@ export const techniquesRouteData = {
     useSearch: true,
   },
   [groups.ritual]: {
-    title: translations.ritual,
+    title: text.ritual,
     list: ritual,
     links: linksWIthActive(groups.ritual),
     filterSettings: [ritualFilterSettings],
@@ -145,7 +145,7 @@ export const techniquesRouteData = {
     useSearch: true,
   },
   [groups.shuji]: {
-    title: translations.shuji,
+    title: text.shuji,
     list: shuji,
     links: linksWIthActive(groups.shuji),
     filterSettings: [shujiFilterSettings],
@@ -153,7 +153,7 @@ export const techniquesRouteData = {
     useSearch: true,
   },
   [groups.schoolAbilities]: {
-    title: translations.schoolAbilities,
+    title: text.schoolAbilities,
     list: schoolAbilities,
     links: linksWIthActive(groups.schoolAbilities),
     filterSettings: [schoolAbilitiesFilterSettings],

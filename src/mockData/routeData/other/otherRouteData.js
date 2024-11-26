@@ -5,7 +5,7 @@ import {
   hiddenOtherTechniquesGroupsTrue,
   hiddenOtherWeaponGroups,
   hiddenOtherWeaponsAndArmorData,
-  translations,
+  text,
 } from "@/mockData/routeData/constants";
 
 import { weaponGroups } from "@/mockData/routeData/other/weaponGroups";
@@ -39,7 +39,7 @@ const filterSettings = [
 
 export const otherRouteData = {
   [groups.other]: {
-    title: translations.other,
+    title: text.other,
     list: {
       ...techniquesGroups,
       ...weaponGroups,

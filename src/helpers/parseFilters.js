@@ -1,4 +1,4 @@
-import { translations } from "@/mockData/routeData/constants";
+import { text } from "@/mockData/routeData/constants";
 
 export function parseFilters(filters) {
   if (!filters) return false;
@@ -6,7 +6,7 @@ export function parseFilters(filters) {
   return filters.map((filter) => {
     const subGroups = filter.subGroups?.length
       ? filter.subGroups.map((j) => ({
-          label: translations[j],
+          label: text[j],
           checked: true,
           value: j,
         }))
@@ -14,7 +14,7 @@ export function parseFilters(filters) {
 
     return {
       group: filter.group,
-      label: translations[filter.group],
+      label: text[filter.group],
       subGroups,
     };
   });

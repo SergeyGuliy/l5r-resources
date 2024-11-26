@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
 import { _techniques } from "@/mockData/routeData/techniques";
 import { skills } from "@/mockData/routeData/skills";
-import { translations } from "@/mockData/routeData/constants";
+import { text } from "@/mockData/routeData/constants";
 
 const _baseRings = Object.fromEntries(Object.keys(_rings).map((i) => [i, 1]));
 const _baseSkills = Object.fromEntries(Object.keys(skills).map((i) => [i, 0]));
@@ -104,7 +104,7 @@ export function useAnswersAccumulated({
     });
 
     return Object.entries(techObject).map(([key, val]) => [
-      `${translations[key]}: `,
+      `${text[key]}: `,
       val,
     ]);
   }, [answers[3], selectedClan]);
