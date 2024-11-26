@@ -1,6 +1,8 @@
 import {
   iconExplosive,
   iconOpportunity,
+  iconRingDice,
+  iconSkillDice,
   iconStrife,
   iconSuccess,
 } from "@/components/MyIcon";
@@ -122,6 +124,8 @@ export const injectImages = [
   ["T", iconStrife],
   ["E", iconExplosive],
   ["R", iconSuccess],
+  ["Z", iconRingDice],
+  ["X", iconSkillDice],
 ];
 export const allLvls = [1, 2, 3, 4, 5];
 

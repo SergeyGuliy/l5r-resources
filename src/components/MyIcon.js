@@ -6,6 +6,9 @@ import explosive from "@/static/images/icons/explosive.svg";
 import opportunity from "@/static/images/icons/opportunity.svg";
 import strife from "@/static/images/icons/strife.svg";
 
+import ringDice from "@/static/images/icons/ringDice.svg";
+import skillDice from "@/static/images/icons/skillDice.svg";
+
 import air from "@/static/images/icons/air.svg";
 import earth from "@/static/images/icons/earth.svg";
 import fire from "@/static/images/icons/fire.svg";
@@ -19,6 +22,9 @@ function MyIcon({ name }) {
     opportunity: opportunity,
     strife: strife,
 
+    ringDice: ringDice,
+    skillDice: skillDice,
+
     air: air,
     earth: earth,
     fire: fire,
@@ -31,6 +37,9 @@ function MyIcon({ name }) {
     explosive: "Взрывной успех",
     opportunity: "Возможность",
     strife: "Смятение",
+
+    ringDice: "Кость кольца",
+    skillDice: "Кость навыка",
 
     air: "Воздух",
     earth: "Земля",
@@ -55,6 +64,9 @@ export const iconSuccess = renderToString(<MyIcon name="success" />);
 export const iconExplosive = renderToString(<MyIcon name="explosive" />);
 export const iconOpportunity = renderToString(<MyIcon name="opportunity" />);
 export const iconStrife = renderToString(<MyIcon name="strife" />);
+
+export const iconRingDice = renderToString(<MyIcon name="ringDice" />);
+export const iconSkillDice = renderToString(<MyIcon name="skillDice" />);
 
 export const iconAir = renderToString(<MyIcon name="air" />);
 export const iconEarth = renderToString(<MyIcon name="earth" />);

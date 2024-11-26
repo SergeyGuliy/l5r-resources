@@ -49,9 +49,9 @@ export default function Home() {
   <br />
   R
   <br />
-  Y
+  Z
   <br />
-  Y
+  X
   <br />
   `,
     injectImages
