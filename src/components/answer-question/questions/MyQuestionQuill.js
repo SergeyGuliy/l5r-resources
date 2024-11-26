@@ -37,17 +37,19 @@ const Editor = forwardRef(
 
         ref.current = quill;
 
-        if (defaultValueRef.current) quill.setContents(defaultValueRef.current);
+        console.log(defaultValueRef.current);
+        if (defaultValueRef.current)
+          quill.setContents(JSON.parse(defaultValueRef.current), "api");
 
         quill.on("text-change", () =>
           onTextChangeRef.current?.(JSON.stringify(quill.getContents().ops))
         );
 
-        quill.on("selection-change", (...args) => {
-          console.log("selection-change");
-          console.log(args);
-          onSelectionChangeRef.current?.(...args);
-        });
+        // quill.on("selection-change", (...args) => {
+        //   console.log("selection-change");
+        //   console.log(args);
+        //   onSelectionChangeRef.current?.(...args);
+        // });
       });
 
       return () => {

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Box, HStack, Tabs, useBreakpointValue } from "@chakra-ui/react";
 import { MyQuestions } from "@/components/answer-question/questions/MyQuestions";
