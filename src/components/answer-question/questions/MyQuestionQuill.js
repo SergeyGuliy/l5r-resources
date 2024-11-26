@@ -43,10 +43,11 @@ const Editor = forwardRef(
           onTextChangeRef.current?.(JSON.stringify(quill.getContents().ops))
         );
 
-        // quill.on("selection-change", (...args) => {
-        //   console.log("selection-change");
-        //   onSelectionChangeRef.current?.(...args);
-        // });
+        quill.on("selection-change", (...args) => {
+          console.log("selection-change");
+          console.log(args);
+          onSelectionChangeRef.current?.(...args);
+        });
       });
 
       return () => {

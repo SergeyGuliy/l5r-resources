@@ -20,7 +20,7 @@ export function MyQuestions({
           <MyPageTitle title={"Вопросы"} />
         </HStack>
 
-        <Stack overflow={"auto"} h={"100%"} p={2}>
+        <Stack overflow={"auto"} h={"100%"} p={{ base: 1, lg: 2 }}>
           {Object.entries(questions).map(([questionIndex, questionData]) => (
             <MyQuestion
               key={questionIndex}

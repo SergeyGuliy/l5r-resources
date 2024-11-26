@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Box, HStack, Tabs, useBreakpointValue } from "@chakra-ui/react";
 import { MyQuestions } from "@/components/answer-question/questions/MyQuestions";
@@ -15,16 +15,32 @@ import {
 } from "@/components/answer-question/_questionsAndAnswers";
 import { MyPageTitle } from "@/components/MyPageTitle";
 import { Switch } from "@/components/ui/switch";
+import { urlDataKey, useConstructorUrl } from "@/hooks/useConstructorUrl";
 
 export function MyAnswerQuestion() {
+  const params = new URLSearchParams(window.location.search);
   const { addAlert } = useAlerts();
 
-  const [answers, setAnswer] = useState(_answers);
-  const [expandedQuestions, setExpandedQuestions] = useState(false);
-  const [swapRings, setSwapRings] = useState({
-    toBeDecreased: "",
-    toBeIncreased: "",
-  });
+  function getUrlData() {
+    // console.log("getUrlData");
+    try {
+      // console.log(params.get(urlDataKey));
+      return JSON.parse(params.get(urlDataKey));
+    } catch {
+      return {
+        answers: _answers,
+        swapRings: { toBeDecreased: "", toBeIncreased: "" },
+        expandedQuestions: false,
+      };
+    }
+  }
+  const urlData = getUrlData();
+
+  const [answers, setAnswer] = useState(urlData.answers);
+  const [swapRings, setSwapRings] = useState(urlData.swapRings);
+  const [expandedQuestions, setExpandedQuestions] = useState(
+    urlData.expandedQuestions
+  );
 
   const { selectedClan, selectedFamily, selectedSchool, selectedRing } =
     useAnswersSelected(answers);
@@ -62,9 +78,6 @@ export function MyAnswerQuestion() {
   const answerQuestion = (newAnswer, questionIndex) =>
     setAnswer({ ...answers, [questionIndex]: newAnswer });
 
-  console.clear();
-  // console.log(answers);
-
   const currentBreakpoint = useBreakpointValue({
     base: "base",
     sm: "sm",
@@ -79,11 +92,16 @@ export function MyAnswerQuestion() {
     [currentBreakpoint]
   );
 
+  useConstructorUrl({
+    answers,
+    swapRings,
+    expandedQuestions,
+  });
+
   return (
     <Box display="flex" flexDirection="column" w={"100%"} h={"100%"}>
       <HStack mb={1}>
         <MyPageTitle title={"Конструктор персонажа"} />
-        {JSON.stringify(useTabs)}
         <Switch
           ml={"auto"}
           flexDirection="row-reverse"

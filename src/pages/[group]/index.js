@@ -6,10 +6,8 @@ import { MyGroupPage } from "@/components/layout/MyGroupPage";
 import { routeData } from "@/mockData/routeData";
 
 export async function getStaticPaths() {
-  console.log(routeData);
   const paths = Object.keys(routeData).map((i) => ({ params: { group: i } }));
 
-  console.log(paths);
   return { paths: paths, fallback: false };
 }
 

@@ -149,7 +149,7 @@ export function MyQuestion({
         </Box>
       )}
 
-      <Box pl={4}>
+      <Box pl={{ base: 0, lg: 4 }}>
         {questionIndex === "1" && (
           <Stack>
             <MyQuestionOptions
