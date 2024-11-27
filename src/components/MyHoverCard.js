@@ -11,20 +11,31 @@ import {
 } from "@/components/ui/hover-card";
 import { LuInfo } from "react-icons/lu";
 
-export function MyHoverCard({ children, cardData }) {
+export function MyHoverCard({
+  children,
+  cardData,
+  hoverTarget,
+  showText = true,
+}) {
   return (
     <Link href="#" onClick={(e) => e.preventDefault()}>
-      <span style={{ textDecoration: "underline" }}>
-        {children ? children : cardData?.title}
-      </span>
-      <span> </span>
+      {showText && (
+        <>
+          <span style={{ textDecoration: "underline" }}>
+            {children ? children : cardData?.title}
+          </span>
+          <span> </span>
+        </>
+      )}
       <HoverCardRoot openDelay={500} closeDelay={100} size="sm">
         <HoverCardTrigger asChild>
-          <LuInfo
-            size={"19px"}
-            color={"orange"}
-            style={{ display: "inline", cursor: "cell" }}
-          />
+          {hoverTarget || (
+            <LuInfo
+              size={"19px"}
+              color={"orange"}
+              style={{ display: "inline", cursor: "cell" }}
+            />
+          )}
         </HoverCardTrigger>
 
         <HoverCardContent

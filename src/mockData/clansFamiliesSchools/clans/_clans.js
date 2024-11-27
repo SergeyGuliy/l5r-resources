@@ -12,8 +12,8 @@ const obj = {
     ringIncrease: [_rings.earth],
     skillIncrease: [skills.Fizicheskaya_podgotovka],
     startStatus: 30,
-    insignificantBushido: _bushido.Compassion,
-    importantBushido: _bushido.Compassion,
+    importantBushido: _bushido.Courage,
+    insignificantBushido: _bushido.Courtesy,
     descriptionAbout: `
 <p>На восточной границе Рокугана находится мрачное
 чудо - Стена Кайю, выглядящая, как большой сморщенный шрам. Её сланцево-серые блоки образуют
@@ -61,8 +61,8 @@ const obj = {
     ringIncrease: [_rings.air],
     skillIncrease: [skills.Kultura],
     startStatus: 35,
-    insignificantBushido: _bushido.Compassion,
-    importantBushido: _bushido.Compassion,
+    importantBushido: _bushido.Courtesy,
+    insignificantBushido: _bushido.Courage,
     descriptionAbout: `
 <p>На рассвете Империи, после того, как Ками пали с
 Небес, они обнаружили себя в мире смертных, полном войн и жестокости. Ками Додзи - сестра Хантея,
@@ -109,8 +109,8 @@ const obj = {
     ringIncrease: [_rings.fire],
     skillIncrease: [skills.Meditaciya],
     startStatus: 30,
-    insignificantBushido: _bushido.Compassion,
-    importantBushido: _bushido.Compassion,
+    importantBushido: _bushido.Sincerity,
+    insignificantBushido: _bushido.DutyAndLoyalty,
     descriptionAbout: `
 <p>В Империи, где обычно ценится уважение традиций, Клан Дракона - загадка. Вдохновленные их
 таинственным основателем, Ками Тогаси, Драконы
@@ -165,8 +165,8 @@ const obj = {
     ringIncrease: [_rings.water],
     skillIncrease: [skills.Taktika],
     startStatus: 35,
+    importantBushido: _bushido.Honor,
     insignificantBushido: _bushido.Compassion,
-    importantBushido: _bushido.Compassion,
     descriptionAbout: `
 <p>Каждый самурай, живущий в Рокугане, измеряет храбрость, честь и долг по стандарту, заданному Кланом
 Льва. Армия Клана Льва непревзойденна, более
@@ -225,8 +225,8 @@ const obj = {
     ringIncrease: [_rings.void],
     skillIncrease: [skills.Teologiya],
     startStatus: 30,
-    insignificantBushido: _bushido.Compassion,
-    importantBushido: _bushido.Compassion,
+    importantBushido: _bushido.Righteousness,
+    insignificantBushido: _bushido.Sincerity,
     descriptionAbout: `
 <p>Феникс - символ противоречия: взрывная сила и
 великая сдержанность, большой интеллект и глубокое смирение, благородное самопожертвование и
@@ -289,8 +289,8 @@ const obj = {
     ringIncrease: [_rings.air],
     skillIncrease: [skills.Zhulnichestvo],
     startStatus: 35,
-    insignificantBushido: _bushido.Compassion,
-    importantBushido: _bushido.Compassion,
+    importantBushido: _bushido.DutyAndLoyalty,
+    insignificantBushido: [_bushido.Honor, _bushido.Righteousness],
     descriptionAbout: `
 <p>Шестью ужасными словами Ками Баюси наставлял
 своих последователей в новообразованном Клане
@@ -353,8 +353,8 @@ const obj = {
     ringIncrease: [_rings.water],
     skillIncrease: [skills.Vyzhivanie],
     startStatus: 30,
-    insignificantBushido: _bushido.Compassion,
     importantBushido: _bushido.Compassion,
+    insignificantBushido: _bushido.Courtesy,
     descriptionAbout: `
 <p>Тысячу лет назад Клан Ки-Рин покинул Рокуган, чтобы найти врагов, прячущихся за пределами Изумрудной Империи. Их путешествие было трудным
 и они обнаружили множество странных и могущественных угроз. Клан обучался, побеждая каждого врага, меняя стиль боя, магические практики и

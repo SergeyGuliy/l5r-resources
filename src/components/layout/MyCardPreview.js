@@ -83,7 +83,7 @@ export function MyCardPreview({ cardData }) {
                 )}
                 {cardData?.clan && (
                   <Text color="fg.muted" textStyle="md">
-                    {_clans[cardData.clan].title}
+                    {_clans[cardData.clan]?.title}
                   </Text>
                 )}
                 {cardData?.school && (
@@ -178,9 +178,11 @@ export function MyCardPreview({ cardData }) {
 
             <MyPreviewList
               previewDataArray={
-                cardData?.insignificantBushido && [
-                  cardData?.insignificantBushido,
-                ]
+                cardData?.insignificantBushido &&
+                (typeof cardData?.insignificantBushido === "object" &&
+                cardData?.insignificantBushido.length
+                  ? cardData?.insignificantBushido
+                  : [cardData?.insignificantBushido])
               }
               previewText={"Малозначительный принцип Бусидо: "}
             />
