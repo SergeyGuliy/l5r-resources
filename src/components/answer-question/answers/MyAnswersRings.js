@@ -1,4 +1,4 @@
-import { Box, Table } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { _rings } from "@/mockData/routeData/other/rings/_rings";
 
 import React, { useMemo } from "react";
