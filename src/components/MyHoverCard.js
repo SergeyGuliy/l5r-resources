@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Box } from "@chakra-ui/react";
 
 import {
-  HoverCardArrow,
   HoverCardContent,
   HoverCardRoot,
   HoverCardTrigger,
@@ -43,8 +42,6 @@ export function MyHoverCard({
           maxWidth={"50vw"}
           overflow={"auto"}
         >
-          <HoverCardArrow />
-
           {cardData?.description && (
             <Box
               className={"card-preview"}

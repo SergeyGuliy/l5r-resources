@@ -1,0 +1,118 @@
+.star-elements {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    min-height: 300px;
+    margin: 0 auto 10px auto;
+    user-select: none;
+}
+.star-element {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    transform: translate(-50%, -50%);
+}
+
+/* Position elements in a star shape */
+.star-element__earth {
+    top: 20%; /* Move this to the top-left of the star */
+    left: 31%;
+}
+.star-element__air {
+    top: 20%; /* Move this to the top-right of the star */
+    left: 69%;
+}
+.star-element__water {
+    top: 55%; /* Bottom-left of the star */
+    left: 22%;
+}
+.star-element__fire {
+    top: 55%; /* Bottom-right of the star */
+    left: 78%;
+}
+.star-element__void {
+    top: 79%; /* Move this to the bottom of the star */
+    left: 50%;
+}
+
+.star-element__value {
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 3px solid #bab8ad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.star-element__earth .star-element__value {
+    background-color: #699678;
+    top: 90%;
+    left: 78%;
+}
+
+.star-element__air .star-element__value {
+    background-color: #917896;
+    top: 90%;
+    left: 22%;
+}
+
+.star-element__water .star-element__value {
+    background-color: #68829B;
+    top: 40%;
+    left: 90%;
+}
+
+.star-element__fire .star-element__value {
+    background-color: #9B7350;
+    top: 40%;
+    left: 10%;
+}
+
+.star-element__void .star-element__value {
+    background-color: #4B4641;
+    top: 10%;
+    left: 50%;
+}
+
+.star-element__text {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.star-element__earth .star-element__text {
+    color: #699678;
+    top: 85%;
+    left: -5%;
+}
+
+.star-element__air .star-element__text {
+    color: #917896;
+    top: 85%;
+    left: 105%;
+}
+
+.star-element__water .star-element__text {
+    color: #68829B;
+    top: 100%;
+    left: 40%;
+}
+
+.star-element__fire .star-element__text {
+    color: #9B7350;
+    top: 100%;
+    left: 60%;
+}
+
+.star-element__void .star-element__text {
+    color: #4B4641;
+    top: 100%;
+    left: 50%;
+}

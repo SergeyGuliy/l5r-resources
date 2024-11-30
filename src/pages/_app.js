@@ -10,6 +10,7 @@ import "@/styles/alert.css";
 import "@/styles/scrollbar.css";
 import "@/styles/table.css";
 import "@/styles/card-preview.css";
+import "@/styles/star-elements.css";
 
 import { AlertProvider } from "@/providers/AlertProvider";
 

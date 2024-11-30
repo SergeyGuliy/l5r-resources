@@ -22,72 +22,63 @@ export function MyAnswersRings({ accumulatedRings, swapRings, setSwapRings }) {
 
   return (
     <>
-      <Box position="relative" mx="auto" w="300px" h="300px">
-        <Box></Box>
-        <MyHoverCard
-          cardData={_rings.earth}
-          showText={false}
-          hoverTarget={
-            <img src={IconEarth.src} alt="" height="100px" width="100px" />
-          }
-        />
-        <MyHoverCard
-          cardData={_rings.fire}
-          showText={false}
-          hoverTarget={
-            <img src={IconFire.src} alt="" height="100px" width="100px" />
-          }
-        />
-        <MyHoverCard
-          cardData={_rings.water}
-          showText={false}
-          hoverTarget={
-            <img src={IconWater.src} alt="" height="100px" width="100px" />
-          }
-        />
-        <MyHoverCard
-          cardData={_rings.air}
-          showText={false}
-          hoverTarget={
-            <img src={IconAir.src} alt="" height="100px" width="100px" />
-          }
-        />
-        <MyHoverCard
-          cardData={_rings.void}
-          showText={false}
-          hoverTarget={
-            <img src={IconVoid.src} alt="" height="100px" width="100px" />
-          }
-        />
+      <Box className={"star-elements"}>
+        <Box className={"star-element star-element__earth"}>
+          <MyHoverCard
+            cardData={_rings.earth}
+            showText={false}
+            hoverTarget={
+              <img src={IconEarth.src} alt="" height="100%" width="100%" />
+            }
+          />
+          <Box className={"star-element__value"}>{accumulatedRings.earth}</Box>
+          <Box className={"star-element__text"}>Земля</Box>
+        </Box>
+        <Box className={"star-element star-element__air"}>
+          <MyHoverCard
+            cardData={_rings.air}
+            showText={false}
+            hoverTarget={
+              <img src={IconAir.src} alt="" height="100%" width="100%" />
+            }
+          />
+          <Box className={"star-element__value"}>{accumulatedRings.air}</Box>
+          <Box className={"star-element__text"}>Воздух</Box>
+        </Box>
+        <Box className={"star-element star-element__water"}>
+          <MyHoverCard
+            cardData={_rings.water}
+            showText={false}
+            hoverTarget={
+              <img src={IconWater.src} alt="" height="100%" width="100%" />
+            }
+          />
+          <Box className={"star-element__value"}>{accumulatedRings.water}</Box>
+          <Box className={"star-element__text"}>Вода</Box>
+        </Box>
+        <Box className={"star-element star-element__fire"}>
+          <MyHoverCard
+            cardData={_rings.fire}
+            showText={false}
+            hoverTarget={
+              <img src={IconFire.src} alt="" height="100%" width="100%" />
+            }
+          />
+          <Box className={"star-element__value"}>{accumulatedRings.fire}</Box>
+          <Box className={"star-element__text"}>Огонь</Box>
+        </Box>
+        <Box className={"star-element star-element__void"}>
+          <MyHoverCard
+            cardData={_rings.void}
+            showText={false}
+            hoverTarget={
+              <img src={IconVoid.src} alt="" height="100%" width="100%" />
+            }
+          />
+          <Box className={"star-element__value"}>{accumulatedRings.void}</Box>
+          <Box className={"star-element__text"}>Пустота</Box>
+        </Box>
       </Box>
-
-      <Table.Root size="sm" showColumnBorder>
-        <Table.ColumnGroup>
-          <Table.Column width="20%" />
-          <Table.Column width="20%" />
-          <Table.Column width="20%" />
-          <Table.Column width="20%" />
-          <Table.Column width="20%" />
-        </Table.ColumnGroup>
-        <Table.Header>
-          <Table.Row>
-            {Object.values(_rings).map((i) => (
-              <Table.ColumnHeader key={i.key} textAlign="center" w={"20%"}>
-                <MyHoverCard cardData={i} />
-              </Table.ColumnHeader>
-            ))}
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            {Object.values(accumulatedRings).map((val, index) => (
-              <Table.Cell key={index} textAlign="center">
-                {val}
-              </Table.Cell>
-            ))}
-          </Table.Row>
-        </Table.Body>
-      </Table.Root>
 
       {(moreThat4Ring || swapRings.toBeDecreased) && (
         <>

@@ -26,7 +26,7 @@ const linksData = [
     { title: text.clans, link: genLinkPath(groups.clans) },
     { title: text.families, link: genLinkPath(groups.families) },
     { title: text.schools, link: genLinkPath(groups.schools) },
-    { title: "Генератор персонажа", link: "/constructor" },
+    { title: "Конструктор персонажа", link: "/constructor" },
   ],
   [
     { title: text.bushido, link: genLinkPath(groups.bushido) },
