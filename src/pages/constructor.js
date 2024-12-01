@@ -1,10 +1,10 @@
-import { ClientOnly } from "@chakra-ui/react";
 import { MyAnswerQuestion } from "@/components/answer-question/MyAnswerQuestion";
+import { MyPageWrapper } from "@/components/MyPageWrapper";
 
 export default function Constructor() {
   return (
-    <ClientOnly>
+    <MyPageWrapper metadata={{ title: "Генератор персонажа" }}>
       <MyAnswerQuestion />
-    </ClientOnly>
+    </MyPageWrapper>
   );
 }
