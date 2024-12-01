@@ -3,7 +3,7 @@ import { Badge, Box, Card, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 import { text } from "@/mockData/routeData/constants";
-import { genLinkPath } from "@/helpers/generateLinkPath";
+import { genLinkPath } from "@/helpers/genLinkPath";
 import { useSearchAndFilterQuery } from "@/hooks/useSearchAndFilterQuery";
 
 export function MyCardListItem({ data }) {
