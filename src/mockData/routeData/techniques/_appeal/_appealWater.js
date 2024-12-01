@@ -186,7 +186,7 @@ const obj = {
     `,
   },
   Simpatiya_Energii: {
-    title: "Симпатия Энергии",
+    title: "Симпатические Энергии",
     rank: 2,
     key: "Simpatiya_Energii",
     description: `
