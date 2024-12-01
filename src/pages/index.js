@@ -3,12 +3,10 @@ import { Box } from "@chakra-ui/react";
 import { genLinkPath } from "@/helpers/genLinkPath";
 
 import { MyLinks } from "@/components/link/MyLinks";
-import { groups, injectImages, text } from "@/mockData/routeData/constants";
+import { groups, text } from "@/mockData/routeData/constants";
 import { titleArmor, titleWeapons } from "@/mockData/tableData/constants";
 import { MyGlobalSearch } from "@/components/MyGlobalSearch";
-import { MyHtml } from "@/components/MyHtml";
-import { replaceCharacter } from "@/helpers/replaceCharacter";
-
+import { MyPageWrapper } from "@/components/MyPageWrapper";
 const linksData = [
   [
     { title: text.skills, link: genLinkPath(groups.skills) },
@@ -39,39 +37,23 @@ const linksData = [
 export default function Home() {
   const col = { base: 24, sm: 12, md: 6, lg: 6, xl: 6, "2xl": 6 };
 
-  const mock = replaceCharacter(
-    `
-  Y
-  <br />
-  T
-  <br />
-  E
-  <br />
-  R
-  <br />
-  Z
-  <br />
-  X
-  <br />
-  `,
-    injectImages
-  );
-
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      maxW={"1100px"}
-      mx={"auto"}
-      overflow={"auto"}
-      h={"100%"}
-    >
-      <MyHtml content={mock} />
-      <MyGlobalSearch />
+    <MyPageWrapper>
+      <Box
+        display="flex"
+        flexDirection="column"
+        maxW={"1100px"}
+        mx={"auto"}
+        overflow={"auto"}
+        h={"100%"}
+        pt={2}
+      >
+        <MyGlobalSearch />
 
-      {linksData.map((links, index) => (
-        <MyLinks key={index} linksData={links} colSpan={col} />
-      ))}
-    </Box>
+        {linksData.map((links, index) => (
+          <MyLinks key={index} linksData={links} colSpan={col} />
+        ))}
+      </Box>
+    </MyPageWrapper>
   );
 }

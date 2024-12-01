@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 
 import { MyGroupPage } from "@/components/layout/MyGroupPage";
 import { MyCardPreview } from "@/components/layout/MyCardPreview";
+import { MyPageWrapper } from "@/components/MyPageWrapper";
 
 import { routeData } from "@/mockData/routeData";
 
@@ -15,9 +16,7 @@ export async function getStaticPaths() {
   );
 
   const paths = Object.keys(obj).flatMap((group) =>
-    obj[group].map((item) => ({
-      params: { group, item },
-    }))
+    obj[group].map((item) => ({ params: { group, item } }))
   );
 
   return { paths, fallback: false };
@@ -53,17 +52,19 @@ export default function GroupItem() {
   if (!itemData) return;
 
   return (
-    <MyGroupPage
-      title={groupData.title}
-      links={groupData.links}
-      list={groupListWrapped}
-      filterSettings={groupData.filterSettings}
-      useTechLvls={groupData.useTechLvls}
-      useSearch={groupData.useSearch}
-    >
-      {cardData && (
-        <MyCardPreview cardData={itemData} setCardData={setCardData} />
-      )}
-    </MyGroupPage>
+    <MyPageWrapper metadata={itemData}>
+      <MyGroupPage
+        title={groupData.title}
+        links={groupData.links}
+        list={groupListWrapped}
+        filterSettings={groupData.filterSettings}
+        useTechLvls={groupData.useTechLvls}
+        useSearch={groupData.useSearch}
+      >
+        {cardData && (
+          <MyCardPreview cardData={itemData} setCardData={setCardData} />
+        )}
+      </MyGroupPage>
+    </MyPageWrapper>
   );
 }

@@ -1,7 +1,6 @@
 import { Box } from "@chakra-ui/react";
-import { _rings } from "@/mockData/routeData/other/rings/_rings";
-
 import React, { useMemo } from "react";
+
 import { MyHoverCard } from "@/components/MyHoverCard";
 import { MyQuestionRing } from "@/components/answer-question/questions/MyQuestionRing";
 
@@ -11,7 +10,7 @@ import IconWater from "@/static/images/icons/water.svg";
 import IconAir from "@/static/images/icons/air.svg";
 import IconVoid from "@/static/images/icons/void.svg";
 
-console.log(IconAir);
+import { _rings } from "@/mockData/routeData/other/rings/_rings";
 
 export function MyAnswersRings({ accumulatedRings, swapRings, setSwapRings }) {
   const moreThat4Ring = useMemo(() => {

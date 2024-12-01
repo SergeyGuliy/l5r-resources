@@ -1,7 +1,8 @@
 import { Flex, Stack } from "@chakra-ui/react";
-import { LuBookMarked, LuLanguages, LuMoon, LuSun } from "react-icons/lu";
+import { LuBookMarked, LuLanguages } from "react-icons/lu";
 import { LinkButton } from "@/components/ui/link-button";
 import { useRouter } from "next/router";
+import { ColorModeButton } from "@/components/ui/color-mode";
 
 export function MySidebar() {
   const router = useRouter();
@@ -13,7 +14,6 @@ export function MySidebar() {
 
   return (
     <Flex
-      bg="gray.800"
       color="white"
       alignItems={"center"}
       justifyContent={"space-between"}
@@ -51,37 +51,18 @@ export function MySidebar() {
           variant="ghost"
           align="center"
           p="3"
-          _hover={{ bg: "gray.700" }}
           width={"40px"}
           height={"40px"}
         >
           <LuBookMarked />
         </LinkButton>
+
+        <ColorModeButton />
+
         <LinkButton
           variant="ghost"
           align="center"
           p="3"
-          _hover={{ bg: "gray.700" }}
-          width={"40px"}
-          height={"40px"}
-        >
-          <LuSun />
-        </LinkButton>
-        <LinkButton
-          variant="ghost"
-          align="center"
-          p="3"
-          _hover={{ bg: "gray.700" }}
-          width={"40px"}
-          height={"40px"}
-        >
-          <LuMoon />
-        </LinkButton>
-        <LinkButton
-          variant="ghost"
-          align="center"
-          p="3"
-          _hover={{ bg: "gray.700" }}
           width={"40px"}
           height={"40px"}
         >

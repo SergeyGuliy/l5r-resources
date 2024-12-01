@@ -1,4 +1,4 @@
-import { Box, Table } from "@chakra-ui/react";
+import { Table } from "@chakra-ui/react";
 import { MyHoverCard } from "@/components/MyHoverCard";
 import React from "react";
 
