@@ -28,6 +28,7 @@ export function MySidebar() {
       zIndex={1}
       top={{ base: "calc(100dvh - 60px)", lg: "0" }}
       left={0}
+      backgroundColor={"bg.panel"}
     >
       <LinkButton
         mt={{ base: 0, lg: 2 }}

@@ -34,32 +34,63 @@ export function MyAnswersStats({ accumulatedRings }) {
   );
 
   return (
-    <Table.Root size="sm" showColumnBorder>
-      <Table.ColumnGroup>
-        <Table.Column width="20%" />
-        <Table.Column width="20%" />
-        <Table.Column width="20%" />
-        <Table.Column width="20%" />
-        <Table.Column width="20%" />
-      </Table.ColumnGroup>
-      <Table.Header>
-        <Table.Row>
-          {Object.values(localHeroStats).map((i, index) => (
-            <Table.ColumnHeader key={index} textAlign="center">
-              {typeof i === "string" ? i : <MyHoverCard cardData={i} />}
-            </Table.ColumnHeader>
-          ))}
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          {Object.keys(localHeroStats).map((val, index) => (
-            <Table.Cell key={index} textAlign="center">
-              {accumulatedStats[val]}
+    <>
+      <Table.Root size="sm" showColumnBorder>
+        <Table.ColumnGroup>
+          <Table.Column width="20%" />
+          <Table.Column width="20%" />
+          <Table.Column width="20%" />
+          <Table.Column width="20%" />
+        </Table.ColumnGroup>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell textAlign="center">
+              <MyHoverCard cardData={localHeroStats.endurance} />
             </Table.Cell>
-          ))}
-        </Table.Row>
-      </Table.Body>
-    </Table.Root>
+            <Table.Cell textAlign="center">
+              {accumulatedStats.endurance}
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              <MyHoverCard cardData={localHeroStats.coldBlooded} />
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              {accumulatedStats.coldBlooded}
+            </Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.Cell textAlign="center">
+              <MyHoverCard cardData={localHeroStats.concentration} />
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              {accumulatedStats.concentration}
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              <MyHoverCard cardData={localHeroStats.vigilance} />
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              {accumulatedStats.vigilance}
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
+
+      <Table.Root size="sm" showColumnBorder>
+        <Table.ColumnGroup>
+          <Table.Column width="40%" />
+          <Table.Column width="40%" />
+        </Table.ColumnGroup>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell textAlign="center">
+              <MyHoverCard cardData={localHeroStats.voidPoints} />
+            </Table.Cell>
+            <Table.Cell textAlign="center">
+              {accumulatedStats.voidPoints}
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
+    </>
   );
 }
