@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { LuInfo } from "react-icons/lu";
-import { MyHtml } from "@/components/MyHtml";
+import { MyCardPreviewContent } from "@/components/layout/MyCardPreviewContent";
 
 import {
   HoverCardContent,
@@ -42,7 +42,8 @@ export function MyHoverCard({
           maxWidth={"50vw"}
           overflow={"auto"}
         >
-          <MyHtml content={cardData.description} />
+          {/*<MyHtml content={cardData.description} />*/}
+          <MyCardPreviewContent cardData={cardData} />
         </HoverCardContent>
       </HoverCardRoot>
     </Link>
