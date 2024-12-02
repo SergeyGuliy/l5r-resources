@@ -46,7 +46,6 @@ const Editor = forwardRef(
 
         // quill.on("selection-change", (...args) => {
         //   console.log("selection-change");
-        //   console.log(args);
         //   onSelectionChangeRef.current?.(...args);
         // });
       });

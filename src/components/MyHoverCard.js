@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-import { Box } from "@chakra-ui/react";
+import { LuInfo } from "react-icons/lu";
+import { MyHtml } from "@/components/MyHtml";
 
 import {
   HoverCardContent,
   HoverCardRoot,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { LuInfo } from "react-icons/lu";
 
 export function MyHoverCard({
   children,
@@ -42,12 +42,7 @@ export function MyHoverCard({
           maxWidth={"50vw"}
           overflow={"auto"}
         >
-          {cardData?.description && (
-            <Box
-              className={"card-preview"}
-              dangerouslySetInnerHTML={{ __html: cardData.description }}
-            />
-          )}
+          <MyHtml content={cardData.description} />
         </HoverCardContent>
       </HoverCardRoot>
     </Link>

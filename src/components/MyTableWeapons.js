@@ -1,6 +1,7 @@
 import { Table } from "@chakra-ui/react";
 import { MyHoverCard } from "@/components/MyHoverCard";
 import React from "react";
+import { MyHtml } from "@/components/MyHtml";
 
 export function MyTableWeapons({ headers, items }) {
   if (!headers.length) return;
@@ -60,12 +61,9 @@ export function MyTableWeapons({ headers, items }) {
               <Table.Cell textAlign="center">
                 {i.weaponsCharacteristics_Deadliness}
               </Table.Cell>
-              <Table.Cell
-                textAlign="center"
-                dangerouslySetInnerHTML={{
-                  __html: i.weaponsCharacteristics_Grip,
-                }}
-              />
+              <Table.Cell textAlign="center">
+                <MyHtml content={i.weaponsCharacteristics_Grip} />
+              </Table.Cell>
               <Table.Cell textAlign="center">
                 {i.weaponsCharacteristics_Properties.map((j, jIndex) => (
                   <div key={jIndex}>

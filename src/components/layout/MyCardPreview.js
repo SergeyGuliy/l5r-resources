@@ -18,6 +18,7 @@ import { MyPreviewList } from "@/components/MyPreviewList";
 import { MyPreviewText } from "@/components/MyPreviewText";
 import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
 import { _clans } from "@/mockData/clansFamiliesSchools/clans/_clans";
+import { MyHtml } from "@/components/MyHtml";
 
 export function MyCardPreview({ cardData }) {
   const router = useRouter();
@@ -196,11 +197,7 @@ export function MyCardPreview({ cardData }) {
               previewData={cardData?.startMoney}
               previewText={"Стартовые деньги: "}
             />
-            <Box
-              mt={2}
-              className={"card-preview"}
-              dangerouslySetInnerHTML={{ __html: cardData.description }}
-            />
+            <MyHtml content={cardData.description} />
           </Stack>
         </Stack>
       </Card.Body>
