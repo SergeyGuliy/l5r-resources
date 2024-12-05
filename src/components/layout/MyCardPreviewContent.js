@@ -1,12 +1,4 @@
-import {
-  Badge,
-  Box,
-  Button,
-  Card,
-  HStack,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Badge, Box, Button, HStack, Stack, Text } from "@chakra-ui/react";
 import { _clans } from "@/mockData/clansFamiliesSchools/clans/_clans";
 import { LuX } from "react-icons/lu";
 import { text } from "@/mockData/routeData/constants";
@@ -33,7 +25,7 @@ export function MyCardPreviewContent({ cardData, isCard = false }) {
     <Stack h={"100%"}>
       <Stack>
         <HStack gap="0" justifyContent={"space-between"}>
-          <Card.Title>
+          <Box>
             <Text fontWeight="semibold" textStyle="2xl">
               {cardData.title}
             </Text>
@@ -53,7 +45,7 @@ export function MyCardPreviewContent({ cardData, isCard = false }) {
                 Школа: {cardData.school}
               </Text>
             )}
-          </Card.Title>
+          </Box>
           {isCard && (
             <Button
               variant="ghost"

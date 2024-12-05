@@ -51,19 +51,19 @@ export function MyAnswersStats({ accumulatedRings }) {
               {accumulatedStats.endurance}
             </Table.Cell>
             <Table.Cell textAlign="center">
-              <MyHoverCard cardData={localHeroStats.coldBlooded} />
+              <MyHoverCard cardData={localHeroStats.concentration} />
             </Table.Cell>
             <Table.Cell textAlign="center">
-              {accumulatedStats.coldBlooded}
+              {accumulatedStats.concentration}
             </Table.Cell>
           </Table.Row>
 
           <Table.Row>
             <Table.Cell textAlign="center">
-              <MyHoverCard cardData={localHeroStats.concentration} />
+              <MyHoverCard cardData={localHeroStats.coldBlooded} />
             </Table.Cell>
             <Table.Cell textAlign="center">
-              {accumulatedStats.concentration}
+              {accumulatedStats.coldBlooded}
             </Table.Cell>
             <Table.Cell textAlign="center">
               <MyHoverCard cardData={localHeroStats.vigilance} />
