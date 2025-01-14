@@ -26,6 +26,7 @@ export function MySidebar() {
       pr={{ base: 5, lg: 0 }}
       position="fixed"
       zIndex={1}
+      className={"ssssss111ss"}
       top={{ base: "calc(100dvh - 60px)", lg: "0" }}
       left={0}
       backgroundColor={"bg.panel"}

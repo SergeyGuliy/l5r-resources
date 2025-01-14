@@ -25,7 +25,7 @@ export function MyCardPreviewContent({ cardData, isCard = false }) {
   };
 
   return (
-    <Stack h={"100%"}>
+    <Stack h={"100%"} pb={2}>
       <Stack>
         <HStack gap="0" justifyContent={"space-between"}>
           <Box>

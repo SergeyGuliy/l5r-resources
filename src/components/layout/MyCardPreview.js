@@ -20,6 +20,7 @@ export function MyCardPreview({ cardData }) {
 
   return (
     <Card.Root
+      className={"ssssssss"}
       flexDirection="row"
       position={isSmall ? "fixed" : "sticky"}
       top={"0"}
@@ -41,8 +42,8 @@ export function MyCardPreview({ cardData }) {
         "2xl": "calc(68% - 8px)",
       }}
     >
-      <Card.Body p={0}>
-        <Box ml={5} mt={3} mr={5}>
+      <Card.Body p={0} h={"100%"}>
+        <Box ml={5} pt={3} mr={5} h={"100%"}>
           <MyCardPreviewContent cardData={cardData} isCard={true} />
         </Box>
       </Card.Body>
