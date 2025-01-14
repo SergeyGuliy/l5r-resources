@@ -78,7 +78,7 @@ export function useAnswersAccumulated({
       baseSkills[answers[7].value]++;
     if (answers[8] && answers[8].key === "selectSkill" && answers[8].value)
       baseSkills[answers[8].value]++;
-    if (answers[17]) baseSkills[answers[17]]++;
+    if (answers[17]?.key) baseSkills[answers[17].key]++;
 
     return baseSkills;
   }, [answers, selectedClan, selectedFamily]);

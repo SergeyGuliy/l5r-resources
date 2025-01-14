@@ -118,7 +118,7 @@ export function MyQuestion({
     () =>
       createListCollection({
         items: Object.entries(accumulatedSkills)
-          .filter((i) => !i[1] || i[0] === answers[17])
+          .filter((i) => !i[1] || i[0] === answers[17]?.key)
           .map(([key]) => ({
             label: skills[key].title,
             value: skills[key].key,
@@ -252,13 +252,23 @@ export function MyQuestion({
             />
 
             {answers[questionIndex].key === "selectSkill" && (
-              <MyQuestionOptions
-                placeholder={"Навык "}
-                invalid={!answers[questionIndex].value}
-                list={skills7}
-                value={answers[questionIndex].value}
-                onCustomUpdateValue={(value) => answerExtended({ value })}
-              />
+              <>
+                <MyQuestionOptions
+                  placeholder={"Навык "}
+                  invalid={!answers[questionIndex].value}
+                  list={skills7}
+                  value={answers[questionIndex].value}
+                  onCustomUpdateValue={(value) => answerExtended({ value })}
+                />
+                {expandedQuestions && (
+                  <Box pt={4}>
+                    <MyQuestionQuill
+                      value={answers[questionIndex].text}
+                      onCustomUpdateValue={(text) => answerExtended({ text })}
+                    />
+                  </Box>
+                )}
+              </>
             )}
           </>
         )}
@@ -272,25 +282,46 @@ export function MyQuestion({
             />
 
             {answers[questionIndex].key === "selectSkill" && (
-              <MyQuestionOptions
-                placeholder={"Навык "}
-                invalid={!answers[questionIndex].value}
-                list={skills8}
-                value={answers[questionIndex].value}
-                onCustomUpdateValue={(value) => answerExtended({ value })}
-              />
+              <>
+                <MyQuestionOptions
+                  placeholder={"Навык "}
+                  invalid={!answers[questionIndex].value}
+                  list={skills8}
+                  value={answers[questionIndex].value}
+                  onCustomUpdateValue={(value) => answerExtended({ value })}
+                />
+
+                {expandedQuestions && (
+                  <Box pt={4}>
+                    <MyQuestionQuill
+                      value={answers[questionIndex].text}
+                      onCustomUpdateValue={(text) => answerExtended({ text })}
+                    />
+                  </Box>
+                )}
+              </>
             )}
           </>
         )}
 
         {questionIndex === "17" && (
-          <MyQuestionOptions
-            placeholder={"Навык "}
-            invalid={!answers[questionIndex]}
-            list={skills17}
-            value={answers[questionIndex]}
-            onCustomUpdateValue={(val) => answerQuestion(val)}
-          />
+          <>
+            <MyQuestionOptions
+              placeholder={"Навык "}
+              invalid={!answers[questionIndex].key}
+              list={skills17}
+              value={answers[questionIndex].key}
+              onCustomUpdateValue={(key) => answerQuestion({ key })}
+            />
+            {expandedQuestions && (
+              <Box pt={4}>
+                <MyQuestionQuill
+                  value={answers[questionIndex].text}
+                  onCustomUpdateValue={(text) => answerExtended({ text })}
+                />
+              </Box>
+            )}
+          </>
         )}
 
         {[

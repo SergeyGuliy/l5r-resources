@@ -16,6 +16,7 @@ export function useConstructorGetUrlData() {
   useEffect(() => {
     try {
       const data = JSON.parse(params.get(urlDataKey));
+      console.log(data?.answers);
       setAnswer(data?.answers || _answers);
       setSwapRings(data?.swapRings || _swapRings);
       setExpandedQuestions(data?.expandedQuestions || false);

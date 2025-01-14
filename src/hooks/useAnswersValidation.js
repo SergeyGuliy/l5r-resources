@@ -94,8 +94,8 @@ export function useAnswersValidation(
       changed = true;
     }
 
-    if (newAnswers[17] && accumulatedSkills[newAnswers[17]] > 1) {
-      newAnswers[17] = "";
+    if (newAnswers[17]?.key && accumulatedSkills[newAnswers[17].key] > 1) {
+      newAnswers[17].key = "";
       addAlert("Выбраный навык в 17м вопросе не может быть выше 1го ранга!");
       changed = true;
     }

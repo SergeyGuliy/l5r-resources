@@ -1,14 +1,17 @@
+import React from "react";
+import { useRouter } from "next/router";
+
 import { Badge, Box, Button, HStack, Stack, Text } from "@chakra-ui/react";
+
 import { _clans } from "@/mockData/clansFamiliesSchools/clans/_clans";
-import { LuX } from "react-icons/lu";
 import { text } from "@/mockData/routeData/constants";
+
+import { LuX } from "react-icons/lu";
 import { MyPreviewList } from "@/components/MyPreviewList";
 import { MyPreviewText } from "@/components/MyPreviewText";
 import { MyHoverCard } from "@/components/MyHoverCard";
 import { MyPreviewSchoolTech } from "@/components/MyPreviewSchoolTech";
 import { MyHtml } from "@/components/MyHtml";
-import React from "react";
-import { useRouter } from "next/router";
 
 export function MyCardPreviewContent({ cardData, isCard = false }) {
   const router = useRouter();
